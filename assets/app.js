@@ -53,7 +53,7 @@ function readStoredJson(key, fallback) {
 const copy = {
   en: {
     welcome: 'What feels heavy today?',
-    note: 'You can write naturally. Your message is not saved by this website.',
+    note: 'Share what you carry, or ask about the Rosary, Catholic prayers, the testimony, or Kristohanon.',
     placeholder: 'I feel anxious about what comes next…',
     sending: 'Finding a passage for this moment…',
     prayer: 'A prayer for this moment',
@@ -63,7 +63,7 @@ const copy = {
   },
   ceb: {
     welcome: 'Unsa ang bug-at sa imong kasingkasing karon?',
-    note: 'Pagsulti lang sa natural nga paagi. Dili tipigan niini nga website ang imong mensahe.',
+    note: 'Isulti ang imong gidala, o pangutana bahin sa Rosaryo, Katolikong mga pag-ampo, pagpamatuod, o Kristohanon.',
     placeholder: 'Nabalaka ko sa umaabot…',
     sending: 'Nangita og Kasulatan alang niining taknaa…',
     prayer: 'Usa ka pag-ampo alang niining taknaa',

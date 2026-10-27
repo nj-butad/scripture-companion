@@ -87,6 +87,7 @@ Returning visitors can resume a gentle rhythm stored only in their browser: rece
 - Guided Lectio Divina, gratitude, daily Catholic question, liturgical calendar context, and private prayer rhythm.
 - Complete Rosary flow with day-appropriate mysteries and bilingual prayers.
 - Searchable bilingual Catholic prayer library.
+- Project-aware conversational guidance that retrieves exact local content about the Rosary, prayer library, creator testimony, translations, privacy, and site features before composing an answer.
 - Responsive desktop and mobile web layouts.
 - Useful fallback responses when OpenAI is unavailable or unconfigured.
 

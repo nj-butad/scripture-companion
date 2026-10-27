@@ -10,6 +10,7 @@ final class PastoralChat
 {
     public function __construct(
         private readonly ScriptureRepository $scripture = new ScriptureRepository(),
+        private readonly KnowledgeRepository $knowledge = new KnowledgeRepository(),
         private readonly SafetyService $safety = new SafetyService(),
         private readonly OpenAIClient $openAI = new OpenAIClient(),
     ) {
@@ -23,6 +24,10 @@ final class PastoralChat
                 ...$this->safety->urgentResponse($language),
                 'passages' => [],
             ];
+        }
+
+        if ($this->knowledge->isKnowledgeQuery($message)) {
+            return $this->answerKnowledge($message, $language, $history);
         }
 
         $excludedIds = [];
@@ -53,6 +58,46 @@ final class PastoralChat
             ];
         } catch (Throwable) {
             return $this->fallback($language, $passages);
+        }
+    }
+
+    private function answerKnowledge(string $message, string $language, array $history): array
+    {
+        $knowledge = $this->knowledge->find($message, $language);
+
+        try {
+            $response = $this->openAI->guide($message, $language, $knowledge, $history);
+
+            return [
+                'type' => 'guide',
+                'message' => (string) $response['answer'],
+                'prayer' => '',
+                'next_step' => (string) $response['next_step'],
+                'passages' => [],
+                'ai' => true,
+            ];
+        } catch (Throwable) {
+            $first = $knowledge[0] ?? null;
+            $second = $knowledge[1] ?? null;
+            $content = trim((string) ($first['content'] ?? ''));
+            if ($second !== null && mb_strlen($content) < 700) {
+                $content .= "\n\n" . trim((string) $second['content']);
+            }
+
+            return [
+                'type' => 'guide',
+                'message' => $content !== '' ? $content : ($language === 'ceb'
+                    ? 'Pangutan-a ko bahin sa Rosaryo, Katolikong mga pag-ampo, Kristohanon, o sa mga feature niini nga site.'
+                    : 'Ask me about the Rosary, Catholic prayers, Kristohanon, or the features of this site.'),
+                'prayer' => '',
+                'next_step' => $first !== null
+                    ? ($language === 'ceb'
+                        ? 'Padayon sa ' . $first['title'] . ': ' . ($first['url'] ?? '/')
+                        : 'Continue with ' . $first['title'] . ': ' . ($first['url'] ?? '/'))
+                    : ($language === 'ceb' ? 'Ablihi ang Home aron makita ang mga feature.' : 'Open Home to explore the available features.'),
+                'passages' => [],
+                'ai' => false,
+            ];
         }
     }
 

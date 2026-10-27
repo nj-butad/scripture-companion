@@ -107,7 +107,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                         <article class="welcome-card">
                             <span class="small-cross" aria-hidden="true">✦</span>
                             <p id="welcomeText">What feels heavy today?</p>
-                            <p class="welcome-note" id="welcomeNote">You can write naturally. Your message is not saved by this website.</p>
+                            <p class="welcome-note" id="welcomeNote">Share what you carry, or ask about the Rosary, Catholic prayers, the testimony, or Kristohanon.</p>
                         </article>
                     </div>
 
@@ -256,10 +256,10 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
         </footer>
     </div>
 
-    <aside class="chat-widget" id="chatWidget" aria-label="Floating Scripture companion">
+    <aside class="chat-widget" id="chatWidget" aria-label="Floating Scripture and prayer guide">
         <div class="chat-widget-panel" id="chatWidgetPanel" hidden></div>
         <button class="chat-widget-launcher" id="openChatWidget" type="button" aria-expanded="false" aria-controls="chatWidgetPanel">
-            <span class="widget-bubble"><strong>Scripture companion</strong><span>Share what is on your heart</span></span>
+            <span class="widget-bubble"><strong>Scripture and prayer guide</strong><span>Share what you carry or ask a question</span></span>
             <span class="widget-mark" aria-hidden="true">
                 <img class="kristohanon-widget-mark" src="assets/images/kristohanon-mark-inverse.svg" alt="" width="38" height="38">
             </span>
@@ -267,7 +267,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     </aside>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?>, home: <?= $homeJson ?> };</script>
-    <script src="assets/app.js?v=13" defer></script>
+    <script src="assets/app.js?v=14" defer></script>
 </body>
 </html>
 

@@ -5,6 +5,12 @@ vanilla JavaScript. It retrieves reviewed Bible passages before asking AI to
 compose a short reflection, so Scripture quotations are never generated from
 model memory.
 
+The same conversation can answer project questions using a deterministic local
+knowledge layer. It retrieves Rosary instructions and mysteries, exact prayers,
+the creator testimony, translation and privacy details, and site guidance
+before asking the model to compose an answer. When the model is unavailable,
+the retrieved local content remains available as a fallback.
+
 The reviewed library contains 98 English and Cebuano selections covering a
 wide range of pastoral intentions. Matching happens locally first; the model
 then chooses the most relevant one or two candidates and avoids recently shown
