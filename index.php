@@ -17,11 +17,31 @@ $dailyCandidates = array_values(array_filter(
     static fn (int $index): bool => isset($cebuanoPassages[$index])
         && mb_strlen($englishPassages[$index]['text']) <= 650
         && mb_strlen($cebuanoPassages[$index]['text']) <= 650
+        && $englishPassages[$index]['id'] !== 'webu-psa-55-23-23'
 ));
 $manilaNow = new DateTimeImmutable('now', new DateTimeZone('Asia/Manila'));
-$dailyIndex = $dailyCandidates[(int) $manilaNow->format('z') % count($dailyCandidates)];
-$dailyVerses = ['en' => $englishPassages[$dailyIndex], 'ceb' => $cebuanoPassages[$dailyIndex]];
-$dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP);
+$today = $manilaNow->setTime(0, 0);
+$weekStart = $today->modify('monday this week');
+$weekVerses = [];
+$cebuanoDays = ['Lunes', 'Martes', 'Miyerkoles', 'Huwebes', 'Biyernes', 'Sabado', 'Domingo'];
+$cebuanoDaysShort = ['Lun', 'Mar', 'Miy', 'Huw', 'Biy', 'Sab', 'Dom'];
+for ($dayOffset = 0; $dayOffset < 7; $dayOffset++) {
+    $date = $weekStart->modify("+{$dayOffset} days");
+    $verseIndex = $dailyCandidates[(int) $date->format('z') % count($dailyCandidates)];
+    $weekVerses[] = [
+        'date' => $date->format('Y-m-d'),
+        'day' => $date->format('D'),
+        'day_long' => $date->format('l'),
+        'day_ceb' => $cebuanoDaysShort[$dayOffset],
+        'day_long_ceb' => $cebuanoDays[$dayOffset],
+        'date_label' => $date->format('F j, Y'),
+        'is_today' => $date->format('Y-m-d') === $today->format('Y-m-d'),
+        'verses' => ['en' => $englishPassages[$verseIndex], 'ceb' => $cebuanoPassages[$verseIndex]],
+    ];
+}
+$todayWeekIndex = (int) $today->format('N') - 1;
+$dailyVerses = $weekVerses[$todayWeekIndex]['verses'];
+$weekJson = json_encode($weekVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP);
 ?>
 <!doctype html>
 <html lang="en">
@@ -34,7 +54,7 @@ $dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_S
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=8">
+    <link rel="stylesheet" href="assets/style.css?v=9">
 </head>
 <body>
     <div class="page-shell">
@@ -91,11 +111,27 @@ $dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_S
             </div>
 
             <section class="daily-reading" aria-labelledby="dailyTitle">
-                <p class="daily-date"><time datetime="<?= $manilaNow->format('Y-m-d') ?>"><?= $manilaNow->format('F j, Y') ?></time></p>
-                <p class="eyebrow" id="dailyTitle">Verse for today</p>
-                <blockquote id="dailyVerse"><?= htmlspecialchars($dailyVerses['en']['text'], ENT_QUOTES, 'UTF-8') ?></blockquote>
-                <p class="daily-reference" id="dailyReference"><?= htmlspecialchars($dailyVerses['en']['reference'], ENT_QUOTES, 'UTF-8') ?></p>
-                <p class="daily-translation" id="dailyTranslation"><?= htmlspecialchars($dailyVerses['en']['translation'], ENT_QUOTES, 'UTF-8') ?></p>
+                <div class="week-picker" id="weekPicker" role="tablist" aria-label="Verses for this week">
+                    <?php foreach ($weekVerses as $index => $day): ?>
+                        <button type="button" role="tab" class="week-day<?= $day['is_today'] ? ' is-active' : '' ?>" data-verse-day="<?= $index ?>" aria-selected="<?= $day['is_today'] ? 'true' : 'false' ?>">
+                            <span><?= htmlspecialchars($day['day'], ENT_QUOTES, 'UTF-8') ?></span>
+                            <strong><?= $weekStart->modify("+{$index} days")->format('j') ?></strong>
+                            <?php if ($day['is_today']): ?><em>Today</em><?php endif; ?>
+                        </button>
+                    <?php endforeach; ?>
+                </div>
+                <div class="daily-slide" id="dailySlide" role="tabpanel" aria-live="polite">
+                    <p class="daily-date"><time id="dailyDate" datetime="<?= $today->format('Y-m-d') ?>"><?= $today->format('F j, Y') ?></time></p>
+                    <p class="eyebrow" id="dailyTitle">Verse for today</p>
+                    <blockquote id="dailyVerse"><?= htmlspecialchars($dailyVerses['en']['text'], ENT_QUOTES, 'UTF-8') ?></blockquote>
+                    <p class="daily-reference" id="dailyReference"><?= htmlspecialchars($dailyVerses['en']['reference'], ENT_QUOTES, 'UTF-8') ?></p>
+                    <p class="daily-translation" id="dailyTranslation"><?= htmlspecialchars($dailyVerses['en']['translation'], ENT_QUOTES, 'UTF-8') ?></p>
+                </div>
+                <div class="daily-slider-actions">
+                    <button type="button" id="previousVerse" aria-label="Previous day">←</button>
+                    <span id="versePosition"><?= $todayWeekIndex + 1 ?> of 7</span>
+                    <button type="button" id="nextVerse" aria-label="Next day">→</button>
+                </div>
             </section>
 
             <p class="boundary-note">Still Waters offers Scripture-centered encouragement, not emergency, medical, or mental-health care. If you are in immediate danger, contact local emergency services or a trusted person now.</p>
@@ -133,8 +169,8 @@ $dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_S
         <a class="text-link" href="https://ebible.org/cebocb/copyright.htm" target="_blank" rel="noopener noreferrer">Read the complete Cebuano license</a>
     </dialog>
 
-    <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", dailyVerses: <?= $dailyJson ?> };</script>
-    <script src="assets/app.js?v=6" defer></script>
+    <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?> };</script>
+    <script src="assets/app.js?v=7" defer></script>
 </body>
 </html>
 

@@ -6,12 +6,19 @@ const aboutDialog = document.querySelector('#aboutDialog');
 const dailyVerse = document.querySelector('#dailyVerse');
 const dailyReference = document.querySelector('#dailyReference');
 const dailyTranslation = document.querySelector('#dailyTranslation');
+const dailyDate = document.querySelector('#dailyDate');
+const dailySlide = document.querySelector('#dailySlide');
+const weekDayButtons = [...document.querySelectorAll('[data-verse-day]')];
+const previousVerse = document.querySelector('#previousVerse');
+const nextVerse = document.querySelector('#nextVerse');
+const versePosition = document.querySelector('#versePosition');
 const companion = document.querySelector('#scriptureCompanion');
 const companionHome = document.querySelector('#companionHome');
 const chatWidgetPanel = document.querySelector('#chatWidgetPanel');
 const openChatWidget = document.querySelector('#openChatWidget');
 const closeChatWidget = document.querySelector('#closeChatWidget');
 let language = 'en';
+let activeVerseIndex = Number(window.STILL_WATERS.todayIndex) || 0;
 const history = [];
 
 const copy = {
@@ -47,14 +54,59 @@ languageButtons.forEach((button) => {
     document.querySelector('#welcomeText').textContent = copy[language].welcome;
     document.querySelector('#welcomeNote').textContent = copy[language].note;
     input.placeholder = copy[language].placeholder;
-    const daily = window.STILL_WATERS.dailyVerses[language];
-    dailyVerse.textContent = daily.text;
-    dailyReference.textContent = daily.reference;
-    dailyTranslation.textContent = daily.translation;
-    document.querySelector('#dailyTitle').textContent = language === 'ceb' ? 'Bersikulo alang karong adlawa' : 'Verse for today';
+    renderDailyVerse(activeVerseIndex, false);
     input.focus();
   });
 });
+
+weekDayButtons.forEach((button) => button.addEventListener('click', () => {
+  renderDailyVerse(Number(button.dataset.verseDay));
+}));
+
+previousVerse.addEventListener('click', () => renderDailyVerse((activeVerseIndex + 6) % 7));
+nextVerse.addEventListener('click', () => renderDailyVerse((activeVerseIndex + 1) % 7));
+
+let verseTouchStart = null;
+dailySlide.addEventListener('touchstart', (event) => {
+  verseTouchStart = event.changedTouches[0].clientX;
+}, { passive: true });
+dailySlide.addEventListener('touchend', (event) => {
+  if (verseTouchStart === null) return;
+  const distance = event.changedTouches[0].clientX - verseTouchStart;
+  verseTouchStart = null;
+  if (Math.abs(distance) < 45) return;
+  renderDailyVerse(distance < 0 ? (activeVerseIndex + 1) % 7 : (activeVerseIndex + 6) % 7);
+}, { passive: true });
+
+function renderDailyVerse(index, animate = true) {
+  const day = window.STILL_WATERS.weekVerses[index];
+  if (!day) return;
+  activeVerseIndex = index;
+  const verse = day.verses[language];
+  dailyDate.dateTime = day.date;
+  dailyDate.textContent = day.date_label;
+  dailyVerse.textContent = verse.text;
+  dailyReference.textContent = verse.reference;
+  dailyTranslation.textContent = verse.translation;
+  document.querySelector('#dailyTitle').textContent = language === 'ceb'
+    ? (day.is_today ? 'Bersikulo alang karong adlawa' : `Bersikulo alang sa ${day.day_long_ceb}`)
+    : (day.is_today ? 'Verse for today' : `Verse for ${day.day_long}`);
+  versePosition.textContent = `${index + 1} of 7`;
+  weekDayButtons.forEach((button, buttonIndex) => {
+    const active = buttonIndex === index;
+    const buttonDay = window.STILL_WATERS.weekVerses[buttonIndex];
+    button.querySelector('span').textContent = language === 'ceb' ? buttonDay.day_ceb : buttonDay.day;
+    const todayLabel = button.querySelector('em');
+    if (todayLabel) todayLabel.textContent = language === 'ceb' ? 'Karon' : 'Today';
+    button.classList.toggle('is-active', active);
+    button.setAttribute('aria-selected', String(active));
+  });
+  weekDayButtons[index].scrollIntoView({ behavior: reducedMotion() ? 'auto' : 'smooth', inline: 'center', block: 'nearest' });
+  if (animate && !reducedMotion()) {
+    dailySlide.classList.remove('is-changing');
+    requestAnimationFrame(() => dailySlide.classList.add('is-changing'));
+  }
+}
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
