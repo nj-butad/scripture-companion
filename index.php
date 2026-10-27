@@ -42,6 +42,8 @@ for ($dayOffset = 0; $dayOffset < 7; $dayOffset++) {
 $todayWeekIndex = (int) $today->format('N') - 1;
 $dailyVerses = $weekVerses[$todayWeekIndex]['verses'];
 $weekJson = json_encode($weekVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP);
+$home = require __DIR__ . '/data/home.php';
+$homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP);
 ?>
 <!doctype html>
 <html lang="en">
@@ -54,7 +56,7 @@ $weekJson = json_encode($weekVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=9">
+    <link rel="stylesheet" href="assets/style.css?v=10">
 </head>
 <body>
     <div class="page-shell">
@@ -134,6 +136,78 @@ $weekJson = json_encode($weekVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
                 </div>
             </section>
 
+            <section class="home-section" aria-labelledby="prayTodayTitle">
+                <div class="section-heading">
+                    <p class="eyebrow">A small rhythm for today</p>
+                    <h2 id="prayTodayTitle">Pause, listen, and respond</h2>
+                </div>
+                <div class="practice-grid">
+                    <article class="practice-card lectio-card" id="lectioCard">
+                        <div class="card-heading-row"><div><p class="card-kicker">3-minute prayer</p><h3 id="lectioTitle">Pray with today’s verse</h3></div><span class="time-chip">3 min</span></div>
+                        <div class="lectio-progress" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div>
+                        <div class="lectio-content" id="lectioContent" aria-live="polite">
+                            <p class="lectio-step" id="lectioStep">1 · Read</p>
+                            <p class="lectio-instruction" id="lectioInstruction">Read the passage slowly. Notice the word or phrase that stays with you.</p>
+                        </div>
+                        <div class="card-actions"><button class="text-button" id="resetLectio" type="button" hidden>Start again</button><button class="compact-primary" id="nextLectio" type="button">Begin <span aria-hidden="true">→</span></button></div>
+                    </article>
+
+                    <article class="practice-card moment-card" id="momentCard">
+                        <p class="card-kicker" id="momentLabel"><?= htmlspecialchars($home['moment']['en']['label'], ENT_QUOTES, 'UTF-8') ?></p>
+                        <h3 id="momentTitle"><?= htmlspecialchars($home['moment']['en']['title'], ENT_QUOTES, 'UTF-8') ?></h3>
+                        <p class="moment-prayer" id="momentText"><?= htmlspecialchars($home['moment']['en']['text'], ENT_QUOTES, 'UTF-8') ?></p>
+                        <button class="mark-prayed" id="markMomentPrayed" type="button"><span aria-hidden="true">○</span> Mark as prayed</button>
+                    </article>
+                </div>
+            </section>
+
+            <section class="home-section" aria-labelledby="needTitle">
+                <div class="section-heading compact-heading"><p class="eyebrow">Come as you are</p><h2 id="needTitle">What do you need today?</h2><p>Choose what feels closest. Your Scripture companion will help you begin.</p></div>
+                <div class="need-grid" id="needGrid">
+                    <?php foreach ($home['needs'] as $need): ?>
+                        <button class="need-card" type="button" data-need="<?= htmlspecialchars($need['id'], ENT_QUOTES, 'UTF-8') ?>">
+                            <span aria-hidden="true"><?= htmlspecialchars($need['symbol'], ENT_QUOTES, 'UTF-8') ?></span>
+                            <strong><?= htmlspecialchars($need['en']['label'], ENT_QUOTES, 'UTF-8') ?></strong>
+                        </button>
+                    <?php endforeach; ?>
+                </div>
+            </section>
+
+            <section class="home-section discovery-grid" aria-label="Daily Catholic discovery">
+                <article class="discovery-card saint-card" id="saintCard">
+                    <p class="card-kicker">Today in the Church</p>
+                    <h2 id="saintName">Loading today’s celebration…</h2>
+                    <p class="saint-type" id="saintType">General Roman Calendar</p>
+                    <p id="saintDescription">The Church’s calendar helps us remember that every ordinary day belongs to God.</p>
+                    <p class="saint-prompt" id="saintPrompt"><strong>Carry this today:</strong> Practice quiet faithfulness in the task before you.</p>
+                    <a class="saint-source" href="https://github.com/cpbjr/catholic-readings-api" target="_blank" rel="noopener noreferrer">Calendar data source</a>
+                </article>
+
+                <article class="discovery-card quiz-card" id="quizCard">
+                    <p class="card-kicker">Daily Catholic question</p>
+                    <h2 id="quizQuestion"><?= htmlspecialchars($home['quiz']['question']['en'], ENT_QUOTES, 'UTF-8') ?></h2>
+                    <div class="quiz-options" id="quizOptions">
+                        <?php foreach ($home['quiz']['options'] as $optionIndex => $option): ?>
+                            <button type="button" data-quiz-answer="<?= $optionIndex ?>"><?= htmlspecialchars($option['en'], ENT_QUOTES, 'UTF-8') ?></button>
+                        <?php endforeach; ?>
+                    </div>
+                    <p class="quiz-feedback" id="quizFeedback" aria-live="polite" hidden></p>
+                </article>
+            </section>
+
+            <section class="home-section rhythm-card" aria-labelledby="rhythmTitle">
+                <div><p class="card-kicker">Private on this device</p><h2 id="rhythmTitle">Your quiet rhythm</h2><p id="rhythmMessage">A gentle record of showing up—never a score.</p></div>
+                <div class="rhythm-week" id="rhythmWeek" aria-label="Prayer activity this week"></div>
+                <div class="rhythm-links"><a href="rosary.php">Continue the Rosary <span aria-hidden="true">→</span></a><a href="prayers.php" id="recentPrayerLink">Open the prayer library <span aria-hidden="true">→</span></a></div>
+            </section>
+
+            <section class="seasonal-card <?= htmlspecialchars($home['seasonal']['tone'], ENT_QUOTES, 'UTF-8') ?>" aria-labelledby="seasonalTitle">
+                <p class="eyebrow" id="seasonalEyebrow"><?= htmlspecialchars($home['seasonal']['en']['eyebrow'], ENT_QUOTES, 'UTF-8') ?></p>
+                <h2 id="seasonalTitle"><?= htmlspecialchars($home['seasonal']['en']['title'], ENT_QUOTES, 'UTF-8') ?></h2>
+                <p id="seasonalText"><?= htmlspecialchars($home['seasonal']['en']['text'], ENT_QUOTES, 'UTF-8') ?></p>
+                <a class="seasonal-action" id="seasonalAction" href="<?= htmlspecialchars($home['seasonal']['href'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($home['seasonal']['en']['action'], ENT_QUOTES, 'UTF-8') ?> <span aria-hidden="true">→</span></a>
+            </section>
+
             <p class="boundary-note">Still Waters offers Scripture-centered encouragement, not emergency, medical, or mental-health care. If you are in immediate danger, contact local emergency services or a trusted person now.</p>
         </main>
 
@@ -169,8 +243,8 @@ $weekJson = json_encode($weekVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
         <a class="text-link" href="https://ebible.org/cebocb/copyright.htm" target="_blank" rel="noopener noreferrer">Read the complete Cebuano license</a>
     </dialog>
 
-    <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?> };</script>
-    <script src="assets/app.js?v=7" defer></script>
+    <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?>, home: <?= $homeJson ?> };</script>
+    <script src="assets/app.js?v=8" defer></script>
 </body>
 </html>
 

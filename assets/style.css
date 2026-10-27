@@ -168,6 +168,72 @@ h1 {
 .daily-slider-actions button:active { transform: scale(0.94); }
 .daily-slider-actions span { min-width: 42px; color: var(--ink-soft); font-size: 0.72rem; }
 
+.home-section { max-width: 820px; margin: 72px auto 0; }
+.section-heading { max-width: 620px; margin: 0 auto 28px; text-align: center; }
+.section-heading h2 { margin: 0; font-size: clamp(1.65rem, 4vw, 2.35rem); font-weight: 400; }
+.section-heading > p:last-child { margin: 10px auto 0; color: var(--ink-soft); line-height: 1.6; }
+.section-heading .eyebrow { margin-bottom: 10px; }
+.practice-grid, .discovery-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.practice-card, .discovery-card, .rhythm-card { border: 1px solid var(--line); border-radius: 14px; background: rgba(255, 253, 250, 0.94); box-shadow: 0 12px 42px rgba(70, 51, 44, 0.06); }
+.practice-card, .discovery-card { min-height: 350px; padding: clamp(24px, 4vw, 34px); }
+.card-heading-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.card-kicker { margin: 0 0 8px; color: var(--burgundy); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; }
+.practice-card h3, .discovery-card h2, .rhythm-card h2, .seasonal-card h2 { margin: 0; font-size: clamp(1.3rem, 3vw, 1.72rem); font-weight: 400; line-height: 1.35; }
+.time-chip { flex: 0 0 auto; border-radius: 999px; padding: 5px 9px; color: var(--ink-soft); background: #f4eee7; font-size: 0.7rem; font-weight: 600; }
+.lectio-card { display: flex; flex-direction: column; }
+.lectio-progress { margin: 22px 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.lectio-progress span { height: 3px; border-radius: 99px; background: #e5dbd5; transition: background-color 180ms var(--ease-out); }
+.lectio-progress span.is-active { background: var(--burgundy); }
+.lectio-content { flex: 1; }
+.lectio-step { margin: 0 0 8px; color: var(--burgundy); font-weight: 600; }
+.lectio-instruction { margin: 0; color: var(--ink-soft); line-height: 1.6; }
+.lectio-content blockquote { max-height: 142px; overflow-y: auto; margin: 16px 0 0; padding-left: 15px; border-left: 2px solid var(--rose-wash); font-family: "Libre Baskerville", Georgia, serif; font-size: 0.96rem; line-height: 1.7; }
+.lectio-content textarea { width: 100%; min-height: 94px; margin-top: 16px; resize: vertical; border: 1px solid var(--line); border-radius: 9px; padding: 12px; outline: none; color: var(--ink); background: #fffdfa; transition: border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out); }
+.lectio-content textarea:focus { border-color: rgba(168, 70, 67, 0.5); box-shadow: 0 0 0 3px rgba(168, 70, 67, 0.08); }
+.card-actions { min-height: 39px; margin-top: 24px; display: flex; align-items: center; justify-content: flex-end; gap: 12px; }
+.compact-primary, .seasonal-action { border: 0; border-radius: 999px; padding: 10px 15px; color: white; background: var(--burgundy); cursor: pointer; text-decoration: none; font-weight: 600; transition: background-color 180ms var(--ease-out), transform 140ms var(--ease-out); }
+.compact-primary:active, .seasonal-action:active { transform: scale(0.97); }
+.text-button { border: 0; padding: 8px; color: var(--ink-soft); background: transparent; cursor: pointer; }
+.moment-card { position: relative; overflow: hidden; display: flex; flex-direction: column; }
+.moment-card::after { content: "✦"; position: absolute; right: 23px; bottom: 13px; color: rgba(168, 70, 67, 0.08); font-size: 5.2rem; }
+.moment-prayer { flex: 1; margin: 24px 0; font-family: "Libre Baskerville", Georgia, serif; font-size: 1.02rem; line-height: 1.75; }
+.mark-prayed { width: fit-content; z-index: 1; border: 1px solid var(--line); border-radius: 999px; padding: 9px 13px; color: var(--burgundy); background: var(--paper); cursor: pointer; font-weight: 600; transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out), background-color 160ms var(--ease-out), transform 140ms var(--ease-out); }
+.mark-prayed:active { transform: scale(0.97); }
+.mark-prayed.is-complete { border-color: transparent; color: var(--burgundy-dark); background: var(--rose-wash); }
+.need-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.need-card { min-height: 116px; border: 1px solid var(--line); border-radius: 12px; padding: 18px 12px; display: grid; place-content: center; gap: 10px; color: var(--ink); background: rgba(255, 253, 250, 0.88); cursor: pointer; text-align: center; transition: border-color 180ms var(--ease-out), box-shadow 180ms var(--ease-out), transform 140ms var(--ease-out); }
+.need-card:active { transform: scale(0.98); }
+.need-card > span { color: var(--burgundy); font-size: 1.2rem; }
+.need-card strong { font-size: 0.87rem; font-weight: 600; }
+.discovery-grid { max-width: 820px; }
+.discovery-card { min-height: 390px; }
+.saint-card { position: relative; overflow: hidden; background: linear-gradient(145deg, rgba(255, 253, 250, 0.96), rgba(246, 238, 230, 0.96)); }
+.saint-card::after { content: "✧"; position: absolute; right: 23px; top: 20px; color: rgba(168, 70, 67, 0.15); font-size: 2rem; }
+.saint-type { margin: 11px 0 22px; color: var(--burgundy); font-size: 0.77rem; font-weight: 600; }
+.saint-card > p:not(.card-kicker):not(.saint-type):not(.saint-prompt) { color: var(--ink-soft); line-height: 1.65; }
+.saint-prompt { margin: 26px 0 0; padding-top: 19px; border-top: 1px solid var(--line); line-height: 1.55; }
+.saint-prompt strong { color: var(--burgundy); }
+.saint-source { display: inline-block; margin-top: 16px; color: var(--ink-soft); font-size: 0.7rem; }
+.quiz-options { margin-top: 24px; display: grid; gap: 8px; }
+.quiz-options button { min-height: 44px; border: 1px solid var(--line); border-radius: 9px; padding: 9px 12px; color: var(--ink); background: transparent; cursor: pointer; text-align: left; transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out), background-color 160ms var(--ease-out), transform 140ms var(--ease-out); }
+.quiz-options button:active { transform: scale(0.99); }
+.quiz-options button.is-correct { border-color: #80946f; color: #435837; background: #edf3e8; }
+.quiz-options button.is-wrong { border-color: #b56e68; color: #743c37; background: #fbebea; }
+.quiz-options button:disabled { cursor: default; }
+.quiz-feedback { margin: 17px 0 0; color: var(--ink-soft); line-height: 1.5; }
+.rhythm-card { max-width: 820px; padding: clamp(25px, 4vw, 36px); display: grid; grid-template-columns: minmax(190px, 0.8fr) 1.2fr; align-items: center; gap: 30px 40px; }
+.rhythm-card > div:first-child p:last-child { margin: 10px 0 0; color: var(--ink-soft); }
+.rhythm-week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+.rhythm-day { display: grid; justify-items: center; gap: 7px; color: var(--ink-soft); font-size: 0.67rem; }
+.rhythm-dot { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: transparent; background: #f8f3ed; }
+.rhythm-day.is-complete .rhythm-dot { border-color: var(--burgundy); color: white; background: var(--burgundy); }
+.rhythm-links { grid-column: 1 / -1; padding-top: 18px; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); }
+.rhythm-links a { color: var(--burgundy); text-decoration: none; font-weight: 600; }
+.seasonal-card { max-width: 820px; margin: 72px auto 0; padding: clamp(34px, 7vw, 62px); border: 1px solid rgba(125, 83, 72, 0.18); border-radius: 16px; background: radial-gradient(circle at 88% 16%, rgba(168, 70, 67, 0.12), transparent 30%), linear-gradient(145deg, #fffaf5, #eee5d8); text-align: center; }
+.seasonal-card h2 { font-size: clamp(1.7rem, 4vw, 2.55rem); }
+.seasonal-card > p:not(.eyebrow) { max-width: 580px; margin: 16px auto 27px; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.65; }
+.seasonal-action { display: inline-flex; align-items: center; gap: 10px; }
+
 .companion {
   overflow: hidden;
   border: 1px solid var(--line);
@@ -496,6 +562,9 @@ footer {
   .daily-slider-actions button:hover { border-color: rgba(168, 70, 67, 0.42); color: var(--burgundy-dark); }
   .widget-close:hover { color: var(--burgundy-dark); background: var(--rose-wash); }
   .chat-widget-launcher:hover { animation-play-state: paused; }
+  .compact-primary:hover, .seasonal-action:hover { background: var(--burgundy-dark); }
+  .need-card:hover { border-color: rgba(168, 70, 67, 0.42); box-shadow: 0 13px 32px rgba(70, 51, 44, 0.08); }
+  .quiz-options button:not(:disabled):hover, .mark-prayed:not(.is-complete):hover { border-color: rgba(168, 70, 67, 0.42); color: var(--burgundy-dark); }
 }
 
 @media (max-width: 620px) {
@@ -528,6 +597,16 @@ footer {
   .chat-widget-panel { width: calc(100vw - 20px); }
   .chat-widget-panel .companion { height: min(620px, calc(100dvh - 82px)); }
   .chat-widget-open .chat-widget-launcher { display: none; }
+  .home-section, .seasonal-card { margin-top: 52px; }
+  .practice-grid, .discovery-grid { grid-template-columns: 1fr; }
+  .practice-card, .discovery-card { min-height: 0; }
+  .need-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .need-card { min-height: 100px; }
+  .rhythm-card { grid-template-columns: 1fr; gap: 24px; }
+  .rhythm-week { gap: 5px; }
+  .rhythm-dot { width: 27px; height: 27px; }
+  .rhythm-links { flex-direction: column; gap: 11px; }
+  .seasonal-card { padding-inline: 22px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

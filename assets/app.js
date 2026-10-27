@@ -17,9 +17,24 @@ const companionHome = document.querySelector('#companionHome');
 const chatWidgetPanel = document.querySelector('#chatWidgetPanel');
 const openChatWidget = document.querySelector('#openChatWidget');
 const closeChatWidget = document.querySelector('#closeChatWidget');
+const homeData = window.STILL_WATERS.home;
+const lectioContent = document.querySelector('#lectioContent');
+const lectioProgress = [...document.querySelectorAll('.lectio-progress span')];
+const nextLectio = document.querySelector('#nextLectio');
+const resetLectio = document.querySelector('#resetLectio');
+const markMomentPrayed = document.querySelector('#markMomentPrayed');
 let language = 'en';
 let activeVerseIndex = Number(window.STILL_WATERS.todayIndex) || 0;
+let lectioStage = 0;
 const history = [];
+
+function readStoredJson(key, fallback) {
+  try {
+    return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback));
+  } catch (error) {
+    return fallback;
+  }
+}
 
 const copy = {
   en: {
@@ -55,6 +70,7 @@ languageButtons.forEach((button) => {
     document.querySelector('#welcomeNote').textContent = copy[language].note;
     input.placeholder = copy[language].placeholder;
     renderDailyVerse(activeVerseIndex, false);
+    renderHomeLanguage();
     input.focus();
   });
 });
@@ -107,6 +123,171 @@ function renderDailyVerse(index, animate = true) {
     requestAnimationFrame(() => dailySlide.classList.add('is-changing'));
   }
 }
+
+const lectioQuestions = {
+  fear: { en: 'What fear can you place in God’s hands today?', ceb: 'Unsang kahadlok ang imong ikatugyan sa mga kamot sa Dios karon?' },
+  grief: { en: 'Where do you most need God to remain close?', ceb: 'Asa nimo labing gikinahanglan nga magpabiling duol ang Dios?' },
+  guidance: { en: 'Which decision needs trust more than control?', ceb: 'Unsang desisyon ang nagkinahanglan og pagsalig labaw sa pagkontrol?' },
+  love: { en: 'Who is God inviting you to love patiently today?', ceb: 'Kinsa ang giagda sa Dios nga imong higugmaon uban sa pailob karon?' },
+  peace: { en: 'What would it mean to receive Christ’s peace here?', ceb: 'Unsay kahulogan sa pagdawat sa kalinaw ni Cristo dinhi?' },
+  default: { en: 'What word is God inviting you to carry into this day?', ceb: 'Unsang pulong ang giagda sa Dios nga imong dad-on niining adlawa?' },
+};
+
+nextLectio.addEventListener('click', () => {
+  if (lectioStage < 2) {
+    lectioStage += 1;
+    renderLectio();
+    return;
+  }
+  markPrayerDay();
+  lectioStage = 3;
+  renderLectio();
+});
+
+resetLectio.addEventListener('click', () => {
+  lectioStage = 0;
+  renderLectio();
+});
+
+function renderLectio() {
+  const active = window.STILL_WATERS.weekVerses[activeVerseIndex].verses[language];
+  const labels = language === 'ceb'
+    ? [['1 · Pagbasa', 'Basaha paghinay ang bersikulo. Timan-i ang pulong o hugpong sa mga pulong nga nagpabilin kanimo.'], ['2 · Pamalandong', (lectioQuestions[active.topic] || lectioQuestions.default).ceb], ['3 · Pagtubag', 'Isulti sa Dios sa imong kaugalingong mga pulong unsa ang anaa sa imong kasingkasing.'], ['Nahuman', 'Pabilin sa kahilom sa makadiyot. Dad-a kining pulonga uban kanimo.']]
+    : [['1 · Read', 'Read the passage slowly. Notice the word or phrase that stays with you.'], ['2 · Reflect', (lectioQuestions[active.topic] || lectioQuestions.default).en], ['3 · Respond', 'Tell God, in your own words, what is present in your heart.'], ['Complete', 'Rest in silence for a moment. Carry this word with you.']];
+  const [step, instruction] = labels[lectioStage];
+  const stepElement = document.createElement('p');
+  stepElement.className = 'lectio-step';
+  stepElement.textContent = step;
+  const instructionElement = document.createElement('p');
+  instructionElement.className = 'lectio-instruction';
+  instructionElement.textContent = instruction;
+  lectioContent.replaceChildren(stepElement, instructionElement);
+  if (lectioStage === 0) {
+    const quote = document.createElement('blockquote');
+    quote.textContent = active.text;
+    lectioContent.append(quote);
+  }
+  if (lectioStage === 2) {
+    const prayer = document.createElement('textarea');
+    prayer.rows = 3;
+    prayer.maxLength = 800;
+    prayer.placeholder = language === 'ceb' ? 'Isulat ang imong personal nga pag-ampo…' : 'Write your personal prayer…';
+    prayer.setAttribute('aria-label', prayer.placeholder);
+    lectioContent.append(prayer);
+  }
+  lectioProgress.forEach((dot, index) => dot.classList.toggle('is-active', index <= Math.min(lectioStage, 2)));
+  resetLectio.hidden = lectioStage === 0;
+  nextLectio.hidden = lectioStage === 3;
+  nextLectio.firstChild.textContent = language === 'ceb'
+    ? (lectioStage === 0 ? 'Sugdi ' : lectioStage === 2 ? 'Humanon ' : 'Sunod ')
+    : (lectioStage === 0 ? 'Begin ' : lectioStage === 2 ? 'Complete ' : 'Next ');
+}
+
+document.querySelectorAll('[data-need]').forEach((button) => button.addEventListener('click', () => {
+  const need = homeData.needs.find((item) => item.id === button.dataset.need);
+  if (!need) return;
+  if (!chatWidgetPanel.hidden) returnChatInline();
+  input.value = need[language].prompt;
+  companion.scrollIntoView({ behavior: reducedMotion() ? 'auto' : 'smooth', block: 'center' });
+  window.setTimeout(() => input.focus(), reducedMotion() ? 0 : 320);
+}));
+
+document.querySelectorAll('[data-quiz-answer]').forEach((button) => button.addEventListener('click', () => {
+  const choice = Number(button.dataset.quizAnswer);
+  const correct = choice === Number(homeData.quiz.answer);
+  const feedback = document.querySelector('#quizFeedback');
+  document.querySelectorAll('[data-quiz-answer]').forEach((option, index) => {
+    option.disabled = true;
+    option.classList.toggle('is-correct', index === Number(homeData.quiz.answer));
+    option.classList.toggle('is-wrong', option === button && !correct);
+  });
+  feedback.hidden = false;
+  feedback.className = `quiz-feedback ${correct ? 'is-correct' : 'is-wrong'}`;
+  feedback.textContent = `${correct ? (language === 'ceb' ? 'Sakto. ' : 'Correct. ') : (language === 'ceb' ? 'Dili pa. ' : 'Not quite. ')}${homeData.quiz.explanation[language]}`;
+  localStorage.setItem('still-waters-quiz-date', window.STILL_WATERS.weekVerses[window.STILL_WATERS.todayIndex].date);
+}));
+
+markMomentPrayed.addEventListener('click', () => {
+  markPrayerDay();
+  markMomentPrayed.classList.add('is-complete');
+  markMomentPrayed.innerHTML = `<span aria-hidden="true">✓</span> ${language === 'ceb' ? 'Giampo na' : 'Prayed today'}`;
+});
+
+function markPrayerDay() {
+  const today = window.STILL_WATERS.weekVerses[window.STILL_WATERS.todayIndex].date;
+  const rhythm = readStoredJson('still-waters-rhythm-v1', []);
+  if (!rhythm.includes(today)) rhythm.push(today);
+  localStorage.setItem('still-waters-rhythm-v1', JSON.stringify(rhythm.slice(-60)));
+  renderRhythm();
+}
+
+function renderRhythm() {
+  const rhythm = readStoredJson('still-waters-rhythm-v1', []);
+  const week = document.querySelector('#rhythmWeek');
+  const days = window.STILL_WATERS.weekVerses.map((day) => {
+    const item = document.createElement('span');
+    const prayed = rhythm.includes(day.date);
+    item.className = `rhythm-day${prayed ? ' is-complete' : ''}`;
+    item.innerHTML = `<i class="rhythm-dot" aria-hidden="true">${prayed ? '✓' : ''}</i><small>${language === 'ceb' ? day.day_ceb : day.day}</small>`;
+    item.setAttribute('aria-label', `${day.day_long}: ${prayed ? 'prayed' : 'not marked'}`);
+    return item;
+  });
+  week.replaceChildren(...days);
+  const count = window.STILL_WATERS.weekVerses.filter((day) => rhythm.includes(day.date)).length;
+  document.querySelector('#rhythmMessage').textContent = language === 'ceb'
+    ? (count ? `${count} ka adlaw nga pag-ampo niining semanaha. Padayon lang sa kalumo.` : 'Usa ka malumong timaan sa imong pagbalik—dili kini grado.')
+    : (count ? `${count} prayer ${count === 1 ? 'day' : 'days'} this week. Keep returning gently.` : 'A gentle record of showing up—never a score.');
+  const today = window.STILL_WATERS.weekVerses[window.STILL_WATERS.todayIndex].date;
+  if (rhythm.includes(today)) {
+    markMomentPrayed.classList.add('is-complete');
+    markMomentPrayed.innerHTML = `<span aria-hidden="true">✓</span> ${language === 'ceb' ? 'Giampo na' : 'Prayed today'}`;
+  }
+  const recent = readStoredJson('still-waters-recent-prayer', null);
+  const recentLink = document.querySelector('#recentPrayerLink');
+  if (recent?.title) recentLink.firstChild.textContent = `${language === 'ceb' ? 'Ablihi pag-usab' : 'Open again'}: ${recent.title} `;
+}
+
+function renderHomeLanguage() {
+  const local = homeData.moment[language];
+  document.querySelector('#momentLabel').textContent = local.label;
+  document.querySelector('#momentTitle').textContent = local.title;
+  document.querySelector('#momentText').textContent = local.text;
+  homeData.needs.forEach((need) => {
+    document.querySelector(`[data-need="${need.id}"] strong`).textContent = need[language].label;
+  });
+  document.querySelector('#quizQuestion').textContent = homeData.quiz.question[language];
+  document.querySelectorAll('[data-quiz-answer]').forEach((button, index) => { button.textContent = homeData.quiz.options[index][language]; });
+  const seasonal = homeData.seasonal[language];
+  document.querySelector('#seasonalEyebrow').textContent = seasonal.eyebrow;
+  document.querySelector('#seasonalTitle').textContent = seasonal.title;
+  document.querySelector('#seasonalText').textContent = seasonal.text;
+  document.querySelector('#seasonalAction').firstChild.textContent = `${seasonal.action} `;
+  renderLectio();
+  renderRhythm();
+}
+
+async function loadTodayCelebration() {
+  const today = window.STILL_WATERS.weekVerses[window.STILL_WATERS.todayIndex];
+  try {
+    const [year, month, day] = today.date.split('-');
+    const response = await fetch(`https://cpbjr.github.io/catholic-readings-api/liturgical-calendar/${year}/${month}-${day}.json`);
+    if (!response.ok) return;
+    const data = await response.json();
+    if (!data.celebration?.name) return;
+    document.querySelector('#saintName').textContent = data.celebration.name;
+    document.querySelector('#saintType').textContent = `${data.season || 'Liturgical calendar'} · ${(data.celebration.type || 'celebration').replaceAll('_', ' ')}`;
+    document.querySelector('#saintDescription').textContent = data.celebration.description || (language === 'ceb'
+      ? 'Bisan ang kasagarang adlaw balaan kung kini atong ihalad sa Dios.'
+      : 'Even an ordinary weekday becomes holy when it is offered to God.');
+    if (data.celebration.quote) document.querySelector('#saintPrompt').textContent = `“${data.celebration.quote}”`;
+  } catch (error) {
+    // The static calendar is an enhancement; the local fallback remains useful offline.
+  }
+}
+
+renderLectio();
+renderRhythm();
+loadTodayCelebration();
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();

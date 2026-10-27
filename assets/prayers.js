@@ -51,6 +51,10 @@
     text.textContent = item.prayer[language].text;
     body.append(text);
     details.append(summary, body);
+    details.addEventListener('toggle', () => {
+      if (!details.open) return;
+      localStorage.setItem('still-waters-recent-prayer', JSON.stringify({ id: item.id, title: item.prayer[language].title }));
+    });
     return details;
   };
 

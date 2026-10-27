@@ -10,6 +10,12 @@ wide range of pastoral intentions. Matching happens locally first; the model
 then chooses the most relevant one or two candidates and avoids recently shown
 passages when a good alternative exists.
 
+The home page adds a full daily faith rhythm: a seven-day verse slider,
+three-minute Lectio Divina, time-aware prayer, pastoral conversation shortcuts,
+a Catholic calendar card, a daily quiz, private on-device prayer activity, and
+a seasonal Catholic practice. Personal notes and prayer activity remain in the
+visitor's browser.
+
 The `/rosary.php` page provides a complete bead-by-bead Rosary guide in English
 and Cebuano. It selects the traditional mystery set for the current day in the
 Asia/Manila timezone, allows another set to be chosen, and remembers progress

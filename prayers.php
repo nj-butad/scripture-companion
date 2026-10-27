@@ -48,6 +48,6 @@ $prayersJson = json_encode($prayers, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
         <footer><span>Made to help people pause, pray, and return to Scripture.</span></footer>
     </div>
     <script>window.PRAYERS_DATA = <?= $prayersJson ?>;</script>
-    <script src="assets/prayers.js?v=1" defer></script>
+    <script src="assets/prayers.js?v=2" defer></script>
 </body>
 </html>
