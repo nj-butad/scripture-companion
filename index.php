@@ -34,7 +34,7 @@ $dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_S
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=6">
+    <link rel="stylesheet" href="assets/style.css?v=7">
 </head>
 <body>
     <div class="page-shell">
@@ -58,39 +58,44 @@ $dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_S
                 <p class="lede">Share what is on your heart. We’ll meet you with Scripture, a short reflection, and a simple prayer.</p>
             </section>
 
+            <div class="companion-home" id="companionHome">
+                <section class="companion" id="scriptureCompanion" aria-label="Scripture companion">
+                    <div class="companion-topbar">
+                        <div class="language-switch" role="group" aria-label="Conversation language">
+                            <button type="button" class="language-option is-active" data-language="en" aria-pressed="true">English</button>
+                            <button type="button" class="language-option" data-language="ceb" aria-pressed="false">Cebuano</button>
+                        </div>
+                        <button class="widget-close" id="closeChatWidget" type="button" aria-label="Return chat to the page">×</button>
+                    </div>
+
+                    <div class="conversation" id="conversation" aria-live="polite">
+                        <article class="welcome-card">
+                            <span class="small-cross" aria-hidden="true">✦</span>
+                            <p id="welcomeText">What feels heavy today?</p>
+                            <p class="welcome-note" id="welcomeNote">You can write naturally. Your message is not saved by this website.</p>
+                        </article>
+                    </div>
+
+                    <form class="composer" id="chatForm">
+                        <label class="sr-only" for="message">Your message</label>
+                        <textarea id="message" name="message" rows="2" maxlength="2000" placeholder="I feel anxious about what comes next…" required></textarea>
+                        <div class="composer-footer">
+                            <span class="privacy-note">Private by default</span>
+                            <button class="send-button" type="submit">
+                                <span>Receive guidance</span>
+                                <span aria-hidden="true">→</span>
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
             <section class="daily-reading" aria-labelledby="dailyTitle">
                 <p class="daily-date"><time datetime="<?= $manilaNow->format('Y-m-d') ?>"><?= $manilaNow->format('F j, Y') ?></time></p>
                 <p class="eyebrow" id="dailyTitle">Verse for today</p>
                 <blockquote id="dailyVerse"><?= htmlspecialchars($dailyVerses['en']['text'], ENT_QUOTES, 'UTF-8') ?></blockquote>
                 <p class="daily-reference" id="dailyReference"><?= htmlspecialchars($dailyVerses['en']['reference'], ENT_QUOTES, 'UTF-8') ?></p>
                 <p class="daily-translation" id="dailyTranslation"><?= htmlspecialchars($dailyVerses['en']['translation'], ENT_QUOTES, 'UTF-8') ?></p>
-            </section>
-
-            <section class="companion" aria-label="Scripture companion">
-                <div class="language-switch" role="group" aria-label="Conversation language">
-                    <button type="button" class="language-option is-active" data-language="en" aria-pressed="true">English</button>
-                    <button type="button" class="language-option" data-language="ceb" aria-pressed="false">Cebuano</button>
-                </div>
-
-                <div class="conversation" id="conversation" aria-live="polite">
-                    <article class="welcome-card">
-                        <span class="small-cross" aria-hidden="true">✦</span>
-                        <p id="welcomeText">What feels heavy today?</p>
-                        <p class="welcome-note" id="welcomeNote">You can write naturally. Your message is not saved by this website.</p>
-                    </article>
-                </div>
-
-                <form class="composer" id="chatForm">
-                    <label class="sr-only" for="message">Your message</label>
-                    <textarea id="message" name="message" rows="3" maxlength="2000" placeholder="I feel anxious about what comes next…" required></textarea>
-                    <div class="composer-footer">
-                        <span class="privacy-note">Private by default</span>
-                        <button class="send-button" type="submit">
-                            <span>Receive guidance</span>
-                            <span aria-hidden="true">→</span>
-                        </button>
-                    </div>
-                </form>
             </section>
 
             <p class="boundary-note">Still Waters offers Scripture-centered encouragement, not emergency, medical, or mental-health care. If you are in immediate danger, contact local emergency services or a trusted person now.</p>
@@ -100,6 +105,14 @@ $dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_S
             <span>Made to help people pause, pray, and return to Scripture.</span>
         </footer>
     </div>
+
+    <aside class="chat-widget" id="chatWidget" aria-label="Floating Scripture companion">
+        <div class="chat-widget-panel" id="chatWidgetPanel" hidden></div>
+        <button class="chat-widget-launcher" id="openChatWidget" type="button" aria-expanded="false" aria-controls="chatWidgetPanel">
+            <span class="widget-bubble"><strong>Scripture companion</strong><span>Share what is on your heart</span></span>
+            <span class="widget-mark" aria-hidden="true"><span>✦</span></span>
+        </button>
+    </aside>
 
     <dialog id="aboutDialog" class="about-dialog">
         <button class="dialog-close" id="closeAbout" type="button" aria-label="Close about dialog">×</button>
@@ -114,7 +127,7 @@ $dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_S
     </dialog>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", dailyVerses: <?= $dailyJson ?> };</script>
-    <script src="assets/app.js?v=5" defer></script>
+    <script src="assets/app.js?v=6" defer></script>
 </body>
 </html>
 

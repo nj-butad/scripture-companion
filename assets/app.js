@@ -6,6 +6,11 @@ const aboutDialog = document.querySelector('#aboutDialog');
 const dailyVerse = document.querySelector('#dailyVerse');
 const dailyReference = document.querySelector('#dailyReference');
 const dailyTranslation = document.querySelector('#dailyTranslation');
+const companion = document.querySelector('#scriptureCompanion');
+const companionHome = document.querySelector('#companionHome');
+const chatWidgetPanel = document.querySelector('#chatWidgetPanel');
+const openChatWidget = document.querySelector('#openChatWidget');
+const closeChatWidget = document.querySelector('#closeChatWidget');
 let language = 'en';
 const history = [];
 
@@ -108,6 +113,33 @@ document.querySelector('#closeAbout').addEventListener('click', () => aboutDialo
 aboutDialog.addEventListener('click', (event) => {
   if (event.target === aboutDialog) aboutDialog.close();
 });
+
+openChatWidget.addEventListener('click', () => {
+  const opening = chatWidgetPanel.hidden;
+  if (opening) {
+    chatWidgetPanel.hidden = false;
+    chatWidgetPanel.append(companion);
+    document.body.classList.add('chat-widget-open');
+    openChatWidget.setAttribute('aria-expanded', 'true');
+    closeChatWidget.focus();
+  } else {
+    returnChatInline();
+  }
+});
+
+closeChatWidget.addEventListener('click', returnChatInline);
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && !chatWidgetPanel.hidden) returnChatInline();
+});
+
+function returnChatInline() {
+  companionHome.append(companion);
+  chatWidgetPanel.hidden = true;
+  document.body.classList.remove('chat-widget-open');
+  openChatWidget.setAttribute('aria-expanded', 'false');
+  openChatWidget.focus();
+}
 
 function appendUserMessage(message) {
   const article = document.createElement('article');
