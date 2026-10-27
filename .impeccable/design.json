@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-10-28T00:00:00+08:00",
-  "title": "Design System: Still Waters",
+  "title": "Design System: Kristohanon",
   "extensions": {
     "colorMeta": {
       "ink": { "role": "neutral", "displayName": "Prayer Ink", "canonical": "#272321", "tonalRamp": ["#191614", "#272321", "#49423e", "#6c625d", "#968d88", "#bcb5b1", "#ded9d6", "#f5f2f0"] },

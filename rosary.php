@@ -17,19 +17,19 @@ $rosaryJson = json_encode(
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f4f0e8">
     <meta name="description" content="Pray the Holy Rosary in English or Cebuano with the mysteries selected for today.">
-    <title>Holy Rosary — Still Waters</title>
+    <title>Holy Rosary — Kristohanon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=17">
+    <link rel="stylesheet" href="assets/style.css?v=18">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
     <div class="page-shell">
         <header class="site-header">
-            <a class="brand" href="/" aria-label="Still Waters home">
+            <a class="brand" href="/" aria-label="Kristohanon home">
                 <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.8c.55 6.55 3.65 9.65 10.2 10.2-6.55.55-9.65 3.65-10.2 10.2C11.45 15.65 8.35 12.55 1.8 12 8.35 11.45 11.45 8.35 12 1.8Z"/></svg>
-                <span>Still Waters</span>
+                <span>Kristohanon</span>
             </a>
             <nav class="site-nav" aria-label="Main navigation">
                 <a class="nav-link" href="/">Home</a>

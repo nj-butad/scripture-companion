@@ -1,8 +1,8 @@
-# Still Waters Editorial Design System
+# Kristohanon Editorial Design System
 
 ## Context and goals
 
-Still Waters should feel like a quiet, contemporary prayer book: reverent,
+Kristohanon should feel like a quiet, contemporary prayer book: reverent,
 welcoming, readable, and distinctly calmer than a social feed. Scripture and
 prayer remain primary; decoration supports orientation and contemplation.
 

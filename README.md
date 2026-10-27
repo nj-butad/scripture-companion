@@ -1,6 +1,6 @@
-# Scripture Companion
+# Kristohanon
 
-A calm, bilingual Scripture companion built with plain PHP, HTML, CSS, and
+Kristohanon is a calm, bilingual Scripture companion built with plain PHP, HTML, CSS, and
 vanilla JavaScript. It retrieves reviewed Bible passages before asking AI to
 compose a short reflection, so Scripture quotations are never generated from
 model memory.

@@ -31,7 +31,7 @@ Help a visitor move from an honestly expressed concern to a relevant, verified p
 
 ## Product Purpose
 
-Still Waters exists to help people pause, name what they carry, encounter relevant Scripture, and return to God in prayer. It combines a private conversational starting point with Catholic devotional practices that can be used immediately in English or Cebuano.
+Kristohanon exists to help people pause, name what they carry, encounter relevant Scripture, and return to God in prayer. It combines a private conversational starting point with Catholic devotional practices that can be used immediately in English or Cebuano.
 
 Success means that a visitor can:
 
@@ -97,6 +97,7 @@ Returning visitors can resume a gentle rhythm stored only in their browser: rece
 - Prefer local deterministic retrieval and validation before paid model calls to control cost and accuracy.
 - Do not require an account for core prayer and Scripture features.
 - Personal notes and progress remain in local browser storage unless a future privacy-reviewed sync feature is explicitly approved.
+- Preserve legacy internal identifiers such as `still-waters-*` browser-storage keys and `window.STILL_WATERS`; they are compatibility contracts, not public branding, and renaming them would discard returning visitors' local progress.
 - Asia/Manila is the authoritative timezone for daily and day-of-week experiences.
 
 ### Content and licensing constraints
@@ -118,14 +119,14 @@ Returning visitors can resume a gentle rhythm stored only in their browser: rece
 
 ## Brand Commitments
 
-- Product name: **Still Waters**.
+- Product name: **Kristohanon**.
 - Category language: **Scripture companion**, not “AI Jesus.”
 - Core invitation: people do not need perfect words before approaching Scripture and prayer.
 - Voice: gentle, direct, attentive, Christ-centered, specific to the visitor's message, and free of stock consolation phrases.
 - Spiritual posture: invitation rather than command; accompaniment rather than authority; prayerful hope without false certainty.
 - Languages: English and Cebuano are first-class experiences, not an English product with a partial translation layer.
 - Visual reference: the dignity and readability of an editorial prayer book and Daily Office, interpreted in a contemporary, mobile-friendly way.
-- Independence: Still Waters is its own product and identity, not a page within the Nielsys portfolio.
+- Independence: Kristohanon is its own product and identity, not a page within the Nielsys portfolio.
 
 ## Evidence on Hand
 

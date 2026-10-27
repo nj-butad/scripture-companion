@@ -1,5 +1,5 @@
 ---
-name: Still Waters
+name: Kristohanon
 description: A contemporary bilingual Catholic prayer book for Scripture, reflection, and daily devotion.
 colors:
   ink: "#272321"
@@ -83,13 +83,13 @@ components:
     padding: "12px 14px"
 ---
 
-# Design System: Still Waters
+# Design System: Kristohanon
 
 ## Overview
 
 **Creative North Star: "The Contemporary Prayer Book"**
 
-Still Waters should feel like opening a well-made prayer book in a quiet room: composed, humane, readable, and reverent without appearing antique. The system borrows the editorial cadence of Scripture and Daily Office pages—serif reading text, measured margins, numbered journeys, thin rules, and restrained rubric color—then adapts it to touch screens and short devotional sessions.
+Kristohanon should feel like opening a well-made prayer book in a quiet room: composed, humane, readable, and reverent without appearing antique. The system borrows the editorial cadence of Scripture and Daily Office pages—serif reading text, measured margins, numbered journeys, thin rules, and restrained rubric color—then adapts it to touch screens and short devotional sessions.
 
 This is an **Operate + Read** product. Visitors must be able to write, choose, pray, and continue without learning a novel interface, while Scripture and prayer remain comfortable for sustained reading. Brand expression comes from typography, devotional imagery, burgundy rubric accents, and spatial rhythm—not from decorating every section or wrapping every idea in a card.
 
@@ -187,7 +187,7 @@ The system is flat by default and uses tonal layering, fine borders, and imagery
 
 ## Shapes
 
-Still Waters uses gently curved paper-like rectangles, not bubbly software containers. Ordinary cards and fields use 8–12px radii; major photographic features may reach 16–18px. Pills are reserved for compact actions, language states, filters, and small metadata—not for entire content panels.
+Kristohanon uses gently curved paper-like rectangles, not bubbly software containers. Ordinary cards and fields use 8–12px radii; major photographic features may reach 16–18px. Pills are reserved for compact actions, language states, filters, and small metadata—not for entire content panels.
 
 Borders are one pixel and low contrast. Circular geometry is meaningful for Rosary beads, day rhythm, arrow controls, and compact close controls. Asymmetric message bubbles are permitted only inside conversation.
 

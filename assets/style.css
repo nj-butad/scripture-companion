@@ -136,7 +136,7 @@ main { flex: 1; padding: 68px 0 50px; }
 .intro-copy { width: min(100%, 700px); min-width: 0; margin-right: auto; }
 .intro h1 { margin-inline: 0; max-width: 680px; }
 .intro .lede { margin-inline: 0; max-width: 560px; }
-.journey-nav { width: 100%; max-width: 1240px; min-width: 0; margin: 0 auto var(--space-4); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--line); }
+.journey-nav { width: 100%; max-width: 1240px; min-width: 0; margin: 0 auto 52px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--line); }
 .journey-nav a { min-height: 56px; padding: 10px 14px; display: flex; align-items: center; justify-content: center; gap: 9px; border-right: 1px solid var(--line); color: var(--ink-soft); text-decoration: none; font-weight: 600; transition: color 160ms var(--ease-out), background-color 160ms var(--ease-out), transform 140ms var(--ease-out); }
 .journey-nav a:last-child { border-right: 0; }
 .journey-nav a:active { transform: scale(0.98); }
@@ -171,7 +171,7 @@ h1 {
 
 .daily-reading {
   max-width: 1240px;
-  margin: 46px auto 0;
+  margin: 84px auto 0;
   padding: 0 0 30px;
   border-block: 1px solid var(--line);
   text-align: center;
@@ -217,7 +217,7 @@ h1 {
 .daily-slider-actions button:active { transform: scale(0.94); }
 .daily-slider-actions span { min-width: 42px; color: var(--ink-soft); font-size: 0.72rem; }
 
-.home-section { max-width: 1240px; margin: 72px auto 0; }
+.home-section { max-width: 1240px; margin: 96px auto 0; }
 .section-heading { max-width: 620px; margin: 0 auto var(--space-4); text-align: center; }
 .section-heading h2 { margin: 0; font-size: clamp(1.65rem, 4vw, 2.35rem); font-weight: 400; }
 .section-heading > p:last-child { margin: 10px auto 0; color: var(--ink-soft); line-height: 1.6; }
@@ -238,7 +238,7 @@ h1 {
 .lectio-content { flex: 1; }
 .lectio-step { margin: 0 0 8px; color: var(--burgundy); font-weight: 600; }
 .lectio-instruction { margin: 0; color: var(--ink-soft); line-height: 1.6; }
-.lectio-content blockquote { max-height: 142px; overflow-y: auto; margin: 16px 0 0; padding-left: 16px; border-left: 2px solid var(--rose-wash); font-family: "Gelasio", Georgia, serif; font-size: 1rem; line-height: 1.7; }
+.lectio-content blockquote { max-height: 142px; overflow-y: auto; margin: 16px 0 0; padding-left: 16px; border-left: 1px solid var(--burgundy); font-family: "Gelasio", Georgia, serif; font-size: 1rem; line-height: 1.7; }
 .lectio-content textarea { width: 100%; min-height: 94px; margin-top: 16px; resize: vertical; border: 1px solid var(--line); border-radius: 9px; padding: 12px; outline: none; color: var(--ink); background: #fffdfa; transition: border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out); }
 .lectio-content textarea:focus { border-color: rgba(168, 70, 67, 0.5); box-shadow: 0 0 0 3px rgba(168, 70, 67, 0.08); }
 .card-actions { min-height: 39px; margin-top: 24px; display: flex; align-items: center; justify-content: flex-end; gap: 12px; }
@@ -293,7 +293,7 @@ h1 {
 .rhythm-day.is-complete .rhythm-dot { border-color: var(--burgundy); color: white; background: var(--burgundy); }
 .rhythm-links { grid-column: 1 / -1; padding-top: 18px; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); }
 .rhythm-links a { color: var(--burgundy); text-decoration: none; font-weight: 600; }
-.seasonal-card { max-width: 1240px; min-height: 390px; margin: 72px auto 0; padding: clamp(34px, 7vw, 62px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; border: 1px solid rgba(125, 83, 72, 0.18); border-radius: 16px; background: linear-gradient(90deg, rgba(255, 251, 246, 0.98) 0%, rgba(255, 251, 246, 0.93) 42%, rgba(255, 251, 246, 0.2) 72%), url("images/rosary-season.webp") 67% center / cover no-repeat; text-align: left; }
+.seasonal-card { max-width: 1240px; min-height: 390px; margin: 96px auto 0; padding: clamp(34px, 7vw, 62px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; border: 1px solid rgba(125, 83, 72, 0.18); border-radius: 16px; background: linear-gradient(90deg, rgba(255, 251, 246, 0.98) 0%, rgba(255, 251, 246, 0.93) 42%, rgba(255, 251, 246, 0.2) 72%), url("images/rosary-season.webp") 67% center / cover no-repeat; text-align: left; }
 .seasonal-card h2 { max-width: 520px; font-size: clamp(1.7rem, 4vw, 2.55rem); }
 .seasonal-card > p:not(.eyebrow) { max-width: 420px; margin: 16px 0 27px; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.65; }
 .seasonal-action { display: inline-flex; align-items: center; gap: 10px; }
@@ -450,7 +450,7 @@ h1 {
 .status-message { margin: 22px 0; }
 .status-message::before { content: "✦"; margin-right: 8px; color: var(--burgundy); }
 .status-message.is-error { color: var(--danger); }
-.boundary-note { margin: 22px auto 0; max-width: 700px; color: var(--ink-soft); text-align: center; font-size: 0.76rem; line-height: 1.55; }
+.boundary-note { margin: 36px auto 0; max-width: 700px; color: var(--ink-soft); text-align: center; font-size: 0.76rem; line-height: 1.55; }
 
 .chat-widget { position: fixed; right: max(18px, env(safe-area-inset-right)); bottom: max(18px, env(safe-area-inset-bottom)); z-index: 30; display: grid; justify-items: end; gap: 10px; }
 .chat-widget-launcher { border: 0; padding: 0; display: flex; align-items: flex-end; gap: 10px; background: transparent; cursor: pointer; animation: widget-float 4.8s ease-in-out infinite; transform-origin: bottom right; }
@@ -674,7 +674,7 @@ footer {
   .privacy-note { max-width: 88px; }
   .site-nav { gap: 2px; }
   .nav-link { padding-inline: 8px; font-size: 0.82rem; }
-  .journey-nav { margin-bottom: 24px; grid-template-columns: repeat(2, 1fr); }
+  .journey-nav { margin-bottom: 36px; grid-template-columns: repeat(2, 1fr); }
   .journey-nav a { min-width: 0; min-height: 48px; padding-inline: 6px; border-bottom: 1px solid var(--line); font-size: 0.88rem; }
   .journey-nav a:nth-child(2) { border-right: 0; }
   .journey-nav a:nth-child(n + 3) { border-bottom: 0; }
@@ -698,7 +698,7 @@ footer {
   .chat-widget-panel { width: calc(100vw - 20px); }
   .chat-widget-panel .companion { height: min(620px, calc(100dvh - 82px)); }
   .chat-widget-open .chat-widget-launcher { display: none; }
-  .home-section, .seasonal-card { margin-top: 52px; }
+  .home-section, .seasonal-card { margin-top: 68px; }
   .need-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .need-card { min-height: 100px; }
   .rhythm-card { grid-template-columns: 1fr; gap: 24px; }
