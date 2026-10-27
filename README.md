@@ -10,6 +10,11 @@ wide range of pastoral intentions. Matching happens locally first; the model
 then chooses the most relevant one or two candidates and avoids recently shown
 passages when a good alternative exists.
 
+The `/rosary.php` page provides a complete bead-by-bead Rosary guide in English
+and Cebuano. It selects the traditional mystery set for the current day in the
+Asia/Manila timezone, allows another set to be chosen, and remembers progress
+locally in the browser for that day.
+
 ## Requirements
 
 - PHP 8.1+

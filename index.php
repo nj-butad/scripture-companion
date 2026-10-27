@@ -34,7 +34,7 @@ $dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_S
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=4">
+    <link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body>
     <div class="page-shell">
@@ -43,7 +43,11 @@ $dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_S
                 <span class="brand-mark" aria-hidden="true">✦</span>
                 <span>Still Waters</span>
             </a>
-            <button class="quiet-button" id="aboutButton" type="button" aria-haspopup="dialog">About</button>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a class="nav-link is-active" href="/" aria-current="page">Home</a>
+                <a class="nav-link" href="rosary.php">Rosary</a>
+                <button class="quiet-button nav-link" id="aboutButton" type="button" aria-haspopup="dialog">About</button>
+            </nav>
         </header>
 
         <main>
@@ -109,7 +113,7 @@ $dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_S
     </dialog>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", dailyVerses: <?= $dailyJson ?> };</script>
-    <script src="assets/app.js?v=4" defer></script>
+    <script src="assets/app.js?v=5" defer></script>
 </body>
 </html>
 
