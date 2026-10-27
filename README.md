@@ -15,7 +15,7 @@ model memory.
 
 ```bash
 cp .env.example .env
-php -S localhost:8080 -t public
+php -S localhost:8080
 ```
 
 Open <http://localhost:8080>.
@@ -26,8 +26,10 @@ enable conversational reflections, set `OPENAI_API_KEY` and `OPENAI_MODEL` in
 
 ## Deployment
 
-Point the website document root to `public/`, or copy the contents of `public/`
-to `public_html` and place `src/`, `data/`, and `.env` one directory above it.
+The repository is laid out for direct deployment to Hostinger's `public_html`.
+Connect the GitHub repository, select the `main` branch, and enable automatic
+deployment. The root `.htaccess` prevents public access to application code,
+configuration, Git metadata, and reviewed Scripture data.
 
 ## Scripture licenses
 

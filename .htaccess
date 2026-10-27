@@ -1,6 +1,15 @@
 Options -Indexes
 DirectoryIndex index.php
 
+# Keep application code, configuration, and reviewed Scripture data private
+# while allowing Hostinger to deploy this repository directly to public_html.
+RedirectMatch 404 ^/(?:src|data|\.git)(?:/|$)
+RedirectMatch 404 ^/(?:\.env|\.env\.example|\.gitignore|README\.md|LICENSE)$
+
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
