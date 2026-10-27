@@ -106,6 +106,8 @@ a { text-underline-offset: 3px; }
 .nav-link.is-active { color: var(--burgundy-dark); font-weight: 600; background: transparent; }
 .nav-link.is-active::after { width: 24px; }
 .nav-link:active { transform: scale(0.97); }
+.header-guidance { min-height: 42px; flex: 0 0 auto; border-radius: 999px; padding: 10px 16px; display: inline-flex; align-items: center; justify-content: center; color: var(--paper); background: var(--burgundy); text-decoration: none; font-size: 0.86rem; font-weight: 600; transition: background-color 180ms var(--ease-out), transform 140ms var(--ease-out); }
+.header-guidance:active { transform: scale(0.97); }
 
 .quiet-button, .dialog-close {
   border: 0;
@@ -645,6 +647,7 @@ footer {
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .header-guidance:hover { background: var(--burgundy-dark); }
   .send-button:hover { background: var(--burgundy-dark); }
   .quiet-button:hover { color: var(--burgundy); }
   .nav-link:hover, .secondary-button:hover { color: var(--burgundy-dark); }
@@ -666,6 +669,7 @@ footer {
   .site-header { min-height: 104px; margin-top: 10px; padding: 12px; flex-wrap: wrap; justify-content: center; gap: 6px 18px; }
   .brand { width: 100%; justify-content: center; }
   .site-nav { width: 100%; justify-content: center; }
+  .header-guidance { min-height: 40px; padding: 9px 15px; }
   main { padding-top: 32px; }
   .intro { min-height: 500px; padding: 26px 22px; align-items: end; background: linear-gradient(0deg, rgba(255, 253, 249, 0.98) 0%, rgba(255, 253, 249, 0.83) 45%, rgba(255, 253, 249, 0.08) 78%), url("images/hero-still-waters.webp") 64% center / cover no-repeat; text-align: center; }
   .intro-copy { margin: 0; }

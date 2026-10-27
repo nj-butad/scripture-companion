@@ -33,8 +33,9 @@ const history = [];
 function focusInitialConversation() {
   const arrivedAtPageTop = window.scrollY < 80;
   const hasSectionTarget = window.location.hash !== '';
+  const targetsConversation = window.location.hash === '#share';
 
-  if (!arrivedAtPageTop || hasSectionTarget) return;
+  if (!targetsConversation && (!arrivedAtPageTop || hasSectionTarget)) return;
 
   companion.scrollIntoView({ behavior: 'auto', block: 'center' });
   input.focus({ preventScroll: true });

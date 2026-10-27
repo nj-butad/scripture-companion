@@ -58,7 +58,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=21">
+    <link rel="stylesheet" href="assets/style.css?v=22">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -74,6 +74,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                 <a class="nav-link" href="prayers.php">Prayers</a>
                 <button class="quiet-button nav-link" id="aboutButton" type="button" aria-haspopup="dialog">About</button>
             </nav>
+            <a class="header-guidance" href="#share">Receive guidance</a>
         </header>
 
         <main id="mainContent">
@@ -278,7 +279,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     </dialog>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?>, home: <?= $homeJson ?> };</script>
-    <script src="assets/app.js?v=11" defer></script>
+    <script src="assets/app.js?v=12" defer></script>
 </body>
 </html>
 

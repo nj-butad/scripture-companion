@@ -225,6 +225,8 @@ The main conversation composer remains compact before use and expands only when 
 
 Desktop navigation is quiet text with a short burgundy rubric underline for the active page. Language choices use the same editorial underline with stronger type rather than a filled pill. The brand uses Gelasio and a small devotional mark. On mobile, navigation wraps beneath the centered brand rather than collapsing into an unnecessary hamburger for four items.
 
+The global header keeps Receive guidance outside the page-navigation group as a filled burgundy action. It links directly to the homepage conversation and focuses the message field, including when entered from Rosary or Prayers.
+
 The homepage journey index is a separate editorial table of contents, using numbers, thin rules, and direct anchors. It must not look like another row of primary navigation pills.
 
 ### Weekly Scripture
