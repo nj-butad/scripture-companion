@@ -31,6 +31,16 @@ Connect the GitHub repository, select the `main` branch, and enable automatic
 deployment. The root `.htaccess` prevents public access to application code,
 configuration, Git metadata, and reviewed Scripture data.
 
+The day-to-day release workflow is:
+
+```bash
+git add -A
+git commit -m "Describe the change"
+git push origin main
+```
+
+Hostinger watches `main` and deploys each successful push automatically.
+
 ## Scripture licenses
 
 - Douay-Rheims 1899: public domain. Source: <https://ebible.org/details.php?id=engDRA>
