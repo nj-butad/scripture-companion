@@ -3,6 +3,9 @@ const input = document.querySelector('#message');
 const conversation = document.querySelector('#conversation');
 const languageButtons = [...document.querySelectorAll('[data-language]')];
 const aboutDialog = document.querySelector('#aboutDialog');
+const dailyVerse = document.querySelector('#dailyVerse');
+const dailyReference = document.querySelector('#dailyReference');
+const dailyTranslation = document.querySelector('#dailyTranslation');
 let language = 'en';
 const history = [];
 
@@ -39,6 +42,11 @@ languageButtons.forEach((button) => {
     document.querySelector('#welcomeText').textContent = copy[language].welcome;
     document.querySelector('#welcomeNote').textContent = copy[language].note;
     input.placeholder = copy[language].placeholder;
+    const daily = window.STILL_WATERS.dailyVerses[language];
+    dailyVerse.textContent = daily.text;
+    dailyReference.textContent = daily.reference;
+    dailyTranslation.textContent = daily.translation;
+    document.querySelector('#dailyTitle').textContent = language === 'ceb' ? 'Bersikulo alang karong adlawa' : 'Verse for today';
     input.focus();
   });
 });

@@ -9,19 +9,32 @@ if (empty($_SESSION['csrf'])) {
 }
 
 $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
+$passages = require __DIR__ . '/data/passages.php';
+$englishPassages = array_values(array_filter($passages, static fn (array $passage): bool => $passage['language'] === 'en'));
+$cebuanoPassages = array_values(array_filter($passages, static fn (array $passage): bool => $passage['language'] === 'ceb'));
+$dailyCandidates = array_values(array_filter(
+    array_keys($englishPassages),
+    static fn (int $index): bool => isset($cebuanoPassages[$index])
+        && mb_strlen($englishPassages[$index]['text']) <= 650
+        && mb_strlen($cebuanoPassages[$index]['text']) <= 650
+));
+$manilaNow = new DateTimeImmutable('now', new DateTimeZone('Asia/Manila'));
+$dailyIndex = $dailyCandidates[(int) $manilaNow->format('z') % count($dailyCandidates)];
+$dailyVerses = ['en' => $englishPassages[$dailyIndex], 'ceb' => $cebuanoPassages[$dailyIndex]];
+$dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP);
 ?>
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f3eee4">
+    <meta name="theme-color" content="#f4f0e8">
     <meta name="description" content="A gentle, bilingual Scripture companion for difficult moments.">
     <title>Still Waters — Scripture Companion</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css?v=4">
 </head>
 <body>
     <div class="page-shell">
@@ -38,6 +51,14 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
                 <p class="eyebrow">A quiet place to bring what you carry</p>
                 <h1 id="pageTitle">You don’t have to find the right words.</h1>
                 <p class="lede">Share what is on your heart. We’ll meet you with Scripture, a short reflection, and a simple prayer.</p>
+            </section>
+
+            <section class="daily-reading" aria-labelledby="dailyTitle">
+                <p class="daily-date"><time datetime="<?= $manilaNow->format('Y-m-d') ?>"><?= $manilaNow->format('F j, Y') ?></time></p>
+                <p class="eyebrow" id="dailyTitle">Verse for today</p>
+                <blockquote id="dailyVerse"><?= htmlspecialchars($dailyVerses['en']['text'], ENT_QUOTES, 'UTF-8') ?></blockquote>
+                <p class="daily-reference" id="dailyReference"><?= htmlspecialchars($dailyVerses['en']['reference'], ENT_QUOTES, 'UTF-8') ?></p>
+                <p class="daily-translation" id="dailyTranslation"><?= htmlspecialchars($dailyVerses['en']['translation'], ENT_QUOTES, 'UTF-8') ?></p>
             </section>
 
             <section class="companion" aria-label="Scripture companion">
@@ -82,13 +103,13 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
         <p>Still Waters retrieves reviewed passages before composing a reflection. Scripture text is displayed from a verified source rather than generated from memory.</p>
         <p>This is a Christ-centered reflection tool, not Jesus himself and not a source of divine revelation. It is designed to help you pray, listen, and return to the words and witness of Scripture.</p>
         <h3>Translations</h3>
-        <p>English passages use the public-domain Douay-Rheims 1899. Cebuano passages use Biblica® Open Ang Pulong sa Dios™ 2024 under CC BY-SA 4.0.</p>
+        <p>English passages use the public-domain World English Bible Updated in modern American English. Cebuano passages use Biblica® Open Ang Pulong sa Dios™ 2024 under CC BY-SA 4.0.</p>
         <p class="license-copy">Biblica® Open Ang Pulong sa Dios™ · Katungod sa pagmantala © 2009, 2010, 2014, 2024 Biblica, Inc. · Biblica® Open Cebuano Contemporary Bible™ · Copyright © 2009, 2010, 2014, 2024 by Biblica, Inc. · Used with permission. The original Work is available for free at biblica.com and open.bible.</p>
         <a class="text-link" href="https://ebible.org/cebocb/copyright.htm" target="_blank" rel="noopener noreferrer">Read the complete Cebuano license</a>
     </dialog>
 
-    <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>" };</script>
-    <script src="assets/app.js?v=3" defer></script>
+    <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", dailyVerses: <?= $dailyJson ?> };</script>
+    <script src="assets/app.js?v=4" defer></script>
 </body>
 </html>
 

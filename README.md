@@ -48,7 +48,8 @@ Hostinger watches `main` and deploys each successful push automatically.
 
 ## Scripture licenses
 
-- Douay-Rheims 1899: public domain. Source: <https://ebible.org/details.php?id=engDRA>
+- World English Bible Updated (American English): public domain. Source:
+  <https://ebible.org/find/show.php?id=engwebu>
 - Biblica Open Ang Pulong sa Dios 2024: CC BY-SA 4.0. Source and required
   notice: <https://ebible.org/cebocb/copyright.htm>
 
@@ -59,7 +60,7 @@ notice in the About panel.
 The checked-in passage library is generated from the official USFM downloads:
 
 ```bash
-php scripts/build-scripture-library.php path/to/engDRA path/to/cebocb data/passages.php
+php scripts/build-scripture-library.php path/to/engwebu path/to/cebocb data/passages.php
 ```
 
 ## Safety

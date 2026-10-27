@@ -6,7 +6,7 @@ declare(strict_types=1);
 return array (
   0 =>
   array (
-    'id' => 'dra-psa-22-1-4',
+    'id' => 'webu-psa-23-1-4',
     'language' => 'en',
     'topic' => 'fear',
     'keywords' =>
@@ -21,13 +21,13 @@ return array (
       7 => 'ngitngit',
       8 => 'nag-inusara',
     ),
-    'reference' => 'Psalms 22:1–4',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'A psalm for David. The Lord ruleth me: and I shall want nothing. He hath set me in a place of pasture. He hath brought me up, on the water of refreshment: He hath converted my soul. He hath led me on the paths of justice, for his own name’s sake. For though I should walk in the midst of the shadow of death, I will fear no evils, for thou art with me. Thy rod and thy staff, they have comforted me.',
+    'reference' => 'Psalms 23:1–4',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'The LORD is my shepherd; I shall lack nothing. He makes me lie down in green pastures. He leads me beside still waters. He restores my soul. He guides me in the paths of righteousness for his name’s sake. Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me. Your rod and your staff, they comfort me.',
   ),
   1 =>
   array (
-    'id' => 'dra-psa-26-1-5',
+    'id' => 'webu-psa-27-1-5',
     'language' => 'en',
     'topic' => 'courage',
     'keywords' =>
@@ -41,13 +41,13 @@ return array (
       6 => 'kaaway',
       7 => 'pagsalig',
     ),
-    'reference' => 'Psalms 26:1–5',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'The psalm of David before he was anointed. The Lord is my light and my salvation, whom shall I fear? The Lord is the protector of my life: of whom shall I be afraid? Whilst the wicked draw near against me, to eat my flesh. My enemies that trouble me, have themselves been weakened, and have fallen. If armies in camp should stand together against me, my heart shall not fear. If a battle should rise up against me, in this will I be confident. One thing I have asked of the Lord, this will I seek after; that I may dwell in the house of the Lord all the days of my life. That I may see the delight of the Lord, and may visit his temple. For he hath hidden me in his tabernacle; in the day of evils, he hath protected me in the secret place of his tabernacle.',
+    'reference' => 'Psalms 27:1–5',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'The LORD is my light and my salvation. Whom shall I fear? The LORD is the strength of my life. Of whom shall I be afraid? When evildoers came at me to eat up my flesh, even my adversaries and my foes, they stumbled and fell. Though an army should encamp against me, my heart shall not fear. Though war should rise against me, even then I will be confident. One thing I have asked of the LORD, that I will seek after: that I may dwell in the LORD’s house all the days of my life, to see the LORD’s beauty, and to inquire in his temple. For in the day of trouble, he will keep me secretly in his pavilion. In the secret place of his tabernacle, he will hide me. He will lift me up on a rock.',
   ),
   2 =>
   array (
-    'id' => 'dra-psa-33-18-19',
+    'id' => 'webu-psa-34-18-19',
     'language' => 'en',
     'topic' => 'grief',
     'keywords' =>
@@ -69,13 +69,13 @@ return array (
       14 => 'masulob-on',
       15 => 'dugmok',
     ),
-    'reference' => 'Psalms 33:18–19',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'The just cried, and the Lord heard them: and delivered them out of all their troubles. The Lord is nigh unto them that are of a contrite heart: and he will save the humble of spirit.',
+    'reference' => 'Psalms 34:18–19',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'The LORD is near to those who have a broken heart, and saves those who have a crushed spirit. Many are the afflictions of the righteous, but the LORD delivers him out of them all.',
   ),
   3 =>
   array (
-    'id' => 'dra-psa-45-2-4',
+    'id' => 'webu-psa-46-2-4',
     'language' => 'en',
     'topic' => 'crisis',
     'keywords' =>
@@ -88,13 +88,13 @@ return array (
       5 => 'kalisod',
       6 => 'katalagman',
     ),
-    'reference' => 'Psalms 45:2–4',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Our God is our refuge and strength: a helper in troubles, which have found us exceedingly. Therefore we will not fear, when the earth shall be troubled; and the mountains shall be removed into the heart of the sea. Their waters roared and were troubled: the mountains were troubled with his strength.',
+    'reference' => 'Psalms 46:2–4',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Therefore we won’t be afraid, though the earth changes, though the mountains are shaken into the heart of the seas; though its waters roar and are troubled, though the mountains tremble with their swelling. Selah. There is a river, the streams of which make the city of God glad, the holy place of the tents of the Most High.',
   ),
   4 =>
   array (
-    'id' => 'dra-psa-54-23-23',
+    'id' => 'webu-psa-55-23-23',
     'language' => 'en',
     'topic' => 'burden',
     'keywords' =>
@@ -107,13 +107,13 @@ return array (
       5 => 'kabalaka',
       6 => 'nabug-atan',
     ),
-    'reference' => 'Psalms 54:23',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Cast thy care upon the Lord, and he shall sustain thee: he shall not suffer the just to waver for ever.',
+    'reference' => 'Psalms 55:23',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'But you, God, will bring them down into the pit of destruction. Bloodthirsty and deceitful men shall not live out half their days, but I will trust in you.',
   ),
   5 =>
   array (
-    'id' => 'dra-psa-138-7-12',
+    'id' => 'webu-psa-139-7-12',
     'language' => 'en',
     'topic' => 'presence',
     'keywords' =>
@@ -127,13 +127,13 @@ return array (
       6 => 'layo sa dios',
       7 => 'presensya',
     ),
-    'reference' => 'Psalms 138:7–12',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Whither shall I go from thy spirit? or whither shall I flee from thy face? If I ascend into heaven, thou art there: if I descend into hell, thou art present. If I take my wings early in the morning, and dwell in the uttermost parts of the sea: Even there also shall thy hand lead me: and thy right hand shall hold me. And I said: Perhaps darkness shall cover me: and night shall be my light in my pleasures. But darkness shall not be dark to thee, and night shall be light as day: the darkness thereof, and the light thereof are alike to thee.',
+    'reference' => 'Psalms 139:7–12',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Where could I go from your Spirit? Or where could I flee from your presence? If I ascend up into heaven, you are there. If I make my bed in Sheol, behold, you are there! If I take the wings of the dawn, and settle in the uttermost parts of the sea, even there your hand will lead me, and your right hand will hold me. If I say, “Surely the darkness will overwhelm me. The light around me will be night,” even the darkness doesn’t hide from you, but the night shines as the day. The darkness is like light to you.',
   ),
   6 =>
   array (
-    'id' => 'dra-psa-146-3-5',
+    'id' => 'webu-psa-147-3-5',
     'language' => 'en',
     'topic' => 'healing',
     'keywords' =>
@@ -147,13 +147,13 @@ return array (
       6 => 'samdan',
       7 => 'kaayohan',
     ),
-    'reference' => 'Psalms 146:3–5',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Who healeth the broken of heart, and bindeth up their bruises. Who telleth the number of the stars: and calleth them all by their names. Great is our Lord, and great is his power: and of his wisdom there is no number.',
+    'reference' => 'Psalms 147:3–5',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'He heals the broken in heart, and binds up their wounds. He counts the number of the stars. He calls them all by their names. Great is our Lord, and mighty in power. His understanding is infinite.',
   ),
   7 =>
   array (
-    'id' => 'dra-pro-3-5-6',
+    'id' => 'webu-pro-3-5-6',
     'language' => 'en',
     'topic' => 'guidance',
     'keywords' =>
@@ -172,12 +172,12 @@ return array (
       11 => 'trabaho',
     ),
     'reference' => 'Proverbs 3:5–6',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Have confidence in the Lord with all thy heart, and lean not upon thy own prudence. In all thy ways think on him, and he will direct thy steps.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Trust in the LORD with all your heart, and don’t lean on your own understanding. In all your ways acknowledge him, and he will make your paths straight.',
   ),
   8 =>
   array (
-    'id' => 'dra-pro-15-3-3',
+    'id' => 'webu-pro-15-3-3',
     'language' => 'en',
     'topic' => 'work',
     'keywords' =>
@@ -193,12 +193,12 @@ return array (
       8 => 'pasulit',
     ),
     'reference' => 'Proverbs 15:3',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'The eyes of the Lord in every place behold the good and the evil.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'The LORD’s eyes are everywhere, keeping watch on the evil and the good.',
   ),
   9 =>
   array (
-    'id' => 'dra-pro-16-17-17',
+    'id' => 'webu-pro-16-17-17',
     'language' => 'en',
     'topic' => 'friendship',
     'keywords' =>
@@ -212,12 +212,12 @@ return array (
       6 => 'nag-inusara',
     ),
     'reference' => 'Proverbs 16:17',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'The path of the just departeth from evils: he that keepeth his soul keepeth his way.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'The highway of the upright is to depart from evil. He who keeps his way preserves his soul.',
   ),
   10 =>
   array (
-    'id' => 'dra-isa-40-28-31',
+    'id' => 'webu-isa-40-28-31',
     'language' => 'en',
     'topic' => 'exhaustion',
     'keywords' =>
@@ -233,12 +233,12 @@ return array (
       8 => 'paghulat',
     ),
     'reference' => 'Isaiah 40:28–31',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Knowest thou not, or hast thou not heard? the Lord is the everlasting God, who hath created the ends of the earth: he shall not faint, nor labour, neither is there any searching out of his wisdom. It is he that giveth strength to the weary, and increaseth force and might to them that are not. Youths shall faint, and labour, and young men shall fall by infirmity. But they that hope in the Lord shall renew their strength, they shall take wings as eagles, they shall run and not be weary, they shall walk and not faint.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Haven’t you known? Haven’t you heard? The everlasting God, the LORD, the Creator of the ends of the earth, doesn’t faint. He isn’t weary. His understanding is unsearchable. He gives power to the weak. He increases the strength of him who has no might. Even the youths faint and get weary, and the young men utterly fall; but those who wait for the LORD will renew their strength. They will mount up with wings like eagles. They will run, and not be weary. They will walk, and not faint.',
   ),
   11 =>
   array (
-    'id' => 'dra-isa-41-10-10',
+    'id' => 'webu-isa-41-10-10',
     'language' => 'en',
     'topic' => 'fear',
     'keywords' =>
@@ -253,12 +253,12 @@ return array (
       7 => 'luya',
     ),
     'reference' => 'Isaiah 41:10',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Fear not, for I am with thee: turn not aside, for I am thy God: I have strengthened thee, and have helped thee, and the right hand of my just one hath upheld thee.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Don’t you be afraid, for I am with you. Don’t be dismayed, for I am your God. I will strengthen you. Yes, I will help you. Yes, I will uphold you with the right hand of my righteousness.',
   ),
   12 =>
   array (
-    'id' => 'dra-lam-3-21-26',
+    'id' => 'webu-lam-3-21-26',
     'language' => 'en',
     'topic' => 'hope',
     'keywords' =>
@@ -274,12 +274,12 @@ return array (
       8 => 'paghulat',
     ),
     'reference' => 'Lamentations 3:21–26',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Zain. These things I shall think over in my heart, therefore will I hope. Heth. The mercies of the Lord that we are not consumed: because his commiserations have not failed. Heth. They are new every morning, great is thy faithfulness. Heth. The Lord is my portion, said my soul: therefore will I wait for him. Teth. The Lord is good to them that hope in him, to the soul that seeketh him. Teth. It is good to wait with silence for the salvation of God.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'This I recall to my mind; therefore I have hope. It is because of the LORD’s loving kindnesses that we are not consumed, because his mercies don’t fail. They are new every morning. Great is your faithfulness. “The LORD is my portion,” says my soul. “Therefore I will hope in him.” The LORD is good to those who wait for him, to the soul who seeks him. It is good that a man should hope and quietly wait for the salvation of the LORD.',
   ),
   13 =>
   array (
-    'id' => 'dra-mic-6-8-8',
+    'id' => 'webu-mic-6-8-8',
     'language' => 'en',
     'topic' => 'purpose',
     'keywords' =>
@@ -293,12 +293,12 @@ return array (
       6 => 'unsa akong buhaton',
     ),
     'reference' => 'Micah 6:8',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'I will shew thee, O man, what is good, and what the Lord requireth of thee: Verily, to do judgment, and to love mercy, and to walk solicitous with thy God.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'He has shown you, O man, what is good. What does the LORD require of you, but to act justly, to love mercy, and to walk humbly with your God?',
   ),
   14 =>
   array (
-    'id' => 'dra-mat-5-3-12',
+    'id' => 'webu-mat-5-3-12',
     'language' => 'en',
     'topic' => 'blessing',
     'keywords' =>
@@ -314,12 +314,12 @@ return array (
       8 => 'mapainubsanon',
     ),
     'reference' => 'Matthew 5:3–12',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Blessed are the poor in spirit: for theirs is the kingdom of heaven. Blessed are the meek: for they shall possess the land. Blessed are they that mourn: for they shall be comforted. Blessed are they that hunger and thirst after justice: for they shall have their fill. Blessed are the merciful: for they shall obtain mercy. Blessed are the clean of heart: for they shall see God. Blessed are the peacemakers: for they shall be called children of God. Blessed are they that suffer persecution for justice’ sake: for theirs is the kingdom of heaven. Blessed are ye when they shall revile you, and persecute you, and speak all that is evil against you, untruly, for my sake: Be glad and rejoice, for your reward is very great in heaven. For so they persecuted the prophets that were before you.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => '“Blessed are the poor in spirit, for theirs is the Kingdom of Heaven. Blessed are those who mourn, for they shall be comforted. Blessed are the gentle, for they shall inherit the earth. Blessed are those who hunger and thirst for righteousness, for they shall be filled. Blessed are the merciful, for they shall obtain mercy. Blessed are the pure in heart, for they shall see God. Blessed are the peacemakers, for they shall be called children of God. Blessed are those who have been persecuted for righteousness’sake, for theirs is the Kingdom of Heaven. “Blessed are you when people reproach you, persecute you, and say all kinds of evil against you falsely, for my sake. Rejoice, and be exceedingly glad, for great is your reward in heaven. For that is how they persecuted the prophets who were before you.',
   ),
   15 =>
   array (
-    'id' => 'dra-mat-6-25-34',
+    'id' => 'webu-mat-6-25-34',
     'language' => 'en',
     'topic' => 'anxiety',
     'keywords' =>
@@ -336,12 +336,12 @@ return array (
       9 => 'kwarta',
     ),
     'reference' => 'Matthew 6:25–34',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Therefore I say to you, be not solicitous for your life, what you shall eat, nor for your body, what you shall put on. Is not the life more than the meat: and the body more than the raiment? Behold the birds of the air, for they neither sow, nor do they reap, nor gather into barns: and your heavenly Father feedeth them. Are not you of much more value than they? And which of you by taking thought, can add to his stature by one cubit? And for raiment why are you solicitous? Consider the lilies of the field, how they grow: they labour not, neither do they spin. But I say to you, that not even Solomon in all his glory was arrayed as one of these. And if the grass of the field, which is today, and tomorrow is cast into the oven, God doth so clothe: how much more you, O ye of little faith? Be not solicitous therefore, saying, What shall we eat: or what shall we drink, or wherewith shall we be clothed? For after all these things do the heathens seek. For your Father knoweth that you have need of all these things. Seek ye therefore first the kingdom of God, and his justice, and all these things shall be added unto you. Be not therefore solicitous for tomorrow; for the morrow will be solicitous for itself. Sufficient for the day is the evil thereof.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Therefore I tell you, don’t be anxious for your life: what you will eat, or what you will drink; nor yet for your body, what you will wear. Isn’t life more than food, and the body more than clothing? See the birds of the sky, that they don’t sow, neither do they reap, nor gather into barns. Your heavenly Father feeds them. Aren’t you of much more value than they? “Which of you by being anxious, can add one moment to his lifespan? Why are you anxious about clothing? Consider the lilies of the field, how they grow. They don’t toil, neither do they spin, yet I tell you that even Solomon in all his glory was not dressed like one of these. But if God so clothes the grass of the field, which today exists and tomorrow is thrown into the oven, won’t he much more clothe you, you of little faith? “Therefore don’t be anxious, saying, ‘What will we eat?’, ‘What will we drink?’or, ‘With what will we be clothed?’ For the Gentiles seek after all these things; for your heavenly Father knows that you need all these things. But seek first God’s Kingdom and his righteousness; and all these things will be given to you as well. Therefore don’t be anxious for tomorrow, for tomorrow will be anxious for itself. Each day’s own evil is sufficient.',
   ),
   16 =>
   array (
-    'id' => 'dra-mat-11-28-30',
+    'id' => 'webu-mat-11-28-30',
     'language' => 'en',
     'topic' => 'rest',
     'keywords' =>
@@ -357,12 +357,12 @@ return array (
       8 => 'nabug-atan',
     ),
     'reference' => 'Matthew 11:28–30',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Come to me, all you that labour, and are burdened, and I will refresh you. Take up my yoke upon you, and learn of me, because I am meek, and humble of heart: and you shall find rest to your souls. For my yoke is sweet and my burden light.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => '“Come to me, all you who labor and are heavily burdened, and I will give you rest. Take my yoke upon you and learn from me, for I am gentle and humble in heart; and you will find rest for your souls. For my yoke is easy, and my burden is light.”',
   ),
   17 =>
   array (
-    'id' => 'dra-mrk-4-35-40',
+    'id' => 'webu-mrk-4-35-40',
     'language' => 'en',
     'topic' => 'storm',
     'keywords' =>
@@ -377,12 +377,12 @@ return array (
       7 => 'dili makontrol',
     ),
     'reference' => 'Mark 4:35–40',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'And he saith to them that day, when evening was come: Let us pass over to the other side. And sending away the multitude, they take him even as he was in the ship: and there were other ships with him. And there arose a great storm of wind, and the waves beat into the ship, so that the ship was filled. And he was in the hinder part of the ship, sleeping upon a pillow; and they awake him, and say to him: Master, doth it not concern thee that we perish? And rising up, he rebuked the wind, and said to the sea: Peace, be still. And the wind ceased: and there was made a great calm. And he said to them: Why are you fearful? have you not faith yet? And they feared exceedingly: and they said one to another: Who is this (thinkest thou) that both wind and sea obey him?',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'On that day, when evening had come, he said to them, “Let’s go over to the other side.” Leaving the multitude, they took him with them, even as he was, in the boat. Other small boats were also with him. A big wind storm arose, and the waves beat into the boat, so much that the boat was already filled. He himself was in the stern, asleep on the cushion; and they woke him up and asked him, “Teacher, don’t you care that we are dying?” He awoke and rebuked the wind, and said to the sea, “Peace! Be still!” The wind ceased and there was a great calm. He said to them, “Why are you so afraid? How is it that you have no faith?”',
   ),
   18 =>
   array (
-    'id' => 'dra-luk-15-11-24',
+    'id' => 'webu-luk-15-11-24',
     'language' => 'en',
     'topic' => 'return',
     'keywords' =>
@@ -397,12 +397,12 @@ return array (
       7 => 'dili takos',
     ),
     'reference' => 'Luke 15:11–24',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'And he said: A certain man had two sons: And the younger of them said to his father: Father, give me the portion of substance that falleth to me. And he divided unto them his substance. And not many days after, the younger son, gathering all together, went abroad into a far country: and there wasted his substance, living riotously. And after he had spent all, there came a mighty famine in that country; and he began to be in want. And he went and cleaved to one of the citizens of that country. And he sent him into his farm to feed swine. And he would fain have filled his belly with the husks the swine did eat; and no man gave unto him. And returning to himself, he said: How many hired servants in my father’s house abound with bread, and I here perish with hunger? I will arise, and will go to my father, and say to him: Father, I have sinned against heaven, and before thee: I am not worthy to be called thy son: make me as one of thy hired servants. And rising up he came to his father. And when he was yet a great way off, his father saw him, and was moved with compassion, and running to him fell upon his neck, and kissed him. And the son said to him: Father, I have sinned against heaven, and before thee, I am not now worthy to be called thy son. And the father said to his servants: Bring forth quickly the first robe, and put it on him, and put a ring on his hand, and shoes on his feet: And bring hither the fatted calf, and kill it, and let us eat and make merry: Because this my son was dead, and is come to life again: was lost, and is found. And they began to be merry.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'He said, “A certain man had two sons. The younger of them said to his father, ‘Father, give me my share of your property.’So he divided his livelihood between them. Not many days after, the younger son gathered all of this together and traveled into a far country. There he wasted his property with riotous living. When he had spent all of it, there arose a severe famine in that country, and he began to be in need. He went and joined himself to one of the citizens of that country, and he sent him into his fields to feed pigs. He wanted to fill his belly with the pods that the pigs ate, but no one gave him any. But when he came to himself, he said, ‘How many hired servants of my father’s have bread enough to spare, and I’m dying with hunger! I will get up and go to my father, and will tell him, “Father, I have sinned against heaven and in your sight. I am no more worthy to be called your son. Make me as one of your hired servants.”’ “He arose and came to his father. But while he was still far off, his father saw him and was moved with compassion, and ran, fell on his neck, and kissed him. The son said to him, ‘Father, I have sinned against heaven and in your sight. I am no longer worthy to be called your son.’ “But the father said to his servants, ‘Bring out the best robe and put it on him. Put a ring on his hand and sandals on his feet. Bring the fattened calf, kill it, and let’s eat and celebrate; for this, my son, was dead and is alive again. He was lost and is found.’Then they began to celebrate.',
   ),
   19 =>
   array (
-    'id' => 'dra-jhn-8-1-11',
+    'id' => 'webu-jhn-8-1-11',
     'language' => 'en',
     'topic' => 'mercy',
     'keywords' =>
@@ -418,12 +418,12 @@ return array (
       8 => 'sayop',
     ),
     'reference' => 'John 8:1–11',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'And Jesus went unto mount Olivet. And early in the morning he came again into the temple, and all the people came to him, and sitting down he taught them. And the scribes and the Pharisees bring unto him a woman taken in adultery: and they set her in the midst, And said to him: Master, this woman was even now taken in adultery. Now Moses in the law commanded us to stone such a one. But what sayest thou? And this they said tempting him, that they might accuse him. But Jesus bowing himself down, wrote with his finger on the ground. When therefore they continued asking him, he lifted up himself, and said to them: He that is without sin among you, let him first cast a stone at her. And again stooping down, he wrote on the ground. But they hearing this, went out one by one, beginning at the eldest. And Jesus alone remained, and the woman standing in the midst. Then Jesus lifting up himself, said to her: Woman, where are they that accused thee? Hath no man condemned thee? Who said: No man, Lord. And Jesus said: Neither will I condemn thee. Go, and now sin no more.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'but Jesus went to the Mount of Olives. Now very early in the morning, he came again into the temple, and all the people came to him. He sat down and taught them. The scribes and the Pharisees brought a woman taken in adultery. Having set her in the middle, they told him, “Teacher, we found this woman in adultery, in the very act. Now in our law, Moses commanded us to stone such women. What then do you say about her?” They said this testing him, that they might have something to accuse him of. But Jesus stooped down and wrote on the ground with his finger. But when they continued asking him, he looked up and said to them, “He who is without sin among you, let him throw the first stone at her.” Again he stooped down and wrote on the ground with his finger. They, when they heard it, being convicted by their conscience, went out one by one, beginning from the oldest, even to the last. Jesus was left alone with the woman where she was, in the middle. Jesus, standing up, saw her and said, “Woman, where are your accusers? Did no one condemn you?” She said, “No one, Lord.” Jesus said, “Neither do I condemn you. Go your way. From now on, sin no more.”',
   ),
   20 =>
   array (
-    'id' => 'dra-jhn-10-10-14',
+    'id' => 'webu-jhn-10-10-14',
     'language' => 'en',
     'topic' => 'care',
     'keywords' =>
@@ -439,12 +439,12 @@ return array (
       8 => 'kinabuhi',
     ),
     'reference' => 'John 10:10–14',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'The thief cometh not, but for to steal, and to kill, and to destroy. I am come that they may have life, and may have it more abundantly. I am the good shepherd. The good shepherd giveth his life for his sheep. But the hireling, and he that is not the shepherd, whose own the sheep are not, seeth the wolf coming, and leaveth the sheep, and flieth: and the wolf catcheth, and scattereth the sheep: And the hireling flieth, because he is a hireling: and he hath no care for the sheep. I am the good shepherd; and I know mine, and mine know me.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'The thief only comes to steal, kill, and destroy. I came that they may have life, and may have it abundantly. “I am the good shepherd. The good shepherd lays down his life for the sheep. He who is a hired hand, and not a shepherd, who doesn’t own the sheep, sees the wolf coming, leaves the sheep, and flees. The wolf snatches the sheep and scatters them. The hired hand flees because he is a hired hand and doesn’t care for the sheep. I am the good shepherd. I know my own, and I’m known by my own;',
   ),
   21 =>
   array (
-    'id' => 'dra-jhn-14-1-6',
+    'id' => 'webu-jhn-14-1-6',
     'language' => 'en',
     'topic' => 'trust',
     'keywords' =>
@@ -461,12 +461,12 @@ return array (
       9 => 'kamatayon',
     ),
     'reference' => 'John 14:1–6',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Let not your heart be troubled. You believe in God, believe also in me. In my Father’s house there are many mansions. If not, I would have told you: because I go to prepare a place for you. And if I shall go, and prepare a place for you, I will come again, and will take you to myself; that where I am, you also may be. And whither I go you know, and the way you know. Thomas saith to him: Lord, we know not whither thou goest; and how can we know the way? Jesus saith to him: I am the way, and the truth, and the life. No man cometh to the Father, but by me.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => '“Don’t let your heart be troubled. Believe in God. Believe also in me. In my Father’s house are many homes. If it weren’t so, I would have told you. I am going to prepare a place for you. If I go and prepare a place for you, I will come again and will receive you to myself; that where I am, you may be there also. You know where I go, and you know the way.” Thomas said to him, “Lord, we don’t know where you are going. How can we know the way?” Jesus said to him, “I am the way, the truth, and the life. No one comes to the Father, except through me.',
   ),
   22 =>
   array (
-    'id' => 'dra-jhn-14-27-27',
+    'id' => 'webu-jhn-14-27-27',
     'language' => 'en',
     'topic' => 'peace',
     'keywords' =>
@@ -481,12 +481,12 @@ return array (
       7 => 'samok',
     ),
     'reference' => 'John 14:27',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Peace I leave with you, my peace I give unto you: not as the world giveth, do I give unto you. Let not your heart be troubled, nor let it be afraid.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Peace I leave with you. My peace I give to you; not as the world gives, I give to you. Don’t let your heart be troubled, neither let it be fearful.',
   ),
   23 =>
   array (
-    'id' => 'dra-jhn-15-9-12',
+    'id' => 'webu-jhn-15-9-12',
     'language' => 'en',
     'topic' => 'love',
     'keywords' =>
@@ -500,12 +500,12 @@ return array (
       6 => 'relasyon',
     ),
     'reference' => 'John 15:9–12',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'As the Father hath loved me, I also have loved you. If you keep my commandments, you shall abide in my love; as I also have kept my Father’s commandments, and do abide in his love. These things I have spoken to you, that my joy may be in you, and your joy may be filled. This is my commandment, that you love one another, as I have loved you.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Even as the Father has loved me, I also have loved you. Remain in my love. If you keep my commandments, you will remain in my love, even as I have kept my Father’s commandments and remain in his love. I have spoken these things to you, that my joy may remain in you, and that your joy may be made full. “This is my commandment, that you love one another, even as I have loved you.',
   ),
   24 =>
   array (
-    'id' => 'dra-jhn-16-33-33',
+    'id' => 'webu-jhn-16-33-33',
     'language' => 'en',
     'topic' => 'courage',
     'keywords' =>
@@ -520,12 +520,12 @@ return array (
       7 => 'madaugon',
     ),
     'reference' => 'John 16:33',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'These things I have spoken to you, that in me you may have peace. In the world you shall have distress: but have confidence, I have overcome the world.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'I have told you these things, that in me you may have peace. In the world you have trouble; but cheer up! I have overcome the world.”',
   ),
   25 =>
   array (
-    'id' => 'dra-rom-5-1-5',
+    'id' => 'webu-rom-5-1-5',
     'language' => 'en',
     'topic' => 'suffering',
     'keywords' =>
@@ -540,12 +540,12 @@ return array (
       7 => 'kalisod',
     ),
     'reference' => 'Romans 5:1–5',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Being justified therefore by faith, let us have peace with God, through our Lord Jesus Christ: By whom also we have access through faith into this grace, wherein we stand, and glory in the hope of the glory of the sons of God. And not only so; but we glory also in tribulations, knowing that tribulation worketh patience; And patience trial; and trial hope; And hope confoundeth not: because the charity of God is poured forth in our hearts, by the Holy Ghost, who is given to us.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Being therefore justified by faith, we have peace with God through our Lord Jesus Christ; through whom we also have our access by faith into this grace in which we stand. We rejoice in hope of the glory of God. Not only this, but we also rejoice in our sufferings, knowing that suffering produces perseverance; and perseverance, proven character; and proven character, hope; and hope doesn’t disappoint us, because God’s love has been poured into our hearts through the Holy Spirit who was given to us.',
   ),
   26 =>
   array (
-    'id' => 'dra-rom-8-26-28',
+    'id' => 'webu-rom-8-26-28',
     'language' => 'en',
     'topic' => 'prayer',
     'keywords' =>
@@ -560,12 +560,12 @@ return array (
       7 => 'libog',
     ),
     'reference' => 'Romans 8:26–28',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Likewise the Spirit also helpeth our infirmity. For we know not what we should pray for as we ought; but the Spirit himself asketh for us with unspeakable groanings. And he that searcheth the hearts, knoweth what the Spirit desireth; because he asketh for the saints according to God. And we know that to them that love God, all things work together unto good, to such as, according to his purpose, are called to be saints.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'In the same way, the Spirit also helps our weaknesses, for we don’t know how to pray as we ought. But the Spirit himself makes intercession for us with groanings which can’t be uttered. He who searches the hearts knows what is on the Spirit’s mind, because he makes intercession for the saints according to God. We know that all things work together for good for those who love God, for those who are called according to his purpose.',
   ),
   27 =>
   array (
-    'id' => 'dra-rom-8-31-39',
+    'id' => 'webu-rom-8-31-39',
     'language' => 'en',
     'topic' => 'security',
     'keywords' =>
@@ -580,12 +580,12 @@ return array (
       7 => 'batok kanako',
     ),
     'reference' => 'Romans 8:31–39',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'What shall we then say to these things? If God be for us, who is against us? He that spared not even his own Son, but delivered him up for us all, how hath he not also, with him, given us all things? Who shall accuse against the elect of God? God that justifieth. Who is he that shall condemn? Christ Jesus that died, yea that is risen also again; who is at the right hand of God, who also maketh intercession for us. Who then shall separate us from the love of Christ? Shall tribulation? or distress? or famine? or nakedness? or danger? or persecution? or the sword? (As it is written: For thy sake we are put to death all the day long. We are accounted as sheep for the slaughter.) But in all these things we overcome, because of him that hath loved us. For I am sure that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come, nor might, Nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'What then shall we say about these things? If God is for us, who can be against us? He who didn’t spare his own Son, but delivered him up for us all, how would he not also with him freely give us all things? Who could bring a charge against God’s chosen ones? It is God who justifies. Who is he who condemns? It is Christ who died, yes rather, who was raised from the dead, who is at the right hand of God, who also makes intercession for us. Who shall separate us from the love of Christ? Could oppression, or anguish, or persecution, or famine, or nakedness, or peril, or sword? Even as it is written, “For your sake we are killed all day long. We were accounted as sheep for the slaughter.” No, in all these things we are more than conquerors through him who loved us. For I am persuaded that neither death, nor life, nor angels, nor principalities, nor things present, nor things to come, nor powers, nor height, nor depth, nor any other created thing will be able to separate us from God’s love which is in Christ Jesus our Lord.',
   ),
   28 =>
   array (
-    'id' => 'dra-rom-12-17-21',
+    'id' => 'webu-rom-12-17-21',
     'language' => 'en',
     'topic' => 'conflict',
     'keywords' =>
@@ -600,12 +600,12 @@ return array (
       7 => 'gipasakitan',
     ),
     'reference' => 'Romans 12:17–21',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'To no man rendering evil for evil. Providing good things, not only in the sight of God, but also in the sight of all men. If it be possible, as much as is in you, have peace with all men. Revenge not yourselves, my dearly beloved; but give place unto wrath, for it is written: Revenge is mine, I will repay, saith the Lord. But if thy enemy be hungry, give him to eat; if he thirst, give him to drink. For, doing this, thou shalt heap coals of fire upon his head. Be not overcome by evil, but overcome evil by good.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Repay no one evil for evil. Respect what is honorable in the sight of all men. If it is possible, as much as it is up to you, be at peace with all men. Don’t seek revenge yourselves, beloved, but give place to God’s wrath. For it is written, “Vengeance belongs to me; I will repay, says the Lord.” Therefore “If your enemy is hungry, feed him. If he is thirsty, give him a drink; for in doing so, you will heap coals of fire on his head.” Don’t be overcome by evil, but overcome evil with good.',
   ),
   29 =>
   array (
-    'id' => 'dra-1co-10-13-13',
+    'id' => 'webu-1co-10-13-13',
     'language' => 'en',
     'topic' => 'temptation',
     'keywords' =>
@@ -620,12 +620,12 @@ return array (
       7 => 'pagpugong sa kaugalingon',
     ),
     'reference' => '1 Corinthians 10:13',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Let no temptation take hold on you, but such as is human. And God is faithful, who will not suffer you to be tempted above that which you are able: but will make also with temptation issue, that you may be able to bear it.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'No temptation has taken you except what is common to man. God is faithful, who will not allow you to be tempted above what you are able, but will with the temptation also make the way of escape, that you may be able to endure it.',
   ),
   30 =>
   array (
-    'id' => 'dra-1co-13-4-8',
+    'id' => 'webu-1co-13-4-8',
     'language' => 'en',
     'topic' => 'love',
     'keywords' =>
@@ -641,12 +641,12 @@ return array (
       8 => 'selos',
     ),
     'reference' => '1 Corinthians 13:4–8',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Charity is patient, is kind: charity envieth not, dealeth not perversely; is not puffed up; Is not ambitious, seeketh not her own, is not provoked to anger, thinketh no evil; Rejoiceth not in iniquity, but rejoiceth with the truth; Beareth all things, believeth all things, hopeth all things, endureth all things. Charity never falleth away: whether prophecies shall be made void, or tongues shall cease, or knowledge shall be destroyed.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Love is patient and is kind. Love doesn’t envy. Love doesn’t brag, is not proud, doesn’t behave itself inappropriately, doesn’t seek its own way, is not provoked, takes no account of evil; doesn’t rejoice in unrighteousness, but rejoices with the truth; bears all things, believes all things, hopes all things, and endures all things. Love never fails. But where there are prophecies, they will be done away with. Where there are various languages, they will cease. Where there is knowledge, it will be done away with.',
   ),
   31 =>
   array (
-    'id' => 'dra-2co-1-3-5',
+    'id' => 'webu-2co-1-3-5',
     'language' => 'en',
     'topic' => 'comfort',
     'keywords' =>
@@ -661,12 +661,12 @@ return array (
       7 => 'pagbangutan',
     ),
     'reference' => '2 Corinthians 1:3–5',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Blessed be the God and Father of our Lord Jesus Christ, the Father of mercies, and the God of all comfort. Who comforteth us in all our tribulation; that we also may be able to comfort them who are in all distress, by the exhortation wherewith we also are exhorted by God. For as the sufferings of Christ abound in us: so also by Christ doth our comfort abound.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Blessed be the God and Father of our Lord Jesus Christ, the Father of mercies and God of all comfort, who comforts us in all our affliction, that we may be able to comfort those who are in any affliction, through the comfort with which we ourselves are comforted by God. For as the sufferings of Christ abound to us, even so our comfort also abounds through Christ.',
   ),
   32 =>
   array (
-    'id' => 'dra-2co-4-7-9',
+    'id' => 'webu-2co-4-7-9',
     'language' => 'en',
     'topic' => 'resilience',
     'keywords' =>
@@ -681,12 +681,12 @@ return array (
       7 => 'pakigbisog',
     ),
     'reference' => '2 Corinthians 4:7–9',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'But we have this treasure in earthen vessels, that the excellency may be of the power of God, and not of us. In all things we suffer tribulation, but are not distressed; we are straitened, but are not destitute; We suffer persecution, but are not forsaken; we are cast down, but we perish not:',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'But we have this treasure in clay vessels, that the exceeding greatness of the power may be of God and not from ourselves. We are pressed on every side, yet not crushed; perplexed, yet not to despair; pursued, yet not forsaken; struck down, yet not destroyed;',
   ),
   33 =>
   array (
-    'id' => 'dra-2co-12-9-10',
+    'id' => 'webu-2co-12-9-10',
     'language' => 'en',
     'topic' => 'weakness',
     'keywords' =>
@@ -700,12 +700,12 @@ return array (
       6 => 'kapakyasan',
     ),
     'reference' => '2 Corinthians 12:9–10',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'And he said to me: My grace is sufficient for thee; for power is made perfect in infirmity. Gladly therefore will I glory in my infirmities, that the power of Christ may dwell in me. For which cause I please myself in my infirmities, in reproaches, in necessities, in persecutions, in distresses, for Christ. For when I am weak, then am I powerful.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'He has said to me, “My grace is sufficient for you, for my power is made perfect in weakness.” Most gladly therefore I will rather glory in my weaknesses, that the power of Christ may rest on me. Therefore I take pleasure in weaknesses, in injuries, in necessities, in persecutions, and in distresses, for Christ’s sake. For when I am weak, then am I strong.',
   ),
   34 =>
   array (
-    'id' => 'dra-gal-5-22-23',
+    'id' => 'webu-gal-5-22-23',
     'language' => 'en',
     'topic' => 'character',
     'keywords' =>
@@ -720,12 +720,12 @@ return array (
       7 => 'kinaiya',
     ),
     'reference' => 'Galatians 5:22–23',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'But the fruit of the Spirit is, charity, joy, peace, patience, benignity, goodness, longanimity, Mildness, faith, modesty, continency, chastity. Against such there is no law.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faith, gentleness, and self-control. Against such things there is no law.',
   ),
   35 =>
   array (
-    'id' => 'dra-eph-4-26-32',
+    'id' => 'webu-eph-4-26-32',
     'language' => 'en',
     'topic' => 'forgiveness',
     'keywords' =>
@@ -739,12 +739,12 @@ return array (
       6 => 'dumot',
     ),
     'reference' => 'Ephesians 4:26–32',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Be angry, and sin not. Let not the sun go down upon your anger. Give not place to the devil. He that stole, let him now steal no more; but rather let him labour, working with his hands the thing which is good, that he may have something to give to him that suffereth need. Let no evil speech proceed from your mouth; but that which is good, to the edification of faith, that it may administer grace to the hearers. And grieve not the holy Spirit of God: whereby you are sealed unto the day of redemption. Let all bitterness, and anger, and indignation, and clamour, and blasphemy, be put away from you, with all malice. And be ye kind one to another; merciful, forgiving one another, even as God hath forgiven you in Christ.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => '“Be angry, and don’t sin.” Don’t let the sun go down on your wrath, and don’t give place to the devil. Let him who stole steal no more; but rather let him labor, producing with his hands something that is good, that he may have something to give to him who has need. Let no corrupt speech proceed out of your mouth, but only what is good for building others up as the need may be, that it may give grace to those who hear. Don’t grieve the Holy Spirit of God, in whom you were sealed for the day of redemption. Let all bitterness, wrath, anger, outcry, and slander be put away from you, with all malice. And be kind to one another, tender hearted, forgiving each other, just as God also in Christ forgave you.',
   ),
   36 =>
   array (
-    'id' => 'dra-php-4-4-9',
+    'id' => 'webu-php-4-4-9',
     'language' => 'en',
     'topic' => 'anxiety',
     'keywords' =>
@@ -759,12 +759,12 @@ return array (
       7 => 'kalinaw',
     ),
     'reference' => 'Philippians 4:4–9',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Rejoice in the Lord always; again, I say, rejoice. Let your modesty be known to all men. The Lord is nigh. Be nothing solicitous; but in every thing, by prayer and supplication, with thanksgiving, let your petitions be made known to God. And the peace of God, which surpasseth all understanding, keep your hearts and minds in Christ Jesus. For the rest, brethren, whatsoever things are true, whatsoever modest, whatsoever just, whatsoever holy, whatsoever lovely, whatsoever of good fame, if there be any virtue, if any praise of discipline, think on these things. The things which you have both learned, and received, and heard, and seen in me, these do ye, and the God of peace shall be with you.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Rejoice in the Lord always! Again I will say, “Rejoice!” Let your gentleness be known to all men. The Lord is at hand. In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus. Finally, brothers, whatever things are true, whatever things are honorable, whatever things are just, whatever things are pure, whatever things are lovely, whatever things are of good report: if there is any virtue and if there is anything worthy of praise, think about these things. Do the things which you learned, received, heard, and saw in me, and the God of peace will be with you.',
   ),
   37 =>
   array (
-    'id' => 'dra-php-4-11-13',
+    'id' => 'webu-php-4-11-13',
     'language' => 'en',
     'topic' => 'contentment',
     'keywords' =>
@@ -779,12 +779,12 @@ return array (
       7 => 'panginahanglan',
     ),
     'reference' => 'Philippians 4:11–13',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'I speak not as it were for want. For I have learned, in whatsoever state I am, to be content therewith. I know both how to be brought low, and I know how to abound: (everywhere, and in all things I am instructed) both to be full, and to be hungry; both to abound, and to suffer need. I can do all these things in him who strengtheneth me.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Not that I speak because of lack, for I have learned in whatever state I am, to be content in it. I know how to be humbled, and I also know how to abound. In any and all circumstances I have learned the secret both to be filled and to be hungry, both to abound and to be in need. I can do all things through Christ who strengthens me.',
   ),
   38 =>
   array (
-    'id' => 'dra-col-3-12-17',
+    'id' => 'webu-col-3-12-17',
     'language' => 'en',
     'topic' => 'relationships',
     'keywords' =>
@@ -799,12 +799,12 @@ return array (
       7 => 'pailob',
     ),
     'reference' => 'Colossians 3:12–17',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Put ye on therefore, as the elect of God, holy, and beloved, the bowels of mercy, benignity, humility, modesty, patience: Bearing with one another, and forgiving one another, if any have a complaint against another: even as the Lord hath forgiven you, so do you also. But above all these things have charity, which is the bond of perfection: And let the peace of Christ rejoice in your hearts, wherein also you are called in one body: and be ye thankful. Let the word of Christ dwell in you abundantly, in all wisdom: teaching and admonishing one another in psalms, hymns, and spiritual canticles, singing in grace in your hearts to God. All whatsoever you do in word or in work, do all in the name of the Lord Jesus Christ, giving thanks to God and the Father by him.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Put on therefore, as God’s chosen ones, holy and beloved, a heart of compassion, kindness, lowliness, humility, and perseverance; bearing with one another, and forgiving each other, if any man has a complaint against any; even as Christ forgave you, so you also do. Above all these things, walk in love, which is the bond of perfection. And let the peace of God rule in your hearts, to which also you were called in one body, and be thankful. Let the word of Christ dwell in you richly; in all wisdom teaching and admonishing one another with psalms, hymns, and spiritual songs, singing with grace in your heart to the Lord. Whatever you do, in word or in deed, do all in the name of the Lord Jesus, giving thanks to God the Father through him.',
   ),
   39 =>
   array (
-    'id' => 'dra-1th-5-16-18',
+    'id' => 'webu-1th-5-16-18',
     'language' => 'en',
     'topic' => 'gratitude',
     'keywords' =>
@@ -818,12 +818,12 @@ return array (
       6 => 'pag-ampo',
     ),
     'reference' => '1 Thessalonians 5:16–18',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Always rejoice. Pray without ceasing. In all things give thanks; for this is the will of God in Christ Jesus concerning you all.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Always rejoice. Pray without ceasing. In everything give thanks, for this is the will of God in Christ Jesus toward you.',
   ),
   40 =>
   array (
-    'id' => 'dra-heb-4-14-16',
+    'id' => 'webu-heb-4-14-16',
     'language' => 'en',
     'topic' => 'mercy',
     'keywords' =>
@@ -838,12 +838,12 @@ return array (
       7 => 'tintasyon',
     ),
     'reference' => 'Hebrews 4:14–16',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Having therefore a great high priest that hath passed into the heavens, Jesus the Son of God: let us hold fast our confession. For we have not a high priest, who can not have compassion on our infirmities: but one tempted in all things like as we are, without sin. Let us go therefore with confidence to the throne of grace: that we may obtain mercy, and find grace in seasonable aid.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Having then a great high priest who has passed through the heavens, Jesus, the Son of God, let’s hold tightly to our confession. For we don’t have a high priest who can’t be touched with the feeling of our infirmities, but one who has been in all points tempted like we are, yet without sin. Let’s therefore draw near with boldness to the throne of grace, that we may receive mercy and may find grace for help in time of need.',
   ),
   41 =>
   array (
-    'id' => 'dra-heb-12-1-3',
+    'id' => 'webu-heb-12-1-3',
     'language' => 'en',
     'topic' => 'endurance',
     'keywords' =>
@@ -858,12 +858,12 @@ return array (
       7 => 'kapoy',
     ),
     'reference' => 'Hebrews 12:1–3',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'And therefore we also having so great a cloud of witnesses over our head, laying aside every weight and sin which surrounds us, let us run by patience to the fight proposed to us: Looking on Jesus, the author and finisher of faith, who having joy set before him, endured the cross, despising the shame, and now sitteth on the right hand of the throne of God. For think diligently upon him that endured such opposition from sinners against himself; that you be not wearied, fainting in your minds.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Therefore let’s also, seeing we are surrounded by so great a cloud of witnesses, lay aside every weight and the sin which so easily entangles us, and let’s run with perseverance the race that is set before us, looking to Jesus, the author and perfecter of faith, who for the joy that was set before him endured the cross, despising its shame, and has sat down at the right hand of the throne of God. For consider him who has endured such contradiction of sinners against himself, that you don’t grow weary, fainting in your souls.',
   ),
   42 =>
   array (
-    'id' => 'dra-jas-1-2-8',
+    'id' => 'webu-jas-1-2-8',
     'language' => 'en',
     'topic' => 'wisdom',
     'keywords' =>
@@ -878,12 +878,12 @@ return array (
       7 => 'desisyon',
     ),
     'reference' => 'James 1:2–8',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'My brethren, count it all joy, when you shall fall into divers temptations; Knowing that the trying of your faith worketh patience. And patience hath a perfect work; that you may be perfect and entire, failing in nothing. But if any of you want wisdom, let him ask of God, who giveth to all men abundantly, and upbraideth not; and it shall be given him. But let him ask in faith, nothing wavering. For he that wavereth is like a wave of the sea, which is moved and carried about by the wind. Therefore let not that man think that he shall receive any thing of the Lord. A double minded man is inconstant in all his ways.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Count it all joy, my brothers, when you fall into various temptations, knowing that the testing of your faith produces endurance. Let endurance have its perfect work, that you may be perfect and complete, lacking in nothing. But if any of you lacks wisdom, let him ask of God, who gives to all liberally and without reproach, and it will be given to him. But let him ask in faith, without any doubting, for he who doubts is like a wave of the sea, driven by the wind and tossed. For that man shouldn’t think that he will receive anything from the Lord. He is a double-minded man, unstable in all his ways.',
   ),
   43 =>
   array (
-    'id' => 'dra-jas-1-19-20',
+    'id' => 'webu-jas-1-19-20',
     'language' => 'en',
     'topic' => 'anger',
     'keywords' =>
@@ -898,12 +898,12 @@ return array (
       7 => 'sapot',
     ),
     'reference' => 'James 1:19–20',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'You know, my dearest brethren. And let every man be swift to hear, but slow to speak, and slow to anger. For the anger of man worketh not the justice of God.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'So, then, my beloved brothers, let every man be swift to hear, slow to speak, and slow to anger; for the anger of man doesn’t produce the righteousness of God.',
   ),
   44 =>
   array (
-    'id' => 'dra-1pe-5-6-10',
+    'id' => 'webu-1pe-5-6-10',
     'language' => 'en',
     'topic' => 'anxiety',
     'keywords' =>
@@ -917,12 +917,12 @@ return array (
       6 => 'pagsulay',
     ),
     'reference' => '1 Peter 5:6–10',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Be you humbled therefore under the mighty hand of God, that he may exalt you in the time of visitation: Casting all your care upon him, for he hath care of you. Be sober and watch: because your adversary the devil, as a roaring lion, goeth about seeking whom he may devour. Whom resist ye, strong in faith: knowing that the same affliction befalls your brethren who are in the world. But the God of all grace, who hath called us into his eternal glory in Christ Jesus, after you have suffered a little, will himself perfect you, and confirm you, and establish you.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time, casting all your worries on him, because he cares for you. Be sober and self-controlled. Be watchful. Your adversary, the devil, walks around like a roaring lion, seeking whom he may devour. Withstand him steadfast in your faith, knowing that your brothers who are in the world are undergoing the same sufferings. But may the God of all grace, who called you to his eternal glory by Christ Jesus, after you have suffered a little while, perfect, establish, strengthen, and settle you.',
   ),
   45 =>
   array (
-    'id' => 'dra-1jn-1-9-9',
+    'id' => 'webu-1jn-1-9-9',
     'language' => 'en',
     'topic' => 'confession',
     'keywords' =>
@@ -936,12 +936,12 @@ return array (
       6 => 'pasaylo',
     ),
     'reference' => '1 John 1:9',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'If we confess our sins, he is faithful and just, to forgive us our sins, and to cleanse us from all iniquity.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'If we confess our sins, he is faithful and righteous to forgive us the sins and to cleanse us from all unrighteousness.',
   ),
   46 =>
   array (
-    'id' => 'dra-1jn-4-7-12',
+    'id' => 'webu-1jn-4-7-12',
     'language' => 'en',
     'topic' => 'love',
     'keywords' =>
@@ -956,12 +956,12 @@ return array (
       7 => 'komunidad',
     ),
     'reference' => '1 John 4:7–12',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Dearly beloved, let us love one another, for charity is of God. And every one that loveth, is born of God, and knoweth God. He that loveth not, knoweth not God: for God is charity. By this hath the charity of God appeared towards us, because God hath sent his only begotten Son into the world, that we may live by him. In this is charity: not as though we had loved God, but because he hath first loved us, and sent his Son to be a propitiation for our sins. My dearest, if God hath so loved us; we also ought to love one another. No man hath seen God at any time. If we love one another, God abideth in us, and his charity is perfected in us.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'Beloved, let’s love one another, for love is of God; and everyone who loves has been born of God and knows God. He who doesn’t love doesn’t know God, for God is love. By this God’s love was revealed in us, that God has sent his only born Son into the world that we might live through him. In this is love, not that we loved God, but that he loved us, and sent his Son as the atoning sacrifice for our sins. Beloved, if God loved us in this way, we also ought to love one another. No one has seen God at any time. If we love one another, God remains in us, and his love has been perfected in us.',
   ),
   47 =>
   array (
-    'id' => 'dra-1jn-4-18-19',
+    'id' => 'webu-1jn-4-18-19',
     'language' => 'en',
     'topic' => 'fear',
     'keywords' =>
@@ -974,12 +974,12 @@ return array (
       5 => 'wala gihigugma',
     ),
     'reference' => '1 John 4:18–19',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'Fear is not in charity: but perfect charity casteth out fear, because fear hath pain. And he that feareth, is not perfected in charity. Let us therefore love God, because God first hath loved us.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'There is no fear in love; but perfect love casts out fear, because fear has punishment. He who fears is not made perfect in love. We love him, because he first loved us.',
   ),
   48 =>
   array (
-    'id' => 'dra-rev-21-1-5',
+    'id' => 'webu-rev-21-1-5',
     'language' => 'en',
     'topic' => 'hope',
     'keywords' =>
@@ -994,8 +994,8 @@ return array (
       7 => 'bag-ong sinugdanan',
     ),
     'reference' => 'Revelation 21:1–5',
-    'translation' => 'Douay-Rheims 1899 · Public domain',
-    'text' => 'And I saw a new heaven and a new earth. For the first heaven and the first earth was gone, and the sea is now no more. And I John saw the holy city, the new Jerusalem, coming down out of heaven from God, prepared as a bride adorned for her husband. And I heard a great voice from the throne, saying: Behold the tabernacle of God with men, and he will dwell with them. And they shall be his people; and God himself with them shall be their God. And God shall wipe away all tears from their eyes: and death shall be no more, nor mourning, nor crying, nor sorrow shall be any more, for the former things are passed away. And he that sat on the throne, said: Behold, I make all things new. And he said to me: Write, for these words are most faithful and true.',
+    'translation' => 'World English Bible Updated · Public domain',
+    'text' => 'I saw a new heaven and a new earth, for the first heaven and the first earth have passed away, and the sea is no more. I saw the holy city, New Jerusalem, coming down out of heaven from God, prepared like a bride adorned for her husband. I heard a loud voice out of heaven saying, “Behold, God’s dwelling is with people; and he will dwell with them, and they will be his people, and God himself will be with them as their God. He will wipe away every tear from their eyes. Death will be no more; neither will there be mourning, nor crying, nor pain any more. The first things have passed away.” He who sits on the throne said, “Behold, I am making all things new.” He said, “Write, for these words of God are faithful and true.”',
   ),
   49 =>
   array (
@@ -1391,7 +1391,7 @@ return array (
     ),
     'reference' => 'Lucas 15:11–24',
     'translation' => 'Biblica® Open Ang Pulong sa Dios™ 2024 · CC BY-SA 4.0',
-    'text' => 'Nagpadayon si Jesus sa pagsulti, “Adunay usa ka tawo nga adunay duha ka anak nga lalaki. Miingon ang manghod ngadto sa iyang amahan, ‘Tay, ihatag na kanako ang akong bahin sa katigayonan.’ Busa gibahin sa amahan ang iyang mga kabtangan ngadto sa ilang duha. “Paglabay sa pipila ka adlaw, gipamaligya sa manghod ang iyang bahin ug milakaw ngadto sa layong dapit. Ug didto nagpatuyang siya ug gasto sa iyang kuwarta sa walay kapuslanan. Sa dihang nahurot na niya ug gasto ang iyang kuwarta, miabot ang dakong kagutom niadtong dapita. Naglisod gayod siya. Busa mitrabaho na lang siya ingon nga tigbahog sa mga baboy sa uma sa tawo nga taga-didto. Usahay gusto na lang niyang mokaon sa bahog sa mga baboy aron matambalan ang iyang kagutom, kay walay bisan usa nga naghatag kaniya ug pagkaon. “Sa kaulahian, nakaamgo siya sa iyang kahimtang. Nahinumdoman niya nga didto sa ilang balay nanobra ang pagkaon sa mga sulugoon sa iyang amahan. Apan siya hapit nang mamatay sa kagutom. Busa miingon siya, ‘Maayo pa ug mopauli na lang ako didto sa akong amahan ug moingon kaniya, “Tay nakasala ako sa Dios ug kanimo. Karon dili na ako angayng tawgon nga imong anak, isipa na lang ako nga usa sa imong mga sulugoon.” ’ Busa mipauli siya. “Samtang layo pa siya, nakita na siya sa iyang amahan. Naluoy gayod ang amahan sa iyang anak, busa midagan siya paingon sa iyang anak ug gigakos niya kini ug gihagkan. “Unya miingon ang iyang anak ngadto kaniya, ‘Tay, nakasala ako sa Dios ug kanimo. Dili na ako angayng tawgon nga imong anak.[ Isipa na lang ako nga usa sa imong mga sulugoon.]’ “Gitawag sa amahan ang iyang mga sulugoon ug miingon, ‘Dali, dad-a ninyo dinhi ang pinakanindot nga bisti ug ipasul-ob kaniya. Sul-obi usab ninyo siya ug singsing ug sapatos. Unya kuhaa ninyo ang nating torong baka nga gipatambok ug ihawa. Magkombira kita. Tungod kay abi nako ug patay na kining akong anak, apan dako diayng buhi. Nawala siya apan karon ania na.’ Busa nagsugod sila sa ilang paglipay-lipay.',
+    'text' => 'Nagpadayon si Jesus sa pagsulti, “Adunay usa ka tawo nga adunay duha ka anak nga lalaki. Miingon ang manghod ngadto sa iyang amahan, ‘Tay, ihatag na kanako ang akong bahin sa katigayonan.’Busa gibahin sa amahan ang iyang mga kabtangan ngadto sa ilang duha. “Paglabay sa pipila ka adlaw, gipamaligya sa manghod ang iyang bahin ug milakaw ngadto sa layong dapit. Ug didto nagpatuyang siya ug gasto sa iyang kuwarta sa walay kapuslanan. Sa dihang nahurot na niya ug gasto ang iyang kuwarta, miabot ang dakong kagutom niadtong dapita. Naglisod gayod siya. Busa mitrabaho na lang siya ingon nga tigbahog sa mga baboy sa uma sa tawo nga taga-didto. Usahay gusto na lang niyang mokaon sa bahog sa mga baboy aron matambalan ang iyang kagutom, kay walay bisan usa nga naghatag kaniya ug pagkaon. “Sa kaulahian, nakaamgo siya sa iyang kahimtang. Nahinumdoman niya nga didto sa ilang balay nanobra ang pagkaon sa mga sulugoon sa iyang amahan. Apan siya hapit nang mamatay sa kagutom. Busa miingon siya, ‘Maayo pa ug mopauli na lang ako didto sa akong amahan ug moingon kaniya, “Tay nakasala ako sa Dios ug kanimo. Karon dili na ako angayng tawgon nga imong anak, isipa na lang ako nga usa sa imong mga sulugoon.” ’ Busa mipauli siya. “Samtang layo pa siya, nakita na siya sa iyang amahan. Naluoy gayod ang amahan sa iyang anak, busa midagan siya paingon sa iyang anak ug gigakos niya kini ug gihagkan. “Unya miingon ang iyang anak ngadto kaniya, ‘Tay, nakasala ako sa Dios ug kanimo. Dili na ako angayng tawgon nga imong anak.[ Isipa na lang ako nga usa sa imong mga sulugoon.]’ “Gitawag sa amahan ang iyang mga sulugoon ug miingon, ‘Dali, dad-a ninyo dinhi ang pinakanindot nga bisti ug ipasul-ob kaniya. Sul-obi usab ninyo siya ug singsing ug sapatos. Unya kuhaa ninyo ang nating torong baka nga gipatambok ug ihawa. Magkombira kita. Tungod kay abi nako ug patay na kining akong anak, apan dako diayng buhi. Nawala siya apan karon ania na.’Busa nagsugod sila sa ilang paglipay-lipay.',
   ),
   68 =>
   array (

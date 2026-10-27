@@ -10,13 +10,13 @@ if ($argc !== 4) {
 [$script, $englishDir, $cebuanoDir, $output] = $argv;
 
 $selections = [
-    ['PSA', ['en' => 22, 'ceb' => 23], 1, 4, 'fear', ['fear', 'afraid', 'danger', 'alone', 'dark', 'kahadlok', 'nahadlok', 'ngitngit', 'nag-inusara']],
-    ['PSA', ['en' => 26, 'ceb' => 27], 1, 5, 'courage', ['courage', 'brave', 'enemy', 'attack', 'confidence', 'kaisog', 'kaaway', 'pagsalig']],
-    ['PSA', ['en' => 33, 'ceb' => 34], 18, 19, 'grief', ['broken heart', 'heartbroken', 'grief', 'grieving', 'died', 'death', 'loss', 'sad', 'sorrow', 'kasubo', 'guol', 'namatay', 'kamatayon', 'kawad-on', 'masulob-on', 'dugmok']],
-    ['PSA', ['en' => 45, 'ceb' => 46], 2, 4, 'crisis', ['trouble', 'crisis', 'disaster', 'unsafe', 'gubot', 'kalisod', 'katalagman']],
-    ['PSA', ['en' => 54, 'ceb' => 55], 23, 23, 'burden', ['burden', 'pressure', 'worry', 'overwhelmed', 'bug-at', 'kabalaka', 'nabug-atan']],
-    ['PSA', ['en' => 138, 'ceb' => 139], 7, 12, 'presence', ['known', 'unseen', 'invisible', 'far from god', 'presence', 'gihibaloan', 'layo sa dios', 'presensya']],
-    ['PSA', ['en' => 146, 'ceb' => 147], 3, 5, 'healing', ['hurt', 'healing', 'wounded', 'pain', 'broken heart', 'kasakit', 'samdan', 'kaayohan']],
+    ['PSA', 23, 1, 4, 'fear', ['fear', 'afraid', 'danger', 'alone', 'dark', 'kahadlok', 'nahadlok', 'ngitngit', 'nag-inusara']],
+    ['PSA', 27, 1, 5, 'courage', ['courage', 'brave', 'enemy', 'attack', 'confidence', 'kaisog', 'kaaway', 'pagsalig']],
+    ['PSA', 34, 18, 19, 'grief', ['broken heart', 'heartbroken', 'grief', 'grieving', 'died', 'death', 'loss', 'sad', 'sorrow', 'kasubo', 'guol', 'namatay', 'kamatayon', 'kawad-on', 'masulob-on', 'dugmok']],
+    ['PSA', 46, 2, 4, 'crisis', ['trouble', 'crisis', 'disaster', 'unsafe', 'gubot', 'kalisod', 'katalagman']],
+    ['PSA', 55, 23, 23, 'burden', ['burden', 'pressure', 'worry', 'overwhelmed', 'bug-at', 'kabalaka', 'nabug-atan']],
+    ['PSA', 139, 7, 12, 'presence', ['known', 'unseen', 'invisible', 'far from god', 'presence', 'gihibaloan', 'layo sa dios', 'presensya']],
+    ['PSA', 147, 3, 5, 'healing', ['hurt', 'healing', 'wounded', 'pain', 'broken heart', 'kasakit', 'samdan', 'kaayohan']],
     ['PRO', 3, 5, 6, 'guidance', ['decision', 'direction', 'guidance', 'confused', 'choice', 'choose', 'career', 'desisyon', 'giya', 'libog', 'pili', 'trabaho']],
     ['PRO', 15, 3, 3, 'work', ['work', 'career', 'project', 'exam', 'study', 'trabaho', 'eskwela', 'proyekto', 'pasulit']],
     ['PRO', 16, 17, 17, 'friendship', ['friend', 'friendship', 'lonely', 'support', 'higala', 'panaghigalaay', 'nag-inusara']],
@@ -62,7 +62,7 @@ $selections = [
 ];
 
 $translations = [
-    'en' => ['dir' => $englishDir, 'name' => 'Douay-Rheims 1899 · Public domain', 'prefix' => 'dra'],
+    'en' => ['dir' => $englishDir, 'name' => 'World English Bible Updated · Public domain', 'prefix' => 'webu'],
     'ceb' => ['dir' => $cebuanoDir, 'name' => 'Biblica® Open Ang Pulong sa Dios™ 2024 · CC BY-SA 4.0', 'prefix' => 'ceb'],
 ];
 
@@ -158,10 +158,12 @@ function cleanUsfm(string $text): string
 {
     $text = preg_replace('/\\\\f\s.*?\\\\f\*/u', '', $text) ?? $text;
     $text = preg_replace('/\\\\x\s.*?\\\\x\*/u', '', $text) ?? $text;
-    $text = preg_replace('/\\\\w\s+([^|]+)\|.*?\\\\w\*/u', '$1', $text) ?? $text;
+    $text = preg_replace('/\\\\\+?w\s+([^|]+)\|.*?\\\\\+?w\*/u', '$1', $text) ?? $text;
     $text = preg_replace('/\\\\[a-z0-9+\-]+\*/iu', '', $text) ?? $text;
     $text = preg_replace('/\\\\[a-z0-9+\-]+\s+/iu', ' ', $text) ?? $text;
     $text = preg_replace('/\\\\[a-z0-9+\-]+$/iu', '', $text) ?? $text;
     $text = str_replace(["\u{00A0}", ' // '], [' ', ' '], $text);
+    $text = preg_replace('/([’\'])\s+([\p{L}])/u', '$1$2', $text) ?? $text;
+    $text = preg_replace('/([“‘])\s+/u', '$1', $text) ?? $text;
     return trim(preg_replace('/\s+/u', ' ', $text) ?? $text);
 }
