@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-28T00:00:00+08:00",
+  "title": "Design System: Still Waters",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Prayer Ink", "canonical": "#272321", "tonalRamp": ["#191614", "#272321", "#49423e", "#6c625d", "#968d88", "#bcb5b1", "#ded9d6", "#f5f2f0"] },
+      "ink-soft": { "role": "neutral", "displayName": "Quiet Ink", "canonical": "#6c625d", "tonalRamp": ["#201c1a", "#39322f", "#514945", "#6c625d", "#928985", "#b8b0ac", "#ddd8d5", "#f5f2f0"] },
+      "burgundy": { "role": "primary", "displayName": "Rubric Burgundy", "canonical": "#a84643", "tonalRamp": ["#32100f", "#57201e", "#823431", "#a84643", "#c87571", "#dda6a2", "#efd0cd", "#faecea"] },
+      "burgundy-deep": { "role": "primary", "displayName": "Deep Burgundy", "canonical": "#823431", "tonalRamp": ["#29100f", "#4b1c1a", "#682925", "#823431", "#a95a55", "#cd8f8a", "#e8c3c0", "#f8e9e7"] },
+      "rose-wash": { "role": "primary", "displayName": "Muted Rose", "canonical": "#f3e5e1", "tonalRamp": ["#3b2220", "#65403c", "#91635e", "#bd8e88", "#d7b5b0", "#e7cfcb", "#f3e5e1", "#fbf5f3"] },
+      "parchment": { "role": "neutral", "displayName": "Parchment Ground", "canonical": "#eee9de", "tonalRamp": ["#2b2821", "#4e493d", "#746d5d", "#9e9684", "#c4bcac", "#ddd7ca", "#eee9de", "#faf8f2"] },
+      "paper": { "role": "neutral", "displayName": "Living Paper", "canonical": "#fffdfa", "tonalRamp": ["#2b2926", "#504c47", "#77716a", "#a49c93", "#ccc4ba", "#e9e3db", "#f7f3ed", "#fffdfa"] },
+      "surface-muted": { "role": "neutral", "displayName": "Muted Surface", "canonical": "#f7f1ea", "tonalRamp": ["#2c2824", "#514943", "#786e65", "#a3988e", "#cabfb4", "#e4dcd3", "#f1ebe4", "#f7f1ea"] },
+      "success": { "role": "secondary", "displayName": "Steady Green", "canonical": "#435837", "tonalRamp": ["#141c10", "#273321", "#435837", "#667a58", "#8da081", "#b3c1aa", "#d5ded0", "#edf2ea"] },
+      "danger": { "role": "tertiary", "displayName": "Pastoral Red", "canonical": "#8b3d35", "tonalRamp": ["#2c100e", "#4e201c", "#6d2f29", "#8b3d35", "#b1645c", "#d0938d", "#e9c3bf", "#f8e9e7"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "One principal editorial statement per page or feature." },
+      "headline": { "displayName": "Section Headline", "purpose": "Major devotional chapters and page titles." },
+      "body": { "displayName": "Body", "purpose": "Instructions, navigation, metadata, and explanatory copy." },
+      "reading": { "displayName": "Sacred Reading", "purpose": "Scripture and full prayer text at a contemplative measure." },
+      "label": { "displayName": "Rubric Label", "purpose": "Short liturgical, category, duration, and stage orientation." }
+    },
+    "shadows": [
+      { "name": "quiet-surface", "value": "0 10px 32px rgba(70, 51, 44, 0.045)", "purpose": "Ordinary interactive cards only when a border is insufficient." },
+      { "name": "companion-surface", "value": "0 18px 60px rgba(70, 51, 44, 0.09)", "purpose": "Primary conversational surface." },
+      { "name": "feature-image", "value": "0 22px 70px rgba(70, 51, 44, 0.12)", "purpose": "Homepage hero feature." },
+      { "name": "overlay", "value": "0 24px 70px rgba(56, 37, 33, 0.24)", "purpose": "Floating chat and modal-level surfaces." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Default state transition easing." },
+      { "name": "state-fast", "value": "140ms", "purpose": "Press feedback." },
+      { "name": "state-standard", "value": "180ms", "purpose": "Color and focus changes." },
+      { "name": "content-change", "value": "220ms", "purpose": "Short verse and step transitions." }
+    ],
+    "breakpoints": [
+      { "name": "wide-grid", "value": "1100px" },
+      { "name": "single-column", "value": "900px" },
+      { "name": "mobile", "value": "620px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single filled action treatment for meaningful forward movement.",
+      "html": "<button class=\"ds-btn-primary\">Receive guidance <span aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-btn-primary{min-height:44px;border:0;border-radius:999px;padding:11px 16px;display:inline-flex;align-items:center;gap:10px;background:var(--burgundy,#a84643);color:var(--paper,#fffdfa);font:600 1rem 'Source Sans 3',system-ui,sans-serif;cursor:pointer;transition:background-color 180ms cubic-bezier(.23,1,.32,1),transform 140ms cubic-bezier(.23,1,.32,1)}.ds-btn-primary:hover{background:var(--burgundy-dark,#823431)}.ds-btn-primary:active{transform:scale(.97)}.ds-btn-primary:focus-visible{outline:0;box-shadow:0 0 0 3px #f6f1e9,0 0 0 6px rgba(130,52,49,.78)}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A quiet outlined action for reversible or secondary choices.",
+      "html": "<button class=\"ds-btn-secondary\">Mark as prayed</button>",
+      "css": ".ds-btn-secondary{min-height:44px;border:1px solid rgba(96,70,62,.17);border-radius:999px;padding:11px 16px;background:transparent;color:var(--ink-soft,#6c625d);font:600 1rem 'Source Sans 3',system-ui,sans-serif;cursor:pointer;transition:color 160ms cubic-bezier(.23,1,.32,1),border-color 160ms cubic-bezier(.23,1,.32,1),transform 140ms cubic-bezier(.23,1,.32,1)}.ds-btn-secondary:hover{color:var(--burgundy-dark,#823431);border-color:rgba(168,70,67,.42)}.ds-btn-secondary:focus-visible{outline:0;box-shadow:0 0 0 3px #f6f1e9,0 0 0 6px rgba(130,52,49,.78)}"
+    },
+    {
+      "name": "Prayer Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "A bounded devotional task with editorial hierarchy and restrained depth.",
+      "html": "<article class=\"ds-card\"><p class=\"ds-kicker\">3-MINUTE PRAYER</p><h3>Pray with today's verse</h3><p>Read slowly. Notice the word or phrase that stays with you.</p></article>",
+      "css": ".ds-card{max-width:360px;border:1px solid rgba(96,70,62,.17);border-radius:9px;padding:24px;background:var(--paper,#fffdfa);color:var(--ink,#272321);box-shadow:0 10px 32px rgba(70,51,44,.045)}.ds-card h3{margin:0;font:400 1.5rem/1.35 Gelasio,Georgia,serif}.ds-card>p:last-child{margin:18px 0 0;color:var(--ink-soft,#6c625d);font:400 1rem/1.6 'Source Sans 3',system-ui,sans-serif}.ds-kicker{margin:0 0 8px;color:var(--burgundy,#a84643);font:600 .7rem/1.5 'Source Sans 3',system-ui,sans-serif;letter-spacing:.11em}"
+    },
+    {
+      "name": "Scripture Composer",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "A compact, visibly editable field that expands only after conversation begins.",
+      "html": "<label class=\"ds-field\"><span>Your message</span><textarea placeholder=\"I feel anxious about what comes next…\"></textarea></label>",
+      "css": ".ds-field{display:grid;gap:8px;color:var(--burgundy-deep,#823431);font:600 .8rem/1.5 'Source Sans 3',system-ui,sans-serif}.ds-field textarea{min-height:54px;resize:vertical;border:1px solid rgba(96,70,62,.17);border-radius:24px;padding:14px 16px;color:var(--ink,#272321);background:var(--surface-muted,#f7f1ea);font:400 1rem/1.5 'Source Sans 3',system-ui,sans-serif}.ds-field textarea:focus{outline:0;border-color:rgba(168,70,67,.58);box-shadow:0 0 0 3px rgba(168,70,67,.1)}"
+    },
+    {
+      "name": "Language Choice",
+      "kind": "chip",
+      "description": "A bilingual segmented control with a quiet active state.",
+      "html": "<div class=\"ds-language\" role=\"group\" aria-label=\"Language\"><button class=\"is-active\">English</button><button>Cebuano</button></div>",
+      "css": ".ds-language{display:flex;gap:4px;padding:10px}.ds-language button{min-height:44px;border:0;border-radius:999px;padding:8px 13px;background:transparent;color:var(--ink-soft,#6c625d);font:400 .84rem 'Source Sans 3',system-ui,sans-serif}.ds-language button.is-active{background:var(--rose-wash,#f3e5e1);color:var(--burgundy-dark,#823431)}.ds-language button:focus-visible{outline:0;box-shadow:0 0 0 3px #f6f1e9,0 0 0 6px rgba(130,52,49,.78)}"
+    },
+    {
+      "name": "Editorial Navigation",
+      "kind": "nav",
+      "description": "Quiet navigation that keeps the four core destinations visible.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a class=\"is-active\" href=\"#\">Home</a><a href=\"#\">Rosary</a><a href=\"#\">Prayers</a><a href=\"#\">About</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:6px;font-family:'Source Sans 3',system-ui,sans-serif}.ds-nav a{min-height:44px;padding:8px 11px;display:inline-flex;align-items:center;border-radius:999px;color:var(--ink-soft,#6c625d);text-decoration:none}.ds-nav a.is-active{color:var(--burgundy-dark,#823431);background:var(--rose-wash,#f3e5e1)}.ds-nav a:focus-visible{outline:0;box-shadow:0 0 0 3px #f6f1e9,0 0 0 6px rgba(130,52,49,.78)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Contemporary Prayer Book",
+    "overview": "Still Waters should feel like opening a well-made prayer book in a quiet room: composed, humane, readable, and reverent without appearing antique. It adapts the editorial cadence of Scripture and Daily Office pages to touch screens and short devotional sessions.",
+    "keyCharacteristics": ["Reading-first editorial hierarchy.", "Warm paper surfaces with one disciplined burgundy accent.", "Large, quiet feature rails balanced by compact controls.", "Contemporary devotional imagery with ample negative space.", "Gentle, purposeful state changes rather than ambient spectacle.", "Full-width composition on desktop and calm single-column reading on mobile."],
+    "rules": [
+      { "name": "The Rubric Rule", "body": "Burgundy should occupy a small minority of any screen. Its rarity gives it authority.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Gelasio carries sacred reading and editorial hierarchy; Source Sans 3 carries action and explanation.", "section": "typography" },
+      { "name": "The Rail Before Card Rule", "body": "First group content with alignment, whitespace, and rules. Add a card only when a bounded surface improves interaction, persistence, or reading focus.", "section": "layout" },
+      { "name": "The Flat-by-Default Rule", "body": "If a border, surface tone, or spacing boundary is sufficient, do not add a shadow.", "section": "elevation" },
+      { "name": "The Radius Hierarchy Rule", "body": "Controls are smaller than cards; cards are smaller than major features.", "section": "shapes" }
+    ],
+    "dos": ["Do preserve Scripture, prayer, and the visitor's concern as the strongest content on the screen.", "Do use editorial rails, dividers, and whitespace to reduce unnecessary containers.", "Do keep burgundy scarce and meaningful as the system's rubric and action color.", "Do verify English and Cebuano at mobile widths with long content and 200% text zoom.", "Do use specific devotional imagery with quiet crops and negative space.", "Do provide useful fallback content when remote data or AI is unavailable.", "Do keep interactions reversible, private by default, and honest about data handling."],
+    "donts": ["Don't turn the homepage into a grid of generic equal-weight feature cards.", "Don't use gradients, floating blobs, glass effects, or sacred symbols as arbitrary decoration.", "Don't add oversized radii, excessive pills, thick side-accent borders, or cold SaaS shadows.", "Don't use archaic language when a licensed contemporary translation is available.", "Don't imply that the chatbot is Jesus, divine revelation, clergy, therapy, or emergency care.", "Don't introduce streak pressure, public prayer history, competitive scores, or guilt-based retention.", "Don't animate layout properties, autoplay audio, or allow decorative motion to delay reading and action.", "Don't hide source, translation, license, privacy, safety, or AI-boundary information."]
+  }
+}
