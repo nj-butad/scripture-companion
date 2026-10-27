@@ -34,7 +34,7 @@ $dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_S
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=7">
+    <link rel="stylesheet" href="assets/style.css?v=8">
 </head>
 <body>
     <div class="page-shell">
@@ -110,7 +110,14 @@ $dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_S
         <div class="chat-widget-panel" id="chatWidgetPanel" hidden></div>
         <button class="chat-widget-launcher" id="openChatWidget" type="button" aria-expanded="false" aria-controls="chatWidgetPanel">
             <span class="widget-bubble"><strong>Scripture companion</strong><span>Share what is on your heart</span></span>
-            <span class="widget-mark" aria-hidden="true"><span>✦</span></span>
+            <span class="widget-mark" aria-hidden="true">
+                <svg class="rosary-icon" viewBox="0 0 40 46" focusable="false">
+                    <path d="M20 4C10.8 4 6 10.3 6 17.2c0 8.2 7.2 13.8 14 17.1 6.8-3.3 14-8.9 14-17.1C34 10.3 29.2 4 20 4Z"/>
+                    <circle cx="20" cy="4" r="2.2"/><circle cx="11.5" cy="7.2" r="2.2"/><circle cx="6.8" cy="14.2" r="2.2"/><circle cx="7.8" cy="22" r="2.2"/><circle cx="13" cy="28.5" r="2.2"/>
+                    <circle cx="28.5" cy="7.2" r="2.2"/><circle cx="33.2" cy="14.2" r="2.2"/><circle cx="32.2" cy="22" r="2.2"/><circle cx="27" cy="28.5" r="2.2"/>
+                    <circle cx="20" cy="34.2" r="2.2"/><path d="M20 36.5V44M16.5 40h7"/>
+                </svg>
+            </span>
         </button>
     </aside>
 

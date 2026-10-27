@@ -302,7 +302,8 @@ h1 {
 .widget-bubble strong { color: var(--burgundy); font-family: "Libre Baskerville", Georgia, serif; font-size: 0.82rem; font-weight: 400; }
 .widget-bubble > span { color: var(--ink-soft); font-size: 0.72rem; }
 .widget-mark { width: 58px; height: 58px; display: grid; place-items: center; border: 3px solid rgba(255, 253, 250, 0.92); border-radius: 50% 50% 46% 54%; color: white; background: var(--burgundy); box-shadow: 0 12px 30px rgba(90, 40, 38, 0.24); }
-.widget-mark span { font-size: 1.25rem; }
+.rosary-icon { width: 34px; height: 39px; overflow: visible; fill: currentColor; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
+.rosary-icon > path:first-child { fill: none; opacity: 0.7; }
 .chat-widget-panel { width: min(420px, calc(100vw - 24px)); max-height: min(690px, calc(100dvh - 112px)); overflow: hidden; border-radius: 14px; box-shadow: 0 24px 70px rgba(56, 37, 33, 0.24); }
 .chat-widget-panel .companion { height: min(600px, calc(100dvh - 112px)); display: grid; grid-template-rows: auto minmax(0, 1fr) auto; border-radius: 14px; }
 .chat-widget-panel .widget-close { display: grid; place-items: center; }
