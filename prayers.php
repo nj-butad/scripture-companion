@@ -11,16 +11,17 @@ $prayersJson = json_encode($prayers, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
     <meta name="theme-color" content="#f4f0e8">
     <meta name="description" content="A searchable collection of essential Catholic prayers in English and Cebuano.">
     <title>Catholic Prayers — Kristohanon</title>
+    <link rel="icon" href="assets/images/kristohanon-mark.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=18">
+    <link rel="stylesheet" href="assets/style.css?v=19">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
     <div class="page-shell">
         <header class="site-header">
-            <a class="brand" href="/" aria-label="Kristohanon home"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.8c.55 6.55 3.65 9.65 10.2 10.2-6.55.55-9.65 3.65-10.2 10.2C11.45 15.65 8.35 12.55 1.8 12 8.35 11.45 11.45 8.35 12 1.8Z"/></svg><span>Kristohanon</span></a>
+            <a class="brand" href="/" aria-label="Kristohanon home"><img class="brand-mark" src="assets/images/kristohanon-mark.svg" alt="" width="32" height="32"><span>Kristohanon</span></a>
             <nav class="site-nav" aria-label="Main navigation">
                 <a class="nav-link" href="/">Home</a>
                 <a class="nav-link" href="rosary.php">Rosary</a>

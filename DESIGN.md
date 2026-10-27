@@ -95,6 +95,8 @@ This is an **Operate + Read** product. Visitors must be able to write, choose, p
 
 The atmosphere is warm and contemplative, never sleepy or vague. It should feel intentionally Catholic and Filipino in content while remaining welcoming to other Christians. The interface must avoid both app-dashboard sterility and ornate church-themed pastiche.
 
+The official Kristohanon mark is a cross rising from two abstract open hands that also suggest an open book, framed by seven restrained rays. Use the burgundy master mark on light surfaces and the warm-ivory inverse inside burgundy controls. Keep its background transparent and never place it inside an additional badge except when the containing control itself requires one, such as the chat launcher.
+
 **Key Characteristics:**
 
 - Reading-first editorial hierarchy.

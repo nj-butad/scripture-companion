@@ -53,18 +53,19 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     <meta name="theme-color" content="#f4f0e8">
     <meta name="description" content="A gentle, bilingual Scripture companion for difficult moments.">
     <title>Kristohanon — Scripture Companion</title>
+    <link rel="icon" href="assets/images/kristohanon-mark.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=18">
+    <link rel="stylesheet" href="assets/style.css?v=19">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
     <div class="page-shell">
         <header class="site-header">
             <a class="brand" href="/" aria-label="Kristohanon home">
-                <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.8c.55 6.55 3.65 9.65 10.2 10.2-6.55.55-9.65 3.65-10.2 10.2C11.45 15.65 8.35 12.55 1.8 12 8.35 11.45 11.45 8.35 12 1.8Z"/></svg>
+                <img class="brand-mark" src="assets/images/kristohanon-mark.svg" alt="" width="32" height="32">
                 <span>Kristohanon</span>
             </a>
             <nav class="site-nav" aria-label="Main navigation">
@@ -259,12 +260,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
         <button class="chat-widget-launcher" id="openChatWidget" type="button" aria-expanded="false" aria-controls="chatWidgetPanel">
             <span class="widget-bubble"><strong>Scripture companion</strong><span>Share what is on your heart</span></span>
             <span class="widget-mark" aria-hidden="true">
-                <svg class="rosary-icon" viewBox="0 0 40 46" focusable="false">
-                    <path d="M20 4C10.8 4 6 10.3 6 17.2c0 8.2 7.2 13.8 14 17.1 6.8-3.3 14-8.9 14-17.1C34 10.3 29.2 4 20 4Z"/>
-                    <circle cx="20" cy="4" r="2.2"/><circle cx="11.5" cy="7.2" r="2.2"/><circle cx="6.8" cy="14.2" r="2.2"/><circle cx="7.8" cy="22" r="2.2"/><circle cx="13" cy="28.5" r="2.2"/>
-                    <circle cx="28.5" cy="7.2" r="2.2"/><circle cx="33.2" cy="14.2" r="2.2"/><circle cx="32.2" cy="22" r="2.2"/><circle cx="27" cy="28.5" r="2.2"/>
-                    <circle cx="20" cy="34.2" r="2.2"/><path d="M20 36.5V44M16.5 40h7"/>
-                </svg>
+                <img class="kristohanon-widget-mark" src="assets/images/kristohanon-mark-inverse.svg" alt="" width="38" height="38">
             </span>
         </button>
     </aside>

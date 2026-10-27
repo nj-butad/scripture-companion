@@ -6,6 +6,8 @@ Kristohanon should feel like a quiet, contemporary prayer book: reverent,
 welcoming, readable, and distinctly calmer than a social feed. Scripture and
 prayer remain primary; decoration supports orientation and contemplation.
 
+The official mark combines a cross, abstract open hands that also suggest open pages, and seven restrained rays. Use the burgundy SVG on light surfaces and the warm-ivory inverse inside the burgundy chat launcher. Preserve its transparent background and clear space.
+
 ## Design tokens and foundations
 
 - Use the eight-point spacing rhythm defined by `--space-1` through

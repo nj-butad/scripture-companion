@@ -3,6 +3,12 @@
   "generatedAt": "2026-10-28T00:00:00+08:00",
   "title": "Design System: Kristohanon",
   "extensions": {
+    "brandMark": {
+      "concept": "A cross rising from abstract open hands/open pages with seven restrained rays.",
+      "master": "assets/images/kristohanon-mark.svg",
+      "inverse": "assets/images/kristohanon-mark-inverse.svg",
+      "rules": "Use the burgundy master on light surfaces and the warm-ivory inverse inside burgundy controls; preserve transparency and clear space."
+    },
     "colorMeta": {
       "ink": { "role": "neutral", "displayName": "Prayer Ink", "canonical": "#272321", "tonalRamp": ["#191614", "#272321", "#49423e", "#6c625d", "#968d88", "#bcb5b1", "#ded9d6", "#f5f2f0"] },
       "ink-soft": { "role": "neutral", "displayName": "Quiet Ink", "canonical": "#6c625d", "tonalRamp": ["#201c1a", "#39322f", "#514945", "#6c625d", "#928985", "#b8b0ac", "#ddd8d5", "#f5f2f0"] },

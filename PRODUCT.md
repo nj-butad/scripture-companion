@@ -120,6 +120,7 @@ Returning visitors can resume a gentle rhythm stored only in their browser: rece
 ## Brand Commitments
 
 - Product name: **Kristohanon**.
+- Official mark: an original cross rising from abstract open hands/open pages with seven rays, supplied as transparent burgundy and warm-ivory SVG variants.
 - Category language: **Scripture companion**, not “AI Jesus.”
 - Core invitation: people do not need perfect words before approaching Scripture and prayer.
 - Voice: gentle, direct, attentive, Christ-centered, specific to the visitor's message, and free of stock consolation phrases.
