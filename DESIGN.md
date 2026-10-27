@@ -223,7 +223,7 @@ The main conversation composer remains compact before use and expands only when 
 
 ### Navigation
 
-Desktop navigation is quiet text with a Muted Rose active pill. The brand uses Gelasio and a small devotional mark. On mobile, navigation wraps beneath the centered brand rather than collapsing into an unnecessary hamburger for four items.
+Desktop navigation is quiet text with a short burgundy rubric underline for the active page. Language choices use the same editorial underline with stronger type rather than a filled pill. The brand uses Gelasio and a small devotional mark. On mobile, navigation wraps beneath the centered brand rather than collapsing into an unnecessary hamburger for four items.
 
 The homepage journey index is a separate editorial table of contents, using numbers, thin rules, and direct anchors. It must not look like another row of primary navigation pills.
 

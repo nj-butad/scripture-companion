@@ -25,6 +25,7 @@ The official mark combines a cross, abstract open hands that also suggest open p
 - Primary actions must be filled burgundy pills; secondary actions must use a
   border or text treatment. Both require hover, focus-visible, active,
   disabled, and loading states when applicable.
+- Active navigation and English/Cebuano states use a short burgundy editorial underline and stronger text, never a filled circular background.
 - All interactive controls must provide a minimum 44 by 44 CSS-pixel target.
 - Content cards use a one-pixel border, nine-pixel radius, and restrained
   shadow. Do not add a card when a divider and whitespace can express the same

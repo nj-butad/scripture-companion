@@ -90,18 +90,21 @@ a { text-underline-offset: 3px; }
 
 .site-nav { display: flex; align-items: center; gap: 6px; }
 .nav-link {
+  position: relative;
   min-height: 44px;
   border: 0;
-  border-radius: 999px;
+  border-radius: 4px;
   padding: 8px 11px;
   color: var(--ink-soft);
   background: transparent;
   text-decoration: none;
   font-size: 0.88rem;
   cursor: pointer;
-  transition: color 160ms var(--ease-out), background-color 160ms var(--ease-out), transform 140ms var(--ease-out);
+  transition: color 160ms var(--ease-out), transform 140ms var(--ease-out);
 }
-.nav-link.is-active { color: var(--burgundy-dark); background: var(--rose-wash); }
+.nav-link::after { content: ""; position: absolute; left: 50%; bottom: 4px; width: 0; height: 2px; border-radius: 2px; background: var(--burgundy); transform: translateX(-50%); transition: width 180ms var(--ease-out); }
+.nav-link.is-active { color: var(--burgundy-dark); font-weight: 600; background: transparent; }
+.nav-link.is-active::after { width: 24px; }
 .nav-link:active { transform: scale(0.97); }
 
 .quiet-button, .dialog-close {
@@ -321,18 +324,21 @@ h1 {
 }
 
 .language-option {
+  position: relative;
   min-height: 44px;
   border: 0;
-  border-radius: 999px;
+  border-radius: 4px;
   padding: 8px 13px;
   background: transparent;
   color: var(--ink-soft);
   cursor: pointer;
   font-size: 0.84rem;
-  transition: background-color 180ms var(--ease-out), color 180ms var(--ease-out), transform 140ms var(--ease-out);
+  transition: color 180ms var(--ease-out), transform 140ms var(--ease-out);
 }
 
-.language-option.is-active { background: var(--rose-wash); color: var(--burgundy-dark); }
+.language-option::after { content: ""; position: absolute; left: 13px; right: 13px; bottom: 3px; height: 2px; border-radius: 2px; background: transparent; transition: background-color 180ms var(--ease-out); }
+.language-option.is-active { color: var(--burgundy-dark); font-weight: 600; background: transparent; }
+.language-option.is-active::after { background: var(--burgundy); }
 
 .conversation {
   min-height: 104px;
