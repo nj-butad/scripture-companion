@@ -58,7 +58,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=21">
+    <link rel="stylesheet" href="assets/style.css?v=20">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -111,6 +111,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                     </div>
 
                     <form class="composer" id="chatForm">
+                        <div class="composer-invitation" id="composerInvitation"><span aria-hidden="true">✦</span><strong>Start a private Scripture conversation</strong></div>
                         <label class="sr-only" for="message">Your message</label>
                         <textarea id="message" name="message" rows="1" maxlength="2000" placeholder="I feel anxious about what comes next…" required></textarea>
                         <div class="composer-footer">
@@ -277,7 +278,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     </dialog>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?>, home: <?= $homeJson ?> };</script>
-    <script src="assets/app.js?v=12" defer></script>
+    <script src="assets/app.js?v=11" defer></script>
 </body>
 </html>
 

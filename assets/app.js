@@ -59,6 +59,7 @@ const copy = {
     prayer: 'A prayer for this moment',
     next: 'A gentle next step',
     error: 'Something went wrong. Please try again in a moment.',
+    conversation: 'Start a private Scripture conversation',
   },
   ceb: {
     welcome: 'Unsa ang bug-at sa imong kasingkasing karon?',
@@ -68,6 +69,7 @@ const copy = {
     prayer: 'Usa ka pag-ampo alang niining taknaa',
     next: 'Usa ka malumong sunod nga lakang',
     error: 'Adunay problema. Palihog sulayi pag-usab sa makadiyot.',
+    conversation: 'Sugdi ang pribadong panag-istorya bahin sa Kasulatan',
   },
 };
 
@@ -83,6 +85,7 @@ languageButtons.forEach((button) => {
     document.querySelector('#welcomeText').textContent = copy[language].welcome;
     document.querySelector('#welcomeNote').textContent = copy[language].note;
     input.placeholder = copy[language].placeholder;
+    document.querySelector('#composerInvitation strong').textContent = copy[language].conversation;
     renderDailyVerse(activeVerseIndex, false);
     renderHomeLanguage();
     input.focus();
