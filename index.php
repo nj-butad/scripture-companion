@@ -55,8 +55,9 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     <title>Still Waters — Scripture Companion</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=10">
+    <link rel="stylesheet" href="assets/style.css?v=11">
 </head>
 <body>
     <div class="page-shell">
@@ -75,9 +76,11 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
 
         <main>
             <section class="intro" aria-labelledby="pageTitle">
-                <p class="eyebrow">A quiet place to bring what you carry</p>
-                <h1 id="pageTitle">You don’t have to find the right words.</h1>
-                <p class="lede">Share what is on your heart. We’ll meet you with Scripture, a short reflection, and a simple prayer.</p>
+                <div class="intro-copy">
+                    <p class="eyebrow">A quiet place to bring what you carry</p>
+                    <h1 id="pageTitle">You don’t have to find the right words.</h1>
+                    <p class="lede">Share what is on your heart. We’ll meet you with Scripture, a short reflection, and a simple prayer.</p>
+                </div>
             </section>
 
             <div class="companion-home" id="companionHome">
@@ -144,6 +147,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                 <div class="practice-grid">
                     <article class="practice-card lectio-card" id="lectioCard">
                         <div class="card-heading-row"><div><p class="card-kicker">3-minute prayer</p><h3 id="lectioTitle">Pray with today’s verse</h3></div><span class="time-chip">3 min</span></div>
+                        <img class="lectio-art" src="assets/images/lectio-bible.webp" alt="An open Bible beside a candle and olive branch" loading="lazy" width="900" height="600">
                         <div class="lectio-progress" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div>
                         <div class="lectio-content" id="lectioContent" aria-live="polite">
                             <p class="lectio-step" id="lectioStep">1 · Read</p>
@@ -175,12 +179,15 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
 
             <section class="home-section discovery-grid" aria-label="Daily Catholic discovery">
                 <article class="discovery-card saint-card" id="saintCard">
+                    <img class="saint-art" src="assets/images/church-calendar.webp" alt="Sunlight through a stained-glass church window" loading="lazy" width="720" height="1080">
+                    <div class="saint-content">
                     <p class="card-kicker">Today in the Church</p>
                     <h2 id="saintName">Today belongs to God</h2>
                     <p class="saint-type" id="saintType">Daily Catholic calendar</p>
                     <p id="saintDescription">The Church’s calendar helps us remember that every ordinary day belongs to God.</p>
                     <p class="saint-prompt" id="saintPrompt"><strong>Carry this today:</strong> Practice quiet faithfulness in the task before you.</p>
                     <a class="saint-source" href="https://github.com/cpbjr/catholic-readings-api" target="_blank" rel="noopener noreferrer">Calendar data source</a>
+                    </div>
                 </article>
 
                 <article class="discovery-card quiz-card" id="quizCard">

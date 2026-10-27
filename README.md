@@ -16,6 +16,10 @@ a Catholic calendar card, a daily quiz, private on-device prayer activity, and
 a seasonal Catholic practice. Personal notes and prayer activity remain in the
 visitor's browser.
 
+Original watercolor-style devotional artwork is stored in `assets/images/` as
+optimized WebP files. The homepage preloads only the hero image; card and
+seasonal illustrations load lazily or through CSS to keep the first visit fast.
+
 The `/rosary.php` page provides a complete bead-by-bead Rosary guide in English
 and Cebuano. It selects the traditional mystery set for the current day in the
 Asia/Manila timezone, allows another set to be chosen, and remembers progress
