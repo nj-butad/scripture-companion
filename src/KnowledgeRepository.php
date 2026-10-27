@@ -128,7 +128,7 @@ final class KnowledgeRepository
                     'ceb' => 'Sugdi sa Timaan sa Krus ug Nagatoo. Sa unang dakong lubid iampo ang Amahan Namo. Sa sunod tulo ka lubid iampo ang tulo ka Maghimaya Ka Maria, dayon ang Himaya sa Amahan. Ipahibalo ang unang misteryo ug ang basahon sa Kasulatan. Iampo ang usa ka Amahan Namo, napulo ka Maghimaya Ka Maria samtang namalandong sa misteryo, Himaya sa Amahan, ug O Hesus Ko. Balika kini sa lima ka misteryo. Taposa sa Maghimaya Ka Rayna, tubag, katapusang pag-ampo, ug Timaan sa Krus. Ang guided page mogiya sa matag pag-ampo ug lubid.',
                 ],
                 'keywords' => ['rosary', 'rosaryo', 'how to pray', 'unsaon pag-ampo', 'bead', 'decade', 'steps'],
-                'url' => '/rosary.php',
+                'url' => '/rosary',
             ],
             [
                 'id' => 'rosary-schedule',
@@ -138,7 +138,7 @@ final class KnowledgeRepository
                     'ceb' => 'Ang tradisyonal nga iskedyul nga gigamit sa Kristohanon mao kini: Mga Misteryo sa Kalipay sa Lunes ug Sabado; Mga Misteryo sa Kasakit sa Martes ug Biyernes; Mga Misteryo sa Himaya sa Miyerkoles ug Domingo; Mga Misteryo sa Kahayag sa Huwebes. Awtomatikong pilion sa Rosary page ang misteryo sumala sa adlaw sa Asia/Manila, apan mahimong mopili og laing set.',
                 ],
                 'keywords' => ['mysteries', 'mystery today', 'misteryo', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'lunes', 'martes', 'miyerkoles', 'huwebes', 'biyernes', 'sabado', 'domingo'],
-                'url' => '/rosary.php',
+                'url' => '/rosary',
             ],
             [
                 'id' => 'app-purpose',
@@ -148,7 +148,7 @@ final class KnowledgeRepository
                     'ceb' => 'Ang Kristohanon usa ka pribado ug bilingual nga Katolikong kauban sa Kasulatan nga gihimo alang sa kinabuhi sa mga Pilipino. Motabang kini sa usa ka tawo sa pagsulti sa iyang gidala, pagtagbo sa angay ug gisusi nga teksto sa Kasulatan, pagdawat og mubo nga pagpamalandong ug pag-ampo, ug pagpadayon ngadto sa Rosaryo o tradisyonal nga mga pag-ampo. Giabiabi niini ang ubang Kristohanon samtang matinud-anon sa Katolikong devotional roots. AI tool kini, dili si Hesus, divine revelation, pari, therapy, o emergency care.',
                 ],
                 'keywords' => ['kristohanon', 'this app', 'this site', 'website', 'what is', 'purpose', 'about'],
-                'url' => '/about.php',
+                'url' => '/about',
             ],
             [
                 'id' => 'author-testimony',
@@ -158,7 +158,7 @@ final class KnowledgeRepository
                     'ceb' => 'Ang Kristohanon mitubo gikan sa personal nga kasinatian sa usa ka Katolikong virtual assistant nga nagpuyo sa Southern Leyte. Bisan nagtrabaho siya, naglisod gihapon siya sa pinansyal ug mibati nga daw wala mouswag ang kinabuhi. Sa ulahi iyang gitugyan ngadto sa Dios ang kahadlok, mga plano, trabaho, ug pinansya—dili pinaagi sa pagbiya sa responsibilidad, kondili pinaagi sa pagbuhi sa pagtuo nga makontrol niya ang tanan. Sa iyang hinay nga pagbasa ug pagsabot sa Kasulatan, dili na kaayo siya gimandoan sa kahadlok ug nahimong mas duol gamay sa Dios. Misugod dayong moabot ang mga oportunidad bisan wala siya aktibong nangapply. Gidawat niya kini isip grasya, dili pormula o saad nga ang pagtuo awtomatikong maghatag og bahandi. Ang mas lawom nga milagro mao ang kalinaw, pagpasalamat, ug pag-ila sa pag-atiman sa Dios. Gihimo niya ang Kristohanon aron ang uban nga anaa sa lisod o stagnant nga panahon makasugod uban sa Dios ug makatagbo sa Kasulatan sa pinulongang ilang masabtan.',
                 ],
                 'keywords' => ['author', 'creator', 'founder', 'testimony', 'story', 'southern leyte', 'virtual assistant', 'va', 'financial', 'opportunities', 'miracle', 'why created'],
-                'url' => '/about.php',
+                'url' => '/about',
             ],
             [
                 'id' => 'privacy-and-ai',
@@ -168,7 +168,7 @@ final class KnowledgeRepository
                     'ceb' => 'Walay account nga gikinahanglan sa core features. Ang prayer activity, progress sa Rosaryo, gratitude text, quiz state, ug recent prayer information gitipigan lamang sa browser sa bisita. Dili tipigan sa site ang mensahe sa kaugalingong database, apan ang mensaheng gipadala alang sa guidance ipadala ngadto sa configured AI provider aron mohimo og tubag. Mangita una ang Kristohanon og gisusi nga local passages ug ipakita ang verified Scripture nga bulag; gitudloan ang model nga dili mag-imbento og Kasulatan.',
                 ],
                 'keywords' => ['privacy', 'private', 'saved', 'store', 'data', 'openai', 'ai', 'database', 'message'],
-                'url' => '/about.php',
+                'url' => '/about',
             ],
             [
                 'id' => 'translations',
@@ -178,7 +178,7 @@ final class KnowledgeRepository
                     'ceb' => 'Ang English Scripture naggamit sa World English Bible Updated, usa ka modernong American-English public-domain translation. Ang Cebuano Scripture naggamit sa Biblica Open Ang Pulong sa Dios 2024 ubos sa CC BY-SA 4.0 nga adunay attribution. Ang mga kinutlo sa Kasulatan pilion gikan sa gisusi nga local library ug dili himoon gikan sa memorya sa model.',
                 ],
                 'keywords' => ['translation', 'english bible', 'cebuano bible', 'source', 'license', 'world english bible', 'open ang pulong sa dios'],
-                'url' => '/about.php',
+                'url' => '/about',
             ],
             [
                 'id' => 'site-guide',
@@ -203,7 +203,7 @@ final class KnowledgeRepository
                 'ceb' => 'Sa Asia/Manila, karon kay ' . $manilaToday->format('F j, Y') . '. Ang tradisyonal nga set mao ang ' . $todayMystery['ceb']['name'] . '. Awtomatikong pilion kini sa guided Rosary page.',
             ],
             'keywords' => ['today mystery', 'mysteries today', 'misteryo karon', 'today rosary', 'rosaryo karon'],
-            'url' => '/rosary.php',
+            'url' => '/rosary',
         ];
 
         foreach ($rosary['mysteries'] as $key => $mystery) {
@@ -221,7 +221,7 @@ final class KnowledgeRepository
                 'title' => $mysteryTitle,
                 'content' => $mysteryContent,
                 'keywords' => [$key, $mystery['en']['name'], $mystery['ceb']['name']],
-                'url' => '/rosary.php',
+                'url' => '/rosary',
             ];
         }
 
@@ -242,7 +242,7 @@ final class KnowledgeRepository
                     preg_split('/[^\p{L}\p{N}]+/u', mb_strtolower($prayer['prayer']['ceb']['title'])) ?: [],
                     [$prayer['id'], $prayer['prayer']['en']['title'], $prayer['prayer']['ceb']['title']]
                 ))),
-                'url' => '/prayers.php#' . $prayer['id'],
+                'url' => '/prayers#' . $prayer['id'],
             ];
         }
 

@@ -347,7 +347,7 @@ form.addEventListener('submit', async (event) => {
   const status = appendStatus(copy[language].sending);
 
   try {
-    const response = await fetch('api/chat.php', {
+    const response = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

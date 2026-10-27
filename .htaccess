@@ -1,6 +1,26 @@
 Options -Indexes
 DirectoryIndex index.php
 
+RewriteEngine On
+
+# Keep public URLs independent from the PHP implementation. Redirect legacy
+# browser requests, then resolve the clean routes internally.
+RewriteCond %{THE_REQUEST} \s/+index\.php(?:[?\s]) [NC]
+RewriteRule ^index\.php$ / [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+(about|rosary|prayers)\.php(?:[?\s]) [NC]
+RewriteRule ^(about|rosary|prayers)\.php$ /$1 [R=301,L,NE]
+
+RewriteCond %{THE_REQUEST} \s/+(about|rosary|prayers)/(?:[?\s]) [NC]
+RewriteRule ^(about|rosary|prayers)/$ /$1 [R=301,L,NE]
+
+# A permanent method-preserving redirect keeps older cached chat clients valid.
+RewriteCond %{THE_REQUEST} \s/+api/chat\.php(?:[?\s]) [NC]
+RewriteRule ^api/chat\.php$ /api/chat [R=308,L,NE]
+
+RewriteRule ^(about|rosary|prayers)/?$ $1.php [END,QSA]
+RewriteRule ^api/chat/?$ api/chat.php [END,QSA]
+
 # Keep application code, configuration, and reviewed Scripture data private
 # while allowing Hostinger to deploy this repository directly to public_html.
 RedirectMatch 404 ^/(?:src|data|\.git)(?:/|$)

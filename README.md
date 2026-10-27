@@ -26,16 +26,16 @@ Original watercolor-style devotional artwork is stored in `assets/images/` as
 optimized WebP files. The homepage preloads only the hero image; card and
 seasonal illustrations load lazily or through CSS to keep the first visit fast.
 
-The `/rosary.php` page provides a complete bead-by-bead Rosary guide in English
+The `/rosary` page provides a complete bead-by-bead Rosary guide in English
 and Cebuano. It selects the traditional mystery set for the current day in the
 Asia/Manila timezone, allows another set to be chosen, and remembers progress
 locally in the browser for that day.
 
-The `/prayers.php` page is a searchable, bilingual library of traditional
+The `/prayers` page is a searchable, bilingual library of traditional
 Catholic prayers. It groups prayers by purpose and includes essential, Marian,
 protection, daily, Holy Spirit, and prayers for the departed.
 
-The `/about.php` page carries the long-form personal testimony behind
+The `/about` page carries the long-form personal testimony behind
 Kristohanon: financial uncertainty in Southern Leyte, surrender, discovering
 God through Scripture, and an invitation to begin again with God first.
 

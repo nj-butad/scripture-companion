@@ -18,7 +18,7 @@
         <header class="site-header">
             <a class="brand" href="/" aria-label="Kristohanon home"><img class="brand-mark" src="assets/images/kristohanon-mark.svg" alt="" width="32" height="32"><span>Kristohanon</span></a>
             <nav class="site-nav" aria-label="Main navigation">
-                <a class="nav-link" href="/">Home</a><a class="nav-link" href="rosary.php">Rosary</a><a class="nav-link" href="prayers.php">Prayers</a><a class="nav-link is-active" href="about.php" aria-current="page">About</a>
+                <a class="nav-link" href="/">Home</a><a class="nav-link" href="/rosary">Rosary</a><a class="nav-link" href="/prayers">Prayers</a><a class="nav-link is-active" href="/about" aria-current="page">About</a>
             </nav>
             <a class="header-guidance" href="/#share">Receive guidance</a>
         </header>

@@ -71,9 +71,9 @@ Returning visitors can resume a gentle rhythm stored only in their browser: rece
 ### Pages
 
 - `/` — daily Scripture rhythm, conversational companion, weekly verse slider, Lectio Divina, prayer prompts, Catholic calendar, learning cards, and seasonal devotion.
-- `/rosary.php` — bead-by-bead Rosary in English and Cebuano, with mysteries selected for the current day in Asia/Manila and progress saved locally.
-- `/prayers.php` — searchable bilingual library of traditional Catholic prayers grouped by purpose.
-- `/about.php` — long-form first-person testimony from Southern Leyte explaining how financial uncertainty, surrender, Scripture, and unexpected opportunities led to Kristohanon.
+- `/rosary` — bead-by-bead Rosary in English and Cebuano, with mysteries selected for the current day in Asia/Manila and progress saved locally.
+- `/prayers` — searchable bilingual library of traditional Catholic prayers grouped by purpose.
+- `/about` — long-form first-person testimony from Southern Leyte explaining how financial uncertainty, surrender, Scripture, and unexpected opportunities led to Kristohanon.
 
 ## Capabilities and Constraints
 

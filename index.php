@@ -70,9 +70,9 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
             </a>
             <nav class="site-nav" aria-label="Main navigation">
                 <a class="nav-link is-active" href="/" aria-current="page">Home</a>
-                <a class="nav-link" href="rosary.php">Rosary</a>
-                <a class="nav-link" href="prayers.php">Prayers</a>
-                <a class="nav-link" href="about.php">About</a>
+                <a class="nav-link" href="/rosary">Rosary</a>
+                <a class="nav-link" href="/prayers">Prayers</a>
+                <a class="nav-link" href="/about">About</a>
             </nav>
             <a class="header-guidance" href="#share">Receive guidance</a>
         </header>
@@ -230,7 +230,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                     <h2 id="termName"><?= htmlspecialchars($home['term']['en']['term'], ENT_QUOTES, 'UTF-8') ?></h2>
                     <p id="termDefinition"><?= htmlspecialchars($home['term']['en']['definition'], ENT_QUOTES, 'UTF-8') ?></p>
                     <p class="term-practice" id="termPractice"><strong>Try this:</strong> <?= htmlspecialchars($home['term']['en']['practice'], ENT_QUOTES, 'UTF-8') ?></p>
-                    <a class="text-link term-link" href="prayers.php">Continue learning through prayer <span aria-hidden="true">→</span></a>
+                    <a class="text-link term-link" href="/prayers">Continue learning through prayer <span aria-hidden="true">→</span></a>
                 </article>
                 </div>
             </section>
@@ -238,7 +238,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
             <section class="home-section rhythm-card" aria-labelledby="rhythmTitle">
                 <div><p class="card-kicker">Private on this device</p><h2 id="rhythmTitle">Your quiet rhythm</h2><p id="rhythmMessage">A gentle record of showing up—never a score.</p></div>
                 <div class="rhythm-week" id="rhythmWeek" aria-label="Prayer activity this week"></div>
-                <div class="rhythm-links"><a href="rosary.php">Continue the Rosary <span aria-hidden="true">→</span></a><a href="prayers.php" id="recentPrayerLink">Open the prayer library <span aria-hidden="true">→</span></a></div>
+                <div class="rhythm-links"><a href="/rosary">Continue the Rosary <span aria-hidden="true">→</span></a><a href="/prayers" id="recentPrayerLink">Open the prayer library <span aria-hidden="true">→</span></a></div>
             </section>
 
             <section class="seasonal-card <?= htmlspecialchars($home['seasonal']['tone'], ENT_QUOTES, 'UTF-8') ?>" aria-labelledby="seasonalTitle">
@@ -267,7 +267,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     </aside>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?>, home: <?= $homeJson ?> };</script>
-    <script src="assets/app.js?v=14" defer></script>
+    <script src="assets/app.js?v=15" defer></script>
 </body>
 </html>
 

@@ -34,9 +34,9 @@ $rosaryJson = json_encode(
             </a>
             <nav class="site-nav" aria-label="Main navigation">
                 <a class="nav-link" href="/">Home</a>
-                <a class="nav-link is-active" href="rosary.php" aria-current="page">Rosary</a>
-                <a class="nav-link" href="prayers.php">Prayers</a>
-                <a class="nav-link" href="about.php">About</a>
+                <a class="nav-link is-active" href="/rosary" aria-current="page">Rosary</a>
+                <a class="nav-link" href="/prayers">Prayers</a>
+                <a class="nav-link" href="/about">About</a>
             </nav>
             <a class="header-guidance" href="/#share">Receive guidance</a>
         </header>
