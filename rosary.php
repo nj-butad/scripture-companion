@@ -14,7 +14,7 @@ $rosaryJson = json_encode(
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#f4f0e8">
     <meta name="description" content="Pray the Holy Rosary in English or Cebuano with the mysteries selected for today.">
     <title>Holy Rosary — Kristohanon</title>
@@ -22,7 +22,7 @@ $rosaryJson = json_encode(
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=23">
+    <link rel="stylesheet" href="assets/style.css?v=25">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -101,7 +101,7 @@ $rosaryJson = json_encode(
             <p class="source-note" id="sourceNote">The mystery schedule and English prayer order follow the Holy See and USCCB. Cebuano prayer wording follows the Basilica Minore del Sto. Niño de Cebu.</p>
         </main>
 
-        <footer><span>Made to help people pause, pray, and return to Scripture.</span></footer>
+        <footer><span>Made to help people pause, pray, and return to Scripture.</span><nav class="footer-links" aria-label="Trust and transparency"><a href="/privacy">Privacy</a><a href="/safety">Safety</a><a href="/sources">Sources</a></nav></footer>
     </div>
 
     <script>window.ROSARY_DATA = <?= $rosaryJson ?>;</script>

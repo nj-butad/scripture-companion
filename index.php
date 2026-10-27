@@ -58,7 +58,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=24">
+    <link rel="stylesheet" href="assets/style.css?v=25">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -116,7 +116,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                         <label class="sr-only" for="message">Your message</label>
                         <textarea id="message" name="message" rows="1" maxlength="2000" placeholder="I feel anxious about what comes next…" required></textarea>
                         <div class="composer-footer">
-                            <span class="privacy-note">Private by default</span>
+                            <a class="privacy-note" href="/privacy">Private by default · How it works</a>
                             <button class="send-button" type="submit">
                                 <span>Receive guidance</span>
                                 <span aria-hidden="true">→</span>
@@ -253,6 +253,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
 
         <footer>
             <span>Made to help people pause, pray, and return to Scripture.</span>
+            <nav class="footer-links" aria-label="Trust and transparency"><a href="/privacy">Privacy</a><a href="/safety">Safety</a><a href="/sources">Sources</a></nav>
         </footer>
     </div>
 
@@ -267,7 +268,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     </aside>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?>, home: <?= $homeJson ?> };</script>
-    <script src="assets/app.js?v=15" defer></script>
+    <script src="assets/app.js?v=16" defer></script>
 </body>
 </html>
 

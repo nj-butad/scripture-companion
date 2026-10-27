@@ -360,7 +360,7 @@ form.addEventListener('submit', async (event) => {
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || 'Request failed');
     status.remove();
-    appendResponse(data);
+    appendResponse(data, message);
     if (data.type !== 'urgent') {
       history.push({
         user: message,
@@ -433,7 +433,7 @@ function appendStatus(message) {
   return status;
 }
 
-function appendResponse(data) {
+function appendResponse(data, userMessage) {
   const article = document.createElement('article');
   article.className = `guide-response${data.type === 'urgent' ? ' urgent-response' : ''}`;
 
@@ -459,9 +459,127 @@ function appendResponse(data) {
 
   if (data.prayer) article.append(labelledSection(copy[language].prayer, data.prayer, 'prayer-block'));
   if (data.next_step) article.append(labelledSection(copy[language].next, data.next_step, 'next-step'));
+  if (data.type !== 'urgent') article.append(createFeedbackControls(data, userMessage));
 
   conversation.append(article);
   article.scrollIntoView({ behavior: reducedMotion() ? 'auto' : 'smooth', block: 'start' });
+}
+
+function createFeedbackControls(data, userMessage) {
+  const region = document.createElement('section');
+  region.className = 'response-feedback';
+  region.setAttribute('aria-label', language === 'ceb' ? 'Feedback sa tubag' : 'Response feedback');
+
+  const prompt = document.createElement('p');
+  prompt.textContent = language === 'ceb' ? 'Nakatabang ba kini?' : 'Was this helpful?';
+  const actions = document.createElement('div');
+  actions.className = 'feedback-actions';
+  const helpful = feedbackButton(language === 'ceb' ? 'Oo' : 'Yes', 'helpful');
+  const notHelpful = feedbackButton(language === 'ceb' ? 'Dili' : 'Not really', 'not_helpful');
+  const report = feedbackButton(language === 'ceb' ? 'I-report' : 'Report an issue', 'report');
+  actions.append(helpful, notHelpful, report);
+
+  const status = document.createElement('p');
+  status.className = 'feedback-status';
+  status.setAttribute('aria-live', 'polite');
+
+  [helpful, notHelpful].forEach((button) => button.addEventListener('click', async () => {
+    setFeedbackBusy(actions, true);
+    const sent = await sendFeedback({ kind: button.dataset.feedback, language, response_type: data.type }, status);
+    setFeedbackBusy(actions, false);
+    if (sent) {
+      helpful.disabled = true;
+      notHelpful.disabled = true;
+    }
+  }));
+
+  const form = document.createElement('form');
+  form.className = 'feedback-report';
+  form.hidden = true;
+  const reportCopy = language === 'ceb' ? {
+    attention: 'Unsay kinahanglan susihon?', choose: 'Pagpili', scripture: 'Sayop nga Kasulatan o reference', prayer: 'Sayop nga pag-ampo', unsafe: 'Dili luwas o makadaot nga giya', irrelevant: 'Dili may kalabotan sa akong mensahe', translation: 'Problema sa hubad', other: 'Laing problema', note: 'Opsyonal nga nota', placeholder: 'Isulti unsay kinahanglan susihon', include: 'Iapil ang akong orihinal nga mensahe niini nga report', privacy: 'Dili iapil ang imong mensahe gawas kon imong tsekan ang kahon. Iapil ang nahimong tubag aron kini masusi.', cancel: 'Kanselahon', send: 'Ipadala ang report',
+  } : {
+    attention: 'What needs attention?', choose: 'Choose one', scripture: 'Incorrect Scripture or reference', prayer: 'Incorrect prayer', unsafe: 'Unsafe or harmful guidance', irrelevant: 'Not relevant to my message', translation: 'Translation problem', other: 'Something else', note: 'Optional note', placeholder: 'Tell us what should be reviewed', include: 'Include my original message in this report', privacy: 'Your message is excluded unless you check the box. The generated answer is included so it can be reviewed.', cancel: 'Cancel', send: 'Send report',
+  };
+  form.innerHTML = `
+    <label>${reportCopy.attention}
+      <select name="reason" required>
+        <option value="">${reportCopy.choose}</option>
+        <option value="incorrect_scripture">${reportCopy.scripture}</option>
+        <option value="incorrect_prayer">${reportCopy.prayer}</option>
+        <option value="unsafe">${reportCopy.unsafe}</option>
+        <option value="irrelevant">${reportCopy.irrelevant}</option>
+        <option value="translation">${reportCopy.translation}</option>
+        <option value="other">${reportCopy.other}</option>
+      </select>
+    </label>
+    <label>${reportCopy.note}<textarea name="comment" maxlength="500" rows="3" placeholder="${reportCopy.placeholder}"></textarea></label>
+    <label class="feedback-consent"><input type="checkbox" name="include_message"> ${reportCopy.include}</label>
+    <p>${reportCopy.privacy}</p>
+    <div><button class="secondary-button" type="button" data-cancel-report>${reportCopy.cancel}</button><button class="compact-primary" type="submit">${reportCopy.send}</button></div>`;
+
+  report.addEventListener('click', () => {
+    form.hidden = !form.hidden;
+    if (!form.hidden) form.querySelector('select').focus();
+  });
+  form.querySelector('[data-cancel-report]').addEventListener('click', () => {
+    form.hidden = true;
+    report.focus();
+  });
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const fields = new FormData(form);
+    const submit = form.querySelector('[type="submit"]');
+    submit.disabled = true;
+    const result = await sendFeedback({
+      kind: 'report',
+      reason: fields.get('reason'),
+      comment: fields.get('comment'),
+      include_message: fields.get('include_message') === 'on',
+      user_message: fields.get('include_message') === 'on' ? userMessage : '',
+      assistant_response: [data.message, data.prayer, data.next_step].filter(Boolean).join('\n\n'),
+      language,
+      response_type: data.type,
+    }, status);
+    submit.disabled = false;
+    if (result) form.hidden = true;
+  });
+
+  region.append(prompt, actions, form, status);
+  return region;
+}
+
+function feedbackButton(label, kind) {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'feedback-button';
+  button.dataset.feedback = kind;
+  button.textContent = label;
+  return button;
+}
+
+function setFeedbackBusy(container, busy) {
+  container.querySelectorAll('button').forEach((button) => { button.disabled = busy; });
+}
+
+async function sendFeedback(payload, status) {
+  status.classList.remove('is-error');
+  status.textContent = language === 'ceb' ? 'Gipadala…' : 'Sending…';
+  try {
+    const response = await fetch('/api/feedback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...payload, csrf: window.STILL_WATERS.csrf }),
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || 'Feedback could not be sent.');
+    status.textContent = language === 'ceb' ? 'Salamat. Nadawat ang imong feedback.' : data.message;
+    return true;
+  } catch (error) {
+    status.textContent = error.message || 'Feedback could not be sent. Please try again.';
+    status.classList.add('is-error');
+    return false;
+  }
 }
 
 function labelledSection(label, text, className) {

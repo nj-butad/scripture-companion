@@ -11,6 +11,13 @@ the creator testimony, translation and privacy details, and site guidance
 before asking the model to compose an answer. When the model is unavailable,
 the retrieved local content remains available as a fallback.
 
+Each generated response can be rated or reported. Ratings do not contain the
+visitor's message or the generated answer. Reports include the generated answer
+for review, while the original visitor message is attached only with explicit
+checkbox consent. Feedback is written to the non-public, ignored
+`storage/feedback.ndjson` file. Plain-language privacy, safety, and source
+information is available at `/privacy`, `/safety`, and `/sources`.
+
 The reviewed library contains 98 English and Cebuano selections covering a
 wide range of pastoral intentions. Matching happens locally first; the model
 then chooses the most relevant one or two candidates and avoids recently shown

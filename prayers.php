@@ -7,7 +7,7 @@ $prayersJson = json_encode($prayers, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#f4f0e8">
     <meta name="description" content="A searchable collection of essential Catholic prayers in English and Cebuano.">
     <title>Catholic Prayers — Kristohanon</title>
@@ -15,7 +15,7 @@ $prayersJson = json_encode($prayers, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=23">
+    <link rel="stylesheet" href="assets/style.css?v=25">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -49,7 +49,7 @@ $prayersJson = json_encode($prayers, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
             <p class="empty-library" id="emptyLibrary" hidden>No prayers match that search. Try a simpler word such as “protection,” “Mary,” or “forgiveness.”</p>
             <p class="source-note">Traditional English texts follow the USCCB’s collection of basic Catholic prayers. Verified Cebuano Rosary and Angelus wording follows the Basilica Minore del Sto. Niño de Cebu; other Cebuano texts are provided as devotional translations.</p>
         </main>
-        <footer><span>Made to help people pause, pray, and return to Scripture.</span></footer>
+        <footer><span>Made to help people pause, pray, and return to Scripture.</span><nav class="footer-links" aria-label="Trust and transparency"><a href="/privacy">Privacy</a><a href="/safety">Safety</a><a href="/sources">Sources</a></nav></footer>
     </div>
     <script>window.PRAYERS_DATA = <?= $prayersJson ?>;</script>
     <script src="assets/prayers.js?v=2" defer></script>
