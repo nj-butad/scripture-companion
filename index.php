@@ -80,6 +80,7 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
         <p class="eyebrow">About this companion</p>
         <h2>Scripture first, technology second.</h2>
         <p>Still Waters retrieves reviewed passages before composing a reflection. Scripture text is displayed from a verified source rather than generated from memory.</p>
+        <p>This is a Christ-centered reflection tool, not Jesus himself and not a source of divine revelation. It is designed to help you pray, listen, and return to the words and witness of Scripture.</p>
         <h3>Translations</h3>
         <p>English passages use the public-domain Douay-Rheims 1899. Cebuano passages use Biblica® Open Ang Pulong sa Dios™ 2024 under CC BY-SA 4.0.</p>
         <p class="license-copy">Biblica® Open Ang Pulong sa Dios™ · Katungod sa pagmantala © 2009, 2010, 2014, 2024 Biblica, Inc. · Biblica® Open Cebuano Contemporary Bible™ · Copyright © 2009, 2010, 2014, 2024 by Biblica, Inc. · Used with permission. The original Work is available for free at biblica.com and open.bible.</p>
@@ -87,7 +88,7 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
     </dialog>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>" };</script>
-    <script src="assets/app.js?v=2" defer></script>
+    <script src="assets/app.js?v=3" defer></script>
 </body>
 </html>
 

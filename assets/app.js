@@ -74,6 +74,7 @@ form.addEventListener('submit', async (event) => {
       history.push({
         user: message,
         assistant: [data.message, data.prayer, data.next_step].filter(Boolean).join(' '),
+        passage_ids: (data.passages || []).map((passage) => passage.id).slice(0, 2),
       });
       if (history.length > 3) history.shift();
     }

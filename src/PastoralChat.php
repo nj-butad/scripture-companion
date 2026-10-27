@@ -25,7 +25,14 @@ final class PastoralChat
             ];
         }
 
-        $passages = $this->scripture->find($message, $language);
+        $excludedIds = [];
+        foreach ($history as $turn) {
+            foreach ($turn['passage_ids'] ?? [] as $id) {
+                $excludedIds[] = (string) $id;
+            }
+        }
+
+        $passages = $this->scripture->find($message, $language, array_values(array_unique($excludedIds)));
         $allowedIds = array_column($passages, 'id');
 
         try {

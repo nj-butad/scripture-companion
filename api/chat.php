@@ -44,6 +44,10 @@ $history = array_slice(array_values(array_filter(array_map(
         return [
             'user' => mb_substr($user, 0, 800),
             'assistant' => mb_substr($assistant, 0, 1200),
+            'passage_ids' => array_slice(array_values(array_filter(
+                array_map('strval', is_array($turn['passage_ids'] ?? null) ? $turn['passage_ids'] : []),
+                static fn (string $id): bool => preg_match('/^[a-z0-9-]{1,80}$/', $id) === 1
+            )), 0, 2),
         ];
     }, $history))), -3);
 

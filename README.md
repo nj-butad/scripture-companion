@@ -5,6 +5,11 @@ vanilla JavaScript. It retrieves reviewed Bible passages before asking AI to
 compose a short reflection, so Scripture quotations are never generated from
 model memory.
 
+The reviewed library contains 98 English and Cebuano selections covering a
+wide range of pastoral intentions. Matching happens locally first; the model
+then chooses the most relevant one or two candidates and avoids recently shown
+passages when a good alternative exists.
+
 ## Requirements
 
 - PHP 8.1+
@@ -50,6 +55,12 @@ Hostinger watches `main` and deploys each successful push automatically.
 The Cebuano text must retain its attribution and share-alike notice. The app
 displays the translation beside every Cebuano passage and links to the complete
 notice in the About panel.
+
+The checked-in passage library is generated from the official USFM downloads:
+
+```bash
+php scripts/build-scripture-library.php path/to/engDRA path/to/cebocb data/passages.php
+```
 
 ## Safety
 
