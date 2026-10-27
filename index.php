@@ -34,7 +34,7 @@ $dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_S
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=5">
+    <link rel="stylesheet" href="assets/style.css?v=6">
 </head>
 <body>
     <div class="page-shell">
@@ -46,6 +46,7 @@ $dailyJson = json_encode($dailyVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_S
             <nav class="site-nav" aria-label="Main navigation">
                 <a class="nav-link is-active" href="/" aria-current="page">Home</a>
                 <a class="nav-link" href="rosary.php">Rosary</a>
+                <a class="nav-link" href="prayers.php">Prayers</a>
                 <button class="quiet-button nav-link" id="aboutButton" type="button" aria-haspopup="dialog">About</button>
             </nav>
         </header>

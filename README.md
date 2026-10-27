@@ -15,6 +15,10 @@ and Cebuano. It selects the traditional mystery set for the current day in the
 Asia/Manila timezone, allows another set to be chosen, and remembers progress
 locally in the browser for that day.
 
+The `/prayers.php` page is a searchable, bilingual library of traditional
+Catholic prayers. It groups prayers by purpose and includes essential, Marian,
+protection, daily, Holy Spirit, and prayers for the departed.
+
 ## Requirements
 
 - PHP 8.1+
