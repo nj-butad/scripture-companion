@@ -15,7 +15,7 @@ final class PastoralChat
     ) {
     }
 
-    public function respond(string $message, string $language): array
+    public function respond(string $message, string $language, array $history = []): array
     {
         if ($this->safety->needsUrgentResponse($message)) {
             return [
@@ -29,7 +29,7 @@ final class PastoralChat
         $allowedIds = array_column($passages, 'id');
 
         try {
-            $response = $this->openAI->reflect($message, $language, $passages);
+            $response = $this->openAI->reflect($message, $language, $passages, $history);
             $selectedIds = array_values(array_intersect($allowedIds, $response['passage_ids'] ?? []));
             $selected = array_values(array_filter(
                 $passages,

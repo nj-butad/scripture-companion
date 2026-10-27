@@ -4,6 +4,7 @@ const conversation = document.querySelector('#conversation');
 const languageButtons = [...document.querySelectorAll('[data-language]')];
 const aboutDialog = document.querySelector('#aboutDialog');
 let language = 'en';
+const history = [];
 
 const copy = {
   en: {
@@ -58,12 +59,24 @@ form.addEventListener('submit', async (event) => {
     const response = await fetch('api/chat.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message, language, csrf: window.STILL_WATERS.csrf }),
+      body: JSON.stringify({
+        message,
+        language,
+        history: history.slice(-3),
+        csrf: window.STILL_WATERS.csrf,
+      }),
     });
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || 'Request failed');
     status.remove();
     appendResponse(data);
+    if (data.type !== 'urgent') {
+      history.push({
+        user: message,
+        assistant: [data.message, data.prayer, data.next_step].filter(Boolean).join(' '),
+      });
+      if (history.length > 3) history.shift();
+    }
   } catch (error) {
     status.textContent = error.message || copy[language].error;
     status.classList.add('is-error');

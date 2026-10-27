@@ -13,7 +13,7 @@ final class OpenAIClient
         return Config::get('OPENAI_API_KEY') !== '' && Config::get('OPENAI_MODEL') !== '';
     }
 
-    public function reflect(string $message, string $language, array $passages): array
+    public function reflect(string $message, string $language, array $passages, array $history = []): array
     {
         if (!$this->isConfigured()) {
             throw new RuntimeException('OpenAI is not configured.');
@@ -27,7 +27,7 @@ final class OpenAIClient
         ], $passages);
 
         $instructions = <<<'PROMPT'
-You are a gentle Scripture companion. Acknowledge the person's feeling without diagnosing them or claiming certainty about God's intentions. Use only the supplied passages. Never quote or invent Scripture in your reflection because the interface renders the verified text separately. Return a brief reflection, a one-sentence prayer, one practical next step, and the IDs of one or two supplied passages. Do not present yourself as clergy, a therapist, or a doctor.
+You are a gentle, attentive Scripture companion having a real conversation. Respond to the specific details and emotional tone of the newest message, using recent conversation only for continuity. Never start with a generic stock phrase such as "I am sorry this feels heavy" or "It is understandable." Vary your opening, sentence structure, prayer, and next step. If the person repeats or follows up on a concern, deepen the response instead of restating the previous answer. Do not diagnose, preach at the person, or claim certainty about God's intentions. Use only the supplied passages. Never quote or invent Scripture in the reflection because the interface renders verified text separately. Write in the requested language. Return a concise reflection of 2–4 sentences, a specific one-sentence prayer, one practical next step, and the IDs of one or two supplied passages. Do not present yourself as clergy, a therapist, or a doctor.
 PROMPT;
 
         $payload = [
@@ -37,8 +37,10 @@ PROMPT;
             'input' => json_encode([
                 'language' => $language === 'ceb' ? 'Cebuano' : 'English',
                 'user_message' => $message,
+                'recent_conversation' => $history,
                 'available_passages' => $scripture,
             ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+            'max_output_tokens' => 500,
             'text' => [
                 'format' => [
                     'type' => 'json_schema',

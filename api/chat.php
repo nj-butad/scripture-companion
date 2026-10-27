@@ -19,6 +19,7 @@ $payload = json_decode(file_get_contents('php://input') ?: '{}', true);
 $message = trim((string) ($payload['message'] ?? ''));
 $language = ($payload['language'] ?? 'en') === 'ceb' ? 'ceb' : 'en';
 $csrf = (string) ($payload['csrf'] ?? '');
+$history = is_array($payload['history'] ?? null) ? $payload['history'] : [];
 
 if (!hash_equals($_SESSION['csrf'] ?? '', $csrf)) {
     jsonResponse(['error' => 'Your session expired. Refresh the page and try again.'], 419);
@@ -27,6 +28,24 @@ if (!hash_equals($_SESSION['csrf'] ?? '', $csrf)) {
 if ($message === '' || mb_strlen($message) > 2000) {
     jsonResponse(['error' => 'Please enter a message between 1 and 2,000 characters.'], 422);
 }
+
+$history = array_slice(array_values(array_filter(array_map(
+    static function (mixed $turn): ?array {
+        if (!is_array($turn)) {
+            return null;
+        }
+
+        $user = trim((string) ($turn['user'] ?? ''));
+        $assistant = trim((string) ($turn['assistant'] ?? ''));
+        if ($user === '' || $assistant === '') {
+            return null;
+        }
+
+        return [
+            'user' => mb_substr($user, 0, 800),
+            'assistant' => mb_substr($assistant, 0, 1200),
+        ];
+    }, $history))), -3);
 
 $now = time();
 $recent = array_values(array_filter(
@@ -40,5 +59,5 @@ $recent[] = $now;
 $_SESSION['requests'] = $recent;
 
 $chat = new PastoralChat();
-jsonResponse($chat->respond($message, $language));
+jsonResponse($chat->respond($message, $language, $history));
 

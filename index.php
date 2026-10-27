@@ -87,7 +87,7 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
     </dialog>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>" };</script>
-    <script src="assets/app.js" defer></script>
+    <script src="assets/app.js?v=2" defer></script>
 </body>
 </html>
 
