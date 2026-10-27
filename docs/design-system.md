@@ -27,6 +27,11 @@ prayer remain primary; decoration supports orientation and contemplation.
 - Content cards use a one-pixel border, nine-pixel radius, and restrained
   shadow. Do not add a card when a divider and whitespace can express the same
   grouping.
+- Desktop content uses the 1440px page canvas with 1240px feature rails and
+  three-column devotional grids. At narrower widths, columns must collapse
+  without creating horizontal scrolling.
+- The initial Scripture composer must remain compact and visibly editable; it
+  expands its conversation history only after the visitor sends a message.
 - The homepage journey navigation must link directly to Share, Scripture,
   Pray, and Discover and collapse to two columns on narrow screens.
 - Loading enhancements must retain useful fallback content rather than an

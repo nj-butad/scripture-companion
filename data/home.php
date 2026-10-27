@@ -22,6 +22,14 @@ $quizzes = [
     ['question' => ['en' => 'What is the final season of the liturgical year?', 'ceb' => 'Unsa ang katapusang panahon sa liturhikanhong tuig?'], 'options' => [['en' => 'Ordinary Time', 'ceb' => 'Kasagarang Panahon'], ['en' => 'Advent', 'ceb' => 'Adbiyento'], ['en' => 'Easter', 'ceb' => 'Pagkabanhaw']], 'answer' => 0, 'explanation' => ['en' => 'The liturgical year concludes in Ordinary Time with Christ the King, before Advent begins a new year.', 'ceb' => 'Ang liturhikanhong tuig matapos sa Kasagarang Panahon uban kang Cristo nga Hari, sa dili pa magsugod ang bag-ong tuig sa Adbiyento.']],
 ];
 
+$terms = [
+    ['en' => ['term' => 'Lectio Divina', 'definition' => 'A prayerful way of reading Scripture through reading, reflection, response, and rest.', 'practice' => 'Try it with today’s verse.'], 'ceb' => ['term' => 'Lectio Divina', 'definition' => 'Usa ka maampuong pagbasa sa Kasulatan pinaagi sa pagbasa, pamalandong, pagtubag, ug pagpahulay.', 'practice' => 'Sulayi kini sa bersikulo karon.']],
+    ['en' => ['term' => 'Grace', 'definition' => 'God’s free and loving gift that heals us and draws us into his life.', 'practice' => 'Notice one grace you received today.'], 'ceb' => ['term' => 'Grasya', 'definition' => 'Ang gawasnon ug mahigugmaong gasa sa Dios nga nagaayo ug nagdala kanato ngadto sa iyang kinabuhi.', 'practice' => 'Timan-i ang usa ka grasya nga imong nadawat karon.']],
+    ['en' => ['term' => 'Amen', 'definition' => 'A word of faithful trust: truly, I believe, and let it be so.', 'practice' => 'Say your next Amen slowly and deliberately.'], 'ceb' => ['term' => 'Amen', 'definition' => 'Usa ka pulong sa matinumanong pagsalig: tinuod, nagatuo ako, ug matuman unta.', 'practice' => 'Isulti ang sunod nimong Amen sa hinay ug tinuyo.']],
+    ['en' => ['term' => 'Mercy', 'definition' => 'God’s compassionate love meeting us in weakness and restoring what was wounded.', 'practice' => 'Offer mercy to one person today.'], 'ceb' => ['term' => 'Kalooy', 'definition' => 'Ang maloloy-ong gugma sa Dios nga mosugat kanato sa kaluyahon ug moayo sa nasamdan.', 'practice' => 'Ipakita ang kalooy ngadto sa usa ka tawo karon.']],
+    ['en' => ['term' => 'Eucharist', 'definition' => 'The sacrament in which Christ gives us his Body and Blood under bread and wine.', 'practice' => 'Make a brief prayer of thanksgiving.'], 'ceb' => ['term' => 'Eukaristiya', 'definition' => 'Ang sakramento diin gihatag ni Cristo ang iyang Lawas ug Dugo ilalom sa pan ug bino.', 'practice' => 'Pag-ampo og mubo nga pagpasalamat.']],
+];
+
 $hour = (int) $manilaNow->format('G');
 if ($hour < 11) {
     $moment = ['key' => 'morning', 'en' => ['label' => 'Begin the day with God', 'title' => 'Morning Offering', 'text' => 'Jesus, I offer you this day—my work, joys, difficulties, and every person I meet. Lead me in your love. Amen.'], 'ceb' => ['label' => 'Sugdi ang adlaw uban sa Dios', 'title' => 'Halad sa Kabuntagon', 'text' => 'Hesus, ihalad ko kanimo kining adlawa—ang akong buhat, kalipay, kalisod, ug matag tawo nga akong mahimamat. Giyahi ako sa imong gugma. Amen.']];
@@ -41,4 +49,4 @@ $seasonal = match ($month) {
     default => ['tone' => 'green', 'en' => ['eyebrow' => 'Grow in ordinary faithfulness', 'title' => 'Meet God in the day you have', 'text' => 'Holiness often grows quietly—in patience, honest work, forgiveness, and attention to the person before you.', 'action' => 'Choose a prayer'], 'ceb' => ['eyebrow' => 'Tubo sa adlaw-adlaw nga pagkamatinumanon', 'title' => 'Himamata ang Dios niining adlawa', 'text' => 'Ang pagkabalaan kasagarang motubo sa hilom—sa pailob, matinud-anong buhat, kapasayloan, ug pagtagad sa tawo sa imong atubangan.', 'action' => 'Pagpili og pag-ampo'], 'href' => 'prayers.php'],
 };
 
-return ['needs' => $needs, 'quiz' => $quizzes[(int) $manilaNow->format('z') % count($quizzes)], 'moment' => $moment, 'seasonal' => $seasonal];
+return ['needs' => $needs, 'quiz' => $quizzes[(int) $manilaNow->format('z') % count($quizzes)], 'term' => $terms[(int) $manilaNow->format('z') % count($terms)], 'moment' => $moment, 'seasonal' => $seasonal];

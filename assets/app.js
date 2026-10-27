@@ -23,6 +23,8 @@ const lectioProgress = [...document.querySelectorAll('.lectio-progress span')];
 const nextLectio = document.querySelector('#nextLectio');
 const resetLectio = document.querySelector('#resetLectio');
 const markMomentPrayed = document.querySelector('#markMomentPrayed');
+const gratitudeText = document.querySelector('#gratitudeText');
+const offerGratitude = document.querySelector('#offerGratitude');
 let language = 'en';
 let activeVerseIndex = Number(window.STILL_WATERS.todayIndex) || 0;
 let lectioStage = 0;
@@ -45,6 +47,7 @@ const copy = {
     prayer: 'A prayer for this moment',
     next: 'A gentle next step',
     error: 'Something went wrong. Please try again in a moment.',
+    conversation: 'Start a private Scripture conversation',
   },
   ceb: {
     welcome: 'Unsa ang bug-at sa imong kasingkasing karon?',
@@ -54,6 +57,7 @@ const copy = {
     prayer: 'Usa ka pag-ampo alang niining taknaa',
     next: 'Usa ka malumong sunod nga lakang',
     error: 'Adunay problema. Palihog sulayi pag-usab sa makadiyot.',
+    conversation: 'Sugdi ang pribadong panag-istorya bahin sa Kasulatan',
   },
 };
 
@@ -69,6 +73,7 @@ languageButtons.forEach((button) => {
     document.querySelector('#welcomeText').textContent = copy[language].welcome;
     document.querySelector('#welcomeNote').textContent = copy[language].note;
     input.placeholder = copy[language].placeholder;
+    document.querySelector('#composerInvitation strong').textContent = copy[language].conversation;
     renderDailyVerse(activeVerseIndex, false);
     renderHomeLanguage();
     input.focus();
@@ -213,6 +218,23 @@ markMomentPrayed.addEventListener('click', () => {
   markMomentPrayed.innerHTML = `<span aria-hidden="true">✓</span> ${language === 'ceb' ? 'Giampo na' : 'Prayed today'}`;
 });
 
+offerGratitude.addEventListener('click', () => {
+  if (!gratitudeText.value.trim()) {
+    gratitudeText.focus();
+    return;
+  }
+  markPrayerDay();
+  gratitudeText.value = '';
+  offerGratitude.textContent = language === 'ceb' ? 'Gipasalamatan na ✓' : 'Thanks offered ✓';
+  window.setTimeout(() => {
+    offerGratitude.textContent = language === 'ceb' ? 'Ihalad ang pasalamat' : 'Offer thanks';
+  }, 1800);
+});
+
+form.addEventListener('click', (event) => {
+  if (!event.target.closest('button')) input.focus();
+});
+
 function markPrayerDay() {
   const today = window.STILL_WATERS.weekVerses[window.STILL_WATERS.todayIndex].date;
   const rhythm = readStoredJson('still-waters-rhythm-v1', []);
@@ -262,6 +284,16 @@ function renderHomeLanguage() {
   document.querySelector('#seasonalTitle').textContent = seasonal.title;
   document.querySelector('#seasonalText').textContent = seasonal.text;
   document.querySelector('#seasonalAction').firstChild.textContent = `${seasonal.action} `;
+  const term = homeData.term[language];
+  document.querySelector('#termKicker').textContent = language === 'ceb' ? 'Katolikong pulong karon' : 'Catholic word for today';
+  document.querySelector('#termName').textContent = term.term;
+  document.querySelector('#termDefinition').textContent = term.definition;
+  document.querySelector('#termPractice').innerHTML = `<strong>${language === 'ceb' ? 'Sulayi kini:' : 'Try this:'}</strong> ${term.practice}`;
+  document.querySelector('#gratitudeTitle').textContent = language === 'ceb' ? 'Ngalani ang usa ka grasya' : 'Name one grace';
+  document.querySelector('#gratitudeCopy').textContent = language === 'ceb' ? 'Unsang gamay nga gasa, kaayo, o tabang ang imong mapasalamatan sa Dios karon?' : 'What small gift, kindness, or moment of help can you thank God for today?';
+  gratitudeText.placeholder = language === 'ceb' ? 'Karon, mapasalamaton ko sa…' : 'Today, I’m grateful for…';
+  document.querySelector('#gratitudePrivacy').textContent = language === 'ceb' ? 'Magpabilin lamang dinhi' : 'Stays on this screen';
+  offerGratitude.textContent = language === 'ceb' ? 'Ihalad ang pasalamat' : 'Offer thanks';
   renderLectio();
   renderRhythm();
 }
@@ -294,6 +326,7 @@ form.addEventListener('submit', async (event) => {
   const message = input.value.trim();
   if (!message) return;
 
+  companion.classList.add('has-conversation');
   appendUserMessage(message);
   input.value = '';
   input.disabled = true;

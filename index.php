@@ -57,7 +57,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=12">
+    <link rel="stylesheet" href="assets/style.css?v=13">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -110,8 +110,9 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                     </div>
 
                     <form class="composer" id="chatForm">
+                        <div class="composer-invitation" id="composerInvitation"><span aria-hidden="true">✦</span><strong>Start a private Scripture conversation</strong></div>
                         <label class="sr-only" for="message">Your message</label>
-                        <textarea id="message" name="message" rows="2" maxlength="2000" placeholder="I feel anxious about what comes next…" required></textarea>
+                        <textarea id="message" name="message" rows="1" maxlength="2000" placeholder="I feel anxious about what comes next…" required></textarea>
                         <div class="composer-footer">
                             <span class="privacy-note">Private by default</span>
                             <button class="send-button" type="submit">
@@ -170,6 +171,15 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                         <p class="moment-prayer" id="momentText"><?= htmlspecialchars($home['moment']['en']['text'], ENT_QUOTES, 'UTF-8') ?></p>
                         <button class="mark-prayed" id="markMomentPrayed" type="button"><span aria-hidden="true">○</span> Mark as prayed</button>
                     </article>
+
+                    <article class="practice-card gratitude-card" id="gratitudeCard">
+                        <p class="card-kicker">1-minute practice</p>
+                        <h3 id="gratitudeTitle">Name one grace</h3>
+                        <p class="gratitude-copy" id="gratitudeCopy">What small gift, kindness, or moment of help can you thank God for today?</p>
+                        <label class="sr-only" for="gratitudeText">A grace I noticed today</label>
+                        <textarea id="gratitudeText" rows="3" maxlength="400" placeholder="Today, I’m grateful for…"></textarea>
+                        <div class="card-actions"><span class="private-microcopy" id="gratitudePrivacy">Stays on this screen</span><button class="compact-primary" id="offerGratitude" type="button">Offer thanks</button></div>
+                    </article>
                 </div>
             </section>
 
@@ -212,6 +222,13 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                         <?php endforeach; ?>
                     </div>
                     <p class="quiz-feedback" id="quizFeedback" aria-live="polite" hidden></p>
+                </article>
+                <article class="discovery-card term-card" id="termCard">
+                    <p class="card-kicker" id="termKicker">Catholic word for today</p>
+                    <h2 id="termName"><?= htmlspecialchars($home['term']['en']['term'], ENT_QUOTES, 'UTF-8') ?></h2>
+                    <p id="termDefinition"><?= htmlspecialchars($home['term']['en']['definition'], ENT_QUOTES, 'UTF-8') ?></p>
+                    <p class="term-practice" id="termPractice"><strong>Try this:</strong> <?= htmlspecialchars($home['term']['en']['practice'], ENT_QUOTES, 'UTF-8') ?></p>
+                    <a class="text-link term-link" href="prayers.php">Continue learning through prayer <span aria-hidden="true">→</span></a>
                 </article>
                 </div>
             </section>
@@ -265,7 +282,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     </dialog>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?>, home: <?= $homeJson ?> };</script>
-    <script src="assets/app.js?v=9" defer></script>
+    <script src="assets/app.js?v=10" defer></script>
 </body>
 </html>
 
