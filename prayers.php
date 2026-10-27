@@ -13,10 +13,11 @@ $prayersJson = json_encode($prayers, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
     <title>Catholic Prayers — Still Waters</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=6">
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css?v=12">
 </head>
 <body>
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
     <div class="page-shell">
         <header class="site-header">
             <a class="brand" href="/" aria-label="Still Waters home"><span class="brand-mark" aria-hidden="true">✦</span><span>Still Waters</span></a>
@@ -26,7 +27,7 @@ $prayersJson = json_encode($prayers, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
                 <a class="nav-link is-active" href="prayers.php" aria-current="page">Prayers</a>
             </nav>
         </header>
-        <main class="prayers-main">
+        <main class="prayers-main" id="mainContent">
             <section class="prayers-hero" aria-labelledby="prayersTitle">
                 <p class="eyebrow">Words the Church has carried for generations</p>
                 <h1 id="prayersTitle">Prayers to keep close</h1>

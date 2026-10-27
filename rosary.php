@@ -20,10 +20,11 @@ $rosaryJson = json_encode(
     <title>Holy Rosary — Still Waters</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=6">
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css?v=12">
 </head>
 <body>
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
     <div class="page-shell">
         <header class="site-header">
             <a class="brand" href="/" aria-label="Still Waters home">
@@ -37,7 +38,7 @@ $rosaryJson = json_encode(
             </nav>
         </header>
 
-        <main class="rosary-main">
+        <main class="rosary-main" id="mainContent">
             <section class="rosary-hero" aria-labelledby="rosaryTitle">
                 <p class="eyebrow" id="rosaryEyebrow">A guided prayer, one bead at a time</p>
                 <h1 id="rosaryTitle">The Holy Rosary</h1>

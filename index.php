@@ -56,10 +56,11 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=11">
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css?v=12">
 </head>
 <body>
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
     <div class="page-shell">
         <header class="site-header">
             <a class="brand" href="/" aria-label="Still Waters home">
@@ -74,7 +75,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
             </nav>
         </header>
 
-        <main>
+        <main id="mainContent">
             <section class="intro" aria-labelledby="pageTitle">
                 <div class="intro-copy">
                     <p class="eyebrow">A quiet place to bring what you carry</p>
@@ -83,7 +84,14 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                 </div>
             </section>
 
-            <div class="companion-home" id="companionHome">
+            <nav class="journey-nav" aria-label="Explore today’s page">
+                <a href="#share"><span>01</span> Share</a>
+                <a href="#verseToday"><span>02</span> Scripture</a>
+                <a href="#prayToday"><span>03</span> Pray</a>
+                <a href="#discoverToday"><span>04</span> Discover</a>
+            </nav>
+
+            <div class="companion-home" id="share">
                 <section class="companion" id="scriptureCompanion" aria-label="Scripture companion">
                     <div class="companion-topbar">
                         <div class="language-switch" role="group" aria-label="Conversation language">
@@ -115,7 +123,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                 </section>
             </div>
 
-            <section class="daily-reading" aria-labelledby="dailyTitle">
+            <section class="daily-reading" id="verseToday" aria-labelledby="dailyTitle">
                 <div class="week-picker" id="weekPicker" role="tablist" aria-label="Verses for this week">
                     <?php foreach ($weekVerses as $index => $day): ?>
                         <button type="button" role="tab" class="week-day<?= $day['is_today'] ? ' is-active' : '' ?>" data-verse-day="<?= $index ?>" aria-selected="<?= $day['is_today'] ? 'true' : 'false' ?>">
@@ -139,7 +147,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                 </div>
             </section>
 
-            <section class="home-section" aria-labelledby="prayTodayTitle">
+            <section class="home-section" id="prayToday" aria-labelledby="prayTodayTitle">
                 <div class="section-heading">
                     <p class="eyebrow">A small rhythm for today</p>
                     <h2 id="prayTodayTitle">Pause, listen, and respond</h2>
@@ -177,7 +185,12 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                 </div>
             </section>
 
-            <section class="home-section discovery-grid" aria-label="Daily Catholic discovery">
+            <section class="home-section" id="discoverToday" aria-labelledby="discoverTitle">
+                <div class="section-heading editorial-heading">
+                    <p class="eyebrow">Learn and remember</p>
+                    <h2 id="discoverTitle">A little more for the journey</h2>
+                </div>
+                <div class="discovery-grid">
                 <article class="discovery-card saint-card" id="saintCard">
                     <img class="saint-art" src="assets/images/church-calendar.webp" alt="Sunlight through a stained-glass church window" loading="lazy" width="720" height="1080">
                     <div class="saint-content">
@@ -200,6 +213,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                     </div>
                     <p class="quiz-feedback" id="quizFeedback" aria-live="polite" hidden></p>
                 </article>
+                </div>
             </section>
 
             <section class="home-section rhythm-card" aria-labelledby="rhythmTitle">
@@ -251,7 +265,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     </dialog>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?>, home: <?= $homeJson ?> };</script>
-    <script src="assets/app.js?v=8" defer></script>
+    <script src="assets/app.js?v=9" defer></script>
 </body>
 </html>
 

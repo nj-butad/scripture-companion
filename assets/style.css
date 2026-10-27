@@ -9,14 +9,25 @@
   --paper: #fffdfa;
   --line: rgba(96, 70, 62, 0.17);
   --danger: #8b3d35;
+  --success: #435837;
+  --surface: #fffdfa;
+  --surface-muted: #f7f1ea;
   --shadow: 0 18px 60px rgba(70, 51, 44, 0.09);
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --focus-ring: 0 0 0 3px #f6f1e9, 0 0 0 6px rgba(130, 52, 49, 0.78);
 }
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
 
-html { min-height: 100%; background: var(--cream); }
+html { min-height: 100%; overflow-x: clip; background: var(--cream); }
 
 body {
   margin: 0;
@@ -28,11 +39,17 @@ body {
     repeating-linear-gradient(115deg, transparent 0 58px, rgba(126, 113, 91, 0.035) 59px 60px),
     linear-gradient(160deg, #f6f2ea 0%, #ebe6dc 100%);
   font-family: "Source Sans 3", system-ui, sans-serif;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
 button, textarea { font: inherit; }
 button { color: inherit; }
+a { text-underline-offset: 3px; }
+.skip-link { position: fixed; top: 10px; left: 10px; z-index: 100; padding: 10px 14px; border-radius: 6px; color: white; background: var(--burgundy-dark); transform: translateY(-150%); transition: transform 160ms var(--ease-out); }
+.skip-link:focus { transform: translateY(0); }
+:where(a, button, textarea, input, summary):focus-visible { outline: 0; box-shadow: var(--focus-ring); }
+:where(#share, #verseToday, #prayToday, #discoverToday) { scroll-margin-top: 24px; }
 
 .page-shell {
   width: min(100% - 32px, 960px);
@@ -56,7 +73,7 @@ button { color: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: "Libre Baskerville", Georgia, serif;
+  font-family: "Gelasio", Georgia, serif;
   font-size: 1.16rem;
   font-weight: 700;
   letter-spacing: 0.015em;
@@ -66,6 +83,7 @@ button { color: inherit; }
 
 .site-nav { display: flex; align-items: center; gap: 6px; }
 .nav-link {
+  min-height: 44px;
   border: 0;
   border-radius: 999px;
   padding: 8px 11px;
@@ -108,9 +126,14 @@ main { flex: 1; padding: 68px 0 50px; }
   box-shadow: 0 22px 70px rgba(70, 51, 44, 0.12);
   text-align: left;
 }
-.intro-copy { width: min(100%, 700px); margin-right: auto; }
+.intro-copy { width: min(100%, 700px); min-width: 0; margin-right: auto; }
 .intro h1 { margin-inline: 0; max-width: 680px; }
 .intro .lede { margin-inline: 0; max-width: 560px; }
+.journey-nav { width: 100%; max-width: 820px; min-width: 0; margin: 0 auto var(--space-4); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--line); }
+.journey-nav a { min-height: 56px; padding: 10px 14px; display: flex; align-items: center; justify-content: center; gap: 9px; border-right: 1px solid var(--line); color: var(--ink-soft); text-decoration: none; font-weight: 600; transition: color 160ms var(--ease-out), background-color 160ms var(--ease-out), transform 140ms var(--ease-out); }
+.journey-nav a:last-child { border-right: 0; }
+.journey-nav a:active { transform: scale(0.98); }
+.journey-nav span { color: var(--burgundy); font-family: "Gelasio", Georgia, serif; font-size: 0.76rem; }
 .eyebrow {
   margin: 0 0 14px;
   color: var(--burgundy);
@@ -120,7 +143,7 @@ main { flex: 1; padding: 68px 0 50px; }
   text-transform: uppercase;
 }
 
-h1, h2, h3 { font-family: "Libre Baskerville", Georgia, serif; }
+h1, h2, h3 { font-family: "Gelasio", Georgia, serif; }
 h1 {
   margin: 0 auto;
   max-width: 760px;
@@ -150,7 +173,7 @@ h1 {
 .week-day { min-width: 0; min-height: 72px; border: 0; border-right: 1px solid var(--line); padding: 10px 5px 8px; display: grid; place-content: center; gap: 2px; color: var(--ink-soft); background: transparent; cursor: pointer; transition: color 160ms var(--ease-out), background-color 160ms var(--ease-out), transform 140ms var(--ease-out); }
 .week-day:last-child { border-right: 0; }
 .week-day span { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; }
-.week-day strong { font-family: "Libre Baskerville", Georgia, serif; font-size: 1rem; font-weight: 400; }
+.week-day strong { font-family: "Gelasio", Georgia, serif; font-size: 1rem; font-weight: 400; }
 .week-day em { color: var(--burgundy); font-size: 0.58rem; font-style: normal; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
 .week-day.is-active { color: var(--burgundy-dark); background: var(--rose-wash); }
 .week-day:active { transform: scale(0.97); }
@@ -164,7 +187,7 @@ h1 {
   border-radius: 4px;
   color: white;
   background: var(--burgundy);
-  font-family: "Libre Baskerville", Georgia, serif;
+  font-family: "Gelasio", Georgia, serif;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -174,25 +197,26 @@ h1 {
 .daily-reading blockquote {
   margin: 0;
   color: var(--ink);
-  font-family: "Libre Baskerville", Georgia, serif;
+  font-family: "Gelasio", Georgia, serif;
   font-size: clamp(1.25rem, 2.8vw, 1.75rem);
   line-height: 1.7;
   text-wrap: balance;
 }
-.daily-reference { margin: 22px 0 4px; color: var(--burgundy); font-family: "Libre Baskerville", Georgia, serif; font-weight: 700; }
+.daily-reference { margin: 22px 0 4px; color: var(--burgundy); font-family: "Gelasio", Georgia, serif; font-weight: 600; }
 .daily-translation { margin: 0; color: var(--ink-soft); font-size: 0.72rem; }
 .daily-slider-actions { margin: 12px auto 0; display: flex; align-items: center; justify-content: center; gap: 18px; }
-.daily-slider-actions button { width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 50%; color: var(--burgundy); background: var(--paper); cursor: pointer; transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out), transform 140ms var(--ease-out); }
+.daily-slider-actions button { width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; color: var(--burgundy); background: var(--paper); cursor: pointer; transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out), transform 140ms var(--ease-out); }
 .daily-slider-actions button:active { transform: scale(0.94); }
 .daily-slider-actions span { min-width: 42px; color: var(--ink-soft); font-size: 0.72rem; }
 
 .home-section { max-width: 820px; margin: 72px auto 0; }
-.section-heading { max-width: 620px; margin: 0 auto 28px; text-align: center; }
+.section-heading { max-width: 620px; margin: 0 auto var(--space-4); text-align: center; }
 .section-heading h2 { margin: 0; font-size: clamp(1.65rem, 4vw, 2.35rem); font-weight: 400; }
 .section-heading > p:last-child { margin: 10px auto 0; color: var(--ink-soft); line-height: 1.6; }
 .section-heading .eyebrow { margin-bottom: 10px; }
+.section-heading::after { content: ""; width: 40px; height: 1px; margin: 20px auto 0; display: block; background: var(--burgundy); opacity: 0.55; }
 .practice-grid, .discovery-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-.practice-card, .discovery-card, .rhythm-card { border: 1px solid var(--line); border-radius: 14px; background: rgba(255, 253, 250, 0.94); box-shadow: 0 12px 42px rgba(70, 51, 44, 0.06); }
+.practice-card, .discovery-card, .rhythm-card { border: 1px solid var(--line); border-radius: 9px; background: rgba(255, 253, 250, 0.94); box-shadow: 0 10px 32px rgba(70, 51, 44, 0.045); }
 .practice-card, .discovery-card { min-height: 350px; padding: clamp(24px, 4vw, 34px); }
 .card-heading-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
 .card-kicker { margin: 0 0 8px; color: var(--burgundy); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; }
@@ -206,17 +230,17 @@ h1 {
 .lectio-content { flex: 1; }
 .lectio-step { margin: 0 0 8px; color: var(--burgundy); font-weight: 600; }
 .lectio-instruction { margin: 0; color: var(--ink-soft); line-height: 1.6; }
-.lectio-content blockquote { max-height: 142px; overflow-y: auto; margin: 16px 0 0; padding-left: 15px; border-left: 2px solid var(--rose-wash); font-family: "Libre Baskerville", Georgia, serif; font-size: 0.96rem; line-height: 1.7; }
+.lectio-content blockquote { max-height: 142px; overflow-y: auto; margin: 16px 0 0; padding-left: 16px; border-left: 2px solid var(--rose-wash); font-family: "Gelasio", Georgia, serif; font-size: 1rem; line-height: 1.7; }
 .lectio-content textarea { width: 100%; min-height: 94px; margin-top: 16px; resize: vertical; border: 1px solid var(--line); border-radius: 9px; padding: 12px; outline: none; color: var(--ink); background: #fffdfa; transition: border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out); }
 .lectio-content textarea:focus { border-color: rgba(168, 70, 67, 0.5); box-shadow: 0 0 0 3px rgba(168, 70, 67, 0.08); }
 .card-actions { min-height: 39px; margin-top: 24px; display: flex; align-items: center; justify-content: flex-end; gap: 12px; }
-.compact-primary, .seasonal-action { border: 0; border-radius: 999px; padding: 10px 15px; color: white; background: var(--burgundy); cursor: pointer; text-decoration: none; font-weight: 600; transition: background-color 180ms var(--ease-out), transform 140ms var(--ease-out); }
+.compact-primary, .seasonal-action { min-height: 44px; border: 0; border-radius: 999px; padding: 10px 16px; color: white; background: var(--burgundy); cursor: pointer; text-decoration: none; font-weight: 600; transition: background-color 180ms var(--ease-out), transform 140ms var(--ease-out); }
 .compact-primary:active, .seasonal-action:active { transform: scale(0.97); }
-.text-button { border: 0; padding: 8px; color: var(--ink-soft); background: transparent; cursor: pointer; }
+.text-button { min-height: 44px; border: 0; padding: 8px 10px; color: var(--ink-soft); background: transparent; cursor: pointer; }
 .moment-card { position: relative; overflow: hidden; display: flex; flex-direction: column; }
 .moment-card::after { content: "✦"; position: absolute; right: 23px; bottom: 13px; color: rgba(168, 70, 67, 0.08); font-size: 5.2rem; }
-.moment-prayer { flex: 1; margin: 24px 0; font-family: "Libre Baskerville", Georgia, serif; font-size: 1.02rem; line-height: 1.75; }
-.mark-prayed { width: fit-content; z-index: 1; border: 1px solid var(--line); border-radius: 999px; padding: 9px 13px; color: var(--burgundy); background: var(--paper); cursor: pointer; font-weight: 600; transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out), background-color 160ms var(--ease-out), transform 140ms var(--ease-out); }
+.moment-prayer { flex: 1; margin: 24px 0; font-family: "Gelasio", Georgia, serif; font-size: 1.05rem; line-height: 1.75; }
+.mark-prayed { width: fit-content; min-height: 44px; z-index: 1; border: 1px solid var(--line); border-radius: 999px; padding: 9px 14px; color: var(--burgundy); background: var(--paper); cursor: pointer; font-weight: 600; transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out), background-color 160ms var(--ease-out), transform 140ms var(--ease-out); }
 .mark-prayed:active { transform: scale(0.97); }
 .mark-prayed.is-complete { border-color: transparent; color: var(--burgundy-dark); background: var(--rose-wash); }
 .need-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
@@ -231,7 +255,7 @@ h1 {
 .saint-content { padding: clamp(24px, 4vw, 34px); }
 .saint-card::after { content: "✧"; position: absolute; right: 23px; top: 20px; color: rgba(168, 70, 67, 0.15); font-size: 2rem; }
 .saint-type { margin: 11px 0 22px; color: var(--burgundy); font-size: 0.77rem; font-weight: 600; }
-.saint-card > p:not(.card-kicker):not(.saint-type):not(.saint-prompt) { color: var(--ink-soft); line-height: 1.65; }
+.saint-content > p:not(.card-kicker):not(.saint-type):not(.saint-prompt) { color: var(--ink-soft); line-height: 1.65; }
 .saint-prompt { margin: 26px 0 0; padding-top: 19px; border-top: 1px solid var(--line); line-height: 1.55; }
 .saint-prompt strong { color: var(--burgundy); }
 .saint-source { display: inline-block; margin-top: 16px; color: var(--ink-soft); font-size: 0.7rem; }
@@ -267,7 +291,7 @@ h1 {
 .companion-home { max-width: 820px; margin-inline: auto; }
 .companion-topbar { min-height: 53px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
 .companion-topbar .language-switch { border-bottom: 0; }
-.widget-close { display: none; width: 38px; height: 38px; margin-right: 8px; border: 0; border-radius: 50%; color: var(--ink-soft); background: transparent; cursor: pointer; font-size: 1.5rem; transition: color 160ms var(--ease-out), background-color 160ms var(--ease-out), transform 140ms var(--ease-out); }
+.widget-close { display: none; width: 44px; height: 44px; margin-right: 8px; border: 0; border-radius: 50%; color: var(--ink-soft); background: transparent; cursor: pointer; font-size: 1.5rem; transition: color 160ms var(--ease-out), background-color 160ms var(--ease-out), transform 140ms var(--ease-out); }
 .widget-close:active { transform: scale(0.94); }
 
 .language-switch {
@@ -278,6 +302,7 @@ h1 {
 }
 
 .language-option {
+  min-height: 44px;
   border: 0;
   border-radius: 999px;
   padding: 8px 13px;
@@ -301,7 +326,7 @@ h1 {
 .welcome-card { max-width: 500px; }
 .welcome-card p:first-of-type {
   margin: 13px 0 7px;
-  font-family: "Libre Baskerville", Georgia, serif;
+  font-family: "Gelasio", Georgia, serif;
   font-size: 1.55rem;
 }
 .welcome-note, .status-message { color: var(--ink-soft); font-size: 0.9rem; }
@@ -338,7 +363,7 @@ h1 {
 }
 .passage-card blockquote {
   margin: 0;
-  font-family: "Libre Baskerville", Georgia, serif;
+  font-family: "Gelasio", Georgia, serif;
   font-size: 1.2rem;
   line-height: 1.7;
 }
@@ -377,6 +402,7 @@ h1 {
 .composer-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .privacy-note { color: var(--ink-soft); font-size: 0.76rem; }
 .send-button {
+  min-height: 44px;
   border: 0;
   border-radius: 999px;
   padding: 11px 16px;
@@ -401,7 +427,7 @@ h1 {
 .chat-widget-launcher:active { transform: scale(0.97); }
 .widget-bubble { position: relative; min-width: 210px; padding: 12px 15px; display: grid; gap: 2px; border: 1px solid rgba(96, 70, 62, 0.25); border-radius: 10px 10px 2px 10px; color: var(--ink); background: rgba(255, 253, 250, 0.97); box-shadow: 0 12px 36px rgba(70, 51, 44, 0.14); text-align: left; }
 .widget-bubble::after { content: ""; position: absolute; right: -7px; bottom: 8px; width: 12px; height: 12px; border-top: 1px solid rgba(96, 70, 62, 0.25); border-right: 1px solid rgba(96, 70, 62, 0.25); background: var(--paper); transform: rotate(45deg); }
-.widget-bubble strong { color: var(--burgundy); font-family: "Libre Baskerville", Georgia, serif; font-size: 0.82rem; font-weight: 400; }
+.widget-bubble strong { color: var(--burgundy); font-family: "Gelasio", Georgia, serif; font-size: 0.82rem; font-weight: 400; }
 .widget-bubble > span { color: var(--ink-soft); font-size: 0.72rem; }
 .widget-mark { width: 58px; height: 58px; display: grid; place-items: center; border: 3px solid rgba(255, 253, 250, 0.92); border-radius: 50% 50% 46% 54%; color: white; background: var(--burgundy); box-shadow: 0 12px 30px rgba(90, 40, 38, 0.24); }
 .rosary-icon { width: 34px; height: 39px; overflow: visible; fill: currentColor; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
@@ -510,20 +536,21 @@ footer {
   border-radius: 50%;
   color: white;
   background: var(--burgundy);
-  font-family: "Libre Baskerville", Georgia, serif;
+  font-family: "Gelasio", Georgia, serif;
 }
-.mystery-context strong { display: block; font-family: "Libre Baskerville", Georgia, serif; font-size: 0.94rem; }
+.mystery-context strong { display: block; font-family: "Gelasio", Georgia, serif; font-size: 0.94rem; }
 .mystery-context div span { display: block; margin-top: 3px; color: var(--ink-soft); font-size: 0.75rem; }
 .prayer-card { max-width: 760px; min-height: 330px; margin: 0 auto; padding: 46px 0 34px; display: flex; flex-direction: column; justify-content: center; text-align: center; }
 .bead-label { min-height: 1.2em; margin: 0 0 10px; color: var(--burgundy); font-size: 0.73rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
 .prayer-card h2 { margin: 0 0 22px; font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 400; }
-.prayer-text { margin: 0; font-family: "Libre Baskerville", Georgia, serif; font-size: clamp(1.05rem, 2.1vw, 1.25rem); line-height: 1.85; }
+.prayer-text { margin: 0; font-family: "Gelasio", Georgia, serif; font-size: clamp(1.05rem, 2.1vw, 1.25rem); line-height: 1.85; }
 .decade-beads { min-height: 28px; display: flex; justify-content: center; align-items: center; gap: clamp(7px, 2vw, 14px); }
 .bead { width: 13px; height: 13px; border: 1px solid #bfaeaa; border-radius: 50%; background: var(--paper); transition: transform 160ms var(--ease-out), background-color 160ms var(--ease-out), border-color 160ms var(--ease-out); }
 .bead.is-complete { border-color: var(--burgundy); background: var(--burgundy); }
 .bead.is-current { border-color: var(--burgundy); background: var(--rose-wash); transform: scale(1.45); }
 .rosary-actions { margin-top: 34px; display: flex; justify-content: space-between; gap: 14px; }
 .secondary-button {
+  min-height: 44px;
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 11px 16px;
@@ -535,13 +562,13 @@ footer {
 }
 .secondary-button:disabled { opacity: 0.35; cursor: default; }
 .secondary-button:active { transform: scale(0.97); }
-.reset-button { display: block; margin: 20px auto 0; border: 0; color: var(--ink-soft); background: transparent; cursor: pointer; font-size: 0.78rem; text-decoration: underline; text-underline-offset: 3px; }
+.reset-button { min-height: 44px; display: block; margin: 20px auto 0; border: 0; color: var(--ink-soft); background: transparent; cursor: pointer; font-size: 0.78rem; text-decoration: underline; text-underline-offset: 3px; }
 .mystery-overview { max-width: 780px; margin: 58px auto 0; }
 .mystery-overview h2 { margin: 0 0 24px; font-size: 1.75rem; font-weight: 400; }
 .mystery-overview ol { margin: 0; padding: 0; list-style: none; counter-reset: mysteries; }
 .mystery-overview li { counter-increment: mysteries; padding: 17px 0; display: grid; grid-template-columns: 32px 1fr auto; align-items: baseline; gap: 10px; border-top: 1px solid var(--line); }
-.mystery-overview li::before { content: counter(mysteries); color: var(--burgundy); font-family: "Libre Baskerville", Georgia, serif; }
-.mystery-overview li strong { font-family: "Libre Baskerville", Georgia, serif; font-size: 0.95rem; }
+.mystery-overview li::before { content: counter(mysteries); color: var(--burgundy); font-family: "Gelasio", Georgia, serif; }
+.mystery-overview li strong { font-family: "Gelasio", Georgia, serif; font-size: 0.95rem; }
 .mystery-overview li span { color: var(--ink-soft); font-size: 0.76rem; }
 .source-note { max-width: 720px; margin: 40px auto 0; color: var(--ink-soft); text-align: center; font-size: 0.74rem; line-height: 1.6; }
 
@@ -554,7 +581,7 @@ footer {
 .prayer-search input { width: 100%; border: 0; outline: 0; color: var(--ink); background: transparent; font: inherit; }
 .prayer-search input::placeholder { color: #968b85; }
 .prayer-categories { margin-top: 16px; display: flex; justify-content: center; flex-wrap: wrap; gap: 7px; }
-.category-chip { border: 1px solid var(--line); border-radius: 999px; padding: 7px 11px; color: var(--ink-soft); background: transparent; cursor: pointer; font-size: 0.78rem; font-weight: 600; transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out), background-color 160ms var(--ease-out), transform 140ms var(--ease-out); }
+.category-chip { min-height: 44px; border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; color: var(--ink-soft); background: transparent; cursor: pointer; font-size: 0.78rem; font-weight: 600; transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out), background-color 160ms var(--ease-out), transform 140ms var(--ease-out); }
 .category-chip.is-active { border-color: transparent; color: var(--burgundy-dark); background: var(--rose-wash); }
 .category-chip:active { transform: scale(0.97); }
 .library-summary { margin: 0 2px 10px; display: flex; align-items: center; justify-content: space-between; color: var(--ink-soft); font-size: 0.8rem; }
@@ -564,12 +591,12 @@ footer {
 .library-card { overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); box-shadow: 0 8px 30px rgba(70, 51, 44, 0.045); }
 .library-card summary { min-height: 92px; padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 18px; cursor: pointer; list-style: none; }
 .library-card summary::-webkit-details-marker { display: none; }
-.library-card-heading strong { display: block; font-family: "Libre Baskerville", Georgia, serif; font-size: 1rem; font-weight: 400; }
+.library-card-heading strong { display: block; font-family: "Gelasio", Georgia, serif; font-size: 1rem; font-weight: 400; }
 .library-card-heading > span { display: block; margin-top: 7px; color: var(--ink-soft); font-size: 0.77rem; line-height: 1.35; }
 .details-icon { width: 28px; height: 28px; flex: 0 0 auto; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--burgundy); font-size: 1.15rem; transition: transform 180ms var(--ease-out), background-color 180ms var(--ease-out); }
 .library-card[open] .details-icon { transform: rotate(45deg); background: var(--rose-wash); }
 .library-card-body { border-top: 1px solid var(--line); padding: 21px 20px 25px; background: #fdf9f4; }
-.library-card-body p { margin: 0; font-family: "Libre Baskerville", Georgia, serif; font-size: 0.96rem; line-height: 1.8; }
+.library-card-body p { margin: 0; font-family: "Gelasio", Georgia, serif; font-size: 0.96rem; line-height: 1.8; }
 .empty-library { margin: 54px auto; color: var(--ink-soft); text-align: center; }
 
 @media (hover: hover) and (pointer: fine) {
@@ -583,6 +610,7 @@ footer {
   .daily-slider-actions button:hover { border-color: rgba(168, 70, 67, 0.42); color: var(--burgundy-dark); }
   .widget-close:hover { color: var(--burgundy-dark); background: var(--rose-wash); }
   .chat-widget-launcher:hover { animation-play-state: paused; }
+  .journey-nav a:hover { color: var(--burgundy-dark); background: rgba(255, 253, 250, 0.58); }
   .compact-primary:hover, .seasonal-action:hover { background: var(--burgundy-dark); }
   .need-card:hover { border-color: rgba(168, 70, 67, 0.42); box-shadow: 0 13px 32px rgba(70, 51, 44, 0.08); }
   .quiz-options button:not(:disabled):hover, .mark-prayed:not(.is-complete):hover { border-color: rgba(168, 70, 67, 0.42); color: var(--burgundy-dark); }
@@ -590,17 +618,25 @@ footer {
 
 @media (max-width: 620px) {
   .page-shell { width: min(100% - 20px, 960px); }
-  .site-header { height: 64px; }
-  main { padding-top: 46px; }
+  .site-header { height: auto; min-height: 104px; padding-block: 12px; flex-wrap: wrap; justify-content: center; gap: 6px 18px; }
+  .brand { width: 100%; justify-content: center; }
+  .site-nav { width: 100%; justify-content: center; }
+  main { padding-top: 32px; }
   .intro { min-height: 500px; padding: 26px 22px; align-items: end; background: linear-gradient(0deg, rgba(255, 253, 249, 0.98) 0%, rgba(255, 253, 249, 0.83) 45%, rgba(255, 253, 249, 0.08) 78%), url("images/hero-still-waters.webp") 64% center / cover no-repeat; text-align: center; }
   .intro-copy { margin: 0; }
   .intro h1, .intro .lede { margin-inline: auto; }
+  .intro h1 { max-width: 100%; font-size: clamp(2rem, 10vw, 2.65rem); overflow-wrap: anywhere; }
+  .intro .lede { max-width: 100%; font-size: 1rem; }
   .conversation { padding: 22px 18px; }
   .companion { border-radius: 10px; }
   .composer-footer { align-items: flex-end; }
   .privacy-note { max-width: 88px; }
-  .site-nav { gap: 0; }
+  .site-nav { gap: 2px; }
   .nav-link { padding-inline: 8px; font-size: 0.82rem; }
+  .journey-nav { margin-bottom: 24px; grid-template-columns: repeat(2, 1fr); }
+  .journey-nav a { min-width: 0; min-height: 48px; padding-inline: 6px; border-bottom: 1px solid var(--line); font-size: 0.88rem; }
+  .journey-nav a:nth-child(2) { border-right: 0; }
+  .journey-nav a:nth-child(n + 3) { border-bottom: 0; }
   .mystery-picker { grid-template-columns: repeat(2, 1fr); }
   .rosary-progress-row { grid-template-columns: 1fr; gap: 14px; }
   .prayer-card { min-height: 370px; padding-block: 36px 24px; }
