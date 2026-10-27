@@ -219,7 +219,7 @@ Image-led cards place photography or watercolor art in a clearly cropped region 
 
 Inputs use Muted Surface, warm borders, 8–24px corners according to context, and visible labels. Focus changes border color, adds a restrained burgundy halo, and may elevate the enclosing companion surface. Placeholder text is an example, never the only label.
 
-The main conversation composer remains compact before use and expands only when dialogue exists. Privacy and AI-transmission language must remain accurate and visible without overwhelming the primary task.
+The main conversation composer remains compact before use and expands only when dialogue exists. Its message field uses a 10px rounded rectangle so it reads as an input, while the filled Receive guidance action retains the pill silhouette. Privacy and AI-transmission language must remain accurate and visible without overwhelming the primary task.
 
 ### Navigation
 
