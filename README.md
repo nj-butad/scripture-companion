@@ -29,6 +29,10 @@ The `/prayers.php` page is a searchable, bilingual library of traditional
 Catholic prayers. It groups prayers by purpose and includes essential, Marian,
 protection, daily, Holy Spirit, and prayers for the departed.
 
+The `/about.php` page carries the long-form personal testimony behind
+Kristohanon: financial uncertainty in Southern Leyte, surrender, discovering
+God through Scripture, and an invitation to begin again with God first.
+
 ## Requirements
 
 - PHP 8.1+

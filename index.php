@@ -58,7 +58,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=22">
+    <link rel="stylesheet" href="assets/style.css?v=23">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -72,7 +72,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                 <a class="nav-link is-active" href="/" aria-current="page">Home</a>
                 <a class="nav-link" href="rosary.php">Rosary</a>
                 <a class="nav-link" href="prayers.php">Prayers</a>
-                <button class="quiet-button nav-link" id="aboutButton" type="button" aria-haspopup="dialog">About</button>
+                <a class="nav-link" href="about.php">About</a>
             </nav>
             <a class="header-guidance" href="#share">Receive guidance</a>
         </header>
@@ -266,20 +266,8 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
         </button>
     </aside>
 
-    <dialog id="aboutDialog" class="about-dialog">
-        <button class="dialog-close" id="closeAbout" type="button" aria-label="Close about dialog">×</button>
-        <p class="eyebrow">About this companion</p>
-        <h2>Scripture first, technology second.</h2>
-        <p>Kristohanon retrieves reviewed passages before composing a reflection. Scripture text is displayed from a verified source rather than generated from memory.</p>
-        <p>This is a Christ-centered reflection tool, not Jesus himself and not a source of divine revelation. It is designed to help you pray, listen, and return to the words and witness of Scripture.</p>
-        <h3>Translations</h3>
-        <p>English passages use the public-domain World English Bible Updated in modern American English. Cebuano passages use Biblica® Open Ang Pulong sa Dios™ 2024 under CC BY-SA 4.0.</p>
-        <p class="license-copy">Biblica® Open Ang Pulong sa Dios™ · Katungod sa pagmantala © 2009, 2010, 2014, 2024 Biblica, Inc. · Biblica® Open Cebuano Contemporary Bible™ · Copyright © 2009, 2010, 2014, 2024 by Biblica, Inc. · Used with permission. The original Work is available for free at biblica.com and open.bible.</p>
-        <a class="text-link" href="https://ebible.org/cebocb/copyright.htm" target="_blank" rel="noopener noreferrer">Read the complete Cebuano license</a>
-    </dialog>
-
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?>, home: <?= $homeJson ?> };</script>
-    <script src="assets/app.js?v=12" defer></script>
+    <script src="assets/app.js?v=13" defer></script>
 </body>
 </html>
 

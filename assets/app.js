@@ -2,7 +2,6 @@ const form = document.querySelector('#chatForm');
 const input = document.querySelector('#message');
 const conversation = document.querySelector('#conversation');
 const languageButtons = [...document.querySelectorAll('[data-language]')];
-const aboutDialog = document.querySelector('#aboutDialog');
 const dailyVerse = document.querySelector('#dailyVerse');
 const dailyReference = document.querySelector('#dailyReference');
 const dailyTranslation = document.querySelector('#dailyTranslation');
@@ -387,11 +386,6 @@ input.addEventListener('keydown', (event) => {
   }
 });
 
-document.querySelector('#aboutButton').addEventListener('click', () => aboutDialog.showModal());
-document.querySelector('#closeAbout').addEventListener('click', () => aboutDialog.close());
-aboutDialog.addEventListener('click', (event) => {
-  if (event.target === aboutDialog) aboutDialog.close();
-});
 
 openChatWidget.addEventListener('click', () => {
   const opening = chatWidgetPanel.hidden;

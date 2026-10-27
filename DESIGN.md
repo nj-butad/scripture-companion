@@ -160,6 +160,8 @@ The palette behaves like a modern prayer book: dark ink on warm paper, with burg
 
 The outer canvas is fluid up to 1440px with 24px desktop gutters, reducing to 16px and then 10px on narrower screens. Primary feature rails stop around 1240px so large displays feel generous without stretching reading content beyond comprehension.
 
+Long-form testimony uses an open editorial reading column with a 70-character measure, generous chapter spacing, and a narrow trust-and-sources rail. It should read as lived experience rather than marketing copy; bounded surfaces are reserved for the final invitation and source information.
+
 The homepage follows a deliberate sequence: welcome, journey index, private conversation, weekly Scripture, daily practice, expressed need, discovery, personal rhythm, and seasonal devotion. Sections use whitespace and fine rules before reaching for containers. Three-column practice and discovery grids collapse to one column below 900px; the seven-need grid becomes four columns and then two. The journey index becomes a two-by-two map on phones.
 
 Use the eight-point spacing scale as the default rhythm. Section gaps are deliberately larger than card gaps: 52–72px between devotional chapters, 16px between related cards, and 24–34px inside substantive cards. Alignment should be shared across adjacent content rather than centered by habit.

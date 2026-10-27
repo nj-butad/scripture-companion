@@ -492,21 +492,25 @@ footer {
   font-size: 0.78rem;
 }
 
-.about-dialog {
-  width: min(100% - 32px, 590px);
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  padding: 32px;
-  color: var(--ink);
-  background: var(--paper);
-  box-shadow: 0 24px 90px rgba(21, 32, 27, 0.24);
-}
-.about-dialog::backdrop { background: rgba(20, 32, 27, 0.42); backdrop-filter: blur(3px); }
-.about-dialog h2 { margin: 0 34px 12px 0; font-size: 2rem; }
-.about-dialog h3 { margin-top: 25px; }
-.about-dialog p { color: var(--ink-soft); line-height: 1.6; }
-.about-dialog .license-copy { font-size: 0.72rem; }
-.dialog-close { position: absolute; top: 17px; right: 18px; font-size: 1.65rem; }
+.about-main { max-width: 1240px; margin-inline: auto; display: grid; grid-template-columns: minmax(0, 760px) minmax(240px, 320px); justify-content: space-between; align-items: start; gap: clamp(48px, 8vw, 108px); }
+.about-story { min-width: 0; }
+.about-story-header { padding-bottom: 48px; border-bottom: 1px solid var(--line); }
+.story-location { margin: 20px 0 0; color: var(--burgundy); font-weight: 600; }
+.about-story h1 { max-width: 730px; margin: 0; font-size: clamp(2.4rem, 6vw, 4.4rem); }
+.about-lede { max-width: 660px; margin: 26px 0 0; color: var(--ink-soft); font-family: "Gelasio", Georgia, serif; font-size: clamp(1.08rem, 2vw, 1.3rem); line-height: 1.75; }
+.story-section { margin-top: 64px; }
+.story-section h2 { margin: 0 0 22px; font-size: clamp(1.65rem, 3vw, 2.15rem); font-weight: 400; line-height: 1.3; }
+.story-section p { max-width: 70ch; margin: 0 0 20px; color: var(--ink-soft); font-size: 1.04rem; line-height: 1.85; }
+.story-callout { margin: 68px 0; padding: 30px clamp(22px, 5vw, 44px); border-block: 1px solid rgba(168, 70, 67, 0.4); }
+.story-callout p { margin: 0; color: var(--burgundy-dark); font-family: "Gelasio", Georgia, serif; font-size: clamp(1.3rem, 2.8vw, 1.75rem); font-style: italic; line-height: 1.65; }
+.story-ending { margin-top: 68px; padding: clamp(28px, 5vw, 44px); border: 1px solid var(--line); border-radius: 10px; background: rgba(255, 253, 250, 0.88); text-align: left; }
+.story-ending p { max-width: 600px; margin: 0 0 24px; font-family: "Gelasio", Georgia, serif; font-size: clamp(1.25rem, 2.5vw, 1.6rem); line-height: 1.55; }
+.story-action { min-height: 44px; border-radius: 999px; padding: 11px 17px; display: inline-flex; align-items: center; color: var(--paper); background: var(--burgundy); text-decoration: none; font-weight: 600; }
+.about-trust { margin-top: 10px; padding-top: 24px; border-top: 2px solid rgba(168, 70, 67, 0.5); }
+.about-trust h2 { margin: 0 0 16px; font-size: 1.45rem; font-weight: 400; line-height: 1.35; }
+.about-trust h3 { margin: 30px 0 10px; font-size: 1.05rem; }
+.about-trust p { margin: 0 0 15px; color: var(--ink-soft); line-height: 1.65; }
+.about-trust .license-copy { font-size: 0.72rem; }
 .text-link { color: var(--burgundy); font-weight: 600; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
@@ -644,6 +648,8 @@ footer {
 @media (max-width: 900px) {
   .practice-grid, .discovery-grid { grid-template-columns: 1fr; }
   .practice-card, .discovery-card { min-height: 0; }
+  .about-main { grid-template-columns: 1fr; }
+  .about-trust { margin-top: 72px; }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -717,6 +723,10 @@ footer {
   .seasonal-card { padding-inline: 22px; }
   .seasonal-card { min-height: 500px; justify-content: flex-end; align-items: center; background: linear-gradient(0deg, rgba(255, 251, 246, 0.98) 0%, rgba(255, 251, 246, 0.91) 46%, rgba(255, 251, 246, 0.04) 76%), url("images/rosary-season.webp") 72% center / cover no-repeat; text-align: center; }
   .seasonal-card > p:not(.eyebrow) { margin-inline: auto; }
+  .about-main { padding-top: 48px; }
+  .about-story-header { padding-bottom: 36px; }
+  .story-section { margin-top: 52px; }
+  .story-callout { margin-block: 52px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
