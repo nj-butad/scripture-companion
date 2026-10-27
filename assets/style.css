@@ -331,9 +331,11 @@ h1 {
   min-height: 104px;
   max-height: 104px;
   overflow-y: auto;
+  scrollbar-width: none;
   padding: 14px 24px;
   scroll-behavior: smooth;
 }
+.conversation::-webkit-scrollbar { display: none; }
 .companion.has-conversation .conversation { min-height: 260px; max-height: 460px; padding-block: 24px; }
 
 .welcome-card { max-width: 500px; }
