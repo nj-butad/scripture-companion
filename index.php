@@ -176,8 +176,8 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
             <section class="home-section discovery-grid" aria-label="Daily Catholic discovery">
                 <article class="discovery-card saint-card" id="saintCard">
                     <p class="card-kicker">Today in the Church</p>
-                    <h2 id="saintName">Loading today’s celebration…</h2>
-                    <p class="saint-type" id="saintType">General Roman Calendar</p>
+                    <h2 id="saintName">Today belongs to God</h2>
+                    <p class="saint-type" id="saintType">Daily Catholic calendar</p>
                     <p id="saintDescription">The Church’s calendar helps us remember that every ordinary day belongs to God.</p>
                     <p class="saint-prompt" id="saintPrompt"><strong>Carry this today:</strong> Practice quiet faithfulness in the task before you.</p>
                     <a class="saint-source" href="https://github.com/cpbjr/catholic-readings-api" target="_blank" rel="noopener noreferrer">Calendar data source</a>
