@@ -30,6 +30,18 @@ let activeVerseIndex = Number(window.STILL_WATERS.todayIndex) || 0;
 let lectioStage = 0;
 const history = [];
 
+function focusInitialConversation() {
+  const arrivedAtPageTop = window.scrollY < 80;
+  const hasSectionTarget = window.location.hash !== '';
+
+  if (!arrivedAtPageTop || hasSectionTarget) return;
+
+  companion.scrollIntoView({ behavior: 'auto', block: 'center' });
+  input.focus({ preventScroll: true });
+}
+
+window.addEventListener('load', focusInitialConversation, { once: true });
+
 function readStoredJson(key, fallback) {
   try {
     return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback));

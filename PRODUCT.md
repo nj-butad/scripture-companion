@@ -57,7 +57,7 @@ The defensible combination is not “an AI Bible chat.” It is the integration 
 
 ### Main journey
 
-1. The visitor sees a calm invitation rather than a productivity dashboard.
+1. On a normal top-of-page visit, the private conversation composer enters the first viewport with its message field focused; section links and restored scroll positions keep their intended destination.
 2. They choose English or Cebuano and type what feels heavy.
 3. Local retrieval ranks reviewed passages against the visitor's intention.
 4. The model selects one or two supplied passages and writes a concise reflection, prayer, and practical next step.

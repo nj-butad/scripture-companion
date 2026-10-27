@@ -235,6 +235,8 @@ The seven-day strip is a tablist and compact calendar. Today is explicit in text
 
 The companion is the signature interactive component: bilingual switch, readable conversation history, verified Scripture panel, and compact composer. The floating Rosary launcher is a secondary entry point, not a competing mascot. Motion is subtle and must stop for reduced-motion users and while the panel is open.
 
+On a normal homepage arrival at the document top, bring the companion into the first viewport and focus its message field so the primary action is unmistakable. Never override a section hash or a browser-restored scroll position.
+
 ### Rosary guide
 
 Progress is expressed through mystery context, a thin progress track, current bead, and explicit step count. Beads are functional state, not decoration. The current mystery for the day is visible but visitors may choose another set.
