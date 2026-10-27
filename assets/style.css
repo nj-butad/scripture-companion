@@ -708,7 +708,7 @@ footer {
   .week-day { min-height: 65px; }
   .daily-slide { min-height: 350px; padding-inline: 18px; }
   .chat-widget { right: max(10px, env(safe-area-inset-right)); bottom: max(10px, env(safe-area-inset-bottom)); }
-  .widget-bubble { display: none; }
+  .widget-bubble { width: min(230px, calc(100vw - 82px)); min-width: 0; padding: 10px 12px; }
   .widget-mark { width: 52px; height: 52px; }
   .chat-widget-panel { width: calc(100vw - 20px); }
   .chat-widget-panel .companion { height: min(620px, calc(100dvh - 82px)); }

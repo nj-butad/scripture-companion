@@ -49,7 +49,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#f4f0e8">
     <meta name="description" content="A gentle, bilingual Scripture companion for difficult moments.">
     <title>Kristohanon — Scripture Companion</title>
@@ -58,7 +58,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=23">
+    <link rel="stylesheet" href="assets/style.css?v=24">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -256,10 +256,10 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
         </footer>
     </div>
 
-    <aside class="chat-widget" id="chatWidget" aria-label="Floating Scripture and prayer guide">
+    <aside class="chat-widget" id="chatWidget" aria-label="Private Scripture and prayer conversation">
         <div class="chat-widget-panel" id="chatWidgetPanel" hidden></div>
-        <button class="chat-widget-launcher" id="openChatWidget" type="button" aria-expanded="false" aria-controls="chatWidgetPanel">
-            <span class="widget-bubble"><strong>Scripture and prayer guide</strong><span>Share what you carry or ask a question</span></span>
+        <button class="chat-widget-launcher" id="openChatWidget" type="button" aria-label="Open a private Scripture and prayer conversation" aria-expanded="false" aria-controls="chatWidgetPanel">
+            <span class="widget-bubble"><strong>What’s on your heart?</strong><span>Share how you feel. Find Scripture and prayer.</span></span>
             <span class="widget-mark" aria-hidden="true">
                 <img class="kristohanon-widget-mark" src="assets/images/kristohanon-mark-inverse.svg" alt="" width="38" height="38">
             </span>
