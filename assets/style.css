@@ -34,10 +34,9 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background:
-    radial-gradient(ellipse at 8% 18%, rgba(168, 70, 67, 0.08) 0 2%, transparent 2.2% 100%),
-    radial-gradient(ellipse at 92% 72%, rgba(112, 122, 83, 0.09) 0 2.4%, transparent 2.6% 100%),
-    repeating-linear-gradient(115deg, transparent 0 58px, rgba(126, 113, 91, 0.035) 59px 60px),
-    linear-gradient(160deg, #f6f2ea 0%, #ebe6dc 100%);
+    linear-gradient(rgba(248, 244, 236, 0.72), rgba(242, 236, 226, 0.78)),
+    url("images/scripture-background.webp") center top / cover fixed no-repeat,
+    #f2ece2;
   font-family: "Source Sans 3", system-ui, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
