@@ -38,6 +38,10 @@ RedirectMatch 404 ^/(?:\.env|\.env\.example|\.gitignore|README\.md|LICENSE)$
   Require all denied
 </FilesMatch>
 
+<Files "manifest.webmanifest">
+  ForceType application/manifest+json
+</Files>
+
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"

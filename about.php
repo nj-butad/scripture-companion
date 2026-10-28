@@ -6,7 +6,12 @@
     <meta name="theme-color" content="#f4f0e8">
     <meta name="description" content="The personal testimony behind Kristohanon: finding God, peace, and hope through Scripture in Southern Leyte.">
     <title>Why Kristohanon Exists — A Personal Testimony</title>
-    <link rel="icon" href="assets/images/kristohanon-mark.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/images/kristohanon-christ-profile.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/kristohanon-apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Kristohanon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
@@ -16,7 +21,7 @@
     <a class="skip-link" href="#mainContent">Skip to main content</a>
     <div class="page-shell">
         <header class="site-header">
-            <a class="brand" href="/" aria-label="Kristohanon home"><img class="brand-mark" src="assets/images/kristohanon-mark.svg" alt="" width="32" height="32"><span>Kristohanon</span></a>
+            <a class="brand" href="/" aria-label="Kristohanon home"><img class="brand-mark" src="/assets/images/kristohanon-christ-profile.svg" alt="" width="32" height="32"><span>Kristohanon</span></a>
             <nav class="site-nav" aria-label="Main navigation">
                 <a class="nav-link" href="/">Home</a><a class="nav-link" href="/rosary">Rosary</a><a class="nav-link" href="/prayers">Prayers</a><a class="nav-link is-active" href="/about" aria-current="page">About</a>
             </nav>

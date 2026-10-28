@@ -6,7 +6,7 @@ Kristohanon should feel like a quiet, contemporary prayer book: reverent,
 welcoming, readable, and distinctly calmer than a social feed. Scripture and
 prayer remain primary; decoration supports orientation and contemplation.
 
-The official mark combines a cross, abstract open hands that also suggest open pages, and seven restrained rays. Use the burgundy SVG on light surfaces and the warm-ivory inverse inside the burgundy chat launcher. Preserve its transparent background and clear space.
+The official mark is an original right-facing profile of Christ with long hair, a beard, and a restrained cross-nimbus. Use the burgundy SVG on light surfaces and the warm-ivory inverse inside the burgundy chat launcher. Preserve its transparent background and clear space. Installed-app icons place the inverse mark on a solid burgundy field for reliable iOS and Android masking.
 
 ## Design tokens and foundations
 
