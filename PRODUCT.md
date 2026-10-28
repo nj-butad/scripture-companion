@@ -124,7 +124,7 @@ Returning visitors can resume a gentle rhythm stored only in their browser: rece
 ## Brand Commitments
 
 - Product name: **Kristohanon**.
-- Official mark: an original frontal Holy Face of Christ with long parted hair, a beard, and a restrained cross-nimbus, supplied as transparent burgundy and warm-ivory SVG variants.
+- Official mark: a bowed Holy Face of Christ with a crown of thorns, rendered as transparent painterly artwork in burgundy, prayer ink, warm ivory, and parchment.
 - Category language: **Scripture companion**, not “AI Jesus.”
 - Core invitation: people do not need perfect words before approaching Scripture and prayer.
 - Voice: gentle, direct, attentive, Christ-centered, specific to the visitor's message, and free of stock consolation phrases.

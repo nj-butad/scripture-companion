@@ -6,7 +6,7 @@ Kristohanon should feel like a quiet, contemporary prayer book: reverent,
 welcoming, readable, and distinctly calmer than a social feed. Scripture and
 prayer remain primary; decoration supports orientation and contemplation.
 
-The official mark is an original frontal Holy Face of Christ with long parted hair, a beard, and a restrained cross-nimbus. Use the burgundy SVG on light surfaces and the warm-ivory inverse inside the burgundy chat launcher. Preserve its transparent background and clear space. Installed-app icons place the inverse mark on a solid burgundy field for reliable iOS and Android masking.
+The official mark is a bowed Holy Face of Christ with a crown of thorns, rendered as transparent painterly artwork in burgundy, prayer ink, warm ivory, and parchment. Use the transparent PNG on light surfaces and inside the parchment chat launcher. Preserve clear space around the crown. Installed-app icons place the portrait on a solid parchment field for reliable iOS and Android masking.
 
 ## Design tokens and foundations
 

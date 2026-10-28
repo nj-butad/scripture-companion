@@ -11,7 +11,7 @@ $prayersJson = json_encode($prayers, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
     <meta name="theme-color" content="#f4f0e8">
     <meta name="description" content="A searchable collection of essential Catholic prayers in English and Cebuano.">
     <title>Catholic Prayers — Kristohanon</title>
-    <link rel="icon" href="/assets/images/kristohanon-holy-face.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/images/kristohanon-app-icon-192.png" type="image/png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/kristohanon-apple-touch-icon.png">
     <link rel="manifest" href="/manifest.webmanifest">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -26,7 +26,7 @@ $prayersJson = json_encode($prayers, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
     <a class="skip-link" href="#mainContent">Skip to main content</a>
     <div class="page-shell">
         <header class="site-header">
-            <a class="brand" href="/" aria-label="Kristohanon home"><img class="brand-mark" src="/assets/images/kristohanon-holy-face.svg" alt="" width="32" height="32"><span>Kristohanon</span></a>
+            <a class="brand" href="/" aria-label="Kristohanon home"><img class="brand-mark" src="/assets/images/kristohanon-holy-face-painted.webp" alt="" width="32" height="32"><span>Kristohanon</span></a>
             <nav class="site-nav" aria-label="Main navigation">
                 <a class="nav-link" href="/">Home</a>
                 <a class="nav-link" href="/rosary">Rosary</a>

@@ -95,7 +95,7 @@ This is an **Operate + Read** product. Visitors must be able to write, choose, p
 
 The atmosphere is warm and contemplative, never sleepy or vague. It should feel intentionally Catholic and Filipino in content while remaining welcoming to other Christians. The interface must avoid both app-dashboard sterility and ornate church-themed pastiche.
 
-The official Kristohanon mark is an original frontal Holy Face of Christ with long parted hair, a beard, and a restrained cross-nimbus. Use the burgundy master mark on light surfaces and the warm-ivory inverse inside burgundy controls. Keep its background transparent and never place it inside an additional badge except when the containing control itself requires one, such as the chat launcher. Installed-app icons use the inverse mark on a solid burgundy field so the identity survives operating-system masks and small home-screen sizes.
+The official Kristohanon mark is a bowed Holy Face of Christ with a crown of thorns, rendered as transparent painterly artwork in burgundy, prayer ink, warm ivory, and parchment. Use the transparent master mark on light surfaces and within the parchment chat launcher. Keep generous clear space around the crown. Installed-app icons place the portrait on a solid parchment field so the identity survives operating-system masks and small home-screen sizes.
 
 **Key Characteristics:**
 

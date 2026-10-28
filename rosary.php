@@ -18,7 +18,7 @@ $rosaryJson = json_encode(
     <meta name="theme-color" content="#f4f0e8">
     <meta name="description" content="Pray the Holy Rosary in English or Cebuano with the mysteries selected for today.">
     <title>Holy Rosary — Kristohanon</title>
-    <link rel="icon" href="/assets/images/kristohanon-holy-face.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/images/kristohanon-app-icon-192.png" type="image/png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/kristohanon-apple-touch-icon.png">
     <link rel="manifest" href="/manifest.webmanifest">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@ $rosaryJson = json_encode(
     <div class="page-shell">
         <header class="site-header">
             <a class="brand" href="/" aria-label="Kristohanon home">
-                <img class="brand-mark" src="/assets/images/kristohanon-holy-face.svg" alt="" width="32" height="32">
+                <img class="brand-mark" src="/assets/images/kristohanon-holy-face-painted.webp" alt="" width="32" height="32">
                 <span>Kristohanon</span>
             </a>
             <nav class="site-nav" aria-label="Main navigation">
