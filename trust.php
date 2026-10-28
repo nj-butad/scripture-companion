@@ -53,7 +53,7 @@ $content = $pages[$page];
     <meta name="theme-color" content="#f4f0e8">
     <meta name="description" content="Kristohanon <?= htmlspecialchars($page, ENT_QUOTES, 'UTF-8') ?> information in plain language.">
     <title><?= htmlspecialchars($content['title'], ENT_QUOTES, 'UTF-8') ?> — Kristohanon</title>
-    <link rel="icon" href="/assets/images/kristohanon-christ-profile.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/images/kristohanon-holy-face.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/kristohanon-apple-touch-icon.png">
     <link rel="manifest" href="/manifest.webmanifest">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -68,7 +68,7 @@ $content = $pages[$page];
     <a class="skip-link" href="#mainContent">Skip to main content</a>
     <div class="page-shell">
         <header class="site-header">
-            <a class="brand" href="/" aria-label="Kristohanon home"><img class="brand-mark" src="/assets/images/kristohanon-christ-profile.svg" alt="" width="32" height="32"><span>Kristohanon</span></a>
+            <a class="brand" href="/" aria-label="Kristohanon home"><img class="brand-mark" src="/assets/images/kristohanon-holy-face.svg" alt="" width="32" height="32"><span>Kristohanon</span></a>
             <nav class="site-nav" aria-label="Main navigation"><a class="nav-link" href="/">Home</a><a class="nav-link" href="/rosary">Rosary</a><a class="nav-link" href="/prayers">Prayers</a><a class="nav-link" href="/about">About</a></nav>
             <a class="header-guidance" href="/#share">Receive guidance</a>
         </header>

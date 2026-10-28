@@ -53,7 +53,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     <meta name="theme-color" content="#f4f0e8">
     <meta name="description" content="A gentle, bilingual Scripture companion for difficult moments.">
     <title>Kristohanon — Scripture Companion</title>
-    <link rel="icon" href="/assets/images/kristohanon-christ-profile.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/images/kristohanon-holy-face.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/kristohanon-apple-touch-icon.png">
     <link rel="manifest" href="/manifest.webmanifest">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -70,7 +70,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     <div class="page-shell">
         <header class="site-header">
             <a class="brand" href="/" aria-label="Kristohanon home">
-                <img class="brand-mark" src="/assets/images/kristohanon-christ-profile.svg" alt="" width="32" height="32">
+                <img class="brand-mark" src="/assets/images/kristohanon-holy-face.svg" alt="" width="32" height="32">
                 <span>Kristohanon</span>
             </a>
             <nav class="site-nav" aria-label="Main navigation">
@@ -267,7 +267,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
         <button class="chat-widget-launcher" id="openChatWidget" type="button" aria-label="Open a private Scripture and prayer conversation" aria-expanded="false" aria-controls="chatWidgetPanel">
             <span class="widget-bubble"><strong>What’s on your heart?</strong><span>Share how you feel. Find Scripture and prayer.</span></span>
             <span class="widget-mark" aria-hidden="true">
-                <img class="kristohanon-widget-mark" src="/assets/images/kristohanon-christ-profile-inverse.svg" alt="" width="38" height="38">
+                <img class="kristohanon-widget-mark" src="/assets/images/kristohanon-holy-face-inverse.svg" alt="" width="38" height="38">
             </span>
         </button>
     </aside>
