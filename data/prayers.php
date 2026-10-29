@@ -15,6 +15,21 @@ return [
     ['id' => 'glory-be', 'category' => 'essential', 'when' => ['en' => 'A short prayer of praise', 'ceb' => 'Mubo nga pag-ampo sa pagdayeg'], 'prayer' => $both('glory_be'), 'keywords' => 'doxology praise trinity himaya'],
     ['id' => 'apostles-creed', 'category' => 'essential', 'when' => ['en' => 'To profess the faith we share', 'ceb' => 'Sa pagsugid sa atong gituohan'], 'prayer' => $both('creed'), 'keywords' => 'credo nagatuo belief faith'],
     [
+        'id' => 'ten-commandments', 'category' => 'essential',
+        'when' => ['en' => 'For daily Christian living and an examination of conscience', 'ceb' => 'Alang sa adlaw-adlaw nga Kristohanong kinabuhi ug pagsusi sa konsensya'],
+        'prayer' => [
+            'en' => [
+                'title' => 'The Ten Commandments',
+                'text' => "1. I am the Lord your God: you shall not have strange gods before me.\n2. You shall not take the name of the Lord your God in vain.\n3. Remember to keep holy the Lord’s Day.\n4. Honor your father and your mother.\n5. You shall not kill.\n6. You shall not commit adultery.\n7. You shall not steal.\n8. You shall not bear false witness against your neighbor.\n9. You shall not covet your neighbor’s wife.\n10. You shall not covet your neighbor’s goods.",
+            ],
+            'ceb' => [
+                'title' => 'Ang Napulo ka mga Sugo',
+                'text' => "1. Ako ang Ginoo nga imong Dios: dili ka magbaton ug laing mga dios gawas kanako.\n2. Dili nimo gamiton sa walay pulos ang ngalan sa Ginoo nga imong Dios.\n3. Hinumdomi nga balaanon ang Adlaw sa Ginoo.\n4. Tahura ang imong amahan ug inahan.\n5. Dili ka magpatay.\n6. Dili ka manapaw.\n7. Dili ka mangawat.\n8. Dili ka magsaksi ug bakak batok sa imong isigkatawo.\n9. Dili ka maibog sa asawa sa imong isigkatawo.\n10. Dili ka maibog sa kabtangan sa imong isigkatawo.",
+            ],
+        ],
+        'keywords' => 'ten commandments decalogue ten sugo napulo kasugoan conscience konsensya christian living moral law exodus exodo',
+    ],
+    [
         'id' => 'st-michael', 'category' => 'protection',
         'when' => ['en' => 'For courage and protection from evil', 'ceb' => 'Alang sa kaisog ug panalipod batok sa dautan'],
         'prayer' => [
