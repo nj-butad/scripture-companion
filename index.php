@@ -123,7 +123,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                         <div class="composer-footer">
                             <a class="privacy-note" href="/privacy">Private by default · How it works</a>
                             <button class="send-button" type="submit">
-                                <span>Receive guidance</span>
+                                <span>Ask Kristohanon</span>
                                 <span aria-hidden="true">→</span>
                             </button>
                         </div>
@@ -273,7 +273,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     </aside>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?>, home: <?= $homeJson ?> };</script>
-    <script src="assets/app.js?v=16" defer></script>
+    <script src="assets/app.js?v=17" defer></script>
 </body>
 </html>
 
