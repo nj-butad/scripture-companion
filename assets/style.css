@@ -492,6 +492,46 @@ h1 {
 .trust-article h2 { margin: 0 0 12px; font-family: "Gelasio", Georgia, serif; font-size: 1.45rem; font-weight: 400; }
 .trust-article p { margin: 0; color: var(--ink-soft); font-size: 1rem; line-height: 1.75; }
 
+.contact-main { width: min(1120px, 100%); margin: 0 auto; padding: 86px 20px 120px; }
+.contact-intro { max-width: 760px; }
+.contact-intro h1 { margin: 0; max-width: 12ch; font-family: "Gelasio", Georgia, serif; font-size: clamp(2.35rem, 6vw, 4.2rem); font-weight: 400; line-height: 1.06; letter-spacing: -0.035em; text-wrap: balance; }
+.contact-intro p { max-width: 65ch; margin: 22px 0 0; color: var(--ink-soft); font-size: 1.08rem; line-height: 1.7; }
+.contact-layout { margin-top: 64px; display: grid; grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr); gap: clamp(48px, 8vw, 96px); align-items: start; }
+.contact-details { padding-top: 4px; }
+.contact-details h2, .contact-form-section h2 { margin: 0; font-family: "Gelasio", Georgia, serif; font-size: clamp(1.65rem, 4vw, 2.35rem); font-weight: 400; line-height: 1.35; }
+.contact-temporary { width: fit-content; margin: 12px 0 28px; padding: 4px 8px; border-radius: 4px; color: var(--burgundy-dark); background: var(--rose-wash); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.contact-details dl { margin: 0; }
+.contact-details dl div { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.contact-details dt { color: var(--ink-soft); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+.contact-details dd { margin: 5px 0 0; color: var(--ink); font-family: "Gelasio", Georgia, serif; font-size: 1.05rem; overflow-wrap: anywhere; }
+.contact-details h3 { margin: 40px 0 14px; font-family: "Gelasio", Georgia, serif; font-size: 1.25rem; font-weight: 400; }
+.social-links { display: flex; gap: 10px; }
+.social-link { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--burgundy); background: var(--paper); }
+.social-link svg { width: 22px; height: 22px; fill: currentColor; stroke: currentColor; stroke-width: 1.8; }
+.social-link svg rect, .social-link svg circle { fill: none; }
+.social-link svg .social-dot { fill: currentColor; stroke: none; }
+.social-link svg .social-play { fill: var(--paper); stroke: none; }
+.social-link.is-disabled { opacity: 0.62; cursor: not-allowed; }
+.contact-coming-soon { max-width: 34ch; margin: 12px 0 0; color: var(--ink-soft); font-size: 0.8rem; line-height: 1.55; }
+.contact-form-section { padding: 30px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255, 253, 250, 0.94); box-shadow: 0 18px 60px rgba(70, 51, 44, 0.09); }
+.form-disclosure { margin: 10px 0 26px; color: var(--ink-soft); line-height: 1.6; }
+.contact-form { display: grid; gap: 20px; }
+.contact-field-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.contact-form label { display: grid; gap: 7px; color: var(--ink); font-size: 0.88rem; font-weight: 600; }
+.contact-form input, .contact-form select, .contact-form textarea { width: 100%; border: 1px solid rgba(96, 70, 62, 0.25); border-radius: 9px; padding: 12px 14px; color: var(--ink); background: var(--surface-muted); font: inherit; font-weight: 400; outline: none; transition: border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out), background-color 160ms var(--ease-out); }
+.contact-form input, .contact-form select { min-height: 48px; }
+.contact-form textarea { min-height: 170px; resize: vertical; line-height: 1.55; }
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--burgundy); background: var(--paper); box-shadow: 0 0 0 3px rgba(168, 70, 67, 0.13); }
+.contact-form small { color: var(--ink-soft); font-size: 0.74rem; font-weight: 400; }
+.contact-submit { min-height: 46px; width: fit-content; border: 0; border-radius: 999px; padding: 11px 18px; display: inline-flex; align-items: center; gap: 12px; color: var(--paper); background: var(--burgundy); font: inherit; font-weight: 600; cursor: pointer; transition: background-color 180ms var(--ease-out), transform 140ms var(--ease-out); }
+.contact-submit:active { transform: scale(0.97); }
+.contact-status { margin: 0 0 24px; padding: 16px 18px; display: grid; gap: 5px; border: 1px solid var(--line); border-radius: 9px; color: var(--ink); background: var(--surface-muted); }
+.contact-status strong { font-family: "Gelasio", Georgia, serif; font-weight: 600; }
+.contact-status span, .contact-status ul { margin: 0; color: var(--ink-soft); font-size: 0.88rem; }
+.contact-status ul { padding-left: 20px; }
+.contact-status.is-ready { border-color: rgba(67, 88, 55, 0.32); background: rgba(67, 88, 55, 0.07); }
+.contact-status.is-error { border-color: rgba(139, 61, 53, 0.3); background: rgba(139, 61, 53, 0.06); }
+
 .chat-widget { position: fixed; right: max(22px, env(safe-area-inset-right)); bottom: max(22px, env(safe-area-inset-bottom)); z-index: 30; display: grid; justify-items: end; gap: 12px; }
 .chat-widget-launcher { border: 0; padding: 4px; display: flex; align-items: flex-end; gap: 12px; background: transparent; cursor: pointer; animation: widget-float 4.8s ease-in-out infinite; transform-origin: bottom right; }
 .chat-widget-launcher:active { transform: scale(0.97); }
@@ -685,6 +725,7 @@ h1 {
   .practice-card, .discovery-card { min-height: 0; }
   .about-main { grid-template-columns: 1fr; }
   .about-trust { margin-top: 72px; }
+  .contact-layout { grid-template-columns: 1fr; }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -701,6 +742,7 @@ h1 {
   .chat-widget-launcher:hover { animation-play-state: paused; }
   .journey-nav a:hover { color: var(--burgundy-dark); background: rgba(255, 253, 250, 0.58); }
   .compact-primary:hover, .seasonal-action:hover { background: var(--burgundy-dark); }
+  .contact-submit:hover { background: var(--burgundy-dark); }
   .need-card:hover { border-color: rgba(168, 70, 67, 0.42); box-shadow: 0 13px 32px rgba(70, 51, 44, 0.08); }
   .quiz-options button:not(:disabled):hover, .mark-prayed:not(.is-complete):hover { border-color: rgba(168, 70, 67, 0.42); color: var(--burgundy-dark); }
 }
@@ -739,6 +781,10 @@ h1 {
   .prayer-library { grid-template-columns: 1fr; }
   .prayer-tools { padding-inline: 12px; }
   .library-card summary { min-height: 82px; padding: 17px; }
+  .contact-main { padding: 48px 4px 88px; }
+  .contact-layout { margin-top: 48px; gap: 52px; }
+  .contact-form-section { padding: 22px 18px; }
+  .contact-field-row { grid-template-columns: 1fr; }
   .week-picker { overflow-x: auto; grid-template-columns: repeat(7, minmax(62px, 1fr)); scrollbar-width: none; }
   .week-picker::-webkit-scrollbar { display: none; }
   .week-day { min-height: 65px; }

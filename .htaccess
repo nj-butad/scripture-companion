@@ -8,11 +8,11 @@ RewriteEngine On
 RewriteCond %{THE_REQUEST} \s/+index\.php(?:[?\s]) [NC]
 RewriteRule ^index\.php$ / [R=301,L]
 
-RewriteCond %{THE_REQUEST} \s/+(about|rosary|prayers)\.php(?:[?\s]) [NC]
-RewriteRule ^(about|rosary|prayers)\.php$ /$1 [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+(about|rosary|prayers|contact)\.php(?:[?\s]) [NC]
+RewriteRule ^(about|rosary|prayers|contact)\.php$ /$1 [R=301,L,NE]
 
-RewriteCond %{THE_REQUEST} \s/+(about|rosary|prayers|privacy|safety|sources)/(?:[?\s]) [NC]
-RewriteRule ^(about|rosary|prayers|privacy|safety|sources)/$ /$1 [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+(about|rosary|prayers|contact|privacy|safety|sources)/(?:[?\s]) [NC]
+RewriteRule ^(about|rosary|prayers|contact|privacy|safety|sources)/$ /$1 [R=301,L,NE]
 
 # A permanent method-preserving redirect keeps older cached chat clients valid.
 RewriteCond %{THE_REQUEST} \s/+api/chat\.php(?:[?\s]) [NC]
@@ -24,7 +24,7 @@ RewriteRule ^api/feedback\.php$ /api/feedback [R=308,L,NE]
 RewriteCond %{THE_REQUEST} \s/+trust\.php(?:[?\s]) [NC]
 RewriteRule ^trust\.php$ - [R=404,L]
 
-RewriteRule ^(about|rosary|prayers)/?$ $1.php [END,QSA]
+RewriteRule ^(about|rosary|prayers|contact)/?$ $1.php [END,QSA]
 RewriteRule ^(privacy|safety|sources)/?$ trust.php?page=$1 [END,QSA]
 RewriteRule ^api/chat/?$ api/chat.php [END,QSA]
 RewriteRule ^api/feedback/?$ api/feedback.php [END,QSA]

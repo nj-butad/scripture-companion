@@ -20,7 +20,7 @@ $prayersJson = json_encode($prayers, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=26">
+    <link rel="stylesheet" href="assets/style.css?v=27">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -32,6 +32,7 @@ $prayersJson = json_encode($prayers, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
                 <a class="nav-link" href="/rosary">Rosary</a>
                 <a class="nav-link is-active" href="/prayers" aria-current="page">Prayers</a>
                 <a class="nav-link" href="/about">About</a>
+                <a class="nav-link" href="/contact">Contact</a>
             </nav>
             <a class="header-guidance" href="/#share">Receive guidance</a>
         </header>
@@ -54,7 +55,7 @@ $prayersJson = json_encode($prayers, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
             <p class="empty-library" id="emptyLibrary" hidden>No prayers match that search. Try a simpler word such as “protection,” “Mary,” or “forgiveness.”</p>
             <p class="source-note">Traditional English texts follow the USCCB’s collection of basic Catholic prayers. The Ten Commandments use the Catholic numbering followed by the Catechism of the Catholic Church. Verified Cebuano Rosary and Angelus wording follows the Basilica Minore del Sto. Niño de Cebu; other Cebuano texts are provided as devotional translations.</p>
         </main>
-        <footer><span>Made to help people pause, pray, and return to Scripture.</span><nav class="footer-links" aria-label="Trust and transparency"><a href="/privacy">Privacy</a><a href="/safety">Safety</a><a href="/sources">Sources</a></nav></footer>
+        <footer><span>Made to help people pause, pray, and return to Scripture.</span><nav class="footer-links" aria-label="Trust and transparency"><a href="/privacy">Privacy</a><a href="/safety">Safety</a><a href="/sources">Sources</a><a href="/contact">Contact</a></nav></footer>
     </div>
     <script>window.PRAYERS_DATA = <?= $prayersJson ?>;</script>
     <script src="assets/prayers.js?v=2" defer></script>

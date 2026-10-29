@@ -63,7 +63,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=26">
+    <link rel="stylesheet" href="assets/style.css?v=27">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -78,6 +78,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                 <a class="nav-link" href="/rosary">Rosary</a>
                 <a class="nav-link" href="/prayers">Prayers</a>
                 <a class="nav-link" href="/about">About</a>
+                <a class="nav-link" href="/contact">Contact</a>
             </nav>
             <a class="header-guidance" href="#share">Receive guidance</a>
         </header>
@@ -258,7 +259,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
 
         <footer>
             <span>Made to help people pause, pray, and return to Scripture.</span>
-            <nav class="footer-links" aria-label="Trust and transparency"><a href="/privacy">Privacy</a><a href="/safety">Safety</a><a href="/sources">Sources</a></nav>
+            <nav class="footer-links" aria-label="Trust and transparency"><a href="/privacy">Privacy</a><a href="/safety">Safety</a><a href="/sources">Sources</a><a href="/contact">Contact</a></nav>
         </footer>
     </div>
 
