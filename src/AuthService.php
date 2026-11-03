@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ScriptureCompanion;
 
 use Delight\Auth\Auth;
+use PDOException;
 use Throwable;
 
 final class AuthService
@@ -20,7 +21,15 @@ final class AuthService
         try {
             Database::connection();
             return true;
-        } catch (Throwable) {
+        } catch (Throwable $error) {
+            // Log only database error identifiers; never include credentials or DSN values.
+            if ($error instanceof PDOException) {
+                $sqlState = (string) ($error->errorInfo[0] ?? $error->getCode() ?: 'unknown');
+                $driverCode = (string) ($error->errorInfo[1] ?? 'unknown');
+                error_log('Kristohanon database connection failed (SQLSTATE ' . $sqlState . ', driver ' . $driverCode . ').');
+            } else {
+                error_log('Kristohanon database initialization failed (' . get_class($error) . ').');
+            }
             return false;
         }
     }
