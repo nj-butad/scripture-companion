@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
+require __DIR__ . '/src/bootstrap.php';
+
+use ScriptureCompanion\MailService;
 
 if (!isset($_SESSION['contact_csrf'])) {
     $_SESSION['contact_csrf'] = bin2hex(random_bytes(24));
@@ -18,7 +18,7 @@ $values = [
 ];
 $subjects = ['General inquiry', 'Prayer and Scripture', 'Catholic faith question', 'Partnership', 'Technical issue'];
 $errors = [];
-$previewed = false;
+$sent = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!hash_equals($_SESSION['contact_csrf'], (string) ($_POST['csrf'] ?? ''))) {
@@ -37,10 +37,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Write a message between 20 and 3,000 characters.';
     }
 
-    if ($errors === []) {
-        $previewed = true;
-        $values = ['name' => '', 'email' => '', 'subject' => 'General inquiry', 'message' => ''];
-        $_SESSION['contact_csrf'] = bin2hex(random_bytes(24));
+    if (trim((string) ($_POST['website'] ?? '')) !== '') {
+        $sent = true;
+    }
+
+    if ($errors === [] && !$sent) {
+        $body = "New message from Kristohanon.com\n\n"
+            . "Name: {$values['name']}\n"
+            . "Email: {$values['email']}\n"
+            . "Subject: {$values['subject']}\n\n"
+            . "Message:\n{$values['message']}\n";
+
+        if (MailService::sendToInbox('Kristohanon contact: ' . $values['subject'], $body, $values['email'])) {
+            $sent = true;
+            $values = ['name' => '', 'email' => '', 'subject' => 'General inquiry', 'message' => ''];
+            $_SESSION['contact_csrf'] = bin2hex(random_bytes(24));
+        } else {
+            $errors[] = 'Your message could not be delivered. Please email info@kristohanon.com directly.';
+        }
     }
 }
 
@@ -63,7 +77,7 @@ $escape = static fn(string $value): string => htmlspecialchars($value, ENT_QUOTE
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=27">
+    <link rel="stylesheet" href="assets/style.css?v=28">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -83,9 +97,8 @@ $escape = static fn(string $value): string => htmlspecialchars($value, ENT_QUOTE
             <div class="contact-layout">
                 <aside class="contact-details" aria-labelledby="contactDetailsTitle">
                     <h2 id="contactDetailsTitle">Contact details</h2>
-                    <p class="contact-temporary">Temporary placeholders</p>
                     <dl>
-                        <div><dt>Email</dt><dd>hello@kristohanon.example</dd></div>
+                        <div><dt>Email</dt><dd><a href="mailto:info@kristohanon.com">info@kristohanon.com</a></dd></div>
                         <div><dt>Phone</dt><dd>+63 900 000 0000</dd></div>
                         <div><dt>Location</dt><dd>Southern Leyte, Philippines</dd></div>
                     </dl>
@@ -107,29 +120,30 @@ $escape = static fn(string $value): string => htmlspecialchars($value, ENT_QUOTE
 
                 <section class="contact-form-section" aria-labelledby="contactFormTitle">
                     <h2 id="contactFormTitle">Send a message</h2>
-                    <p class="form-disclosure">This preview form is prepared for a future Hostinger Reach connection. For now, submissions are validated but are not sent, saved, or added to a mailing list.</p>
+                    <p class="form-disclosure">Your message is delivered privately to <a href="mailto:info@kristohanon.com">info@kristohanon.com</a>. It is never added to the newsletter unless you subscribe separately.</p>
 
-                    <?php if ($previewed): ?>
-                        <div class="contact-status is-ready" role="status"><strong>The form is ready.</strong><span>Your message passed validation, but it was not sent or saved because email delivery is not connected yet.</span></div>
+                    <?php if ($sent): ?>
+                        <div class="contact-status is-ready" role="status"><strong>Your message is on its way.</strong><span>Thank you. Kristohanon will reply to the email address you provided.</span></div>
                     <?php elseif ($errors !== []): ?>
                         <div class="contact-status is-error" role="alert"><strong>Please check the form.</strong><ul><?php foreach ($errors as $error): ?><li><?= $escape($error) ?></li><?php endforeach; ?></ul></div>
                     <?php endif; ?>
 
                     <form class="contact-form" method="post" action="/contact">
                         <input type="hidden" name="csrf" value="<?= $escape($_SESSION['contact_csrf']) ?>">
+                        <label class="form-honeypot" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
                         <div class="contact-field-row">
                             <label><span>Name</span><input type="text" name="name" value="<?= $escape($values['name']) ?>" autocomplete="name" minlength="2" maxlength="80" required></label>
                             <label><span>Email</span><input type="email" name="email" value="<?= $escape($values['email']) ?>" autocomplete="email" maxlength="160" required></label>
                         </div>
                         <label><span>What is this about?</span><select name="subject" required><?php foreach ($subjects as $subject): ?><option<?= $values['subject'] === $subject ? ' selected' : '' ?>><?= $escape($subject) ?></option><?php endforeach; ?></select></label>
                         <label><span>Message</span><textarea name="message" rows="7" minlength="20" maxlength="3000" placeholder="Write your message here…" required><?= $escape($values['message']) ?></textarea><small>20–3,000 characters</small></label>
-                        <button class="contact-submit" type="submit">Check message <span aria-hidden="true">→</span></button>
+                        <button class="contact-submit" type="submit">Send message <span aria-hidden="true">→</span></button>
                     </form>
                 </section>
             </div>
         </main>
 
-        <footer><span>Made to help people pause, pray, and return to Scripture.</span><nav class="footer-links" aria-label="Trust and transparency"><a href="/privacy">Privacy</a><a href="/safety">Safety</a><a href="/sources">Sources</a><a href="/contact">Contact</a></nav></footer>
+        <footer><span>Made to help people pause, pray, and return to Scripture.</span><nav class="footer-links" aria-label="Trust and transparency"><a href="mailto:info@kristohanon.com">info@kristohanon.com</a><a href="/privacy">Privacy</a><a href="/safety">Safety</a><a href="/sources">Sources</a><a href="/contact">Contact</a></nav></footer>
     </div>
 </body>
 </html>

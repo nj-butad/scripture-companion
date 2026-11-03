@@ -164,6 +164,8 @@ Long-form testimony uses an open editorial reading column with a 70-character me
 
 The homepage follows a deliberate sequence: welcome, journey index, private conversation, weekly Scripture, daily practice, expressed need, discovery, personal rhythm, and seasonal devotion. Sections use whitespace and fine rules before reaching for containers. Three-column practice and discovery grids collapse to one column below 900px; the seven-need grid becomes four columns and then two. The journey index becomes a two-by-two map on phones.
 
+The newsletter closes the homepage as a quiet editorial invitation rather than a promotional banner. On desktop, its short promise and email form share a two-column ruled surface; on mobile, the field and single primary action stack at full width. Subscription status remains directly beneath the form so success and recovery are visible without a modal.
+
 Use the eight-point spacing scale as the default rhythm. Section gaps are deliberately larger than card gaps: 52–72px between devotional chapters, 16px between related cards, and 24–34px inside substantive cards. Alignment should be shared across adjacent content rather than centered by habit.
 
 Mobile is a re-composition, not a shrink. Hero copy moves toward the lower calm portion of the image, practice cards become full-width reading surfaces, weekly dates remain horizontally available, and actions retain 44px targets. No page may require horizontal page scrolling at 320px.

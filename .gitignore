@@ -1,5 +1,6 @@
 .env
 storage/logs/*.log
 storage/feedback.ndjson
+storage/newsletter-subscribers.csv
 .DS_Store
 

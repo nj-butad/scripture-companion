@@ -63,7 +63,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=27">
+    <link rel="stylesheet" href="assets/style.css?v=28">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -254,12 +254,29 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                 <a class="seasonal-action" id="seasonalAction" href="<?= htmlspecialchars($home['seasonal']['href'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($home['seasonal']['en']['action'], ENT_QUOTES, 'UTF-8') ?> <span aria-hidden="true">→</span></a>
             </section>
 
+            <section class="newsletter-section" aria-labelledby="newsletterTitle">
+                <div class="newsletter-copy">
+                    <h2 id="newsletterTitle">A quiet note for your week</h2>
+                    <p>Receive a short Scripture passage, a simple prayer, and a gentle invitation to return to God. No noise, no daily pressure.</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <label for="newsletterEmail">Email address</label>
+                    <div class="newsletter-field">
+                        <input id="newsletterEmail" name="email" type="email" autocomplete="email" maxlength="160" placeholder="you@example.com" required>
+                        <button type="submit">Join the newsletter <span aria-hidden="true">→</span></button>
+                    </div>
+                    <input class="form-honeypot" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <p class="newsletter-note">Occasional emails from Kristohanon. Unsubscribe anytime by replying to <a href="mailto:info@kristohanon.com">info@kristohanon.com</a>.</p>
+                    <p class="newsletter-status" id="newsletterStatus" role="status" aria-live="polite"></p>
+                </form>
+            </section>
+
             <p class="boundary-note">Kristohanon offers Scripture-centered encouragement, not emergency, medical, or mental-health care. If you are in immediate danger, contact local emergency services or a trusted person now.</p>
         </main>
 
         <footer>
             <span>Made to help people pause, pray, and return to Scripture.</span>
-            <nav class="footer-links" aria-label="Trust and transparency"><a href="/privacy">Privacy</a><a href="/safety">Safety</a><a href="/sources">Sources</a><a href="/contact">Contact</a></nav>
+            <nav class="footer-links" aria-label="Trust and transparency"><a href="mailto:info@kristohanon.com">info@kristohanon.com</a><a href="/privacy">Privacy</a><a href="/safety">Safety</a><a href="/sources">Sources</a><a href="/contact">Contact</a></nav>
         </footer>
     </div>
 
@@ -274,7 +291,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     </aside>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?>, home: <?= $homeJson ?> };</script>
-    <script src="assets/app.js?v=17" defer></script>
+    <script src="assets/app.js?v=18" defer></script>
 </body>
 </html>
 

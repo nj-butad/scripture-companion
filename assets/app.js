@@ -600,3 +600,38 @@ function reducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
+const newsletterForm = document.querySelector('#newsletterForm');
+if (newsletterForm) {
+  const newsletterStatus = document.querySelector('#newsletterStatus');
+  newsletterForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const submit = newsletterForm.querySelector('button[type="submit"]');
+    const fields = new FormData(newsletterForm);
+    submit.disabled = true;
+    newsletterStatus.classList.remove('is-error', 'is-success');
+    newsletterStatus.textContent = 'Joining…';
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          csrf: window.STILL_WATERS.csrf,
+          email: fields.get('email'),
+          website: fields.get('website'),
+        }),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'We could not add you right now.');
+      newsletterStatus.textContent = data.message;
+      newsletterStatus.classList.add('is-success');
+      newsletterForm.reset();
+    } catch (error) {
+      newsletterStatus.textContent = error.message || 'We could not add you right now. Please try again.';
+      newsletterStatus.classList.add('is-error');
+    } finally {
+      submit.disabled = false;
+    }
+  });
+}
+

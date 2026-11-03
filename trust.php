@@ -11,7 +11,8 @@ $pages = [
             ['What stays on your device', 'Rosary progress, gratitude text, recent prayer activity, quiz state, and similar preferences use your browser’s local storage. They are not synced to a Kristohanon account because accounts do not exist. Clearing this site’s browser data removes them.'],
             ['What happens when you chat', 'Your message is sent to Kristohanon’s server and then to the configured OpenAI service so a response can be composed. Kristohanon does not write ordinary chat messages to its own feedback log or database. OpenAI requests are configured with storage disabled.'],
             ['Feedback and reports', 'Helpful and Not helpful ratings contain no original message or generated answer. A report includes the generated answer so it can be reviewed. Your original message is included only when you deliberately check the consent box before submitting the report. Reports are stored in a private server file and are not public.'],
-            ['What we do not collect', 'Kristohanon does not require your name, email address, account, contacts, precise location, camera, or microphone. The feedback system does not intentionally record your IP address or browser identity. Ordinary hosting security logs may still be maintained by the hosting provider.'],
+            ['Contact and newsletter email', 'The contact form sends the name, email address, subject, and message you provide to info@kristohanon.com. Newsletter signup stores the email address you submit in a private server file and sends a subscription notice to that inbox. These are optional and separate from the Scripture companion.'],
+            ['What we do not collect', 'Kristohanon does not require an account, contacts, precise location, camera, or microphone. The feedback system does not intentionally record your IP address or browser identity. Ordinary hosting security logs may still be maintained by the hosting provider.'],
             ['Your choices', 'Do not enter information you do not want transmitted to the AI provider. You can use the Rosary, prayer library, weekly Scripture, and other non-chat features without submitting a personal message.'],
         ],
     ],
@@ -62,7 +63,7 @@ $content = $pages[$page];
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=27">
+    <link rel="stylesheet" href="assets/style.css?v=28">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -81,7 +82,7 @@ $content = $pages[$page];
                 <?php endforeach; ?>
             </article>
         </main>
-        <footer><span>Made to help people pause, pray, and return to Scripture.</span><nav class="footer-links" aria-label="Trust and transparency"><a href="/privacy">Privacy</a><a href="/safety">Safety</a><a href="/sources">Sources</a><a href="/contact">Contact</a></nav></footer>
+        <footer><span>Made to help people pause, pray, and return to Scripture.</span><nav class="footer-links" aria-label="Trust and transparency"><a href="mailto:info@kristohanon.com">info@kristohanon.com</a><a href="/privacy">Privacy</a><a href="/safety">Safety</a><a href="/sources">Sources</a><a href="/contact">Contact</a></nav></footer>
     </div>
 </body>
 </html>

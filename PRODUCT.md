@@ -74,7 +74,7 @@ Returning visitors can resume a gentle rhythm stored only in their browser: rece
 - `/rosary` — bead-by-bead Rosary in English and Cebuano, with mysteries selected for the current day in Asia/Manila and progress saved locally.
 - `/prayers` — searchable bilingual library of traditional Catholic prayers grouped by purpose.
 - `/about` — long-form first-person testimony from Southern Leyte explaining how financial uncertainty, surrender, Scripture, and unexpected opportunities led to Kristohanon.
-- `/contact` — temporary contact details, social placeholders, and a validated contact form prepared for a future Hostinger Reach connection.
+- `/contact` — the official `info@kristohanon.com` address, social placeholders, and a validated contact form that delivers to the ministry inbox.
 
 ## Capabilities and Constraints
 
@@ -93,6 +93,7 @@ Returning visitors can resume a gentle rhythm stored only in their browser: rece
 - Plain-language Privacy, Safety, and Sources pages available without an account.
 - Responsive desktop and mobile web layouts.
 - Useful fallback responses when OpenAI is unavailable or unconfigured.
+- Optional newsletter signup with private subscriber storage and inbox notification through `info@kristohanon.com`.
 
 ### Technical constraints
 

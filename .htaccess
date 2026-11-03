@@ -21,6 +21,9 @@ RewriteRule ^api/chat\.php$ /api/chat [R=308,L,NE]
 RewriteCond %{THE_REQUEST} \s/+api/feedback\.php(?:[?\s]) [NC]
 RewriteRule ^api/feedback\.php$ /api/feedback [R=308,L,NE]
 
+RewriteCond %{THE_REQUEST} \s/+api/newsletter\.php(?:[?\s]) [NC]
+RewriteRule ^api/newsletter\.php$ /api/newsletter [R=308,L,NE]
+
 RewriteCond %{THE_REQUEST} \s/+trust\.php(?:[?\s]) [NC]
 RewriteRule ^trust\.php$ - [R=404,L]
 
@@ -28,6 +31,7 @@ RewriteRule ^(about|rosary|prayers|contact)/?$ $1.php [END,QSA]
 RewriteRule ^(privacy|safety|sources)/?$ trust.php?page=$1 [END,QSA]
 RewriteRule ^api/chat/?$ api/chat.php [END,QSA]
 RewriteRule ^api/feedback/?$ api/feedback.php [END,QSA]
+RewriteRule ^api/newsletter/?$ api/newsletter.php [END,QSA]
 
 # Keep application code, configuration, and reviewed Scripture data private
 # while allowing Hostinger to deploy this repository directly to public_html.

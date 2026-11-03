@@ -523,6 +523,7 @@ h1 {
 .contact-form textarea { min-height: 170px; resize: vertical; line-height: 1.55; }
 .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--burgundy); background: var(--paper); box-shadow: 0 0 0 3px rgba(168, 70, 67, 0.13); }
 .contact-form small { color: var(--ink-soft); font-size: 0.74rem; font-weight: 400; }
+.form-honeypot { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip-path: inset(50%) !important; white-space: nowrap !important; }
 .contact-submit { min-height: 46px; width: fit-content; border: 0; border-radius: 999px; padding: 11px 18px; display: inline-flex; align-items: center; gap: 12px; color: var(--paper); background: var(--burgundy); font: inherit; font-weight: 600; cursor: pointer; transition: background-color 180ms var(--ease-out), transform 140ms var(--ease-out); }
 .contact-submit:active { transform: scale(0.97); }
 .contact-status { margin: 0 0 24px; padding: 16px 18px; display: grid; gap: 5px; border: 1px solid var(--line); border-radius: 9px; color: var(--ink); background: var(--surface-muted); }
@@ -531,6 +532,23 @@ h1 {
 .contact-status ul { padding-left: 20px; }
 .contact-status.is-ready { border-color: rgba(67, 88, 55, 0.32); background: rgba(67, 88, 55, 0.07); }
 .contact-status.is-error { border-color: rgba(139, 61, 53, 0.3); background: rgba(139, 61, 53, 0.06); }
+
+.newsletter-section { margin: 72px auto 0; padding: clamp(28px, 5vw, 48px); display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr); align-items: center; gap: clamp(32px, 7vw, 88px); border-block: 1px solid rgba(168, 70, 67, 0.28); background: rgba(255, 253, 250, 0.64); }
+.newsletter-copy h2 { max-width: 12ch; margin: 0; font-family: "Gelasio", Georgia, serif; font-size: clamp(1.8rem, 3.8vw, 2.7rem); font-weight: 400; line-height: 1.18; letter-spacing: -0.025em; text-wrap: balance; }
+.newsletter-copy p { max-width: 52ch; margin: 16px 0 0; color: var(--ink-soft); line-height: 1.7; }
+.newsletter-form { display: grid; gap: 10px; }
+.newsletter-form > label { font-size: 0.82rem; font-weight: 600; }
+.newsletter-field { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; }
+.newsletter-field input { min-width: 0; min-height: 48px; border: 1px solid rgba(96, 70, 62, 0.25); border-radius: 9px; padding: 12px 14px; color: var(--ink); background: var(--paper); font: inherit; outline: none; transition: border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out); }
+.newsletter-field input:focus { border-color: var(--burgundy); box-shadow: 0 0 0 3px rgba(168, 70, 67, 0.13); }
+.newsletter-field button { min-height: 48px; border: 0; border-radius: 999px; padding: 11px 18px; color: var(--paper); background: var(--burgundy); font: inherit; font-weight: 600; cursor: pointer; transition: background-color 180ms var(--ease-out), transform 140ms var(--ease-out), opacity 180ms var(--ease-out); }
+.newsletter-field button:active { transform: scale(0.97); }
+.newsletter-field button:disabled { cursor: wait; opacity: 0.58; }
+.newsletter-note, .newsletter-status { margin: 0; color: var(--ink-soft); font-size: 0.78rem; line-height: 1.55; }
+.newsletter-note a { color: inherit; }
+.newsletter-status:empty { display: none; }
+.newsletter-status.is-success { color: var(--success); }
+.newsletter-status.is-error { color: var(--danger); }
 
 .chat-widget { position: fixed; right: max(22px, env(safe-area-inset-right)); bottom: max(22px, env(safe-area-inset-bottom)); z-index: 30; display: grid; justify-items: end; gap: 12px; }
 .chat-widget-launcher { border: 0; padding: 4px; display: flex; align-items: flex-end; gap: 12px; background: transparent; cursor: pointer; animation: widget-float 4.8s ease-in-out infinite; transform-origin: bottom right; }
@@ -725,7 +743,7 @@ h1 {
   .practice-card, .discovery-card { min-height: 0; }
   .about-main { grid-template-columns: 1fr; }
   .about-trust { margin-top: 72px; }
-  .contact-layout { grid-template-columns: 1fr; }
+  .contact-layout, .newsletter-section { grid-template-columns: 1fr; }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -785,6 +803,9 @@ h1 {
   .contact-layout { margin-top: 48px; gap: 52px; }
   .contact-form-section { padding: 22px 18px; }
   .contact-field-row { grid-template-columns: 1fr; }
+  .newsletter-section { margin-top: 56px; padding: 28px 18px; }
+  .newsletter-field { grid-template-columns: 1fr; }
+  .newsletter-field button { width: 100%; justify-content: center; }
   .week-picker { overflow-x: auto; grid-template-columns: repeat(7, minmax(62px, 1fr)); scrollbar-width: none; }
   .week-picker::-webkit-scrollbar { display: none; }
   .week-day { min-height: 65px; }

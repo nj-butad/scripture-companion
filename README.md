@@ -46,6 +46,12 @@ The `/about` page carries the long-form personal testimony behind
 Kristohanon: financial uncertainty in Southern Leyte, surrender, discovering
 God through Scripture, and an invitation to begin again with God first.
 
+The contact form delivers messages to `info@kristohanon.com` using the hosting
+account's PHP mail transport. The homepage newsletter signup stores unique
+subscriber addresses in the private `storage/newsletter-subscribers.csv` file
+and sends a new-subscriber notice to the same inbox. The storage directory is
+blocked from public access by `.htaccess`.
+
 ## Requirements
 
 - PHP 8.1+
