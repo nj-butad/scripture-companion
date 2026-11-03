@@ -89,7 +89,8 @@ $escape = static fn(string $value): string => htmlspecialchars($value, ENT_QUOTE
         </header>
 
         <main class="contact-main" id="mainContent">
-            <section class="contact-opening" aria-labelledby="contactTitle">
+            <div class="contact-layout">
+                <section class="contact-opening" aria-labelledby="contactTitle">
                 <header class="contact-intro">
                     <h1 id="contactTitle">A note, from one heart to another.</h1>
                     <p>I started Kristohanon after Scripture became a steady place to return to in uncertain days. If something here has helped you—or you have a question, correction, or prayer resource to share—I would be glad to hear from you.</p>
@@ -99,26 +100,21 @@ $escape = static fn(string $value): string => htmlspecialchars($value, ENT_QUOTE
                     <img src="/assets/images/lectio-bible.webp" alt="An open Bible beside a candle and olive branch">
                     <figcaption>A little room for a conversation, and a word to carry with you.</figcaption>
                 </figure>
-            </section>
+                </section>
 
-            <section class="contact-direct" aria-labelledby="contactDirectTitle">
-                <h2 id="contactDirectTitle">Reach me directly</h2>
-                <nav class="contact-routes" aria-label="Direct contact options">
-                    <a href="tel:+639166014705"><span>Call</span><strong>+63 916 601 4705</strong><svg class="contact-route-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M6 6h8v8"/></svg></a>
-                    <a href="mailto:info@kristohanon.com"><span>Email</span><strong>info@kristohanon.com</strong><svg class="contact-route-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M6 6h8v8"/></svg></a>
-                    <a href="https://www.facebook.com/profile.php?id=61596336594040" target="_blank" rel="noopener noreferrer"><span>Facebook</span><strong>Kristohanon</strong><svg class="contact-route-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M6 6h8v8"/></svg></a>
-                </nav>
-            </section>
-
-            <div class="contact-layout">
-                <aside class="contact-note">
-                    <h2>What would you like to share?</h2>
-                    <p>Questions about Scripture, Catholic prayers, or how this project began are all welcome. Choose the closest topic, then write in your own words.</p>
-                    <p>Your note is sent to <a href="mailto:info@kristohanon.com">info@kristohanon.com</a>. It is not added to the newsletter.</p>
-                </aside>
+                <div class="contact-sidebar">
+                <section class="contact-direct" aria-labelledby="contactDirectTitle">
+                    <h2 id="contactDirectTitle">Reach me directly</h2>
+                    <nav class="contact-routes" aria-label="Direct contact options">
+                        <a href="tel:+639166014705"><span>Call</span><strong>+63 916 601 4705</strong><svg class="contact-route-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M6 6h8v8"/></svg></a>
+                        <a href="mailto:info@kristohanon.com"><span>Email</span><strong>info@kristohanon.com</strong><svg class="contact-route-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M6 6h8v8"/></svg></a>
+                        <a href="https://www.facebook.com/profile.php?id=61596336594040" target="_blank" rel="noopener noreferrer"><span>Facebook</span><strong>Kristohanon</strong><svg class="contact-route-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M6 6h8v8"/></svg></a>
+                    </nav>
+                </section>
 
                 <section class="contact-form-section" aria-labelledby="contactFormTitle">
                     <h2 id="contactFormTitle">Write me a message</h2>
+                    <p class="contact-form-lede">Questions about Scripture, Catholic prayers, or how this project began are welcome. Your note goes to <a href="mailto:info@kristohanon.com">info@kristohanon.com</a> and is not added to the newsletter.</p>
 
                     <?php if ($sent): ?>
                         <div class="contact-status is-ready" role="status"><strong>Your message is on its way.</strong><span>Thank you. Kristohanon will reply to the email address you provided.</span></div>
@@ -138,6 +134,7 @@ $escape = static fn(string $value): string => htmlspecialchars($value, ENT_QUOTE
                         <button class="contact-submit" type="submit">Send message <span aria-hidden="true">→</span></button>
                     </form>
                 </section>
+                </div>
             </div>
         </main>
 
