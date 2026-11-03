@@ -53,7 +53,7 @@ The feed uses the reviewed bilingual passage library in `data/passages.php`. It 
 /usr/bin/php /home/ACCOUNT/domains/kristohanon.com/public_html/scripts/publish-scheduled-readings.php
 ```
 
-Run it daily (for example, 8:10 AM Asia/Manila). It creates the `feed_readings` table if needed, syncs approved entries from the deployed monthly calendar, and publishes items due in Manila time. Each user sees the entries matching their selected language, with the existing topic and interaction ranking applied. New monthly batches still need to be prepared and reviewed; the schedule automates their release, not authorship.
+Run it daily (for example, 9:00 AM Asia/Manila). It creates the `feed_readings` table if needed, syncs approved entries from the deployed monthly calendar, and publishes items due in Manila time. Each user sees the entries matching their selected language, with the existing topic and interaction ranking applied. New monthly batches still need to be prepared and reviewed; the schedule automates their release, not authorship.
 
 The account Preferences page defaults email reminders to **Off**. A user must opt in to daily or weekly email. To deliver reminders on Hostinger, add these PHP CLI cron jobs after deploying:
 
