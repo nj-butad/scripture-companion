@@ -1,0 +1,20 @@
+{
+    "name": "kristohanon/scripture-companion",
+    "description": "A bilingual Catholic Scripture and prayer companion.",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "ext-curl": "*",
+        "delight-im/auth": "^8.3",
+        "phpmailer/phpmailer": "^7.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1"
+    },
+    "config": {
+        "allow-plugins": {},
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}

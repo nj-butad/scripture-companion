@@ -1,0 +1,66 @@
+name: Quality
+
+on:
+  pull_request:
+  push:
+    branches: [main, staging]
+
+permissions:
+  contents: read
+
+jobs:
+  php:
+    name: PHP quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: curl, mbstring
+          coverage: none
+      - uses: ramsey/composer-install@v3
+        with:
+          dependency-versions: locked
+      - name: Validate Composer metadata
+        run: composer validate --strict
+      - name: Check PHP syntax
+        run: find . -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyse --no-progress
+
+  browser:
+    name: Browser, accessibility and SEO
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: curl, mbstring
+          coverage: none
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium webkit
+      - name: Playwright smoke tests
+        run: npm run test:e2e
+      - name: Start local site
+        run: php -S 127.0.0.1:8080 tests/router.php > /tmp/kristohanon-php.log 2>&1 &
+      - name: Wait for local site
+        run: npx wait-on http://127.0.0.1:8080
+      - name: Accessibility checks
+        run: npm run test:a11y
+      - name: Lighthouse checks
+        run: npm run test:lighthouse
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: browser-test-results
+          path: |
+            playwright-report/
+            test-results/
+            .lighthouseci/
+          if-no-files-found: ignore

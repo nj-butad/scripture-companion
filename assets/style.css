@@ -2,8 +2,8 @@
   color-scheme: light;
   --ink: #272321;
   --ink-soft: #6c625d;
-  --burgundy: #a84643;
-  --burgundy-dark: #823431;
+  --burgundy: #7f302f;
+  --burgundy-dark: #682422;
   --rose-wash: #f3e5e1;
   --cream: #eee9de;
   --paper: #fffdfa;
@@ -33,13 +33,20 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  background:
-    linear-gradient(rgba(248, 244, 236, 0.72), rgba(242, 236, 226, 0.78)),
-    url("images/scripture-background.webp") center top / cover fixed no-repeat,
-    #f2ece2;
+  background: #f2ece2;
   font-family: "Source Sans 3", system-ui, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url("images/scripture-background.webp") center top / cover no-repeat;
+  opacity: 0.11;
 }
 
 button, textarea { font: inherit; }
@@ -51,6 +58,8 @@ a { text-underline-offset: 3px; }
 :where(#share, #verseToday, #prayToday, #discoverToday) { scroll-margin-top: 24px; }
 
 .page-shell {
+  position: relative;
+  z-index: 1;
   width: min(100% - 48px, 1440px);
   margin-inline: auto;
   min-height: 100vh;
@@ -108,6 +117,41 @@ a { text-underline-offset: 3px; }
 .nav-link:active { transform: scale(0.97); }
 .header-guidance { min-height: 42px; flex: 0 0 auto; border-radius: 999px; padding: 10px 16px; display: inline-flex; align-items: center; justify-content: center; color: var(--paper); background: var(--burgundy); text-decoration: none; font-size: 0.86rem; font-weight: 600; transition: background-color 180ms var(--ease-out), transform 140ms var(--ease-out); }
 .header-guidance:active { transform: scale(0.97); }
+.header-actions { display: flex; align-items: center; gap: 12px; }
+.account-nav { min-height: 42px; padding: 9px 13px; display: inline-flex; align-items: center; color: var(--burgundy-dark); border: 1px solid var(--line); border-radius: 7px; background: var(--paper); text-decoration: none; font-size: 0.86rem; font-weight: 600; }
+.account-nav:hover { border-color: var(--burgundy); }
+
+.account-main { width: min(100%, 620px); margin-inline: auto; padding-block: 64px; }
+.account-card { padding: clamp(26px, 6vw, 48px); border: 1px solid var(--line); border-radius: 14px; background: rgba(255, 253, 250, 0.96); box-shadow: var(--shadow); }
+.account-card h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.2rem); }
+.account-intro { margin: 14px 0 26px; color: var(--ink-soft); line-height: 1.65; }
+.account-form { display: grid; gap: 18px; }
+.account-form > label:not(.account-checkbox):not(.account-honeypot) { display: grid; gap: 7px; color: var(--ink); font-size: 0.9rem; font-weight: 600; }
+.account-form input[type="email"], .account-form input[type="password"] { width: 100%; min-height: 48px; border: 1px solid rgba(96, 70, 62, 0.25); border-radius: 7px; padding: 11px 13px; color: var(--ink); background: var(--surface-muted); font: inherit; font-weight: 400; }
+.account-form small { color: var(--ink-soft); font-size: 0.78rem; font-weight: 400; }
+.account-checkbox { display: flex; align-items: flex-start; gap: 10px; color: var(--ink-soft); font-size: 0.84rem; line-height: 1.5; }
+.account-checkbox input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--burgundy); }
+.account-checkbox a, .account-links a, .account-switch a { color: var(--burgundy-dark); font-weight: 600; }
+.account-submit { min-height: 48px; width: 100%; border: 0; border-radius: 7px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; color: white; background: var(--burgundy); font: inherit; font-weight: 600; cursor: pointer; }
+.account-submit:hover { background: var(--burgundy-dark); }
+.account-switch { margin: 22px 0 0; color: var(--ink-soft); text-align: center; font-size: 0.9rem; }
+.account-links { margin-top: 20px; display: flex; justify-content: space-between; gap: 12px; font-size: 0.86rem; }
+.account-privacy { margin: 24px 0 0; padding-top: 18px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 0.78rem; line-height: 1.6; }
+.account-message { margin: 0 0 18px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 7px; font-size: 0.88rem; }
+.account-message.is-notice { color: #314526; background: #edf3e8; }
+.account-message.is-error { color: #652b25; background: #fff1ee; }
+.account-setup-note { padding: 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-muted); }
+.account-setup-note p { color: var(--ink-soft); line-height: 1.6; }
+.account-setup-note a { color: var(--burgundy-dark); font-weight: 600; }
+.account-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+@media (max-width: 700px) {
+  .header-actions { gap: 6px; }
+  .account-nav { min-height: 40px; padding-inline: 9px; font-size: 0.78rem; }
+  .header-guidance { padding-inline: 10px; font-size: 0.78rem; }
+  .account-main { padding-block: 38px; }
+  .account-links { flex-direction: column; align-items: center; }
+}
 
 .quiet-button, .dialog-close {
   border: 0;
@@ -123,6 +167,7 @@ a { text-underline-offset: 3px; }
 main { flex: 1; padding: 68px 0 50px; }
 
 .intro {
+  position: relative;
   max-width: 1400px;
   min-height: 470px;
   margin: 0 auto 34px;
@@ -132,12 +177,19 @@ main { flex: 1; padding: 68px 0 50px; }
   overflow: hidden;
   border: 1px solid rgba(96, 70, 62, 0.16);
   border-radius: 18px;
-  background:
-    linear-gradient(90deg, rgba(255, 253, 249, 0.91) 0%, rgba(255, 253, 249, 0.77) 50%, rgba(255, 253, 249, 0.38) 100%),
-    url("images/hero-still-waters.webp") center / cover no-repeat;
+  background: #f7f1e8;
   box-shadow: 0 22px 70px rgba(70, 51, 44, 0.12);
   text-align: left;
 }
+.intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: url("images/hero-still-waters.webp") center / cover no-repeat;
+  opacity: 0.2;
+}
+.intro > * { position: relative; z-index: 1; }
 .intro-copy { width: min(100%, 700px); min-width: 0; margin-right: auto; }
 .intro h1 { margin-inline: 0; max-width: 680px; }
 .intro .lede { margin-inline: 0; max-width: 560px; }
@@ -267,7 +319,7 @@ h1 {
 .need-card strong { font-size: 0.87rem; font-weight: 600; }
 .discovery-grid { max-width: 1240px; }
 .discovery-card { min-height: 390px; }
-.saint-card { position: relative; overflow: hidden; padding: 0; background: linear-gradient(145deg, rgba(255, 253, 250, 0.96), rgba(246, 238, 230, 0.96)); }
+.saint-card { position: relative; overflow: hidden; padding: 0; background: linear-gradient(145deg, #fffdfa, #f6eee6); }
 .saint-art { width: 100%; height: 168px; display: block; object-fit: cover; object-position: 73% 37%; }
 .saint-content { padding: clamp(24px, 4vw, 34px); }
 .saint-card::after { content: "✧"; position: absolute; right: 23px; top: 20px; color: rgba(168, 70, 67, 0.15); font-size: 2rem; }
@@ -302,7 +354,9 @@ h1 {
 .rhythm-day.is-complete .rhythm-dot { border-color: var(--burgundy); color: white; background: var(--burgundy); }
 .rhythm-links { grid-column: 1 / -1; padding-top: 18px; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); }
 .rhythm-links a { color: var(--burgundy); text-decoration: none; font-weight: 600; }
-.seasonal-card { max-width: 1240px; min-height: 390px; margin: 96px auto 0; padding: clamp(34px, 7vw, 62px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; border: 1px solid rgba(125, 83, 72, 0.18); border-radius: 16px; background: linear-gradient(90deg, rgba(255, 251, 246, 0.98) 0%, rgba(255, 251, 246, 0.93) 42%, rgba(255, 251, 246, 0.2) 72%), url("images/rosary-season.webp") 67% center / cover no-repeat; text-align: left; }
+.seasonal-card { position: relative; overflow: hidden; max-width: 1240px; min-height: 390px; margin: 96px auto 0; padding: clamp(34px, 7vw, 62px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; border: 1px solid rgba(125, 83, 72, 0.18); border-radius: 16px; background: #fff9f2; text-align: left; }
+.seasonal-card::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: url("images/rosary-season.webp") 67% center / cover no-repeat; opacity: 0.16; }
+.seasonal-card > * { position: relative; z-index: 1; }
 .seasonal-card h2 { max-width: 520px; font-size: clamp(1.7rem, 4vw, 2.55rem); }
 .seasonal-card > p:not(.eyebrow) { max-width: 420px; margin: 16px 0 27px; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.65; }
 .seasonal-action { display: inline-flex; align-items: center; gap: 10px; }

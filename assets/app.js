@@ -185,6 +185,7 @@ function renderLectio() {
   if (lectioStage === 0) {
     const quote = document.createElement('blockquote');
     quote.textContent = active.text;
+    quote.tabIndex = 0;
     lectioContent.append(quote);
   }
   if (lectioStage === 2) {
@@ -265,6 +266,7 @@ function renderRhythm() {
     const item = document.createElement('span');
     const prayed = rhythm.includes(day.date);
     item.className = `rhythm-day${prayed ? ' is-complete' : ''}`;
+    item.setAttribute('role', 'listitem');
     item.innerHTML = `<i class="rhythm-dot" aria-hidden="true">${prayed ? '✓' : ''}</i><small>${language === 'ceb' ? day.day_ceb : day.day}</small>`;
     item.setAttribute('aria-label', `${day.day_long}: ${prayed ? 'prayed' : 'not marked'}`);
     return item;

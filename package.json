@@ -1,0 +1,15 @@
+{
+  "name": "kristohanon-quality-checks",
+  "private": true,
+  "scripts": {
+    "test:e2e": "playwright test",
+    "test:a11y": "pa11y-ci --config .pa11yci.json",
+    "test:lighthouse": "lhci autorun --config=lighthouserc.json"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.16.0",
+    "@playwright/test": "^1.56.1",
+    "pa11y-ci": "^5.0.0",
+    "wait-on": "^9.0.1"
+  }
+}
