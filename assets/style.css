@@ -120,6 +120,17 @@ a { text-underline-offset: 3px; }
 .header-actions { display: flex; align-items: center; gap: 12px; }
 .account-nav { min-height: 42px; padding: 9px 13px; display: inline-flex; align-items: center; color: var(--burgundy-dark); border: 1px solid var(--line); border-radius: 7px; background: var(--paper); text-decoration: none; font-size: 0.86rem; font-weight: 600; }
 .account-nav:hover { border-color: var(--burgundy); }
+.account-menu { position: relative; }
+.account-menu > summary { min-height: 42px; padding: 9px 13px; display: inline-flex; align-items: center; gap: 9px; border: 1px solid var(--line); border-radius: 7px; color: var(--burgundy-dark); background: var(--paper); cursor: pointer; font-size: 0.86rem; font-weight: 600; list-style: none; }
+.account-menu > summary::-webkit-details-marker { display: none; }
+.account-menu[open] > summary { border-color: rgba(127, 48, 47, 0.42); }
+.account-menu-chevron { color: var(--ink-soft); font-size: 1rem; transition: transform 160ms var(--ease-out); }
+.account-menu[open] .account-menu-chevron { transform: rotate(180deg); }
+.account-menu-panel { position: absolute; z-index: 30; top: calc(100% + 8px); right: 0; width: 220px; padding: 7px; border: 1px solid var(--line); border-radius: 9px; background: var(--paper); box-shadow: 0 14px 38px rgba(52, 35, 30, 0.16); }
+.account-menu-panel a, .account-menu-panel button { width: 100%; min-height: 42px; padding: 10px 11px; display: flex; align-items: center; border: 0; border-radius: 5px; color: var(--ink); background: transparent; text-align: left; text-decoration: none; font: inherit; font-size: 0.88rem; cursor: pointer; }
+.account-menu-panel a:hover, .account-menu-panel button:hover { color: var(--burgundy-dark); background: var(--surface-muted); }
+.account-menu-panel form { margin: 5px 0 0; padding-top: 5px; border-top: 1px solid var(--line); }
+.account-menu-panel button { color: var(--burgundy-dark); font-weight: 600; }
 
 .account-main { width: min(100%, 620px); margin-inline: auto; padding-block: 64px; }
 .account-card { padding: clamp(26px, 6vw, 48px); border: 1px solid var(--line); border-radius: 14px; background: rgba(255, 253, 250, 0.96); box-shadow: var(--shadow); }
@@ -148,6 +159,8 @@ a { text-underline-offset: 3px; }
 @media (max-width: 700px) {
   .header-actions { gap: 6px; }
   .account-nav { min-height: 40px; padding-inline: 9px; font-size: 0.78rem; }
+  .account-menu > summary { min-height: 40px; padding-inline: 9px; font-size: 0.78rem; }
+  .account-menu-panel { right: auto; left: 0; }
   .header-guidance { padding-inline: 10px; font-size: 0.78rem; }
   .account-main { padding-block: 38px; }
   .account-links { flex-direction: column; align-items: center; }
@@ -829,6 +842,7 @@ h1 {
   .site-header { min-height: 104px; margin-top: 10px; padding: 12px; flex-wrap: wrap; justify-content: center; gap: 6px 18px; }
   .brand { width: 100%; justify-content: center; }
   .site-nav { width: 100%; justify-content: center; }
+  .header-actions { width: 100%; justify-content: center; }
   .header-guidance { min-height: 40px; padding: 9px 15px; }
   main { padding-top: 32px; }
   .intro { min-height: 360px; padding: 32px 22px; align-items: center; background: linear-gradient(90deg, rgba(255, 253, 249, 0.96) 0%, rgba(255, 253, 249, 0.86) 62%, rgba(255, 253, 249, 0.56) 100%), url("images/hero-still-waters.webp") 64% center / cover no-repeat; text-align: left; }

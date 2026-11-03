@@ -111,7 +111,7 @@ $structuredData = json_encode([
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=33">
+    <link rel="stylesheet" href="assets/style.css?v=34">
     <script type="application/ld+json"><?= $structuredData ?></script>
 </head>
 <body>
@@ -129,7 +129,7 @@ $structuredData = json_encode([
                 <a class="nav-link" href="/about">About</a>
                 <a class="nav-link" href="/contact">Contact</a>
             </nav>
-            <div class="header-actions"><a class="account-nav" href="/account">Sign in</a><a class="header-guidance" href="#share">Receive guidance</a></div>
+            <div class="header-actions"><?php require __DIR__ . '/partials/account-menu.php'; ?><a class="header-guidance" href="#share">Receive guidance</a></div>
         </header>
 
         <main id="mainContent">
