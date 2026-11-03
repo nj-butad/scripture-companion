@@ -46,6 +46,10 @@ RedirectMatch 404 ^/(?:\.env|\.env\.example|\.gitignore|README\.md|LICENSE)$
   ForceType application/manifest+json
 </Files>
 
+<Files "sitemap.xml">
+  ForceType application/xml
+</Files>
+
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"

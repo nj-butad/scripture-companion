@@ -126,7 +126,7 @@ function renderDailyVerse(index, animate = true) {
   dailyTranslation.textContent = verse.translation;
   document.querySelector('#dailyTitle').textContent = language === 'ceb'
     ? (day.is_today ? 'Bersikulo alang karong adlawa' : `Bersikulo alang sa ${day.day_long_ceb}`)
-    : (day.is_today ? 'Verse for today' : `Verse for ${day.day_long}`);
+    : (day.is_today ? 'Bible verse for today' : `Bible verse for ${day.day_long}`);
   versePosition.textContent = `${index + 1} of 7`;
   weekDayButtons.forEach((button, buttonIndex) => {
     const active = buttonIndex === index;
@@ -634,4 +634,21 @@ if (newsletterForm) {
     }
   });
 }
+
+function syncVisualViewportHeight() {
+  const viewportHeight = window.visualViewport?.height || window.innerHeight;
+  document.documentElement.style.setProperty('--visual-viewport-height', `${Math.round(viewportHeight)}px`);
+}
+
+syncVisualViewportHeight();
+window.addEventListener('resize', syncVisualViewportHeight, { passive: true });
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', syncVisualViewportHeight, { passive: true });
+}
+
+input.addEventListener('focus', () => {
+  if (!chatWidgetPanel.hidden && window.matchMedia('(max-width: 620px)').matches) {
+    window.requestAnimationFrame(() => input.scrollIntoView({ block: 'nearest' }));
+  }
+});
 

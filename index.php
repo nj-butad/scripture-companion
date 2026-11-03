@@ -44,6 +44,40 @@ $dailyVerses = $weekVerses[$todayWeekIndex]['verses'];
 $weekJson = json_encode($weekVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP);
 $home = require __DIR__ . '/data/home.php';
 $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP);
+$siteUrl = rtrim(\ScriptureCompanion\Config::get('APP_URL', 'https://scripture.nielsys.com'), '/');
+$pageUrl = $siteUrl . '/';
+$socialImage = $siteUrl . '/assets/images/hero-still-waters.webp';
+$structuredData = json_encode([
+    '@context' => 'https://schema.org',
+    '@graph' => [
+        [
+            '@type' => 'WebSite',
+            '@id' => $siteUrl . '/#website',
+            'url' => $pageUrl,
+            'name' => 'Kristohanon',
+            'description' => 'A bilingual Catholic Scripture and prayer companion for Filipinos in English and Cebuano.',
+            'inLanguage' => ['en', 'ceb'],
+        ],
+        [
+            '@type' => 'WebApplication',
+            '@id' => $siteUrl . '/#app',
+            'name' => 'Kristohanon Catholic Scripture Companion',
+            'url' => $pageUrl,
+            'applicationCategory' => 'LifestyleApplication',
+            'operatingSystem' => 'Any',
+            'isAccessibleForFree' => true,
+            'description' => 'Find relevant Bible passages, Catholic prayers, a bilingual Rosary guide, and gentle Scripture-centered reflection in English and Cebuano.',
+            'inLanguage' => ['en', 'ceb'],
+            'publisher' => [
+                '@type' => 'Organization',
+                'name' => 'Kristohanon',
+                'url' => $pageUrl,
+                'email' => 'info@kristohanon.com',
+                'logo' => $siteUrl . '/assets/images/kristohanon-app-icon-512.png',
+            ],
+        ],
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP);
 ?>
 <!doctype html>
 <html lang="en">
@@ -51,8 +85,22 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#f4f0e8">
-    <meta name="description" content="A gentle, bilingual Scripture companion for difficult moments.">
-    <title>Kristohanon — Scripture Companion</title>
+    <meta name="description" content="Find Catholic Bible verses, prayers, Rosary guidance, and gentle Scripture reflection in English and Cebuano—made for Filipino Christians.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="<?= htmlspecialchars($pageUrl, ENT_QUOTES, 'UTF-8') ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Kristohanon">
+    <meta property="og:locale" content="en_PH">
+    <meta property="og:title" content="Catholic Scripture and Prayer in English & Cebuano | Kristohanon">
+    <meta property="og:description" content="Bring what you carry to Scripture. Find relevant Bible passages, Catholic prayers, and a bilingual Rosary guide made for Filipino life.">
+    <meta property="og:url" content="<?= htmlspecialchars($pageUrl, ENT_QUOTES, 'UTF-8') ?>">
+    <meta property="og:image" content="<?= htmlspecialchars($socialImage, ENT_QUOTES, 'UTF-8') ?>">
+    <meta property="og:image:alt" content="An open Bible beside still water, representing quiet Scripture reflection">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Catholic Scripture and Prayer in English & Cebuano | Kristohanon">
+    <meta name="twitter:description" content="Relevant Bible passages, Catholic prayers, and Rosary guidance for Filipino Christians.">
+    <meta name="twitter:image" content="<?= htmlspecialchars($socialImage, ENT_QUOTES, 'UTF-8') ?>">
+    <title>Catholic Scripture & Prayer in English and Cebuano | Kristohanon</title>
     <link rel="icon" href="/assets/images/kristohanon-app-icon-192.png" type="image/png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/kristohanon-apple-touch-icon.png">
     <link rel="manifest" href="/manifest.webmanifest">
@@ -63,7 +111,8 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=28">
+    <link rel="stylesheet" href="assets/style.css?v=29">
+    <script type="application/ld+json"><?= $structuredData ?></script>
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -86,9 +135,9 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
         <main id="mainContent">
             <section class="intro" aria-labelledby="pageTitle">
                 <div class="intro-copy">
-                    <p class="eyebrow">A quiet place to bring what you carry</p>
-                    <h1 id="pageTitle">You don’t have to find the right words.</h1>
-                    <p class="lede">Share what is on your heart. We’ll meet you with Scripture, a short reflection, and a simple prayer.</p>
+                    <p class="hero-context">Catholic Scripture and prayer in English and Cebuano</p>
+                    <h1 id="pageTitle">Bring what you carry to Scripture and prayer.</h1>
+                    <p class="lede">Kristohanon is a private Catholic Scripture companion for Filipinos. Share what is on your heart and find a relevant Bible passage, a short reflection, and a simple prayer.</p>
                 </div>
             </section>
 
@@ -144,7 +193,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
                 </div>
                 <div class="daily-slide" id="dailySlide" role="tabpanel" aria-live="polite">
                     <p class="daily-date"><time id="dailyDate" datetime="<?= $today->format('Y-m-d') ?>"><?= $today->format('F j, Y') ?></time></p>
-                    <p class="eyebrow" id="dailyTitle">Verse for today</p>
+                    <h2 class="daily-heading" id="dailyTitle">Bible verse for today</h2>
                     <blockquote id="dailyVerse"><?= htmlspecialchars($dailyVerses['en']['text'], ENT_QUOTES, 'UTF-8') ?></blockquote>
                     <p class="daily-reference" id="dailyReference"><?= htmlspecialchars($dailyVerses['en']['reference'], ENT_QUOTES, 'UTF-8') ?></p>
                     <p class="daily-translation" id="dailyTranslation"><?= htmlspecialchars($dailyVerses['en']['translation'], ENT_QUOTES, 'UTF-8') ?></p>
@@ -291,7 +340,7 @@ $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES |
     </aside>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?>, home: <?= $homeJson ?> };</script>
-    <script src="assets/app.js?v=18" defer></script>
+    <script src="assets/app.js?v=19" defer></script>
 </body>
 </html>
 
