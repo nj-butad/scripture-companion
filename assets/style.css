@@ -89,14 +89,16 @@ a { text-underline-offset: 3px; }
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-family: "Gelasio", Georgia, serif;
-  font-size: 1.16rem;
   font-weight: 700;
   letter-spacing: 0.015em;
 }
 
-.brand-mark { width: 36px; height: 36px; flex: 0 0 auto; object-fit: contain; }
+.brand-mark { width: 50px; height: 50px; flex: 0 0 auto; object-fit: contain; }
+.brand-copy { display: grid; gap: 3px; }
+.brand-name { font-size: 1.42rem; line-height: 1.05; }
+.brand-tagline { color: var(--ink-soft); font-family: "Source Sans 3", system-ui, sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.015em; line-height: 1.2; }
 .small-cross { color: var(--burgundy); }
 
 .site-nav { display: flex; align-items: center; gap: 6px; }
@@ -166,6 +168,11 @@ a { text-underline-offset: 3px; }
   .header-guidance { padding-inline: 10px; font-size: 0.78rem; }
   .account-main { padding-block: 38px; }
   .account-links { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 800px) {
+  .site-header { flex-wrap: wrap; justify-content: center; gap: 8px 16px; padding-block: 10px; }
+  .brand { width: 100%; justify-content: center; }
 }
 
 .quiet-button, .dialog-close {
@@ -854,6 +861,9 @@ body.chat-embed::before { display: none; }
   .page-shell > footer { align-items: flex-start; flex-direction: column; }
   .site-header { min-height: 104px; margin-top: 10px; padding: 12px; flex-wrap: wrap; justify-content: center; gap: 6px 18px; }
   .brand { width: 100%; justify-content: center; }
+  .brand-mark { width: 46px; height: 46px; }
+  .brand-name { font-size: 1.3rem; }
+  .brand-tagline { font-size: 0.68rem; }
   .site-nav { width: 100%; justify-content: center; }
   .header-actions { width: 100%; justify-content: center; }
   .header-guidance { min-height: 40px; padding: 9px 15px; }
