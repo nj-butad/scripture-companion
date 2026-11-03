@@ -24,6 +24,7 @@ if ((int) $lock !== 1) {
 
 $today = date('Y-m-d');
 $isWeeklySendDay = date('N') === '1';
+$notificationsOnly = in_array('--notifications-only', $argv, true);
 $users = $db->query(
     "SELECT u.id, u.email, COALESCE(p.email_digest, 'off') AS email_digest FROM users u LEFT JOIN user_preferences p ON p.user_id = u.id WHERE u.verified = 1 ORDER BY u.id"
 )->fetchAll();
@@ -52,7 +53,7 @@ foreach ($users as $user) {
         $notified++;
     }
 
-    if ($frequency === 'off' || ($frequency === 'weekly' && !$isWeeklySendDay)) {
+    if ($notificationsOnly || $frequency === 'off' || ($frequency === 'weekly' && !$isWeeklySendDay)) {
         continue;
     }
 

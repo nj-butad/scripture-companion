@@ -44,8 +44,9 @@ The feed uses the reviewed bilingual passage library in `data/passages.php`. It 
 
 The account Preferences page defaults email reminders to **Off**. A user must opt in to daily or weekly email. To deliver reminders on Hostinger, add these PHP CLI cron jobs after deploying:
 
-1. Run `scripts/send-reading-reminders.php` once each morning (for example, 8:00 AM Asia/Manila). It creates that day's in-app notification and queues opted-in email reminders. Weekly users are queued on Monday.
-2. Run `scripts/process-email-queue.php` every 15 minutes. It sends queued messages over the configured SMTP connection and retries delivery failures up to three times.
+1. Run `scripts/send-reading-reminders.php --notifications-only` once each morning (for example, 8:00 AM Asia/Manila). It creates that day's in-app notification for each verified user without queueing email.
+2. If you want email reminders active, run `scripts/send-reading-reminders.php` once each morning. It queues daily users every day and weekly users on Monday, and honors each account's Off/Daily/Weekly preference.
+3. When email reminders are enabled, run `scripts/process-email-queue.php` every 15 minutes. It sends queued messages over the configured SMTP connection and retries delivery failures up to three times.
 
 Use Hostinger's **PHP CLI** cron mode and the absolute path to the deployed site, for example:
 
