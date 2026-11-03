@@ -1,0 +1,31 @@
+name: Scripture or translation concern
+description: Flag a reference, quotation, attribution, or translation concern.
+title: "[Scripture]: "
+labels: [content, scripture]
+body:
+  - type: input
+    id: reference
+    attributes:
+      label: Bible reference
+      placeholder: Psalm 23:1–4
+    validations:
+      required: true
+  - type: dropdown
+    id: translation
+    attributes:
+      label: Translation
+      options: [World English Bible Updated, Open Ang Pulong sa Dios 2024, Not sure]
+    validations:
+      required: true
+  - type: textarea
+    id: concern
+    attributes:
+      label: What needs review?
+      description: Include the page and the wording you believe should be checked.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Authoritative source
+      description: Link to the publisher, eBible, USCCB, Vatican, or another reliable source.

@@ -1,0 +1,19 @@
+name: Pastoral safety concern
+description: Report guidance that may be unsafe, misleading, or inappropriate.
+title: "[Safety]: "
+labels: [safety]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include names, contact details, private prayer intentions, or information that identifies another person. If someone is in immediate danger, contact local emergency services rather than using this form.
+  - type: textarea
+    id: concern
+    attributes:
+      label: What was unsafe or misleading?
+      description: Paraphrase sensitive content instead of copying a private conversation.
+    validations:
+      required: true
+  - type: textarea
+    id: improvement
+    attributes:
+      label: What should Kristohanon have done instead?

@@ -48,7 +48,7 @@ $prayersJson = json_encode($prayers, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLA
                     <button type="button" class="language-option" data-prayer-language="ceb" aria-pressed="false">Cebuano</button>
                 </div>
                 <label class="prayer-search"><span class="sr-only">Search prayers</span><span aria-hidden="true">⌕</span><input id="prayerSearch" type="search" placeholder="Search by prayer or need…" autocomplete="off"></label>
-                <div class="prayer-categories" id="prayerCategories" aria-label="Prayer categories"></div>
+                <div class="prayer-categories" id="prayerCategories" role="group" aria-label="Prayer categories"></div>
             </section>
             <div class="library-summary" aria-live="polite"><p id="prayerCount"></p><button type="button" id="expandPrayers">Open all</button></div>
             <section class="prayer-library" id="prayerLibrary" aria-label="Catholic prayer library"></section>

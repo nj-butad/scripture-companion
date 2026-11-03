@@ -44,7 +44,7 @@ $dailyVerses = $weekVerses[$todayWeekIndex]['verses'];
 $weekJson = json_encode($weekVerses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP);
 $home = require __DIR__ . '/data/home.php';
 $homeJson = json_encode($home, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP);
-$siteUrl = rtrim(\ScriptureCompanion\Config::get('APP_URL', 'https://scripture.nielsys.com'), '/');
+$siteUrl = rtrim(\ScriptureCompanion\Config::get('APP_URL', 'https://kristohanon.com'), '/');
 $pageUrl = $siteUrl . '/';
 $socialImage = $siteUrl . '/assets/images/hero-still-waters.webp';
 $structuredData = json_encode([
@@ -129,7 +129,7 @@ $structuredData = json_encode([
                 <a class="nav-link" href="/about">About</a>
                 <a class="nav-link" href="/contact">Contact</a>
             </nav>
-            <a class="header-guidance" href="#share">Receive guidance</a>
+            <div class="header-actions"><a class="account-nav" href="/account">Sign in</a><a class="header-guidance" href="#share">Receive guidance</a></div>
         </header>
 
         <main id="mainContent">
@@ -161,7 +161,7 @@ $structuredData = json_encode([
                         <button class="widget-close" id="closeChatWidget" type="button" aria-label="Return chat to the page">×</button>
                     </div>
 
-                    <div class="conversation" id="conversation" aria-live="polite">
+                    <div class="conversation" id="conversation" aria-live="polite" tabindex="0">
                         <article class="welcome-card">
                             <span class="small-cross" aria-hidden="true">✦</span>
                             <p id="welcomeText">What feels heavy today?</p>
@@ -295,7 +295,7 @@ $structuredData = json_encode([
 
             <section class="home-section rhythm-card" aria-labelledby="rhythmTitle">
                 <div><p class="card-kicker">Private on this device</p><h2 id="rhythmTitle">Your quiet rhythm</h2><p id="rhythmMessage">A gentle record of showing up—never a score.</p></div>
-                <div class="rhythm-week" id="rhythmWeek" aria-label="Prayer activity this week"></div>
+                <div class="rhythm-week" id="rhythmWeek" role="list" aria-label="Prayer activity this week"></div>
                 <div class="rhythm-links"><a href="/rosary">Continue the Rosary <span aria-hidden="true">→</span></a><a href="/prayers" id="recentPrayerLink">Open the prayer library <span aria-hidden="true">→</span></a></div>
             </section>
 
@@ -334,7 +334,7 @@ $structuredData = json_encode([
 
     <aside class="chat-widget" id="chatWidget" aria-label="Private Scripture and prayer conversation">
         <div class="chat-widget-panel" id="chatWidgetPanel" hidden></div>
-        <button class="chat-widget-launcher" id="openChatWidget" type="button" aria-label="Open a private Scripture and prayer conversation" aria-expanded="false" aria-controls="chatWidgetPanel">
+        <button class="chat-widget-launcher" id="openChatWidget" type="button" aria-label="What’s on your heart? Open a private Scripture and prayer conversation" aria-expanded="false" aria-controls="chatWidgetPanel">
             <span class="widget-bubble"><strong>What’s on your heart?</strong><span>Share how you feel. Find Scripture and prayer.</span></span>
             <span class="widget-mark" aria-hidden="true">
                 <img class="kristohanon-widget-mark" src="/assets/images/kristohanon-holy-face-painted.webp" alt="" width="38" height="38">

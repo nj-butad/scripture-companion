@@ -1,0 +1,31 @@
+name: Catholic prayer correction
+description: Suggest a correction or authoritative source for a prayer.
+title: "[Prayer]: "
+labels: [content, prayer]
+body:
+  - type: input
+    id: prayer
+    attributes:
+      label: Prayer name
+    validations:
+      required: true
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      options: [English, Cebuano, Both]
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested correction
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Church or publisher source
+      description: Link to an authoritative Catholic source when possible.
+    validations:
+      required: true

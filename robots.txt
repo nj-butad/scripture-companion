@@ -5,4 +5,4 @@ Disallow: /data/
 Disallow: /src/
 Disallow: /storage/
 
-Sitemap: https://scripture.nielsys.com/sitemap.xml
+Sitemap: https://kristohanon.com/sitemap.xml
