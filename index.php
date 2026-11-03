@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 require __DIR__ . '/src/bootstrap.php';
+$chatEmbed = ($_GET['chat'] ?? '') === 'embed';
 
 if (empty($_SESSION['csrf'])) {
     $_SESSION['csrf'] = bin2hex(random_bytes(24));
@@ -111,10 +112,11 @@ $structuredData = json_encode([
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=35">
+    <link rel="stylesheet" href="assets/style.css?v=36">
+    <?php if ($chatEmbed): ?><meta name="robots" content="noindex, nofollow"><?php endif; ?>
     <script type="application/ld+json"><?= $structuredData ?></script>
 </head>
-<body>
+<body<?= $chatEmbed ? ' class="chat-embed"' : '' ?>>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
     <div class="page-shell">
         <header class="site-header">
@@ -332,15 +334,7 @@ $structuredData = json_encode([
         </footer>
     </div>
 
-    <aside class="chat-widget" id="chatWidget" aria-label="Private Scripture and prayer conversation">
-        <div class="chat-widget-panel" id="chatWidgetPanel" hidden></div>
-        <button class="chat-widget-launcher" id="openChatWidget" type="button" aria-label="What’s on your heart? Open a private Scripture and prayer conversation" aria-expanded="false" aria-controls="chatWidgetPanel">
-            <span class="widget-bubble"><strong>What’s on your heart?</strong><span>Share how you feel. Find Scripture and prayer.</span></span>
-            <span class="widget-mark" aria-hidden="true">
-                <img class="kristohanon-widget-mark" src="/assets/images/kristohanon-holy-face-painted.webp" alt="" width="38" height="38">
-            </span>
-        </button>
-    </aside>
+    <?php $chatWidgetInline = true; require __DIR__ . '/partials/chat-widget.php'; ?>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?>, home: <?= $homeJson ?> };</script>
     <script src="assets/app.js?v=20" defer></script>
