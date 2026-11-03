@@ -652,3 +652,44 @@ input.addEventListener('focus', () => {
   }
 });
 
+const journeyLinks = [...document.querySelectorAll('[data-journey-target]')];
+const journeySections = journeyLinks
+  .map((link) => document.getElementById(link.dataset.journeyTarget))
+  .filter(Boolean);
+
+if (journeySections.length) {
+  const setCurrentJourney = (sectionId) => {
+    journeyLinks.forEach((link) => {
+      if (link.dataset.journeyTarget === sectionId) {
+        link.setAttribute('aria-current', 'location');
+        if (window.matchMedia('(max-width: 620px)').matches) {
+          const linkRail = link.closest('.journey-nav-links');
+          linkRail?.scrollTo({
+            left: link.offsetLeft - ((linkRail.clientWidth - link.clientWidth) / 2),
+            behavior: reducedMotion() ? 'auto' : 'smooth',
+          });
+        }
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  };
+
+  let journeyFrame = 0;
+  const updateJourneyFromScroll = () => {
+    if (journeyFrame) return;
+    journeyFrame = window.requestAnimationFrame(() => {
+      const marker = window.innerHeight * 0.34;
+      const current = journeySections
+        .filter((section) => section.getBoundingClientRect().top <= marker)
+        .at(-1) || journeySections[0];
+      setCurrentJourney(current.id);
+      journeyFrame = 0;
+    });
+  };
+
+  window.addEventListener('scroll', updateJourneyFromScroll, { passive: true });
+  updateJourneyFromScroll();
+  journeyLinks.forEach((link) => link.addEventListener('click', () => setCurrentJourney(link.dataset.journeyTarget)));
+}
+

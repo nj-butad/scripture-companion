@@ -142,11 +142,14 @@ main { flex: 1; padding: 68px 0 50px; }
 .intro h1 { margin-inline: 0; max-width: 680px; }
 .intro .lede { margin-inline: 0; max-width: 560px; }
 .hero-context { max-width: 560px; margin: 0 0 16px; color: var(--burgundy-dark); font-size: 0.92rem; font-weight: 600; line-height: 1.45; }
-.journey-nav { width: 100%; max-width: 1240px; min-width: 0; margin: 0 auto 52px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--line); }
-.journey-nav a { min-height: 56px; padding: 10px 14px; display: flex; align-items: center; justify-content: center; gap: 9px; border-right: 1px solid var(--line); color: var(--ink-soft); text-decoration: none; font-weight: 600; transition: color 160ms var(--ease-out), background-color 160ms var(--ease-out), transform 140ms var(--ease-out); }
-.journey-nav a:last-child { border-right: 0; }
-.journey-nav a:active { transform: scale(0.98); }
-.journey-nav span { color: var(--burgundy); font-family: "Gelasio", Georgia, serif; font-size: 0.76rem; }
+.journey-nav { width: 100%; max-width: 1240px; min-width: 0; margin: 0 auto 52px; padding: 0 4px; display: flex; align-items: center; gap: clamp(24px, 5vw, 64px); border-bottom: 1px solid var(--line); }
+.journey-nav-label { flex: 0 0 auto; color: var(--ink-soft); font-family: "Gelasio", Georgia, serif; font-size: 0.94rem; font-style: italic; }
+.journey-nav-links { min-width: 0; display: flex; align-items: center; gap: clamp(18px, 3.5vw, 42px); }
+.journey-nav a { position: relative; min-height: 52px; padding: 15px 0 13px; display: inline-flex; align-items: center; color: var(--ink-soft); text-decoration: none; font-size: 0.9rem; font-weight: 500; white-space: nowrap; transition: color 180ms var(--ease-out), transform 140ms var(--ease-out); }
+.journey-nav a::after { content: ""; position: absolute; right: 0; bottom: -1px; left: 0; height: 2px; background: var(--burgundy); transform: scaleX(0); transform-origin: left; transition: transform 220ms var(--ease-out); }
+.journey-nav a[aria-current="location"] { color: var(--burgundy-dark); font-weight: 600; }
+.journey-nav a[aria-current="location"]::after { transform: scaleX(1); }
+.journey-nav a:active { transform: translateY(1px); }
 .eyebrow {
   margin: 0 0 14px;
   color: var(--burgundy);
@@ -759,7 +762,7 @@ h1 {
   .daily-slider-actions button:hover { border-color: rgba(168, 70, 67, 0.42); color: var(--burgundy-dark); }
   .widget-close:hover { color: var(--burgundy-dark); background: var(--rose-wash); }
   .chat-widget-launcher:hover { animation-play-state: paused; }
-  .journey-nav a:hover { color: var(--burgundy-dark); background: rgba(255, 253, 250, 0.58); }
+  .journey-nav a:hover { color: var(--burgundy-dark); }
   .compact-primary:hover, .seasonal-action:hover { background: var(--burgundy-dark); }
   .contact-submit:hover { background: var(--burgundy-dark); }
   .need-card:hover { border-color: rgba(168, 70, 67, 0.42); box-shadow: 0 13px 32px rgba(70, 51, 44, 0.08); }
@@ -787,10 +790,11 @@ h1 {
   .privacy-note { max-width: 88px; }
   .site-nav { gap: 2px; }
   .nav-link { padding-inline: 8px; font-size: 0.82rem; }
-  .journey-nav { margin-bottom: 36px; grid-template-columns: repeat(2, 1fr); }
-  .journey-nav a { min-width: 0; min-height: 48px; padding-inline: 6px; border-bottom: 1px solid var(--line); font-size: 0.88rem; }
-  .journey-nav a:nth-child(2) { border-right: 0; }
-  .journey-nav a:nth-child(n + 3) { border-bottom: 0; }
+  .journey-nav { margin-bottom: 36px; padding: 0; display: block; overflow: hidden; }
+  .journey-nav-label { display: block; margin-bottom: 2px; font-size: 0.88rem; }
+  .journey-nav-links { overflow-x: auto; gap: 24px; scrollbar-width: none; scroll-snap-type: x proximity; }
+  .journey-nav-links::-webkit-scrollbar { display: none; }
+  .journey-nav a { min-height: 48px; padding-block: 13px 11px; font-size: 0.86rem; scroll-snap-align: start; }
   .mystery-picker { grid-template-columns: repeat(2, 1fr); }
   .rosary-progress-row { grid-template-columns: 1fr; gap: 14px; }
   .prayer-card { min-height: 370px; padding-block: 36px 24px; }

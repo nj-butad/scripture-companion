@@ -111,7 +111,7 @@ $structuredData = json_encode([
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=29">
+    <link rel="stylesheet" href="assets/style.css?v=30">
     <script type="application/ld+json"><?= $structuredData ?></script>
 </head>
 <body>
@@ -141,11 +141,14 @@ $structuredData = json_encode([
                 </div>
             </section>
 
-            <nav class="journey-nav" aria-label="Explore today’s page">
-                <a href="#share"><span>01</span> Share</a>
-                <a href="#verseToday"><span>02</span> Scripture</a>
-                <a href="#prayToday"><span>03</span> Pray</a>
-                <a href="#discoverToday"><span>04</span> Discover</a>
+            <nav class="journey-nav" aria-label="On this page">
+                <span class="journey-nav-label">On this page</span>
+                <div class="journey-nav-links">
+                    <a href="#share" data-journey-target="share" aria-current="location">Share what you feel</a>
+                    <a href="#verseToday" data-journey-target="verseToday">Read today’s Scripture</a>
+                    <a href="#prayToday" data-journey-target="prayToday">Pause and pray</a>
+                    <a href="#discoverToday" data-journey-target="discoverToday">Explore the faith</a>
+                </div>
             </nav>
 
             <div class="companion-home" id="share">
@@ -340,7 +343,7 @@ $structuredData = json_encode([
     </aside>
 
     <script>window.STILL_WATERS = { csrf: "<?= $csrf ?>", weekVerses: <?= $weekJson ?>, todayIndex: <?= $todayWeekIndex ?>, home: <?= $homeJson ?> };</script>
-    <script src="assets/app.js?v=19" defer></script>
+    <script src="assets/app.js?v=20" defer></script>
 </body>
 </html>
 
