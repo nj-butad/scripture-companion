@@ -32,13 +32,14 @@ $pages = [
     ],
     'sources' => [
         'title' => 'Where the words come from',
-        'lede' => 'Scripture, devotional material, generated reflection, and calendar information have different sources. Kristohanon keeps those roles distinct.',
+        'lede' => 'Scripture, reviewed devotional writing, conversational reflection, and calendar information have different sources. Kristohanon keeps those roles distinct.',
         'sections' => [
             ['English Scripture', 'English passages use the World English Bible Updated, a contemporary American-English translation in the public domain. Scripture quotations are selected from Kristohanon’s reviewed local library.'],
             ['Cebuano Scripture', 'Cebuano passages use Biblica® Open Ang Pulong sa Dios™ 2024 under CC BY-SA 4.0 with attribution. The original work is available from Biblica and open.bible.'],
+            ['Feed reflections', 'Short reflections, prayer prompts, and practices in the member feed are prepared and reviewed for Kristohanon. They accompany Scripture but are not Scripture or official Church teaching. New entries are scheduled in reviewed monthly batches.'],
             ['Catholic prayers and the Rosary', 'Traditional English prayer structure follows public guidance from the Holy See and USCCB. Verified Cebuano Rosary and Angelus wording follows the Basilica Minore del Sto. Niño de Cebu; other Cebuano texts are identified as devotional translations.'],
             ['Calendar information', 'Daily Catholic calendar context is enhanced with public data from the cpbjr Catholic Readings API. A local fallback remains visible when the remote calendar cannot be reached.'],
-            ['AI-generated reflection', 'OpenAI composes the conversational reflection from locally retrieved material. Generated reflection is not Scripture, Church teaching, divine revelation, or a substitute for pastoral care.'],
+            ['Conversational reflection', 'OpenAI may compose chat replies from locally retrieved material. Those replies are not Scripture, Church teaching, divine revelation, or a substitute for pastoral care.'],
         ],
     ],
 ];

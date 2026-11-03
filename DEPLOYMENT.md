@@ -40,7 +40,20 @@ Open a pull request to `staging`. For a production release, open a second pull r
 
 ## Personalized Scripture feed and reminder jobs
 
-The feed uses the reviewed bilingual passage library in `data/passages.php`. It chooses a daily featured passage using the account language and selected topic groups, then ranks the remaining library using saved or engaged topics. The current library contains 49 selected readings in each language; add and review more passages before the daily rotation begins to feel repetitive.
+The feed uses the reviewed bilingual passage library in `data/passages.php`. It chooses a daily featured passage using the account language and selected topic groups, then ranks the remaining library using saved or engaged topics. The current base library contains 49 selected readings in each language. Reviewed devotional cards in `data/monthly-readings.php` add a reflection, a small practice, and a short prayer to an existing verified passage. The publisher validates the passage ID and language before importing a card; it never generates, rewrites, or fetches Bible text.
+
+### Monthly feed content publishing
+
+1. Prepare a new monthly batch in `data/monthly-readings.php` with a distinct English and Cebuano entry for each scheduled post. Use passage IDs from `data/passages.php`, retain the translation label and source attribution, and review the Cebuano text with a fluent speaker before publishing.
+2. Give each pair a stable ID, batch name, topic, and `publish_on` date. New reflections, practices, and prayers are editorial content; do not present them as Scripture or official Church teaching.
+3. Merge the reviewed batch to `main`. Hostinger deploys it with the site.
+4. Configure a daily Hostinger PHP CLI cron job so scheduled entries appear on their publication dates. The script is idempotent and safe to run more than once:
+
+```text
+/usr/bin/php /home/ACCOUNT/domains/kristohanon.com/public_html/scripts/publish-scheduled-readings.php
+```
+
+Run it daily (for example, 8:10 AM Asia/Manila). It creates the `feed_readings` table if needed, syncs approved entries from the deployed monthly calendar, and publishes items due in Manila time. Each user sees the entries matching their selected language, with the existing topic and interaction ranking applied. New monthly batches still need to be prepared and reviewed; the schedule automates their release, not authorship.
 
 The account Preferences page defaults email reminders to **Off**. A user must opt in to daily or weekly email. To deliver reminders on Hostinger, add these PHP CLI cron jobs after deploying:
 

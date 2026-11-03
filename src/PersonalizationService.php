@@ -53,6 +53,10 @@ final class PersonalizationService
     {
         $preferences = self::preferences($userId);
         $passages = require dirname(__DIR__) . '/data/passages.php';
+        $passagesById = [];
+        foreach ($passages as $passage) {
+            $passagesById[(string) $passage['id']] = $passage;
+        }
         $scores = [];
 
         $statement = Database::connection()->prepare(
@@ -71,13 +75,62 @@ final class PersonalizationService
         $dailyIndex = count($dailyPool) > 0 ? ((int) $manilaDate->format('z') % count($dailyPool)) : 0;
         $dailyId = $dailyPool[$dailyIndex]['id'] ?? '';
 
+        // A scheduled reading is a reviewed reflection paired with an existing,
+        // verified Bible passage. If the publishing table has not been migrated,
+        // the established Scripture-only feed continues to work.
+        $scheduled = [];
+        try {
+            $published = Database::connection()->prepare(
+                'SELECT id, passage_id, language, topic, title, reflection, practice, prayer, publish_on '
+                . "FROM feed_readings WHERE language = ? AND status = 'published' AND publish_on <= ? ORDER BY publish_on DESC, id"
+            );
+            $published->execute([$language, $manilaDate->format('Y-m-d')]);
+            $scheduled = $published->fetchAll();
+        } catch (\PDOException) {
+            // The first publisher run creates this table; do not break members'
+            // existing feeds during deployment or a database migration.
+        }
+
+        $replacedPassageIds = [];
+        $seenDevotionalPassageIds = [];
+        foreach ($scheduled as $reading) {
+            $passageId = (string) $reading['passage_id'];
+            if (isset($seenDevotionalPassageIds[$passageId]) || !isset($passagesById[$passageId]) || ($passagesById[$passageId]['language'] ?? '') !== $language) {
+                continue;
+            }
+            $seenDevotionalPassageIds[$passageId] = true;
+            $replacedPassageIds[$passageId] = true;
+            $passage = $passagesById[$passageId];
+            $passage['passage_id'] = $passageId;
+            // Keep the cursor and save IDs stable if a future batch refreshes
+            // the reflection attached to this same Scripture passage.
+            $passage['id'] = $passageId;
+            $passage['topic'] = (string) $reading['topic'];
+            $passage['devotional'] = [
+                'title' => (string) $reading['title'],
+                'reflection' => (string) $reading['reflection'],
+                'practice' => (string) $reading['practice'],
+                'prayer' => (string) $reading['prayer'],
+                'publish_on' => (string) $reading['publish_on'],
+            ];
+            $candidates[] = $passage;
+        }
+        if ($replacedPassageIds !== []) {
+            $candidates = array_values(array_filter(
+                $candidates,
+                static fn(array $passage): bool => isset($passage['devotional']) || !isset($replacedPassageIds[(string) $passage['id']])
+            ));
+        }
+
         $ranked = [];
         foreach ($candidates as $index => $passage) {
             $topic = (string) ($passage['topic'] ?? 'hope');
             $preferenceScore = self::matchesPreferences($topic, $preferences['topics']) ? 5 : 0;
-            $score = $preferenceScore + ($scores[$topic] ?? 0) + (($passage['id'] === $dailyId) ? 100 : 0) + (($index * 17) % 7) / 10;
+            $passageId = (string) ($passage['passage_id'] ?? $passage['id']);
+            $freshContentScore = isset($passage['devotional']) ? 2 : 0;
+            $score = $preferenceScore + ($scores[$topic] ?? 0) + $freshContentScore + (($passageId === $dailyId) ? 100 : 0) + (($index * 17) % 7) / 10;
             $passage['score'] = $score;
-            $passage['is_daily'] = $passage['id'] === $dailyId;
+            $passage['is_daily'] = $passageId === $dailyId;
             $passage['image'] = self::imageForTopic($topic);
             $ranked[] = $passage;
         }
@@ -102,9 +155,9 @@ final class PersonalizationService
     private static function matchesPreferences(string $passageTopic, array $preferences): bool
     {
         $groups = [
-            'peace' => ['peace', 'trust', 'comfort', 'care', 'rest'],
-            'hope' => ['hope', 'resilience', 'endurance', 'purpose', 'return'],
-            'strength' => ['courage', 'endurance', 'exhaustion', 'resilience', 'weakness'],
+            'peace' => ['peace', 'trust', 'comfort', 'care', 'rest', 'anxiety'],
+            'hope' => ['hope', 'resilience', 'endurance', 'purpose', 'return', 'contentment'],
+            'strength' => ['courage', 'endurance', 'exhaustion', 'resilience', 'weakness', 'rest'],
             'wisdom' => ['wisdom', 'guidance', 'purpose', 'work'],
             'gratitude' => ['gratitude', 'blessing', 'contentment'],
             'fear' => ['fear', 'courage', 'security', 'anxiety', 'storm', 'crisis'],
