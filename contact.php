@@ -77,13 +77,13 @@ $escape = static fn(string $value): string => htmlspecialchars($value, ENT_QUOTE
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=36">
+    <link rel="stylesheet" href="assets/style.css?v=37">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
     <div class="page-shell">
         <header class="site-header">
-            <a class="brand" href="/" aria-label="Kristohanon home"><img class="brand-mark" src="/assets/images/kristohanon-holy-face-painted.webp" alt="" width="32" height="32"><span>Kristohanon</span></a>
+            <a class="brand" href="/" aria-label="Kristohanon home"><img class="brand-mark" src="/assets/images/kristohanon-holy-face-painted.webp" alt="" width="32" height="32"><span class="brand-copy"><span class="brand-name">Kristohanon</span><span class="brand-tagline">Kauban sa imong adlaw-adlaw nga pagtuo.</span></span></a>
             <nav class="site-nav" aria-label="Main navigation"><a class="nav-link" href="/">Home</a><a class="nav-link" href="/rosary">Rosary</a><a class="nav-link" href="/prayers">Prayers</a><a class="nav-link" href="/about">About</a><a class="nav-link is-active" href="/contact" aria-current="page">Contact</a></nav>
             <div class="header-actions"><?php require __DIR__ . '/partials/account-menu.php'; ?><a class="header-guidance" href="/#share">Receive guidance</a></div>
         </header>
