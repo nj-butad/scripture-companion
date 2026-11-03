@@ -77,7 +77,7 @@ $escape = static fn(string $value): string => htmlspecialchars($value, ENT_QUOTE
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=37">
+    <link rel="stylesheet" href="assets/style.css?v=38">
 </head>
 <body>
     <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -89,38 +89,32 @@ $escape = static fn(string $value): string => htmlspecialchars($value, ENT_QUOTE
         </header>
 
         <main class="contact-main" id="mainContent">
-            <header class="contact-intro">
-                <h1>Let’s stay connected</h1>
-                <p>Ask about Kristohanon, share a correction, suggest a prayer resource, or begin a conversation about supporting this ministry.</p>
-            </header>
-
             <div class="contact-layout">
-                <aside class="contact-details" aria-labelledby="contactDetailsTitle">
-                    <h2 id="contactDetailsTitle">Contact details</h2>
-                    <dl>
-                        <div><dt>Email</dt><dd><a href="mailto:info@kristohanon.com">info@kristohanon.com</a></dd></div>
-                        <div><dt>Phone</dt><dd>+63 900 000 0000</dd></div>
-                        <div><dt>Location</dt><dd>Southern Leyte, Philippines</dd></div>
-                    </dl>
+                <section class="contact-opening" aria-labelledby="contactTitle">
+                <header class="contact-intro">
+                    <h1 id="contactTitle">A note, from one heart to another.</h1>
+                    <p>I started Kristohanon after Scripture became a steady place to return to in uncertain days. If something here has helped you—or you have a question, correction, or prayer resource to share—I would be glad to hear from you.</p>
+                    <p class="contact-location">Southern Leyte, Philippines</p>
+                </header>
+                <figure class="contact-image">
+                    <img src="/assets/images/lectio-bible.webp" alt="An open Bible beside a candle and olive branch">
+                    <figcaption>A little room for a conversation, and a word to carry with you.</figcaption>
+                </figure>
+                </section>
 
-                    <h3>Follow Kristohanon</h3>
-                    <div class="social-links" role="group" aria-label="Social media links coming soon">
-                        <span class="social-link is-disabled" role="img" aria-label="Facebook, coming soon" title="Facebook · Coming soon">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v6h4v-6h3l1-4h-4V9c0-.7.3-1 1-1Z"/></svg>
-                        </span>
-                        <span class="social-link is-disabled" role="img" aria-label="Instagram, coming soon" title="Instagram · Coming soon">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.7" r=".8" class="social-dot"/></svg>
-                        </span>
-                        <span class="social-link is-disabled" role="img" aria-label="YouTube, coming soon" title="YouTube · Coming soon">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7.2c-.2-1-1-1.8-2-2C16.4 5 12 5 12 5s-4.4 0-6 .2c-1 .2-1.8 1-2 2C3.8 8.5 3.8 12 3.8 12s0 3.5.2 4.8c.2 1 1 1.8 2 2 1.6.2 6 .2 6 .2s4.4 0 6-.2c1-.2 1.8-1 2-2 .2-1.3.2-4.8.2-4.8s0-3.5-.2-4.8Z"/><path d="m10 9 5 3-5 3V9Z" class="social-play"/></svg>
-                        </span>
-                    </div>
-                    <p class="contact-coming-soon">Official accounts will be linked here when they are ready.</p>
-                </aside>
+                <div class="contact-sidebar">
+                <section class="contact-direct" aria-labelledby="contactDirectTitle">
+                    <h2 id="contactDirectTitle">Reach me directly</h2>
+                    <nav class="contact-routes" aria-label="Direct contact options">
+                        <a href="tel:+639166014705"><span>Call</span><strong>+63 916 601 4705</strong><svg class="contact-route-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M6 6h8v8"/></svg></a>
+                        <a href="mailto:info@kristohanon.com"><span>Email</span><strong>info@kristohanon.com</strong><svg class="contact-route-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M6 6h8v8"/></svg></a>
+                        <a href="https://www.facebook.com/profile.php?id=61596336594040" target="_blank" rel="noopener noreferrer"><span>Facebook</span><strong>Kristohanon</strong><svg class="contact-route-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M6 6h8v8"/></svg></a>
+                    </nav>
+                </section>
 
                 <section class="contact-form-section" aria-labelledby="contactFormTitle">
-                    <h2 id="contactFormTitle">Send a message</h2>
-                    <p class="form-disclosure">Your message is delivered privately to <a href="mailto:info@kristohanon.com">info@kristohanon.com</a>. It is never added to the newsletter unless you subscribe separately.</p>
+                    <h2 id="contactFormTitle">Write me a message</h2>
+                    <p class="contact-form-lede">Questions about Scripture, Catholic prayers, or how this project began are welcome. Your note goes to <a href="mailto:info@kristohanon.com">info@kristohanon.com</a> and is not added to the newsletter.</p>
 
                     <?php if ($sent): ?>
                         <div class="contact-status is-ready" role="status"><strong>Your message is on its way.</strong><span>Thank you. Kristohanon will reply to the email address you provided.</span></div>
@@ -140,6 +134,7 @@ $escape = static fn(string $value): string => htmlspecialchars($value, ENT_QUOTE
                         <button class="contact-submit" type="submit">Send message <span aria-hidden="true">→</span></button>
                     </form>
                 </section>
+                </div>
             </div>
         </main>
 
