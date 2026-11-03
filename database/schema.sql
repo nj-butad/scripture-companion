@@ -83,6 +83,23 @@ CREATE TABLE IF NOT EXISTS feed_impressions (
   PRIMARY KEY (id), KEY feed_user_date (user_id, shown_at)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+CREATE TABLE IF NOT EXISTS feed_readings (
+  id VARCHAR(120) NOT NULL,
+  passage_id VARCHAR(120) NOT NULL,
+  language ENUM('en','ceb') NOT NULL,
+  topic VARCHAR(60) NOT NULL,
+  title VARCHAR(180) NOT NULL,
+  reflection TEXT NOT NULL,
+  practice VARCHAR(500) NOT NULL,
+  prayer TEXT NOT NULL,
+  publish_on DATE NOT NULL,
+  status ENUM('scheduled','published') NOT NULL DEFAULT 'scheduled',
+  source_batch VARCHAR(40) NOT NULL,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id), KEY feed_readings_schedule (language, status, publish_on),
+  KEY feed_readings_passage (passage_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 CREATE TABLE IF NOT EXISTS notifications (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT, user_id INT UNSIGNED NOT NULL,
   notification_type VARCHAR(40) NOT NULL, title VARCHAR(160) NOT NULL,
