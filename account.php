@@ -153,7 +153,7 @@ $description = match ($mode) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/style.css?v=35">
+    <link rel="stylesheet" href="/assets/style.css?v=36">
 </head>
 <body>
     <a class="skip-link" href="#accountMain">Skip to account form</a>
@@ -216,5 +216,6 @@ $description = match ($mode) {
         </main>
         <footer><span>Made to help people pause, pray, and return to Scripture.</span><nav class="footer-links" aria-label="Trust and transparency"><a href="/privacy">Privacy</a><a href="/safety">Safety</a><a href="/contact">Contact</a></nav></footer>
     </div>
+    <?php require __DIR__ . '/partials/chat-widget.php'; ?>
 </body>
 </html>

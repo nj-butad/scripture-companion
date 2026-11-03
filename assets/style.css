@@ -623,7 +623,7 @@ h1 {
 .newsletter-status.is-success { color: var(--success); }
 .newsletter-status.is-error { color: var(--danger); }
 
-.chat-widget { position: fixed; right: max(22px, env(safe-area-inset-right)); bottom: max(22px, env(safe-area-inset-bottom)); z-index: 30; display: grid; justify-items: end; gap: 12px; }
+.chat-widget { position: fixed; right: max(22px, env(safe-area-inset-right)); bottom: max(22px, env(safe-area-inset-bottom)); z-index: 60; display: grid; justify-items: end; gap: 12px; }
 .chat-widget-launcher { border: 0; padding: 4px; display: flex; align-items: flex-end; gap: 12px; background: transparent; cursor: pointer; animation: widget-float 4.8s ease-in-out infinite; transform-origin: bottom right; }
 .chat-widget-launcher:active { transform: scale(0.97); }
 .widget-bubble { position: relative; min-width: 242px; padding: 15px 18px; display: grid; gap: 3px; border: 1px solid rgba(96, 70, 62, 0.25); border-radius: 10px 10px 2px 10px; color: var(--ink); background: rgba(255, 253, 250, 0.97); box-shadow: 0 16px 42px rgba(70, 51, 44, 0.17); text-align: left; }
@@ -633,6 +633,7 @@ h1 {
 .widget-mark { width: 76px; height: 76px; display: grid; place-items: center; overflow: hidden; flex: 0 0 auto; border: 2px solid var(--burgundy); border-radius: 50% 50% 46% 54%; color: var(--burgundy); background: var(--cream); box-shadow: 0 16px 38px rgba(90, 40, 38, 0.28); }
 .kristohanon-widget-mark { width: 72px; height: 72px; display: block; object-fit: contain; }
 .chat-widget-panel { width: min(420px, calc(100vw - 24px)); max-height: min(690px, calc(var(--visual-viewport-height, 100dvh) - 112px)); overflow: hidden; border-radius: 14px; box-shadow: 0 24px 70px rgba(56, 37, 33, 0.24); }
+.chat-widget-frame { width: 100%; height: min(600px, calc(var(--visual-viewport-height, 100dvh) - 112px)); display: block; border: 0; background: var(--paper); }
 .chat-widget-panel .companion { height: min(600px, calc(var(--visual-viewport-height, 100dvh) - 112px)); display: grid; grid-template-rows: auto minmax(0, 1fr) auto; border-radius: 14px; }
 .chat-widget-panel .widget-close { display: grid; place-items: center; }
 .chat-widget-panel .conversation { min-height: 0; max-height: none; padding: 22px; }
@@ -641,6 +642,16 @@ h1 {
 .chat-widget-open { overflow: hidden; }
 .chat-widget-open .chat-widget-launcher { animation: none; }
 .chat-widget-open .widget-bubble { display: none; }
+
+body.chat-embed { min-height: 100vh; overflow: hidden; background: transparent; }
+body.chat-embed::before { display: none; }
+.chat-embed .page-shell { width: 100%; min-height: 100vh; margin: 0; z-index: auto; }
+.chat-embed .page-shell > .site-header, .chat-embed .page-shell > footer, .chat-embed > .chat-widget { display: none; }
+.chat-embed .page-shell > main { width: 100%; min-height: 100vh; margin: 0; padding: 0; display: block; }
+.chat-embed .page-shell > main > *:not(.companion-home) { display: none !important; }
+.chat-embed .companion-home { width: 100%; max-width: none; height: 100vh; margin: 0; }
+.chat-embed .companion { width: 100%; height: 100vh; min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; border-radius: 12px; }
+.chat-embed .widget-close { display: none !important; }
 
 @keyframes widget-float {
   0%, 100% { transform: translateY(0); }
@@ -891,6 +902,7 @@ h1 {
   .widget-mark { width: 68px; height: 68px; }
   .kristohanon-widget-mark { width: 64px; height: 64px; }
   .chat-widget-panel { width: calc(100vw - 20px); max-height: min(520px, calc(var(--visual-viewport-height, 100dvh) - 36px)); }
+  .chat-widget-frame { height: min(520px, calc(var(--visual-viewport-height, 100dvh) - 36px)); }
   .chat-widget-panel .companion { height: min(520px, calc(var(--visual-viewport-height, 100dvh) - 36px)); }
   .chat-widget-panel .conversation { padding: 16px; }
   .chat-widget-panel .composer { padding: 8px 10px 10px; }
