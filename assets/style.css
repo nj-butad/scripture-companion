@@ -68,6 +68,8 @@ a { text-underline-offset: 3px; }
 }
 
 .site-header {
+  position: relative;
+  z-index: 40;
   min-height: 72px;
   margin-top: 16px;
   padding: 0 18px;
@@ -126,7 +128,7 @@ a { text-underline-offset: 3px; }
 .account-menu[open] > summary { border-color: rgba(127, 48, 47, 0.42); }
 .account-menu-chevron { color: var(--ink-soft); font-size: 1rem; transition: transform 160ms var(--ease-out); }
 .account-menu[open] .account-menu-chevron { transform: rotate(180deg); }
-.account-menu-panel { position: absolute; z-index: 30; top: calc(100% + 8px); right: 0; width: 220px; padding: 7px; border: 1px solid var(--line); border-radius: 9px; background: var(--paper); box-shadow: 0 14px 38px rgba(52, 35, 30, 0.16); }
+.account-menu-panel { position: absolute; z-index: 50; top: calc(100% + 8px); right: 0; width: 220px; padding: 7px; border: 1px solid var(--line); border-radius: 9px; background: var(--paper); box-shadow: 0 14px 38px rgba(52, 35, 30, 0.16); }
 .account-menu-panel a, .account-menu-panel button { width: 100%; min-height: 42px; padding: 10px 11px; display: flex; align-items: center; border: 0; border-radius: 5px; color: var(--ink); background: transparent; text-align: left; text-decoration: none; font: inherit; font-size: 0.88rem; cursor: pointer; }
 .account-menu-panel a:hover, .account-menu-panel button:hover { color: var(--burgundy-dark); background: var(--surface-muted); }
 .account-menu-panel form { margin: 5px 0 0; padding-top: 5px; border-top: 1px solid var(--line); }
