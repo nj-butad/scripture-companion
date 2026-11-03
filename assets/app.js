@@ -55,7 +55,7 @@ const copy = {
     welcome: 'What feels heavy today?',
     note: 'Share what you carry, or ask about the Rosary, Catholic prayers, the testimony, or Kristohanon.',
     placeholder: 'I feel anxious about what comes next…',
-    sending: 'Finding a passage for this moment…',
+    sending: 'Taking a moment with what you shared…',
     prayer: 'A prayer for this moment',
     next: 'A gentle next step',
     error: 'Something went wrong. Please try again in a moment.',
@@ -66,7 +66,7 @@ const copy = {
     welcome: 'Unsa ang bug-at sa imong kasingkasing karon?',
     note: 'Isulti ang imong gidala, o pangutana bahin sa Rosaryo, Katolikong mga pag-ampo, pagpamatuod, o Kristohanon.',
     placeholder: 'Nabalaka ko sa umaabot…',
-    sending: 'Nangita og Kasulatan alang niining taknaa…',
+    sending: 'Gihatagan og panahon ang imong gipangpaambit…',
     prayer: 'Usa ka pag-ampo alang niining taknaa',
     next: 'Usa ka malumong sunod nga lakang',
     error: 'Adunay problema. Palihog sulayi pag-usab sa makadiyot.',
@@ -464,7 +464,7 @@ function appendResponse(data, userMessage) {
 
   if (data.prayer) article.append(labelledSection(copy[language].prayer, data.prayer, 'prayer-block'));
   if (data.next_step) article.append(labelledSection(copy[language].next, data.next_step, 'next-step'));
-  if (data.type !== 'urgent') article.append(createFeedbackControls(data, userMessage));
+  if (data.type === 'reflection' || data.type === 'guide') article.append(createFeedbackControls(data, userMessage));
 
   conversation.append(article);
   article.scrollIntoView({ behavior: reducedMotion() ? 'auto' : 'smooth', block: 'start' });
