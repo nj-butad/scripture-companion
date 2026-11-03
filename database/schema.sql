@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS user_preferences (
   user_id INT UNSIGNED NOT NULL,
   language ENUM('en','ceb') NOT NULL DEFAULT 'en',
   topics JSON NOT NULL,
-  email_digest ENUM('off','daily','weekly') NOT NULL DEFAULT 'weekly',
+  email_digest ENUM('off','daily','weekly') NOT NULL DEFAULT 'off',
   quiet_hours_start TIME NOT NULL DEFAULT '21:00:00',
   quiet_hours_end TIME NOT NULL DEFAULT '07:00:00',
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
