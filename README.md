@@ -46,8 +46,8 @@ The `/about` page carries the long-form personal testimony behind
 Kristohanon: financial uncertainty in Southern Leyte, surrender, discovering
 God through Scripture, and an invitation to begin again with God first.
 
-The contact form delivers messages to `info@kristohanon.com` using the hosting
-account's PHP mail transport. The homepage newsletter signup stores unique
+The contact form delivers messages to `info@kristohanon.com` using authenticated
+Hostinger SMTP through PHPMailer. The homepage newsletter signup stores unique
 subscriber addresses in the private `storage/newsletter-subscribers.csv` file
 and sends a new-subscriber notice to the same inbox. The storage directory is
 blocked from public access by `.htaccess`.
@@ -57,11 +57,14 @@ blocked from public access by `.htaccess`.
 - PHP 8.1+
 - PHP cURL extension
 - Apache with `mod_rewrite` (production)
+- Composer 2 (production dependency installation)
+- Node.js 22 (development and CI only)
 
 ## Local development
 
 ```bash
 cp .env.example .env
+composer install
 php -S localhost:8080
 ```
 
@@ -74,19 +77,22 @@ enable conversational reflections, set `OPENAI_API_KEY` and `OPENAI_MODEL` in
 ## Deployment
 
 The repository is laid out for direct deployment to Hostinger's `public_html`.
-Connect the GitHub repository, select the `main` branch, and enable automatic
-deployment. The root `.htaccess` prevents public access to application code,
+Connect the GitHub repository, select only the protected `main` branch, and enable automatic
+deployment. Follow [DEPLOYMENT.md](DEPLOYMENT.md) for the staging and production
+workflow. The root `.htaccess` prevents public access to application code,
 configuration, Git metadata, and reviewed Scripture data.
 
-The day-to-day release workflow is:
+Run the automated quality checks locally with:
 
 ```bash
-git add -A
-git commit -m "Describe the change"
-git push origin main
+composer validate --strict
+vendor/bin/phpstan analyse
+npm ci
+npm run test:e2e
 ```
 
-Hostinger watches `main` and deploys each successful push automatically.
+GitHub checks PHP syntax and static analysis, Playwright browser flows, WCAG AA
+accessibility, Lighthouse SEO, and responsive behavior before production merges.
 
 ## Scripture licenses
 

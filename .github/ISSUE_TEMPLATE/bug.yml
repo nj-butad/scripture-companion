@@ -1,0 +1,27 @@
+name: Bug report
+description: Report something that is broken or difficult to use.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Explain what you expected and what happened instead. Do not include private prayer messages.
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page or feature
+      placeholder: /prayers, Rosary, chat widget, newsletter…
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      options: [iPhone or iPad, Android phone or tablet, Desktop or laptop, Other]
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Open…\n2. Tap…\n3. See…"

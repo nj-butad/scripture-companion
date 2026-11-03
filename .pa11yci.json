@@ -1,0 +1,19 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "runners": ["htmlcs"],
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox"]
+    },
+    "timeout": 30000,
+    "wait": 1000
+  },
+  "urls": [
+    "http://127.0.0.1:8080/",
+    "http://127.0.0.1:8080/rosary",
+    "http://127.0.0.1:8080/prayers",
+    "http://127.0.0.1:8080/about",
+    "http://127.0.0.1:8080/contact",
+    "http://127.0.0.1:8080/privacy"
+  ]
+}

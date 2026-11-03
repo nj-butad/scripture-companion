@@ -2,11 +2,18 @@
 
 declare(strict_types=1);
 
+$composerAutoload = dirname(__DIR__) . '/vendor/autoload.php';
+if (is_file($composerAutoload)) {
+    require_once $composerAutoload;
+}
+
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start([
+        'use_strict_mode' => true,
+        'use_only_cookies' => true,
         'cookie_httponly' => true,
         'cookie_samesite' => 'Lax',
-        'cookie_secure' => (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'),
+        'cookie_secure' => ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https')),
     ]);
 }
 

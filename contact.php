@@ -104,14 +104,14 @@ $escape = static fn(string $value): string => htmlspecialchars($value, ENT_QUOTE
                     </dl>
 
                     <h3>Follow Kristohanon</h3>
-                    <div class="social-links" aria-label="Social media links coming soon">
-                        <span class="social-link is-disabled" aria-label="Facebook, coming soon" title="Facebook · Coming soon">
+                    <div class="social-links" role="group" aria-label="Social media links coming soon">
+                        <span class="social-link is-disabled" role="img" aria-label="Facebook, coming soon" title="Facebook · Coming soon">
                             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v6h4v-6h3l1-4h-4V9c0-.7.3-1 1-1Z"/></svg>
                         </span>
-                        <span class="social-link is-disabled" aria-label="Instagram, coming soon" title="Instagram · Coming soon">
+                        <span class="social-link is-disabled" role="img" aria-label="Instagram, coming soon" title="Instagram · Coming soon">
                             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.7" r=".8" class="social-dot"/></svg>
                         </span>
-                        <span class="social-link is-disabled" aria-label="YouTube, coming soon" title="YouTube · Coming soon">
+                        <span class="social-link is-disabled" role="img" aria-label="YouTube, coming soon" title="YouTube · Coming soon">
                             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7.2c-.2-1-1-1.8-2-2C16.4 5 12 5 12 5s-4.4 0-6 .2c-1 .2-1.8 1-2 2C3.8 8.5 3.8 12 3.8 12s0 3.5.2 4.8c.2 1 1 1.8 2 2 1.6.2 6 .2 6 .2s4.4 0 6-.2c1-.2 1.8-1 2-2 .2-1.3.2-4.8.2-4.8s0-3.5-.2-4.8Z"/><path d="m10 9 5 3-5 3V9Z" class="social-play"/></svg>
                         </span>
                     </div>
