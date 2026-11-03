@@ -38,6 +38,24 @@ git push -u origin codex/short-feature-name
 
 Open a pull request to `staging`. For a production release, open a second pull request from `staging` to `main`. Hostinger should deploy only after the production pull request is merged.
 
+## Personalized Scripture feed and reminder jobs
+
+The feed uses the reviewed bilingual passage library in `data/passages.php`. It chooses a daily featured passage using the account language and selected topic groups, then ranks the remaining library using saved or engaged topics. The current library contains 49 selected readings in each language; add and review more passages before the daily rotation begins to feel repetitive.
+
+The account Preferences page defaults email reminders to **Off**. A user must opt in to daily or weekly email. To deliver reminders on Hostinger, add these PHP CLI cron jobs after deploying:
+
+1. Run `scripts/send-reading-reminders.php` once each morning (for example, 8:00 AM Asia/Manila). It creates that day's in-app notification and queues opted-in email reminders. Weekly users are queued on Monday.
+2. Run `scripts/process-email-queue.php` every 15 minutes. It sends queued messages over the configured SMTP connection and retries delivery failures up to three times.
+
+Use Hostinger's **PHP CLI** cron mode and the absolute path to the deployed site, for example:
+
+```text
+/usr/bin/php /home/ACCOUNT/domains/kristohanon.com/public_html/scripts/send-reading-reminders.php
+/usr/bin/php /home/ACCOUNT/domains/kristohanon.com/public_html/scripts/process-email-queue.php
+```
+
+Replace `ACCOUNT` with the actual Hostinger account directory. The jobs only run from CLI, use the app's existing MySQL schema (`notifications` and `email_queue`), and do not call OpenAI. Do not enable the reminder jobs until Hostinger SMTP and database access are working.
+
 ## Verification
 
 ```bash

@@ -10,12 +10,13 @@ $pages = [
         'title' => 'Privacy, in plain language',
         'lede' => 'Kristohanon is designed to let you begin without an account and without building a private profile about your prayer life.',
         'sections' => [
-            ['What stays on your device', 'Rosary progress, gratitude text, recent prayer activity, quiz state, and similar preferences use your browser’s local storage. They are not synced to a Kristohanon account because accounts do not exist. Clearing this site’s browser data removes them.'],
+            ['What stays on your device', 'Rosary progress, gratitude text, recent prayer activity, quiz state, and similar prayer-tool state use your browser’s local storage. These device-only features are not currently synced to your account. Clearing this site’s browser data removes them.'],
+            ['What an account stores', 'A Kristohanon account stores your email address and authentication data, reading language and chosen topics, saved Scripture, feed-interaction signals used to rank readings, and notifications. It does not store your ordinary chat messages. New accounts have email reminders off by default; you can choose daily or weekly delivery in Preferences.'],
             ['What happens when you chat', 'Your message is sent to Kristohanon’s server and then to the configured OpenAI service so a response can be composed. Kristohanon does not write ordinary chat messages to its own feedback log or database. OpenAI requests are configured with storage disabled.'],
             ['Feedback and reports', 'Helpful and Not helpful ratings contain no original message or generated answer. A report includes the generated answer so it can be reviewed. Your original message is included only when you deliberately check the consent box before submitting the report. Reports are stored in a private server file and are not public.'],
             ['Contact and newsletter email', 'The contact form sends the name, email address, subject, and message you provide to info@kristohanon.com. Newsletter signup stores the email address you submit in a private server file and sends a subscription notice to that inbox. These are optional and separate from the Scripture companion.'],
             ['What we do not collect', 'Kristohanon does not require an account, contacts, precise location, camera, or microphone. The feedback system does not intentionally record your IP address or browser identity. Ordinary hosting security logs may still be maintained by the hosting provider.'],
-            ['Your choices', 'Do not enter information you do not want transmitted to the AI provider. You can use the Rosary, prayer library, weekly Scripture, and other non-chat features without submitting a personal message.'],
+            ['Your choices', 'Do not enter information you do not want transmitted to the AI provider. You can turn off reading emails in account Preferences and use the Rosary, prayer library, and other non-chat features without submitting a personal message.'],
         ],
     ],
     'safety' => [
