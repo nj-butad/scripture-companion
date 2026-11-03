@@ -87,7 +87,7 @@ $structuredData = json_encode([
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#f4f0e8">
     <meta name="description" content="Find Catholic Bible verses, prayers, Rosary guidance, and gentle Scripture reflection in English and Cebuano—made for Filipino Christians.">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="robots" content="<?= $chatEmbed ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' ?>">
     <link rel="canonical" href="<?= htmlspecialchars($pageUrl, ENT_QUOTES, 'UTF-8') ?>">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Kristohanon">
@@ -113,7 +113,6 @@ $structuredData = json_encode([
     <link rel="preload" as="image" href="assets/images/hero-still-waters.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css?v=36">
-    <?php if ($chatEmbed): ?><meta name="robots" content="noindex, nofollow"><?php endif; ?>
     <script type="application/ld+json"><?= $structuredData ?></script>
 </head>
 <body<?= $chatEmbed ? ' class="chat-embed"' : '' ?>>
