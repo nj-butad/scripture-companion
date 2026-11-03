@@ -5,6 +5,7 @@ declare(strict_types=1);
 // Reviewed devotional companions for the fixed bilingual Scripture library.
 // Add a reviewed English/Cebuano pair each month. Scripture text stays in
 // data/passages.php and is never generated or edited by the publishing job.
+// Each due entry becomes a new feed post; the original Scripture card remains.
 return [
     [
         'id' => '2026-11-week-1-en', 'batch' => '2026-11', 'language' => 'en',

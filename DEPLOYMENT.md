@@ -40,7 +40,7 @@ Open a pull request to `staging`. For a production release, open a second pull r
 
 ## Personalized Scripture feed and reminder jobs
 
-The feed uses the reviewed bilingual passage library in `data/passages.php`. It chooses a daily featured passage using the account language and selected topic groups, then ranks the remaining library using saved or engaged topics. The current base library contains 49 selected readings in each language. Reviewed devotional cards in `data/monthly-readings.php` add a reflection, a small practice, and a short prayer to an existing verified passage. The publisher validates the passage ID and language before importing a card; it never generates, rewrites, or fetches Bible text.
+The feed uses the reviewed bilingual passage library in `data/passages.php`. It chooses a daily featured passage using the account language and selected topic groups, then ranks the remaining library using saved or engaged topics. The current base library contains 49 selected readings in each language. Reviewed devotional cards in `data/monthly-readings.php` append new feed posts with a reflection, a small practice, and a short prayer paired with an existing verified passage; the original Scripture card remains in the feed. The publisher validates the passage ID and language before importing a card; it never generates, rewrites, or fetches Bible text.
 
 ### Monthly feed content publishing
 

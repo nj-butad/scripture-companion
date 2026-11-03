@@ -91,20 +91,14 @@ final class PersonalizationService
             // existing feeds during deployment or a database migration.
         }
 
-        $replacedPassageIds = [];
-        $seenDevotionalPassageIds = [];
         foreach ($scheduled as $reading) {
             $passageId = (string) $reading['passage_id'];
-            if (isset($seenDevotionalPassageIds[$passageId]) || !isset($passagesById[$passageId]) || ($passagesById[$passageId]['language'] ?? '') !== $language) {
+            if (!isset($passagesById[$passageId]) || ($passagesById[$passageId]['language'] ?? '') !== $language) {
                 continue;
             }
-            $seenDevotionalPassageIds[$passageId] = true;
-            $replacedPassageIds[$passageId] = true;
             $passage = $passagesById[$passageId];
             $passage['passage_id'] = $passageId;
-            // Keep the cursor and save IDs stable if a future batch refreshes
-            // the reflection attached to this same Scripture passage.
-            $passage['id'] = $passageId;
+            $passage['id'] = (string) $reading['id'];
             $passage['topic'] = (string) $reading['topic'];
             $passage['devotional'] = [
                 'title' => (string) $reading['title'],
@@ -115,12 +109,6 @@ final class PersonalizationService
             ];
             $candidates[] = $passage;
         }
-        if ($replacedPassageIds !== []) {
-            $candidates = array_values(array_filter(
-                $candidates,
-                static fn(array $passage): bool => isset($passage['devotional']) || !isset($replacedPassageIds[(string) $passage['id']])
-            ));
-        }
 
         $ranked = [];
         foreach ($candidates as $index => $passage) {
@@ -130,7 +118,7 @@ final class PersonalizationService
             $freshContentScore = isset($passage['devotional']) ? 2 : 0;
             $score = $preferenceScore + ($scores[$topic] ?? 0) + $freshContentScore + (($passageId === $dailyId) ? 100 : 0) + (($index * 17) % 7) / 10;
             $passage['score'] = $score;
-            $passage['is_daily'] = $passageId === $dailyId;
+            $passage['is_daily'] = !isset($passage['devotional']) && $passageId === $dailyId;
             $passage['image'] = self::imageForTopic($topic);
             $ranked[] = $passage;
         }
